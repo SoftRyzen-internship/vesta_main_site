@@ -2,10 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-UltraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/fonts/e-Ukraine-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KyivTypeSans';
+  src: url('/fonts/KyivTypeSans-VarGX.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-eukraine: 'e-Ukraine', sans-serif;
+  --font-kyiv: 'KyivTypeSans', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
