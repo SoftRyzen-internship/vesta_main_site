@@ -1,8 +1,11 @@
 'use client';
 
 import { Logo } from '@/components/ui/Logo';
+import dataSupport from '@/data/supportCardsData.json'
+
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
+import { SupportCards } from './components/ui/SuppportCards/SupportCards';
 import { NewsCard } from './components/ui/NewsCard';
 
 export const Viewer = () => {
@@ -69,6 +72,7 @@ export const Viewer = () => {
         розповідає про проблеми з ветеранською політикою в Україні.'
       />
       <div className='container'>
+        <SupportCards data={dataSupport.supportsCards}/>
         <ServiceCard />
       </div>
     </div>
