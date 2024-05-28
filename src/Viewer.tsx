@@ -3,6 +3,8 @@
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
+import { SupportCards } from './components/ui/SuppportCards/SupportCards';
+import dataSupport from '@/data/supportCardsData.json'
 
 export const Viewer = () => {
   return (
@@ -57,6 +59,7 @@ export const Viewer = () => {
       </div>
 
       <div className='container'>
+        <SupportCards data={dataSupport.supportsCards}/>
         <ServiceCard />
       </div>
     </>
