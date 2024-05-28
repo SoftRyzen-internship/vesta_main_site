@@ -1,3 +1,6 @@
+'use client';
+import { Button } from './components/ui/Button';
+
 export const Viewer = () => {
   return (
     <>
@@ -13,6 +16,28 @@ export const Viewer = () => {
         modi rem quasi fugiat. Nam totam perferendis iure veniam quos quis
         deleniti laudantium aliquid natus? Soluta?
       </p>
+      <div className='h-[500px] w-full'>
+        <Button
+          text='Запит на підтримку'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          text='контакти'
+          variant='contacts'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          text='   про нас'
+          variant='secondary'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button variant='open' handleClick={() => console.log('click')} />
+        <Button variant='play' handleClick={() => console.log('click')} />
+        <Button variant='close' handleClick={() => console.log('click')} />
+      </div>
     </>
   );
 };
