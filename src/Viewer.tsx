@@ -2,6 +2,7 @@
 
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
+import { TeamCard } from './components/common/TeamCard';
 
 export const Viewer = () => {
   return (
@@ -10,7 +11,7 @@ export const Viewer = () => {
       <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
-      <div className='bg-darkGrey h-[100px] w-full'>
+      <div className='bg-darkGrey h-[280px] w-full'>
         <Button
           text='Запит на підтримку'
           handleClick={() => console.log('click')}
@@ -54,6 +55,9 @@ export const Viewer = () => {
           className='mr-10'
         />
       </div>
+      <section className='w-full'>
+        <TeamCard />
+      </section>
     </>
   );
 };
