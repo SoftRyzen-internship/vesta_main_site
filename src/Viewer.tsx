@@ -23,7 +23,8 @@ export const Viewer = () => {
       >
         <Play width={13} height={18} />
       </button>
-      <div className='h-[91px] w-full bg-[#1A341B]'>
+      {/* div тимчасово, щоб було видно логотип */}
+      <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
     </>

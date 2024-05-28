@@ -60,7 +60,7 @@ const config: Config = {
         darkGrey: '#5E5D5D',
         red: '#FF0000',
         current: 'currentColor',
-        logoWhite: '#F2EFE8',
+        logoWhite: '#F2EFE9',
       },
     },
   },
