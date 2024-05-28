@@ -25,12 +25,25 @@ export const NewsCard = ({
       <p className='text-light text-darkGrey mb-[15px] tracking-[-0.01em]'>
         {date}
       </p>
-      <h3 className='text-green xl:text-medium mb-[15px] text-base font-medium leading-[1.5] md:text-lg'>{title}</h3>
+      <h3 className='text-green xl:text-medium mb-[15px] text-base font-medium leading-[1.5] md:text-lg'>
+        {title}
+      </h3>
       <p
         className={`text-light text-darkGrey leading-[1.6] tracking-[-0.01em] ${style.textEllipsis}`}
       >
-       {description}
+        {description}
       </p>
     </div>
   );
 };
+
+//це для рідмі, зараз не можу залити бо там є попередній коміт і буде конфлікт, допишу в рідмі при можливості
+// - Button
+
+// | Prop          | Default | Description                             |
+// | ------------- | ------- | --------------------------------------- |
+// | `img`         | --      | required, `string`, img src             |
+// | `imgAlt`      | --      | required, `string`, description for img |
+// | `date`        | --      | required, `string`, date of news        |
+// | `title`       | --      | required, `string`, title of news       |
+// | `description` | --      | required, `string`, description of news |
