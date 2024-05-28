@@ -5,7 +5,7 @@ import dataSupport from '@/data/supportCardsData.json'
 
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/ui/SuppportCards/SupportCards';
+import { SupportCards } from './components/common/SuppportCards/SupportCards';
 import { NewsCard } from './components/ui/NewsCard';
 
 export const Viewer = () => {

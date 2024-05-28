@@ -1,9 +1,10 @@
 import { FC } from 'react';
+
 import clsx from 'clsx';
 
-import { SupportCardsProps } from './SupportCards.type';
+import { ISupportCardsProps } from './SupportCards.types';
 
-export const SupportCards: FC<SupportCardsProps> = ({ data }) => {
+export const SupportCards: FC<ISupportCardsProps> = ({ data }) => {
   return (
     <ul className='flex gap-5'>
       {data.map(({ id, amountOfHelp, typeOfHelp }) => (
