@@ -5,15 +5,16 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/*.{js,ts,jsx,tsx,mdx}', //тимчасово для Viewer.tsx
+    './src/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     screens: {
       sm: '480px',
-      smOnly: { max: '767px' },
+      smOnly: { max: '767.98px' },
       md: '768px',
-      mdOnly: { max: '1279px' },
+      mdOnly: { min: '768px', max: '1279.98px' },
       xl: '1280px',
+      notXl: { max: '1279.98px' },
     },
     extend: {
       backgroundImage: {
@@ -35,11 +36,11 @@ const config: Config = {
         eukraine: ['var(--font-eukraine)'],
       },
       fontSize: {
-        light: ['14px', '22.4px'],
-        medium: ['20px', '30px'],
-        lightLarge: ['25px', '32.5px'],
-        large: ['60px', '72px'],
-        extraLarge: ['70px', '84px'],
+        light: ['14px', '1.6'],
+        medium: ['20px', '2.15'],
+        lightLarge: ['25px', '2.32'],
+        large: ['60px', '5.15'],
+        extraLarge: ['70px', '6'],
       },
       colors: {
         whiteGrey: '#F2EFE933',
@@ -59,11 +60,9 @@ const config: Config = {
         grey: '#999999',
         darkGrey: '#5E5D5D',
         red: '#FF0000',
-        current: 'currentColor',
-        logoWhite: '#F2EFE9',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 export default config;
