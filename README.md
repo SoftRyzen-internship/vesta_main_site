@@ -34,15 +34,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## Components API
-
-- Button
-
-| Prop | Default | Description |
-| --- | --- | --- |
-| `handleClick` | -- | required, `() => void` , add the function |
-| `text` | -- | optional, `string` button's text |
-| `variant` | `primary` | optional, `'primary'` `'secondary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` `'contacts'` |
-| `type` | `button` | optional, `'button'` `'submit'` `'reset' ` |
-| `className` | -- | optional, `string` add tailwind styles |
