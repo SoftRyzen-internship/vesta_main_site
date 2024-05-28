@@ -2,7 +2,7 @@ import './globals.css';
 
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
-import classNames from 'classnames';
+import clsx from 'clsx';
 import localFont from 'next/font/local';
 
 import { metaData } from '@/data';
@@ -63,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='uk'>
-      <body className={classNames(
+      <body className={clsx(
           eUkraine.variable,
           KyivTypeSans.variable,
           'h-full min-h-screen'
