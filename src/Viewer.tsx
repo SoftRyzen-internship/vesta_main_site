@@ -23,10 +23,9 @@ export const Viewer = () => {
       >
         <Play width={13} height={18} />
       </button>
-  <div className='h-[91px] w-full bg-[#1A341B]'>
+      <div className='h-[91px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
-
     </>
   );
 };

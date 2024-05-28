@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { logo } from '@/data';
 // import { LogoSvg } from './LogoSvg';
-import LogoIcon from '@/../public/icons/vestaLogoWhite.svg';
+import LogoIcon from '@/../public/icons/vesta_logo_white.svg';
 
 
 export const Logo:FC = () => {
@@ -12,14 +12,10 @@ export const Logo:FC = () => {
       <Link
         href='/'
         aria-label={logo.ariaLabel}
-        className='fill-[#F2EFE8] transition hover:fill-[#9C4E12] focus:outline-1  active:fill-[#F2600C]'
+        className='text-logoWhite transition hover:text-hoverDark focus:outline-1 active:text-orangeText'
       >
-        <LogoIcon
-          width={113}
-          height={29}
-          className='fill-[#F2EFE8] hover:fill-[#9C4E12]'
-        />
-        {/* <LogoSvg/> */}
+        <LogoIcon width={113} height={29} className='fill-current'/>
+        {/* <LogoSvg /> */}
       </Link>
     </>
   );
