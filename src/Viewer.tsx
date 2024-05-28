@@ -1,4 +1,5 @@
 import Play from '@/../public/icons/playButton.svg';
+import { ServiceCard } from './components/common/ServiceCard';
 
 export const Viewer = () => {
   return (
@@ -22,6 +23,7 @@ export const Viewer = () => {
       >
         <Play width={13} height={18} />
       </button>
+      <ServiceCard/>
     </>
   );
 };
