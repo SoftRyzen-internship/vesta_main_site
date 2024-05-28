@@ -1,10 +1,12 @@
-// import Play from '@/../public/icons/playButton.svg';
+'use client';
+import Play from '@/../public/icons/playButton.svg';
 import { ServiceCard } from './components/common/ServiceCard';
+import { Button } from './components/ui/Button';
 
 export const Viewer = () => {
   return (
-    <div className='container'>
-      {/* <p>
+    <>
+      <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
         nemo possimus, ipsa hic dolores commodi incidunt modi labore aliquam?
         Repellendus explicabo architecto dolore asperiores nam earum ipsum.
@@ -22,8 +24,54 @@ export const Viewer = () => {
         className='h-[51px] w-[51px] rounded-full bg-orange-600 pb-4 pl-[21px] pr-[17px] pt-[17px]'
       >
         <Play width={13} height={18} />
-      </button> */}
-      <ServiceCard/>
-    </div>
+      </button>
+      <div className='h-[500px] w-full bg-darkGrey'>
+        <Button
+          text='Запит на підтримку'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          text='контакти'
+          variant='contacts'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          text='дивитись всі'
+          variant='secondary'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          variant='openTeamMember'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          variant='play'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          variant='openMenu'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          variant='closeMenu'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <Button
+          variant='closeModal'
+          handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+      </div>
+      <div className='container'>
+        <ServiceCard />
+      </div>
+    </>
   );
 };
