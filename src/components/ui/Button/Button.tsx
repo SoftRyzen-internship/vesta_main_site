@@ -1,7 +1,9 @@
 import clsx from 'clsx';
 
-// import Facebook from '/public/icons/Facebook.svg';
-// import Close from '/public/icons/Close.svg';
+import PlayIcon from '/public/icons/playButton.svg';
+import OpenIcon from '/public/icons/Plus.svg';
+import OpenMenuIcon from '/public/icons/burgerMenu.svg';
+import CloseIcon from '/public/icons/burgerClosed.svg';
 
 import { ButtonProps } from './Button.types';
 
@@ -17,39 +19,62 @@ export const Button = ({
       type={type}
       onClick={handleClick}
       className={clsx(
-        'mr-10 inline-block text-sm font-bold uppercase leading-[1.5] tracking-[0.03em] text-[#f3efe9]',
+        ' text-light inline-block font-bold uppercase tracking-[0.03em] transition-colors duration-300',
         variant === 'primary' &&
-          ' width-[240px] height-[57px] bg-[#f2600c] px-8 py-[18px] hover:bg-[#1a341b]  hover:opacity-60 focus:bg-[#72806d] active:bg-[#1a341b]',
+          ' bg-orangeText text-bgText hover:bg-green active:bg-green focus:bg-greenFocus h-[57px] w-60 px-6 py-[18px] hover:opacity-60',
         variant === 'contacts' &&
-          ' h-[53px] w-[200px] border-[0.50px] border-solid border-[#f3efe9] px-6 py-4 hover:border-[#f7a06d] hover:text-[#f7a06d] focus:border-[#ee9764] focus:text-[#ee9764] active:border-[#f2600c] active:text-[#f2600c]',
+          ' border-bgText text-bgText active:border-orangeText active:text-orangeText hover:border-hoverOrange hover:text-hoverOrange focus:border-focusOrange focus:text-focusOrange h-[53px] w-[200px] border-[0.50px] border-solid px-[55px] py-4',
         variant === 'secondary' &&
-          'border-b border-solid border-[#f2600c] py-1 text-[#f2600c] hover:border-[#1a341b] hover:text-[#1a341b] hover:opacity-60 focus:border-[#ee9764] focus:text-[#ee9764] active:border-[#1a341b] active:text-[#1a341b]',
-        variant === 'open' &&
-          'flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[rgba(242,239,233,0.2)] backdrop-blur-sm hover:bg-[#849080] focus:bg-[rgba(132,144,128,0.2)] active:bg-[#1a341b]',
+          'border-orangeText text-orangeText hover:border-green hover:text-green active:border-green active:text-green focus:border-focusOrange focus:text-focusOrange border-b border-solid py-1 hover:opacity-60',
+        variant === 'openTeamMember' &&
+          ' fill-bgText active:bg-green focus-within:fill-greenFocus hover:bg-greenHover h-[50px] w-[50px] rounded-full bg-[rgba(242,239,233,0.2)] p-[18px] backdrop-blur-sm     focus-within:bg-[rgba(132,144,128,0.2)]',
         variant === 'play' &&
-          'flex h-[51px] w-[51px] items-center justify-center rounded-full bg-[#f2600c] hover:bg-[#849080] focus:bg-[#ee9764] active:bg-[#1a341b]',
+          ' bg-orangeText active:bg-green focus:bg-focusOrange hover:bg-greenHover h-[51px] w-[51px] rounded-full pb-4 pl-[21px] pr-[17px] pt-[17px]',
+        variant === 'closeModal' &&
+          'stroke-green hover:stroke-orangeText active:stroke-hoverOrange focus:stroke-greenFocus',
+        variant === 'closeMenu' &&
+          'stroke-bgWhite hover:stroke-hoverDark active:stroke-orangeText focus:stroke-[#B25A17]',
+        variant === 'openMenu' &&
+          'stroke-bgWhite hover:stroke-orangeText active:stroke-hoverDark focus:stroke-[#B25A17]',
         className,
       )}
     >
       {text && text}
-      {
-        variant === 'open' && ''
-        // <Facebook width={24} height={24} aria-label='відкрити facebook' />
-      }
-      {
-        variant === 'play' && ''
-        // <Facebook width={24} height={24} aria-label='відкрити facebook' />
-      }
-      {
-        variant === 'close' && ''
-        // <Close
-        //   width={24}
-        //   height={24}
-        //   aria-label='відкрити facebook'
-        //   stroke='#1A341B'
-        //   className='hover:stroke-[#F2600C] focus:stroke-[#72806D] active:stroke-[#F7A06D]'
-        // />
-      }
+      {variant === 'openTeamMember' && (
+        <OpenIcon
+          width={14}
+          height={14}
+          aria-label='дізнатися більше про члена команди'
+          className='fill-inherit'
+        />
+      )}
+      {variant === 'play' && (
+        <PlayIcon width={13} height={18} aria-label='відворити відео' />
+      )}
+      {variant === 'openMenu' && (
+        <OpenMenuIcon
+          width={24}
+          height={24}
+          aria-label='відкрити мобільне навігаційне меню'
+          className='stroke-inherit'
+        />
+      )}
+      {variant === 'closeMenu' && (
+        <CloseIcon
+          width={24}
+          height={24}
+          aria-label='закрити мобільне навігаційне меню'
+          className='stroke-inherit'
+        />
+      )}
+      {variant === 'closeModal' && (
+        <CloseIcon
+          width={24}
+          height={24}
+          aria-label='закрити діалогове вікно'
+          className='stroke-inherit'
+        />
+      )}
     </button>
   );
 };
