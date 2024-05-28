@@ -1,4 +1,4 @@
-export interface ButtonProps {
+export interface IButtonProps {
   handleClick: () => void;
   text?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
