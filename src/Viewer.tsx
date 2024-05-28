@@ -2,6 +2,7 @@
 
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
+import { ServiceCard } from './components/common/ServiceCard';
 
 export const Viewer = () => {
   return (
@@ -53,6 +54,10 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
+      </div>
+
+      <div className='container'>
+        <ServiceCard />
       </div>
     </>
   );

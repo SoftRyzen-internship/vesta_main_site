@@ -10,10 +10,11 @@ const config: Config = {
   theme: {
     screens: {
       sm: '480px',
-      smOnly: { max: '767px' },
+      smOnly: { max: '767.98px' },
       md: '768px',
-      mdOnly: { max: '1279px' },
+      mdOnly: { min: '768px', max: '1279.98px' },
       xl: '1280px',
+      notXl: { max: '1279.98px' },
     },
     extend: {
       backgroundImage: {
