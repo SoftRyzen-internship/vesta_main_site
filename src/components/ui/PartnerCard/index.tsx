@@ -1,0 +1,1 @@
+export { PartnerCard } from './PartnerCard';
