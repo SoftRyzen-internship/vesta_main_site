@@ -1,30 +1,38 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import img from '@/../public/images/service-desk@1.png';
+import { serviceExample } from '@/data';
+
+import img from '@/../public/images/services/service-desk@1.png';
 
 import { IServiceCardProps } from './ServiceCard.types';
 
 export const ServiceCard: FC<IServiceCardProps> = ({
-  title = 'Юридична підтримка',
+  title = serviceExample.title,
   src = img,
-  alt = 'Чоловік тримає буклет з юридичними послугами',
-  description = 'Благодійний Фонд “Веста” надає  безкоштовні юридичні консультації та повний юрсупровід для вирішення конкретних випадків. Кожен випадок унікальний, тому ми створюємо індивідуальні стратегії для вирішення проблем. Наша команда фахівців ставить перед собою завдання відновлення справедливості та вирішення правових питань, що турбують наших ветеранів,  військовослужбовців та їх сімʼї.',
+  alt = serviceExample.alt,
+  description = serviceExample.description,
 }) => {
   return (
-    <div className=''>
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className='h-[635px] w-[360px] bg-bgText py-10 pl-4 md:h-[863px] md:w-[684px] xl:h-[599px] xl:w-[1216px]'>
+      <h3
+        className='mb-[30px] font-eukraine text-xl leading-[1.3]
+        text-green md:text-lightLarge xl:text-[35px] xl:leading-[1.3]'
+      >
+        {title}
+      </h3>
+      <p className='tracking-[-0.14px] mb-[30px] max-w-[303px]'>{description}</p>
 
-      {/* <div className='w-0 h-0 xl:w-[402px] md:w-[497px]'> */}
+      <div className='relative smOnly:hidden md:h-[400px] md:w-[496px] xl:h-[439px] xl:w-[402px]'>
         <Image
           fill
+          className='object-cover'
           src={src}
           alt={alt}
           priority
-          sizes='(max-width: 768px) 0px, (max-width: 1280px) 497px, 402px'
+          sizes='(max-width: 1280px) 497px, 402px'
         />
-      {/* </div> */}
+      </div>
     </div>
   );
 };

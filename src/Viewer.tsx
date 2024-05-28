@@ -1,10 +1,10 @@
-import Play from '@/../public/icons/playButton.svg';
+// import Play from '@/../public/icons/playButton.svg';
 import { ServiceCard } from './components/common/ServiceCard';
 
 export const Viewer = () => {
   return (
-    <>
-      <p>
+    <div className='container'>
+      {/* <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
         nemo possimus, ipsa hic dolores commodi incidunt modi labore aliquam?
         Repellendus explicabo architecto dolore asperiores nam earum ipsum.
@@ -22,8 +22,8 @@ export const Viewer = () => {
         className='h-[51px] w-[51px] rounded-full bg-orange-600 pb-4 pl-[21px] pr-[17px] pt-[17px]'
       >
         <Play width={13} height={18} />
-      </button>
+      </button> */}
       <ServiceCard/>
-    </>
+    </div>
   );
 };
