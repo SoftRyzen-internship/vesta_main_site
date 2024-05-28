@@ -1,3 +1,7 @@
+// import { Logo } from '@/components/ui/Logo';
+
+import { Logo } from "./components/ui/Logo";
+
 export const Viewer = () => {
   return (
     <>
@@ -13,6 +17,9 @@ export const Viewer = () => {
         modi rem quasi fugiat. Nam totam perferendis iure veniam quos quis
         deleniti laudantium aliquid natus? Soluta?
       </p>
+      <div className='h-[91px] w-full bg-[#1A341B]'>
+        <Logo />
+      </div>
     </>
   );
 };
