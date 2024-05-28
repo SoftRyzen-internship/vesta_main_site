@@ -1,4 +1,4 @@
-export interface NewsCardProps {
+export interface INewsCardProps {
   img: string;
   imgAlt: string;
   date: string;

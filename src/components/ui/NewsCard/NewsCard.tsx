@@ -1,18 +1,20 @@
+import { FC } from 'react';
+
 import Image from 'next/image';
 
-import { NewsCardProps } from './NewsCard.types';
+import { INewsCardProps } from './NewsCard.types';
 
-import style from './NewsCard.module.css';
+import s from './NewsCard.module.css';
 
 // всі дані повинні тянутись з адмінки, тому добавлю це коли вона буде готова до використання
 
-export const NewsCard = ({
+export const NewsCard: FC<INewsCardProps> = ({
   img,
   imgAlt,
   date,
   title,
   description,
-}: NewsCardProps) => {
+}) => {
   return (
     <div className='w-full xl:w-[596px]'>
       <Image
@@ -22,28 +24,17 @@ export const NewsCard = ({
         src={img}
         className='mb-[25px]	h-[290px] w-full object-cover md:h-[356px]'
       />
-      <p className='text-light text-darkGrey mb-[15px] tracking-[-0.01em]'>
+      <p className='text-body4 text-darkGrey mb-[15px] tracking-[-0.01em]'>
         {date}
       </p>
-      <h3 className='text-green xl:text-medium mb-[15px] text-base font-medium leading-[1.5] md:text-lg'>
+      <h3 className='text-green xl:text-body2_desk text-body3 md:text-body3_desk: mb-[15px]  font-medium '>
         {title}
       </h3>
       <p
-        className={`text-light text-darkGrey leading-[1.6] tracking-[-0.01em] ${style.textEllipsis}`}
+        className={`text-body4 text-darkGrey  tracking-[-0.01em] ${s.textEllipsis}`}
       >
         {description}
       </p>
     </div>
   );
 };
-
-//це для рідмі, зараз не можу залити бо там є попередній коміт і буде конфлікт, допишу в рідмі при можливості
-// - Button
-
-// | Prop          | Default | Description                             |
-// | ------------- | ------- | --------------------------------------- |
-// | `img`         | --      | required, `string`, img src             |
-// | `imgAlt`      | --      | required, `string`, description for img |
-// | `date`        | --      | required, `string`, date of news        |
-// | `title`       | --      | required, `string`, title of news       |
-// | `description` | --      | required, `string`, description of news |
