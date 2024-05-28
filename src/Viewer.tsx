@@ -2,6 +2,7 @@
 
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
+import { ServiceCard } from './components/common/ServiceCard';
 import { TeamCard } from './components/common/TeamCard';
 
 export const Viewer = () => {
@@ -55,6 +56,11 @@ export const Viewer = () => {
           className='mr-10'
         />
       </div>
+
+      <div className='container'>
+        <ServiceCard />
+      </div>
+
       <section className='w-full'>
         <TeamCard />
       </section>
