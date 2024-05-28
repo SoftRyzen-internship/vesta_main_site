@@ -1,3 +1,5 @@
+import Play from '@/../public/icons/playButton.svg';
+
 export const Viewer = () => {
   return (
     <>
@@ -13,6 +15,13 @@ export const Viewer = () => {
         modi rem quasi fugiat. Nam totam perferendis iure veniam quos quis
         deleniti laudantium aliquid natus? Soluta?
       </p>
+
+      <button
+        type='button'
+        className='h-[51px] w-[51px] rounded-full bg-orange-600 pb-4 pl-[21px] pr-[17px] pt-[17px]'
+      >
+        <Play width={13} height={18} />
+      </button>
     </>
   );
 };
