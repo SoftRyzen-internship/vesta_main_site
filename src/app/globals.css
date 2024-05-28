@@ -66,4 +66,10 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
 }
+
+

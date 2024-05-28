@@ -1,7 +1,8 @@
 'use client';
 import Play from '@/../public/icons/playButton.svg';
-import { ServiceCard } from './components/common/ServiceCard';
+import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
+import { ServiceCard } from './components/common/ServiceCard';
 
 export const Viewer = () => {
   return (
@@ -25,6 +26,10 @@ export const Viewer = () => {
       >
         <Play width={13} height={18} />
       </button>
+      {/* div тимчасово, щоб було видно логотип */}
+      <div className='h-[51px] w-full bg-[#1A341B]'>
+        <Logo />
+      </div>
       <div className='h-[500px] w-full bg-darkGrey'>
         <Button
           text='Запит на підтримку'
