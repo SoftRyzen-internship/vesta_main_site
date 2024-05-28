@@ -1,18 +1,16 @@
 'use client';
 
 import { Logo } from '@/components/ui/Logo';
-import dataSupport from '@/data/supportCardsData.json'
+import dataSupport from '@/data/supportCards.json';
 
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/common/SuppportCards/SupportCards';
+import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/ui/NewsCard';
 
 export const Viewer = () => {
   return (
-    //щоб зручно було бачити нижній контент
     <div className='container pb-16'>
-      {/* div тимчасово, щоб було видно логотип */}
       <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
@@ -72,7 +70,7 @@ export const Viewer = () => {
         розповідає про проблеми з ветеранською політикою в Україні.'
       />
       <div className='container'>
-        <SupportCards data={dataSupport.supportsCards}/>
+        <SupportCards data={dataSupport.supportsCards} />
         <ServiceCard />
       </div>
     </div>
