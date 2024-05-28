@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import clsx from 'clsx';
 
 import PlayIcon from '/public/icons/playButton.svg';
@@ -5,15 +7,15 @@ import OpenIcon from '/public/icons/Plus.svg';
 import OpenMenuIcon from '/public/icons/burgerMenu.svg';
 import CloseIcon from '/public/icons/burgerClosed.svg';
 
-import { ButtonProps } from './Button.types';
+import { IButtonProps } from './Button.types';
 
-export const Button = ({
+export const Button: FC<IButtonProps> = ({
   text,
   handleClick,
   type = 'button',
   variant = 'primary',
   className,
-}: ButtonProps) => {
+}) => {
   return (
     <button
       type={type}
