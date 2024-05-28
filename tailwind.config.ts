@@ -60,6 +60,7 @@ const config: Config = {
         grey: '#999999',
         darkGrey: '#5E5D5D',
         red: '#FF0000',
+        logoWhite: '#F2EFE9',
       },
     },
   },
