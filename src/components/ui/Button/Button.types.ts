@@ -11,6 +11,5 @@ export interface ButtonProps {
     | 'openMenu'
     | 'play'
     | 'contacts';
-  isSvg?: boolean;
   className?: string;
 }
