@@ -3,7 +3,7 @@
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/ui/SuppportCards/SupportCards';
+import { SupportCards } from './components/common/SuppportCards/SupportCards';
 import dataSupport from '@/data/supportCardsData.json'
 
 export const Viewer = () => {
