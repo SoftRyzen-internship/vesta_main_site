@@ -1,10 +1,11 @@
 'use client';
 import Play from '@/../public/icons/playButton.svg';
 import { Button } from './components/ui/Button';
+import { NewsCard } from './components/ui/NewsCard';
 
 export const Viewer = () => {
   return (
-    <>
+    <div className='py-16'>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
         nemo possimus, ipsa hic dolores commodi incidunt modi labore aliquam?
@@ -24,7 +25,7 @@ export const Viewer = () => {
       >
         <Play width={13} height={18} />
       </button>
-      <div className='bg-darkGrey h-[500px] w-full'>
+      <div className='bg-darkGrey w-full p-10'>
         <Button
           text='Запит на підтримку'
           handleClick={() => console.log('click')}
@@ -68,6 +69,7 @@ export const Viewer = () => {
           className='mr-10'
         />
       </div>
-    </>
+      <NewsCard />
+    </div>
   );
 };
