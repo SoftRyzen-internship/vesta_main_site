@@ -6,7 +6,7 @@ import style from './NewsCard.module.css';
 
 export const NewsCard = () => {
   return (
-    <div className='w-[328px] md:w-[684px] xl:w-[596px]'>
+    <div className='w-full xl:w-[596px]'>
       <Image
         width={328}
         height={290}

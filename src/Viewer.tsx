@@ -6,12 +6,13 @@ import { NewsCard } from './components/ui/NewsCard';
 
 export const Viewer = () => {
   return (
-    <>
+    //щоб зручно було бачити нижній контент
+    <div className='container pb-16'>
       {/* div тимчасово, щоб було видно логотип */}
       <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
-      <div className='bg-darkGrey h-[100px] w-full'>
+      <div className='bg-darkGrey'>
         <Button
           text='Запит на підтримку'
           handleClick={() => console.log('click')}
@@ -56,6 +57,6 @@ export const Viewer = () => {
         />
       </div>
       <NewsCard />
-    </>
+    </div>
   );
 };
