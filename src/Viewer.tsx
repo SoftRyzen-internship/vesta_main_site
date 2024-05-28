@@ -1,4 +1,5 @@
 'use client';
+
 import Play from '@/../public/icons/playButton.svg';
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
@@ -74,6 +75,7 @@ export const Viewer = () => {
           className='mr-10'
         />
       </div>
+
       <div className='container'>
         <ServiceCard />
       </div>
