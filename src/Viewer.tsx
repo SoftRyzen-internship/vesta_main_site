@@ -12,6 +12,7 @@ import { PartnerCard } from './components/common/PartnerCard';
 
 import news from '@/data/news.json';
 import partners from '@/data/partners.json';
+import { GettingKnowTeamCard } from './components/common/GettingKnowTeamCard';
 
 export const Viewer = () => {
   return (
@@ -76,6 +77,9 @@ export const Viewer = () => {
       </div>
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
+      </div>
+      <div className='py-16'>
+        <GettingKnowTeamCard />
       </div>
       <div className='container'>
         <SupportCards data={dataSupport.supportsCards} />
