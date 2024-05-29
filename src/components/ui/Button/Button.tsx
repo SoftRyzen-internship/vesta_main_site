@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import clsx from 'clsx';
 
 import PlayIcon from '/public/icons/playButton.svg';
@@ -5,21 +7,21 @@ import OpenIcon from '/public/icons/Plus.svg';
 import OpenMenuIcon from '/public/icons/burgerMenu.svg';
 import CloseIcon from '/public/icons/burgerClosed.svg';
 
-import { ButtonProps } from './Button.types';
+import { IButtonProps } from './Button.types';
 
-export const Button = ({
+export const Button: FC<IButtonProps> = ({
   text,
   handleClick,
   type = 'button',
   variant = 'primary',
   className,
-}: ButtonProps) => {
+}) => {
   return (
     <button
       type={type}
       onClick={handleClick}
       className={clsx(
-        ' text-light inline-block font-bold uppercase tracking-[0.03em] transition-colors duration-300',
+        ' text-button inline-block font-bold uppercase tracking-[0.03em] transition-colors duration-300',
         variant === 'primary' &&
           ' bg-orangeText text-bgText hover:bg-green active:bg-green focus:bg-greenFocus h-[57px] w-60 px-6 py-[18px] hover:opacity-60',
         variant === 'contacts' &&
