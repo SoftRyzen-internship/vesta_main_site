@@ -3,31 +3,28 @@ import { clsx } from 'clsx';
 
 import ErrorIcon from '@/../public/icons/error.svg';
 
-import { ICustomTextareaProps } from './CustomTextarea.types';
+import { ITextareaProps } from './Textarea.types';
 
-export const CustomTextarea: FC<ICustomTextareaProps> = ({
+export const Textarea: FC<ITextareaProps> = ({
   label,
   errorMessage,
+  value,
   className,
   ...rest
 }) => {
   const id = useId();
 
   return (
-    <div
-      className={clsx(
-        'relative flex flex-col gap-1 tracking-[-0.14px]',
-        className,
-      )}
-    >
-      <label htmlFor={id} className='pl-2 tracking-[-0.14px] text-grey'>
+    <div className={clsx('relative flex flex-col gap-1', className)}>
+      <label htmlFor={id} className='paragraph pl-2 text-grey'>
         {label}
       </label>
       <textarea
         {...rest}
         id={id}
         className={clsx(
-          'resize-none border-[0.5px] h-full border-bgText bg-bgText p-6  tracking-[-0.14px] text-darkGrey transition  placeholder:text-grey hover:border-accent focus:border-accent  focus:outline-0',
+          'paragraph h-[151px] resize-none border-[0.5px] border-bgText bg-bgText p-6 transition placeholder:text-grey placeholder:transition hover:border-accent focus:border-accent focus:outline-0 focus:placeholder:opacity-0',
+          value && 'bg-filledInputBg',
           errorMessage && 'border-red',
         )}
       />

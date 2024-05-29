@@ -1,22 +1,23 @@
 'use client';
 
-import { Logo } from '@/components/ui/Logo';
-import dataSupport from '@/data/supportCards.json';
+// import { Logo } from '@/components/ui/Logo';
+// import dataSupport from '@/data/supportCards.json';
 
-import { Button } from './components/ui/Button';
-import { SocialMedias } from './components/ui/SocialMedias';
-import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/ui/NewsCard';
-import { CustomInput } from '@/components/common/Form/CustomInput';
+// import { Button } from './components/ui/Button';
+// import { SocialMedias } from './components/ui/SocialMedias';
+// import { ServiceCard } from './components/common/ServiceCard';
+// import { SupportCards } from './components/common/SuppportCards';
+// import { NewsCard } from './components/ui/NewsCard';
+import { FormInput } from '@/components/common/Form/Input';
 
 import { formData } from '@/data';
-import { CustomTextarea } from './components/common/Form/CustomTextarea';
+import { Textarea } from './components/common/Form/Textarea';
+import { Checkbox } from './components/common/Form/Checkbox';
 
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <div className='h-[51px] w-full bg-[#1A341B]'>
+      {/* <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
       <div className='bg-darkGrey'>
@@ -75,18 +76,24 @@ export const Viewer = () => {
         Громадського радіо “На пульсі: аналізуємо головне на Громадському радіо”
         розповідає про проблеми з ветеранською політикою в Україні.'
       />
-      <div className='container'>
         <SupportCards data={dataSupport.supportsCards} />
-        <ServiceCard />
-        <CustomInput
+        <ServiceCard /> */}
+      <div className='flex flex-col gap-6'>
+        <FormInput
           label={formData.namedField.name.label}
           placeholder={formData.namedField.name.placeholder}
           // errorMessage={formData.namedField.name.errorMessage}
         />
-        <CustomTextarea
+        <Textarea
           label={formData.namedField.textarea.label}
           placeholder={formData.namedField.textarea.placeholder}
           // errorMessage={formData.namedField.textarea.errorMessage}
+        />
+        <Checkbox
+          checked={false}
+          // handleChange={field.onChange}
+          // errorMessage={formData.namedField.checkbox.errorMessage}
+          text={formData.namedField.checkbox.label}
         />
       </div>
     </div>

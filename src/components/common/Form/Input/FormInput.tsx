@@ -3,31 +3,28 @@ import { clsx } from 'clsx';
 
 import ErrorIcon from '@/../public/icons/error.svg';
 
-import { ICustomInputProps } from './CustomInput.types';
+import { IFormInputProps } from './FormInput.types';
 
-export const CustomInput: FC<ICustomInputProps> = ({
+export const FormInput: FC<IFormInputProps> = ({
   label,
   errorMessage,
   className,
+  value,
   ...rest
 }) => {
   const id = useId();
 
   return (
-    <div
-      className={clsx(
-        'relative flex flex-col gap-1 tracking-[-0.14px]',
-        className,
-      )}
-    >
-      <label htmlFor={id} className='pl-2 tracking-[-0.14px] text-grey'>
+    <div className={clsx('relative flex flex-col gap-1', className)}>
+      <label htmlFor={id} className='paragraph pl-2 text-grey'>
         {label}
       </label>
       <input
         {...rest}
         id={id}
         className={clsx(
-          'border-[0.5px] border-bgText bg-bgText p-6  tracking-[-0.14px] text-darkGrey transition  placeholder:text-grey hover:border-accent focus:border-accent  focus:outline-0',
+          'paragraph border-[0.5px] border-bgText bg-bgText p-6 transition  placeholder:text-grey placeholder:transition hover:border-accent focus:border-accent focus:outline-0 focus:placeholder:opacity-0',
+          value && 'bg-filledInputBg',
           errorMessage && 'border-red',
         )}
       />

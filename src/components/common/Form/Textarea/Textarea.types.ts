@@ -1,8 +1,8 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-export interface ICustomTextareaProps
-  extends ComponentPropsWithoutRef<'textarea'> {
+export interface ITextareaProps extends ComponentPropsWithoutRef<'textarea'> {
   label?: string;
   errorMessage?: string;
   className?: string;
+  value?: string;
 }
