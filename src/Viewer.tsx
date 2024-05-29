@@ -8,10 +8,10 @@ import { SocialMedias } from './components/ui/SocialMedias';
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/common/NewsCard';
+import { PartnerCard } from './components/common/PartnerCard';
 
 import news from '@/data/news.json';
 import partners from '@/data/partners.json';
-import { PartnerCard } from './components/common/PartnerCard';
 
 export const Viewer = () => {
   return (
