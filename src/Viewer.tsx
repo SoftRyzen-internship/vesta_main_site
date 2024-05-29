@@ -4,6 +4,7 @@ import { Logo } from '@/components/ui/Logo';
 import dataSupport from '@/data/supportCards.json';
 
 import { Button } from './components/ui/Button';
+import { SocialMedias } from './components/ui/SocialMedias';
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/ui/NewsCard';
@@ -57,6 +58,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
+        <SocialMedias />
       </div>
       <NewsCard
         img='/images/news-card/ukrainian-soldier-desktop.webp'
