@@ -2,6 +2,7 @@
 
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
+import { SocialMedias } from './components/ui/SocialMedias';
 
 export const Viewer = () => {
   return (
@@ -10,7 +11,7 @@ export const Viewer = () => {
       <div className='h-[51px] w-full bg-[#1A341B]'>
         <Logo />
       </div>
-      <div className='bg-darkGrey h-[100px] w-full'>
+      <div className='h-[100px] w-full bg-darkGrey'>
         <Button
           text='Запит на підтримку'
           handleClick={() => console.log('click')}
@@ -53,6 +54,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
+        <SocialMedias />
       </div>
     </>
   );

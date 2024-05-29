@@ -1,7 +1,1 @@
-[
-{"facebook": "socialsFacebook"}, 
-{"instagram": "socialsInstagram"}, 
-{"youtube": "socialsYoutube"}, 
-{"tiktok": "socialsTikTok"},
-{"twitter": "socialsTwitter"}
-]
+["facebook", "instagram", "youtube", "tiktok", "twitter"]
