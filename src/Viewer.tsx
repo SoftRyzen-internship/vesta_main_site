@@ -76,7 +76,9 @@ export const Viewer = () => {
       </div>
 
       <section className='w-full'>
-        <TeamCard />
+        <div className='container outline outline-slate-800'>
+          <TeamCard />
+        </div>
       </section>
     </div>
   );

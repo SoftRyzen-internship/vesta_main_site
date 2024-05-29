@@ -3,4 +3,5 @@ export interface TeamCardProps {
   src?: string;
   alt?: string;
   position?: string;
+  onClick?: () => void;
 }
