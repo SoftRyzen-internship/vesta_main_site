@@ -3,15 +3,15 @@
 // import { Logo } from '@/components/ui/Logo';
 // import dataSupport from '@/data/supportCards.json';
 
-import { Button } from './components/ui/Button';
-import { SocialMedias } from './components/ui/SocialMedias';
-import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/common/NewsCard';
-import { PartnerCard } from './components/common/PartnerCard';
-import { DwellingCard } from './components/common/DwellingCard';
+// import { Button } from './components/ui/Button';
+// import { SocialMedias } from './components/ui/SocialMedias';
+// import { ServiceCard } from './components/common/ServiceCard';
+// import { SupportCards } from './components/common/SuppportCards';
+// import { NewsCard } from './components/common/NewsCard';
+// import { PartnerCard } from './components/common/PartnerCard';
+// import { DwellingCard } from './components/common/DwellingCard';
 
-import { dwellings, news, partners } from './data';
+// import { dwellings, news, partners } from './data';
 import { FormInput } from '@/components/common/Form/Input';
 
 import { formData } from '@/data';
