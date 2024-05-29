@@ -1,0 +1,1 @@
+export { DwellingCard } from './DwellingCard';
