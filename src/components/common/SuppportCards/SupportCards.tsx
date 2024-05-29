@@ -16,11 +16,11 @@ export const SupportCards: FC<ISupportCardsProps> = ({ data }) => {
             'rounded-br-[120px]': id === 3,
           })}
         >
-          <div className='flex flex-col gap-2 px-[2px] py-[100px] text-center'>
-            <p className='font-kyiv text-[40px] font-bold leading-[48px]'>
+          <div className='flex flex-col gap-2 px-[2px] py-[100px] text-center md:px-[22px] md:py-[108px] xl:px-[66px] xl:py-[113px]'>
+            <p className='font-kyiv text-[40px] font-bold leading-[48px] md:text-h2_desk xl:text-h1_desk'>
               {amountOfHelp}
             </p>
-            <p className='text-body3 leading-[22.4px]'>{typeOfHelp}</p>
+            <p className='text-body3 leading-[22.4px] font-normal xl:text-body3_desk'>{typeOfHelp}</p>
           </div>
         </li>
       ))}
