@@ -1,0 +1,18 @@
+.card {
+  @media screen and (min-width: 768px) {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: image-set(
+      url(/images/services/service-bg-tab@1x.webp) 1x,
+      url(/images/services/service-bg-tab@2x.webp) 2x
+    );
+  }
+
+  @media screen and (min-width: 1280px) {
+    background-position: right;
+    background-image: image-set(
+      url(/images/services/service-bg-desk@1x.webp) 1x,
+      url(/images/services/service-bg-desk@2x.webp) 2x
+    );
+  }
+}

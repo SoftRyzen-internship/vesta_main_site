@@ -1,4 +1,4 @@
-export interface ButtonProps {
+export interface IButtonProps {
   handleClick: () => void;
   text?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
@@ -11,6 +11,5 @@ export interface ButtonProps {
     | 'openMenu'
     | 'play'
     | 'contacts';
-  isSvg?: boolean;
   className?: string;
 }
