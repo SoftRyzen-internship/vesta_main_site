@@ -19,20 +19,20 @@ export const ServiceCard: FC<IServiceCardProps> = ({
 }) => {
   return (
     <div
-      className={`h-[635px] w-[360px] bg-bgText px-4 py-10 font-eukraine md:h-[863px] md:w-[684px] md:px-[94px] md:py-[74px] xl:flex xl:h-[599px] xl:w-[1216px] xl:justify-between xl:px-[70px] xl:py-20 ${s.card}`}
+      className={`h-[635px] w-[360px] bg-bgText px-4 py-10 md:h-[863px] md:w-[684px] md:px-[94px] md:py-[74px] xl:flex xl:h-[599px] xl:w-[1216px] xl:justify-between xl:px-[70px] xl:py-20 ${s.card}`}
     >
-      <div className=''>
-        <h3 className='mb-[30px] font-eukraine text-xl leading-[1.3] text-green md:text-lightLarge xl:text-[35px] xl:leading-[1.3]'>
+      <div>
+        <h3 className='mb-[30px] text-body1 text-green md:text-body1_tab xl:text-body1_desk'>
           {title}
         </h3>
-        <p className='mb-[30px] max-w-[303px] tracking-[-0.14px] md:max-w-[496px] xl:max-w-[562px]'>
+        <p className='paragraph mb-[30px] max-w-[303px] md:max-w-[496px] xl:max-w-[562px]'>
           {description}
         </p>
-        <div className='text-darkGrey mdOnly:mb-10'>
-          <span className='text-base font-medium leading-[1.5] md:text-lg xl:text-xl'>
+        <div className='mdOnly:mb-10'>
+          <span className='text-body2 font-medium text-darkGrey md:text-body2_tab xl:text-body2_desk'>
             {count}{' '}
           </span>
-          <span className='leading-[1.6] tracking-[-0.14px]'>/ {countAll}</span>
+          <span className='paragraph'>/ {countAll}</span>
         </div>
       </div>
       <div className='relative smOnly:hidden md:h-[400px] md:w-[496px] xl:h-[439px] xl:w-[402px]'>
