@@ -9,9 +9,9 @@ import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/common/NewsCard';
 import { PartnerCard } from './components/common/PartnerCard';
+import { DwellingCard } from './components/common/DwellingCard';
 
-import news from '@/data/news.json';
-import partners from '@/data/partners.json';
+import { dwellings, news, partners } from './data';
 
 export const Viewer = () => {
   return (
@@ -76,6 +76,9 @@ export const Viewer = () => {
       </div>
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
+      </div>
+      <div className='py-16'>
+        <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
       <div className='container'>
         <SupportCards data={dataSupport.supportsCards} />
