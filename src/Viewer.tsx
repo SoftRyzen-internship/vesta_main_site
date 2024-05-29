@@ -6,7 +6,11 @@ import dataSupport from '@/data/supportCards.json';
 import { Button } from './components/ui/Button';
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/ui/NewsCard';
+import { NewsCard } from './components/common/NewsCard';
+
+import news from '@/data/news.json';
+import partners from '@/data/partners.json';
+import { PartnerCard } from './components/common/PartnerCard';
 
 export const Viewer = () => {
   return (
@@ -58,17 +62,19 @@ export const Viewer = () => {
           className='mr-10'
         />
       </div>
-      <NewsCard
-        img='/images/news-card/ukrainian-soldier-desktop.webp'
-        imgAlt='Український військовослужбовець'
-        date='03.11.2023'
-        title='Немає ветеранської політики, є хаотичні рішення та застаріла радянська
-        система — Левицька.'
-        description='Членкиня правління Громадської ради при Міністерстві у справах
-        ветеранів, очільниця благодійного фонду «Веста» Богдана Левицька в етері
-        Громадського радіо “На пульсі: аналізуємо головне на Громадському радіо”
-        розповідає про проблеми з ветеранською політикою в Україні.'
-      />
+      <div className='py-16'>
+        <NewsCard
+          id={news.id}
+          img={news.img}
+          imgAlt={news.imgAlt}
+          date={news.date}
+          title={news.title}
+          description={news.description}
+        />
+      </div>
+      <div className='py-16'>
+        <PartnerCard img={partners.img} name={partners.name} />
+      </div>
       <div className='container'>
         <SupportCards data={dataSupport.supportsCards} />
         <ServiceCard />
