@@ -1,4 +1,4 @@
-export interface TeamCardProps {
+export interface ITeamCardProps {
   name?: string;
   src?: string;
   alt?: string;
