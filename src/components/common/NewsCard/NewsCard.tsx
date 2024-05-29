@@ -26,17 +26,11 @@ export const NewsCard: FC<INewsCardProps> = ({
         src={img}
         className='mb-[25px]	h-[290px] w-full object-cover md:h-[356px]'
       />
-      <p className='text-body4 text-darkGrey mb-[15px] tracking-[-0.01em]'>
-        {date}
-      </p>
+      <p className='paragraph mb-[15px]'>{date}</p>
       <h3 className='xl:text-body2_desk text-body3 md:text-body3_desk: mb-[15px]   font-medium text-inherit '>
         {title}
       </h3>
-      <p
-        className={`text-body4 text-darkGrey  tracking-[-0.01em] ${s.textEllipsis}`}
-      >
-        {description}
-      </p>
+      <p className={`paragraph ${s.textEllipsis}`}>{description}</p>
     </Link>
   );
 };
