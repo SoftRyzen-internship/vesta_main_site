@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-bgWhite text-green font-eukraine text-caption_desk font-normal;
+    @apply bg-bgWhite font-eukraine text-caption_desk font-normal text-green;
   }
 }
 
@@ -16,6 +16,6 @@
 
 @layer components {
   .paragraph {
-    @apply text-body4 text-darkGrey tracking-[-0.14px];
+    @apply text-body4 tracking-[-0.14px] text-darkGrey;
   }
 }

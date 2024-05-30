@@ -17,9 +17,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
     handleChange(e.target.checked);
 
   return (
-    <label
-      className={clsx('flex cursor-pointer gap-4', className)}
-    >
+    <label className={clsx('flex cursor-pointer gap-4', className)}>
       <input
         {...rest}
         type='checkbox'

@@ -1,9 +1,5 @@
 'use client';
 
-// import { Logo } from '@/components/ui/Logo';
-// import { Button } from './components/ui/Button';
-// import { SocialMedias } from './components/ui/SocialMedias';
-
 // import { ServiceCard } from './components/common/ServiceCard';
 // import { SupportCards } from './components/common/SuppportCards';
 // import { NewsCard } from './components/common/NewsCard';
@@ -14,6 +10,11 @@ import { FormBlock } from '@/components/common/Form';
 
 // import { supportCards } from '@/data';
 // import { dwellings, news, partners } from './data';
+// import { socialMedia } from '@/data';
+
+// import { Logo } from '@/components/ui/Logo';
+// import { Button } from './components/ui/Button';
+// import { SocialMedia } from './components/ui/SocialMedia';
 
 
 
@@ -66,7 +67,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedias />
+        <SocialMedia socialMedia={socialMedia} forFooter={false} />
       </div>
       <div className='py-16'>
         <NewsCard
@@ -85,6 +86,13 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
       <SupportCards data={supportCards.supportsCards} />
+      <ServiceCard /> */}
+      {/* <SupportCards
+          key={supportCards.id}
+          id={supportCards.id}
+          amountOfHelp={supportCards.amountOfHelp}
+          typeOfHelp={supportCards.typeOfHelp}
+        />
       <ServiceCard /> */}
 
         <FormBlock/>
