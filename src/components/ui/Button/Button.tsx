@@ -9,8 +9,6 @@ import OpenIcon from '/public/icons/Plus.svg';
 import OpenMenuIcon from '/public/icons/burgerMenu.svg';
 import CloseIcon from '/public/icons/burgerClosed.svg';
 
-import { buttons } from '@/data';
-
 export const Button: FC<IButtonProps> = ({
   text,
   handleClick,
@@ -44,18 +42,18 @@ export const Button: FC<IButtonProps> = ({
         <OpenIcon
           width={14}
           height={14}
-          aria-label={buttons.openTeamMember}
+          aria-label={}
           className='fill-inherit'
         />
       )}
       {variant === 'play' && (
-        <PlayIcon width={13} height={18} aria-label={buttons.play} />
+        <PlayIcon width={13} height={18} aria-label='відворити відео' />
       )}
       {variant === 'openMenu' && (
         <OpenMenuIcon
           width={24}
           height={24}
-          aria-label={buttons.openMenu}
+          aria-label='відкрити мобільне навігаційне меню'
           className='stroke-inherit'
         />
       )}
@@ -63,7 +61,7 @@ export const Button: FC<IButtonProps> = ({
         <CloseIcon
           width={24}
           height={24}
-          aria-label={buttons.closeMenu}
+          aria-label='закрити мобільне навігаційне меню'
           className='stroke-inherit'
         />
       )}
@@ -71,7 +69,7 @@ export const Button: FC<IButtonProps> = ({
         <CloseIcon
           width={24}
           height={24}
-          aria-label={buttons.closeMenu}
+          aria-label='закрити діалогове вікно'
           className='stroke-inherit'
         />
       )}
