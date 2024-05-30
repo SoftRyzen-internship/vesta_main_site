@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { ISupportCardsProps } from './SupportCards.types';
 
@@ -16,11 +16,11 @@ export const SupportCards: FC<ISupportCardsProps> = ({ data }) => {
             'rounded-br-[120px]': id === 3,
           })}
         >
-          <div className='flex flex-col gap-2 px-[2px] py-[100px] text-center md:px-[22px] md:py-[108px] xl:px-[66px] xl:py-[113px] w-[260px] h-[300px] md:w-[300px] md:h-[340px] xl:w-[390px] xl:h-[368px]'>
-            <p className='font-kyiv text-[40px] font-bold leading-[48px] md:text-h2_desk xl:text-h1_desk'>
+          <div className='flex h-[300px] w-[260px] flex-col gap-2 px-[2px] py-[100px] text-center md:h-[340px] md:w-[300px] md:px-[22px] md:py-[108px] xl:h-[368px] xl:w-[390px] xl:px-[66px] xl:py-[113px]'>
+            <p className='font-kyiv md:text-h1_tab xl:text-h1_desk text-h1 font-bold'>
               {amountOfHelp}
             </p>
-            <p className='text-body3 leading-[22.4px] font-normal xl:text-body3_desk'>{typeOfHelp}</p>
+            <p className='text-body3 xl:text-body3_desk'>{typeOfHelp}</p>
           </div>
         </li>
       ))}

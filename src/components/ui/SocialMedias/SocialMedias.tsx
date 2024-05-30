@@ -1,3 +1,5 @@
+import { FC } from 'react';
+
 import { socialMedias } from '@/data';
 
 import SocialsFacebook from '@/../public/icons/socialsFacebook.svg';
@@ -6,7 +8,7 @@ import SocialsYoutube from '@/../public/icons/socialsYoutube.svg';
 import SocialsTikTok from '@/../public/icons/socialsTikTok.svg';
 import SocialsTwitter from '@/../public/icons/socialsTwitter.svg';
 
-export const SocialMedias = () => {
+export const SocialMedias: FC = () => {
   return (
     <ul className='flex gap-[20px]'>
       {socialMedias.map(value => {

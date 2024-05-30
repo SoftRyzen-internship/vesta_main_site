@@ -3,17 +3,19 @@
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
 import { SocialMedias } from './components/ui/SocialMedias';
+
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/common/NewsCard';
 import { PartnerCard } from './components/common/PartnerCard';
 import { DwellingCard } from './components/common/DwellingCard';
+import { TeamCard } from './components/common/TeamCard';
 import { FormInput } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Checkbox } from '@/components/common/Form/Checkbox';
 
-import { dwellings, news, partners } from './data';
 import dataSupport from '@/data/supportCards.json';
+import { dwellings, news, partners } from './data';
 import { formData } from '@/data';
 
 export const Viewer = () => {
@@ -70,7 +72,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <NewsCard
           id={news.id}
-          img={news.img}
+          // img={news.img}
           imgAlt={news.imgAlt}
           date={news.date}
           title={news.title}
@@ -83,9 +85,9 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-        <SupportCards data={dataSupport.supportsCards} />
-        <ServiceCard />
-      
+      <SupportCards data={dataSupport.supportsCards} />
+      <ServiceCard />
+
       <div className='flex flex-col gap-6'>
         <FormInput
           label={formData.namedField.name.label}
@@ -105,6 +107,11 @@ export const Viewer = () => {
         />
       </div>
 
+      <section>
+        <div className='container outline outline-slate-800'>
+          <TeamCard />
+        </div>
+      </section>
     </div>
   );
 };
