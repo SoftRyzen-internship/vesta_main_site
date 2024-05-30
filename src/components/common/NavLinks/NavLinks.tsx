@@ -1,13 +1,12 @@
-import React from 'react';
-
+import { FC } from 'react';
 import Link from 'next/link';
 
-import navList from '@/data/navlist.json';
+import { navListData } from '@/data';
 
-export const NavList = () => {
+export const NavList: FC = () => {
   return (
     <ul className='flex flex-col items-start gap-[24px] xl:flex-row xl:gap-[40px]'>
-      {navList.map(({ id, title, sectionId }) => (
+      {navListData.map(({ id, title, sectionId }) => (
         <li key={id}>
           <Link
             href={`#${sectionId}`}
