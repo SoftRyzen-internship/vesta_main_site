@@ -6,16 +6,17 @@ import { SocialMedias } from './components/ui/SocialMedias';
 
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/common/NewsCard';
-import { PartnerCard } from './components/common/PartnerCard';
-import { DwellingCard } from './components/common/DwellingCard';
+import { NewsCard } from '@/components/common/NewsCard';
+import { PartnerCard } from '@/components/common/PartnerCard';
+import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormInput } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Checkbox } from '@/components/common/Form/Checkbox';
+import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, news, partners } from './data';
+import { dwellings, news, partners, projects } from '@/data';
 import { formData } from '@/data';
 
 export const Viewer = () => {
@@ -112,6 +113,21 @@ export const Viewer = () => {
           <TeamCard />
         </div>
       </section>
+      <div className='flex flex-col gap-10 py-16'>
+        {projects.map(
+          ({ id, img, imgAlt, title, description, linkText }, index) => (
+            <ProjectCard
+              key={id}
+              img={img}
+              imgAlt={imgAlt}
+              title={title}
+              description={description}
+              linkText={linkText}
+              isOddCard={index % 2 ? false : true}
+            />
+          ),
+        )}
+      </div>
     </div>
   );
 };
