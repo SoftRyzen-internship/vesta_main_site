@@ -21,7 +21,7 @@ export const Button: FC<IButtonProps> = ({
       type={type}
       onClick={handleClick}
       className={clsx(
-        ' text-button inline-block font-bold uppercase tracking-[0.03em] transition-colors duration-300',
+        ' text-button inline-block font-bold uppercase tracking-[0.03em] transition-colors duration-300 ',
         variant === 'primary' &&
           ' bg-orangeText text-bgText hover:bg-green active:bg-green focus:bg-greenFocus h-[57px] w-60 px-6 py-[18px] hover:opacity-60',
         variant === 'contacts' &&

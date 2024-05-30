@@ -1,5 +1,5 @@
 export interface IButtonProps {
-  handleClick: () => void;
+  handleClick?: () => void;
   text?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?:

@@ -5,4 +5,5 @@ export interface IFormInputProps extends ComponentPropsWithoutRef<'input'> {
   errorMessage?: string;
   className?: string;
   value?: string;
+  name: string;
 }

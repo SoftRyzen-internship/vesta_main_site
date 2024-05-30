@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { clsx } from 'clsx';
 
 import { ICheckboxProps } from './Checkbox.types';
@@ -7,26 +7,24 @@ import CheckIcon from '@/../public/icons/checkmark.svg';
 
 export const Checkbox: FC<ICheckboxProps> = ({
   checked,
-  // handleChange,
+  handleChange,
   errorMessage,
   text,
   className,
   ...rest
 }) => {
-  // const onBooleanChange = (e: ChangeEvent<HTMLInputElement>) =>
-  //   handleChange(e.target.checked);
+  const onBooleanChange = (e: ChangeEvent<HTMLInputElement>) =>
+    handleChange(e.target.checked);
 
   return (
     <label
-      htmlFor='check'
       className={clsx('flex cursor-pointer gap-4', className)}
     >
       <input
         {...rest}
-        id='check'
         type='checkbox'
         checked={checked}
-        // onChange={onBooleanChange}
+        onChange={onBooleanChange}
         className='peer absolute appearance-none'
       />
       <span
@@ -36,7 +34,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
           errorMessage ? ' border-red' : 'border-accent',
         )}
       >
-        <CheckIcon className='transition' />
+        <CheckIcon className='transition' width={17} height={16}/>
       </span>
       <span className='paragraph'>{text}</span>
     </label>

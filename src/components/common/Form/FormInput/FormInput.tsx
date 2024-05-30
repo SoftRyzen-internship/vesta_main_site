@@ -1,12 +1,12 @@
 import { forwardRef, useId } from 'react';
 import { clsx } from 'clsx';
 
-import { ITextareaProps } from './Textarea.types';
+import { IFormInputProps } from './FormInput.types';
 
 import ErrorIcon from '@/../public/icons/error.svg';
 
-export const Textarea = forwardRef<HTMLTextAreaElement, ITextareaProps>(
-  ({ label, errorMessage, value, className, ...rest }, ref) => {
+export const FormInput = forwardRef<HTMLInputElement, IFormInputProps>(
+  ({ label, errorMessage = '', className, value, ...rest }, ref) => {
     const id = useId();
 
     return (
@@ -14,12 +14,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, ITextareaProps>(
         <label htmlFor={id} className='paragraph pl-2 text-grey'>
           {label}
         </label>
-        <textarea
+
+        <input
           {...rest}
           ref={ref}
           id={id}
           className={clsx(
-            'paragraph h-[151px] resize-none border-[0.5px] border-bgText bg-bgText p-6 transition placeholder:text-grey placeholder:transition hover:border-accent focus:border-accent focus:outline-0 focus:placeholder:opacity-0',
+            'paragraph border-[0.5px] border-bgText bg-bgText p-6 transition  placeholder:text-grey placeholder:transition hover:border-accent focus:border-accent focus:outline-0 focus:placeholder:opacity-0',
             value && 'bg-filledInputBg',
             errorMessage && 'border-red',
           )}
@@ -39,6 +40,6 @@ export const Textarea = forwardRef<HTMLTextAreaElement, ITextareaProps>(
       </div>
     );
   },
-); 
+);
 
-Textarea.displayName = 'Textarea';
+FormInput.displayName = 'FormInput';
