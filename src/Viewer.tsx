@@ -14,7 +14,7 @@ import { FormInput } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Checkbox } from '@/components/common/Form/Checkbox';
 
-import dataSupport from '@/data/supportCards.json';
+import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
 import { formData } from '@/data';
 
@@ -85,7 +85,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      <SupportCards data={dataSupport.supportsCards} />
+      <SupportCards data={supportCards.supportsCards} />
       <ServiceCard />
 
       <div className='flex flex-col gap-6'>
