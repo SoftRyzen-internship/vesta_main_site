@@ -11,8 +11,7 @@ import { PartnerCard } from './components/common/PartnerCard';
 import { DwellingCard } from './components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 
-import dataSupport from '@/data/supportCards.json';
-import { dwellings, news, partners } from './data';
+import { dwellings, news, partners, supportCards } from './data';
 
 export const Viewer = () => {
   return (
@@ -82,7 +81,7 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
       <div className='container'>
-        <SupportCards data={dataSupport.supportsCards} />
+        <SupportCards data={supportCards.supportsCards} />
         <ServiceCard />
       </div>
 
