@@ -10,7 +10,6 @@ export const NavList: FC = () => {
         <li key={id}>
           <Link
             href={`#${sectionId}`}
-            onClick={close}
             className='text-body2_desk xl:text-body4_desk'
           >
             {title}

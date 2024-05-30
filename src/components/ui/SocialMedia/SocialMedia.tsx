@@ -21,46 +21,30 @@ export const SocialMedia: FC<SocialMediaProps> = ({
     <ul className='flex gap-[20px]'>
       {socialMedia.map(({ value, link }) => {
         return (
-          <li
-            key={value}
-            className={clsx(
-              'h-[40px] w-[40px] rounded-[50%]',
-              forFooter && 'bg-[#F2EFE933]',
-              !forFooter &&
-                'border-[1px] border-solid border-[#1A341B] bg-transparent text-[#1A341B]',
-            )}
-          >
+          <li key={value} className='h-[40px] w-[40px]'>
             <a
               target='_blank'
               rel='noopener noreferrer nofollow'
               aria-label={`відкрити ${value}`}
               href={link}
-              className='flex h-full w-full items-center justify-center'
+              className={clsx(
+                'flex h-full w-full items-center justify-center rounded-[50%]',
+                forFooter &&
+                  'bg-whiteGrey text-logoWhite hover:bg-[#9C4E12] focus:bg-[#B25A17]',
+                !forFooter &&
+                  'border-[0.5px] border-solid border-green bg-transparent text-green hover:border-hoverOrange hover:text-hoverOrange focus:border-greenFocus focus:text-greenFocus',
+              )}
             >
-              {value === 'facebook' && (
-                <SocialsFacebook width={24} height={24} fill='currentColor' />
-              )}
+              {value === 'facebook' && <SocialsFacebook fill='currentColor' />}
               {value === 'instagram' && (
-                <SocialsInstagram width={24} height={24} fill='currentColor' />
+                <SocialsInstagram fill='currentColor' />
               )}
-              {value === 'youtube' && (
-                <SocialsYoutube width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'tiktok' && (
-                <SocialsTikTok width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'twitter' && (
-                <SocialsTwitter width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'soundCloud' && (
-                <SoundCloud width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'spotify' && (
-                <SpotifyIcon width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'diya' && (
-                <Diya width={24} height={24} fill='currentColor' />
-              )}
+              {value === 'youtube' && <SocialsYoutube fill='currentColor' />}
+              {value === 'tiktok' && <SocialsTikTok fill='currentColor' />}
+              {value === 'twitter' && <SocialsTwitter fill='currentColor' />}
+              {value === 'soundCloud' && <SoundCloud fill='currentColor' />}
+              {value === 'spotify' && <SpotifyIcon fill='currentColor' />}
+              {value === 'diya' && <Diya fill='currentColor' />}
             </a>
           </li>
         );
