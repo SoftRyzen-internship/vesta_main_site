@@ -1,24 +1,22 @@
-import { Button } from '@/components/ui/Button';
 import VestaLogoIcon from '/public/icons/vestaLogo.svg';
+import { NavLink } from '@/components/ui/Link';
 
-// import { IGettingKnowTeamCardProps } from './GettingKnowTeamCard.types';
+import { gettingKnowTeamCard } from '@/data';
 
 export const GettingKnowTeamCard = () => {
+  const { title, description, link, textLink } = gettingKnowTeamCard;
   return (
-    <div className='bg-bgText w-full p-10'>
-      <VestaLogoIcon width={72} height={72} className='mb-[30px] ml-auto' />
-      <h4 className='text-body1 text-green mb-5 font-normal'>
-        Познайомся з усією командою
-      </h4>
-      <p className='paragraph text-darkGrey mb-[45px]'>
-        Ми вдячні всім за підтримку та хочемо знати вас особисто, наші фронтмени
-        та фронтвумен.
-      </p>
-      <Button
-        text='про нас'
-        variant='secondary'
-        handleClick={() => console.log('first')}
+    <div className='bg-bgText w-full p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>
+      <VestaLogoIcon
+        width={72}
+        height={72}
+        className='fill-accent mb-[30px] ml-auto md:mb-[114px]'
       />
+      <h4 className='text-body1 text-green md:text-body1_tab xl:text-body1_desk mb-5 font-normal'>
+        {title}
+      </h4>
+      <p className='paragraph text-darkGrey mb-[45px]'>{description}</p>
+      <NavLink href={link} text={textLink} variant='secondary' />
     </div>
   );
 };

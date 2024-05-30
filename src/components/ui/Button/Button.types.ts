@@ -4,12 +4,10 @@ export interface IButtonProps {
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?:
     | 'primary'
-    | 'secondary'
     | 'closeModal'
     | 'closeMenu'
     | 'openTeamMember'
     | 'openMenu'
-    | 'play'
-    | 'contacts';
+    | 'play';
   className?: string;
 }
