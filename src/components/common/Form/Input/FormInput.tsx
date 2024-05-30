@@ -1,9 +1,9 @@
 import { FC, useId } from 'react';
 import { clsx } from 'clsx';
 
-import ErrorIcon from '@/../public/icons/error.svg';
-
 import { IFormInputProps } from './FormInput.types';
+
+import ErrorIcon from '@/../public/icons/error.svg';
 
 export const FormInput: FC<IFormInputProps> = ({
   label,
@@ -33,7 +33,7 @@ export const FormInput: FC<IFormInputProps> = ({
           <ErrorIcon
             width={16}
             height={16}
-            className='absolute bottom-[-25px] left-0 fill-red '
+            className='absolute bottom-[-25px] left-0 fill-red'
           />
           <span className='absolute bottom-0 left-5 flex translate-y-full pt-2 text-xs font-light leading-[1.6] tracking-[-0.12px] text-red'>
             {errorMessage}

@@ -1,15 +1,14 @@
 import { FC } from 'react';
 import { clsx } from 'clsx';
 
-import CheckIcon from '@/../public/icons/checkmark.svg';
-
-
 import { ICheckboxProps } from './Checkbox.types';
+
+import CheckIcon from '@/../public/icons/checkmark.svg';
 
 export const Checkbox: FC<ICheckboxProps> = ({
   checked,
   // handleChange,
-  errorMessage='',
+  errorMessage,
   text,
   className,
   ...rest
@@ -20,7 +19,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
   return (
     <label
       htmlFor='check'
-      className={clsx('flex cursor-pointer  gap-4', className)}
+      className={clsx('flex cursor-pointer gap-4', className)}
     >
       <input
         {...rest}
