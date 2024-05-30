@@ -69,7 +69,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedia socialMedia={socialMedia} forFooter={false} />
+        <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
       <div className='py-16'>
         <NewsCard
@@ -88,11 +88,11 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
       <SupportCards
-          key={supportCards.id}
-          id={supportCards.id}
-          amountOfHelp={supportCards.amountOfHelp}
-          typeOfHelp={supportCards.typeOfHelp}
-        />
+        key={supportCards.id}
+        id={supportCards.id}
+        amountOfHelp={supportCards.amountOfHelp}
+        typeOfHelp={supportCards.typeOfHelp}
+      />
       <ServiceCard />
 
       <div className='flex flex-col gap-6'>
