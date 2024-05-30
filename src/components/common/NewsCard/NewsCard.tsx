@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { INewsCardProps } from './NewsCard.types';
 
 import s from './NewsCard.module.css';
+import image from '@/../public/images/news/ukrainian-soldier.webp';
 
 export const NewsCard: FC<INewsCardProps> = ({
   id,
-  img,
+  img = image,
   imgAlt,
   date,
   title,
@@ -24,6 +25,7 @@ export const NewsCard: FC<INewsCardProps> = ({
         height={290}
         alt={imgAlt}
         src={img}
+        priority
         className='mb-[25px]	h-[290px] w-full object-cover md:h-[356px]'
       />
       <p className='paragraph mb-[15px]'>{date}</p>

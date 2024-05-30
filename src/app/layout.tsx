@@ -2,8 +2,9 @@ import './globals.css';
 
 import { ReactNode } from 'react';
 import { Metadata } from 'next';
-import clsx from 'clsx';
 import localFont from 'next/font/local';
+
+import { clsx } from 'clsx';
 
 import { metaData } from '@/data';
 
@@ -50,7 +51,7 @@ const eUkraine = localFont({
       path: '../../public/fonts/e-Ukraine-Bold.otf',
       weight: '700',
       style: 'normal',
-    }
+    },
   ],
   display: 'swap',
   variable: '--font-eukraine',
@@ -63,11 +64,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='uk'>
-      <body className={clsx(
+      <body
+        className={clsx(
           eUkraine.variable,
           KyivTypeSans.variable,
-          'h-full min-h-screen'
-        )}>
+          'h-full min-h-screen',
+        )}
+      >
         <main>{children}</main>
       </body>
     </html>
