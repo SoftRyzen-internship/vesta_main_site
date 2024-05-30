@@ -9,3 +9,4 @@ export { default as formData } from './formData.json';
 export { default as teamCard } from './teamCard.json';
 export { default as supportCards } from './supportCards.json';
 export { default as gettingKnowTeamCard } from './gettingKnowTeamCard.json';
+export { default as buttons } from './buttons.json';
