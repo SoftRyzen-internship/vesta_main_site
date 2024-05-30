@@ -17,13 +17,9 @@ export const Checkbox: FC<ICheckboxProps> = ({
   //   handleChange(e.target.checked);
 
   return (
-    <label
-      htmlFor='check'
-      className={clsx('flex cursor-pointer gap-4', className)}
-    >
+    <label className={clsx('flex cursor-pointer gap-4', className)}>
       <input
         {...rest}
-        id='check'
         type='checkbox'
         checked={checked}
         // onChange={onBooleanChange}
@@ -36,7 +32,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
           errorMessage ? ' border-red' : 'border-accent',
         )}
       >
-        <CheckIcon className='transition' />
+        <CheckIcon className='transition' width={17} height={16}/>
       </span>
       <span className='paragraph'>{text}</span>
     </label>
