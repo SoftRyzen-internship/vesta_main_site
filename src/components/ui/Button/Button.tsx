@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
+
+import { IButtonProps } from './Button.types';
 
 import PlayIcon from '/public/icons/playButton.svg';
 import OpenIcon from '/public/icons/Plus.svg';
 import OpenMenuIcon from '/public/icons/burgerMenu.svg';
 import CloseIcon from '/public/icons/burgerClosed.svg';
-
-import { IButtonProps } from './Button.types';
 
 export const Button: FC<IButtonProps> = ({
   text,
