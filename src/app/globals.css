@@ -9,10 +9,6 @@
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
   .transition {
     @apply transition-all duration-300 ease-in-out;
   }
@@ -20,6 +16,6 @@
 
 @layer components {
   .paragraph {
-    @apply text-body4 tracking-[-0.14px] text-darkGrey
+    @apply text-body4 text-darkGrey tracking-[-0.14px];
   }
 }
