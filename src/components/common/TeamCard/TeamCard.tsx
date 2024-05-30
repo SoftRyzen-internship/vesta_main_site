@@ -19,13 +19,12 @@ export const TeamCard: FC<ITeamCardProps> = ({
   },
 }) => {
   return (
-    <div className='smOnly:max-w-[328px] outline-dotted outline-yellow-400 md:w-[330px] xl:w-[389px]'>
+    <div className='outline-dotted outline-yellow-400 smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full md:h-[440px] xl:h-[463px]'>
         <Image
           className='object-cover'
           src={src}
           alt={alt}
-          fill
           sizes='(min-width: 768px) 330px, (min-width: 1280px) 389px, 328px'
           priority
         />
@@ -35,7 +34,7 @@ export const TeamCard: FC<ITeamCardProps> = ({
           className='absolute right-5 top-5 xl:right-[22px]'
         />
       </div>
-      <h3 className='text-body2 xl:text-body2_desk md:text-body2_tab mb-2 font-medium'>
+      <h3 className='mb-2 text-body2 font-medium md:text-body2_tab xl:text-body2_desk'>
         {name}
       </h3>
       <p className='paragraph'>{position}</p>
