@@ -2,6 +2,10 @@ import * as yup from 'yup';
 
 import { formData } from '@/data';
 
+import { nameRegExp } from './nameRegExp';
+import { emailRegExp } from './emailRegExp';
+import { phoneRegExp } from './phoneRegExp';
+
 const {
   validationMessages: {
     required,
@@ -23,19 +27,18 @@ export const formSchema = yup.object({
     .required(required)
     .min(2, nameMin)
     .max(30, nameMax)
-    .matches(/^[А-ЯҐЄІЇа-яґєії\s'-]+$/u, namePattern),
+    .matches(nameRegExp, namePattern),
   phone: yup
     .string()
     .required(required)
-    .min(3, phoneMin)
-    .max(12, phoneMax)
-    .matches(/^\s*\+?\d+\s*$/, phonePattern),
+    .min(13, phoneMin)
+    .max(13, phoneMax)
+    .matches(phoneRegExp, phonePattern),
   email: yup
     .string()
     .required(required)
     .max(63, emailMax)
-    .matches(/^$|^\s*[^\s@]+@[^\s@]+\.[^\s@]+\s*$/, emailPattern),
+    .matches(emailRegExp, emailPattern),
   textarea: yup.string().max(500, textareaMax),
   privacy: yup.boolean().oneOf([true]).required(),
 });
-

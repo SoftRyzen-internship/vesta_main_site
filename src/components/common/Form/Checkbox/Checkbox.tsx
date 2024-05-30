@@ -32,7 +32,7 @@ export const Checkbox: FC<ICheckboxProps> = ({
           errorMessage ? ' border-red' : 'border-accent',
         )}
       >
-        <CheckIcon className='transition' width={17} height={16}/>
+        <CheckIcon className='transition' width={17} height={16} />
       </span>
       <span className='paragraph'>{text}</span>
     </label>
