@@ -1,26 +1,22 @@
 'use client';
 
-import { socialMedia } from '@/data';
-
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
 import { SocialMedia } from './components/ui/SocialMedia';
-
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
 import { NewsCard } from './components/common/NewsCard';
 import { PartnerCard } from './components/common/PartnerCard';
 import { DwellingCard } from './components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
-import { FormInput } from '@/components/common/Form/Input';
-import { Textarea } from '@/components/common/Form/Textarea';
-import { Checkbox } from '@/components/common/Form/Checkbox';
+import { FormBlock } from '@/components/common/Form';
 import { NavLink } from '@/components/ui/Link';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 
 import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
-import { formData } from '@/data';
+import { socialMedia } from '@/data';
+
 
 export const Viewer = () => {
   return (
@@ -109,26 +105,7 @@ export const Viewer = () => {
         typeOfHelp={supportCards.typeOfHelp}
       />
       <ServiceCard />
-
-      <div className='flex flex-col gap-6'>
-        <FormInput
-          label={formData.namedField.name.label}
-          placeholder={formData.namedField.name.placeholder}
-          // errorMessage={formData.namedField.name.errorMessage}
-        />
-        <Textarea
-          label={formData.namedField.textarea.label}
-          placeholder={formData.namedField.textarea.placeholder}
-          // errorMessage={formData.namedField.textarea.errorMessage}
-        />
-        <Checkbox
-          checked={false}
-          // handleChange={field.onChange}
-          // errorMessage={formData.namedField.checkbox.errorMessage}
-          text={formData.namedField.checkbox.label}
-        />
-      </div>
-
+      <FormBlock className='my-10'/>
       <section>
         <div className='container outline outline-slate-800'>
           <TeamCard />
