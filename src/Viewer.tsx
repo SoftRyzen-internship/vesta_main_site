@@ -1,8 +1,10 @@
 'use client';
 
+import { socialMedia } from '@/data';
+
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
-import { SocialMedias } from './components/ui/SocialMedias';
+import { SocialMedia } from './components/ui/SocialMedia';
 
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
@@ -67,7 +69,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedias />
+        <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
       <div className='py-16'>
         <NewsCard
@@ -86,11 +88,11 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
       <SupportCards
-          key={supportCards.id}
-          id={supportCards.id}
-          amountOfHelp={supportCards.amountOfHelp}
-          typeOfHelp={supportCards.typeOfHelp}
-        />
+        key={supportCards.id}
+        id={supportCards.id}
+        amountOfHelp={supportCards.amountOfHelp}
+        typeOfHelp={supportCards.typeOfHelp}
+      />
       <ServiceCard />
 
       <div className='flex flex-col gap-6'>
