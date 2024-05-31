@@ -35,16 +35,30 @@ export const SocialMedia: FC<SocialMediaProps> = ({
                   'border-[0.5px] border-solid border-green bg-transparent text-green hover:border-hoverOrange hover:text-hoverOrange focus:border-greenFocus focus:text-greenFocus',
               )}
             >
-              {value === 'facebook' && <SocialsFacebook fill='currentColor' />}
-              {value === 'instagram' && (
-                <SocialsInstagram fill='currentColor' />
+              {value === 'facebook' && (
+                <SocialsFacebook width={24} height={24} fill='currentColor' />
               )}
-              {value === 'youtube' && <SocialsYoutube fill='currentColor' />}
-              {value === 'tiktok' && <SocialsTikTok fill='currentColor' />}
-              {value === 'twitter' && <SocialsTwitter fill='currentColor' />}
-              {value === 'soundCloud' && <SoundCloud fill='currentColor' />}
-              {value === 'spotify' && <SpotifyIcon fill='currentColor' />}
-              {value === 'diya' && <Diya fill='currentColor' />}
+              {value === 'instagram' && (
+                <SocialsInstagram width={24} height={24} fill='currentColor' />
+              )}
+              {value === 'youtube' && (
+                <SocialsYoutube width={28} height={24} fill='currentColor' />
+              )}
+              {value === 'tiktok' && (
+                <SocialsTikTok width={24} height={24} fill='currentColor' />
+              )}
+              {value === 'twitter' && (
+                <SocialsTwitter width={24} height={20} fill='currentColor' />
+              )}
+              {value === 'soundCloud' && (
+                <SoundCloud width={24} height={22} fill='currentColor' />
+              )}
+              {value === 'spotify' && (
+                <SpotifyIcon width={24} height={24} fill='currentColor' />
+              )}
+              {value === 'diya' && (
+                <Diya width={24} height={24} fill='currentColor' />
+              )}
             </a>
           </li>
         );
