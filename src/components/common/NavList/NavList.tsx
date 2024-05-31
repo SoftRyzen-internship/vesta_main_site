@@ -19,6 +19,7 @@ export const NavList: FC<NavListProps> = ({ navList, forFooter }) => {
           <Link
             href={path}
             className={clsx(
+              'text-bgText hover:text-hoverOrange focus:text-focusOrange',
               forFooter && 'text-body4_desk',
               !forFooter && 'text-body2_desk xl:text-body4_desk',
             )}

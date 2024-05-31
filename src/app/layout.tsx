@@ -8,6 +8,8 @@ import { clsx } from 'clsx';
 
 import { metaData } from '@/data';
 
+import { Header } from './layout/Header';
+
 export const metadata: Metadata = {
   title: metaData.title,
   description: metaData.description,
@@ -71,6 +73,7 @@ export default function RootLayout({
           'h-full min-h-screen',
         )}
       >
+        <Header />
         <main>{children}</main>
       </body>
     </html>
