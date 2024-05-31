@@ -1,0 +1,6 @@
+
+[
+  { "id": 1, "title": "Про нас", "path": "/about" },
+  { "id": 2, "title": "Проєкти", "path": "/projects" },
+  { "id": 3, "title": "Новини", "path": "/news" }
+]

@@ -1,8 +1,10 @@
 'use client';
 
+import { socialMedia } from '@/data';
+
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
-import { SocialMedias } from './components/ui/SocialMedias';
+import { SocialMedia } from './components/ui/SocialMedia';
 
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
@@ -13,6 +15,8 @@ import { TeamCard } from './components/common/TeamCard';
 import { FormInput } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Checkbox } from '@/components/common/Form/Checkbox';
+import { NavLink } from '@/components/ui/Link';
+import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
@@ -27,27 +31,37 @@ export const Viewer = () => {
       </div>
       <div className='bg-darkGrey'>
         <Button
-          text='Запит на підтримку'
+          text='Надіслати'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <Button
+        <NavLink
+          href='https://www.monobank.ua/?lang=uk'
+          text='задонатити'
+          target='_blank'
+          rel='noopener noreferrer nofollow'
+          className='mr-10'
+        />
+
+        <NavLink
+          href='/contacts'
           text='контакти'
-          variant='contacts'
-          handleClick={() => console.log('click')}
+          variant='contactsHeader'
           className='mr-10'
         />
-        <Button
+        <NavLink
+          href='/news'
           text='дивитись всі'
           variant='secondary'
-          handleClick={() => console.log('click')}
           className='mr-10'
         />
+
         <Button
           variant='openTeamMember'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
+        <NavLink href='/contacts' text='Запит на підтримку' className='mr-10' />
         <Button
           variant='play'
           handleClick={() => console.log('click')}
@@ -68,7 +82,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedias />
+        <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
       <div className='py-16'>
         <NewsCard
@@ -86,7 +100,15 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      <SupportCards data={supportCards.supportsCards} />
+      <div className='py-16'>
+        <GettingKnowTeamCard />
+      </div>
+      <SupportCards
+        key={supportCards.id}
+        id={supportCards.id}
+        amountOfHelp={supportCards.amountOfHelp}
+        typeOfHelp={supportCards.typeOfHelp}
+      />
       <ServiceCard />
 
       <div className='flex flex-col gap-6'>

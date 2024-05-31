@@ -1,11 +1,11 @@
 - #### component Button
 
-The component is for all variants of button from layout
+The component is for handle click with all style variants of button from layout
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `handleClick` | `() => void` | -- | required, function for handle click |
-| `text` | `string` | -- | required, button text |
-| `variant` | `'primary'` `'secondary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` `'contacts'` | `'primary'` | required, variant of button style |
+| `text` | `string` | -- | optional, button text |
+| `variant` | `'primary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` | `'primary'` | optional, variant of button style |
 | `type` | `'button'` `'submit'` `'reset' ` | `'button'` | optional, type of button |
-| `className` | `string` | -- | required, custom styles |
+| `className` | `string` | -- | optional, custom styles |
