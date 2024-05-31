@@ -10,6 +10,8 @@ import { PartnerCard } from './components/common/PartnerCard';
 import { DwellingCard } from './components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormBlock } from '@/components/common/Form';
+import { NavLink } from '@/components/ui/Link';
+import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 
 import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
@@ -24,27 +26,37 @@ export const Viewer = () => {
       </div>
       <div className='bg-darkGrey'>
         <Button
-          text='Запит на підтримку'
+          text='Надіслати'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <Button
+        <NavLink
+          href='https://www.monobank.ua/?lang=uk'
+          text='задонатити'
+          target='_blank'
+          rel='noopener noreferrer nofollow'
+          className='mr-10'
+        />
+
+        <NavLink
+          href='/contacts'
           text='контакти'
-          variant='contacts'
-          handleClick={() => console.log('click')}
+          variant='contactsHeader'
           className='mr-10'
         />
-        <Button
+        <NavLink
+          href='/news'
           text='дивитись всі'
           variant='secondary'
-          handleClick={() => console.log('click')}
           className='mr-10'
         />
+
         <Button
           variant='openTeamMember'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
+        <NavLink href='/contacts' text='Запит на підтримку' className='mr-10' />
         <Button
           variant='play'
           handleClick={() => console.log('click')}
@@ -82,6 +94,9 @@ export const Viewer = () => {
       </div>
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
+      </div>
+      <div className='py-16'>
+        <GettingKnowTeamCard />
       </div>
       <SupportCards
         key={supportCards.id}
