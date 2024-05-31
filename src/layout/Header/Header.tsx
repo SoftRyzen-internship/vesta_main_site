@@ -1,25 +1,37 @@
 'use client';
 
 import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+
+import { clsx } from 'clsx';
 
 import { Logo } from '@/components/ui/Logo';
-import { Button } from '@/components/ui/Button';
 import { NavList } from '@/components/common/NavList';
-
+import { NavLink } from '@/components/ui/Link';
+import { Button } from '@/components/ui/Button';
 import { navListData } from '@/data';
 
 export const Header: FC = () => {
+  const pathName = usePathname();
+
   return (
-    <header className='fixed left-0 top-0 w-full bg-green py-[20px]'>
+    <header
+      className={clsx(
+        'fixed left-0 top-0 w-full py-[20px]',
+        pathName === '/' || pathName === '/about'
+          ? 'bg-transparent'
+          : 'bg-green',
+      )}
+    >
       <div className='container flex items-center justify-between'>
         <Logo />
         <div className='hidden xl:block'>
           <NavList navList={navListData} forFooter={false} />
         </div>
-        <Button
-          text='контакти'
-          variant='contacts'
-          handleClick={() => console.log('click')}
+        <NavLink
+          text='Контакти'
+          href='/contacts'
+          variant='contactsHeader'
           className='hidden xl:block'
         />
         <Button
