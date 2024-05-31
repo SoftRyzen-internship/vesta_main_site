@@ -15,7 +15,7 @@ import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, news, partners } from './data';
+import { dwellings, news, partners, projects } from './data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
