@@ -1,8 +1,10 @@
 import { FC } from 'react';
-import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { clsx } from 'clsx';
+
 import { NavListProps } from './NavList.types';
+
 export const NavList: FC<NavListProps> = ({ navList, forFooter }) => {
   return (
     <ul
