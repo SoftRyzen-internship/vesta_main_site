@@ -1,12 +1,13 @@
-'use client';
+'use client'
+import { FC } from 'react';
 import { Logo } from '@/components/ui/Logo';
 import { SocialMedia } from '@/components/ui/SocialMedia';
-import { socialMedia, footer, footerNavigation } from '@/data';
+import { NavList } from '@/components/common/NavList';
 
-import { FC } from 'react';
+import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
+
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
-import { NavList } from '@/components/common/NavList';
 import ScrollUp from '/public/icons/scrollUp.svg';
 
 const scrollToTop = () => {
@@ -34,37 +35,30 @@ export const Footer: FC = () => {
               <div className='mb-10  mt-[43px] flex flex-col gap-[15px] text-body4 font-normal text-white md:mt-[40px] xl:mt-0 transition'>
                 <NavList navList={footerNavigation} forFooter={true} />
                 <button className='absolute right-0' onClick={scrollToTop}>
-                  <ScrollUp className='fill-bgText hover:fill-orangeText' />
+                  <ScrollUp className='transition fill-bgText hover:fill-orangeText focus:fill-orangeText' />
                 </button>
               </div>
               <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white md:pb-[96px] md:pl-[169px] md:pt-[40px]  xl:pb-[100px] xl:pl-[236px]  xl:pt-0 transition'>
-                <div className='flex flex-col gap-1'>
-                  <p className='text-greenHover text-whiteGrey'>
-                    Юридичні послуги
-                  </p>
-                  <a
-                    href='tel:+321321'
-                    className='transition hover:text-orangeText'
-                  >
-                    068 924 32 34
-                  </a>
-                </div>
-                <div className='flex flex-col gap-1'>
-                  <p className='text-greenHover text-whiteGrey'>
-                    Юридичні послуги
-                  </p>
-                  <a
-                    href='tel:+321321'
-                    className='transition hover:text-orangeText'
-                  >
-                    068 924 32 34
-                  </a>
-                </div>
+                {footerPhones.map((item, index) => (
+                  <div key={index} className='flex flex-col gap-1'>
+                    <p className='text-greenHover text-whiteGrey'>
+                      {item.typeOfHelp}
+                    </p>
+                    <a
+                      href={`tel:${item.phone}`}
+                      className='transition hover:text-orangeText'
+                      aria-label={`Позвонити за номером  ${item.phone}`}
+                    >
+                      {item.phone}
+                    </a>
+                  </div>
+                ))}
                 <a
-                  href='mailto:mail@example.com'
+                  href={`mailto:${footer['@mail']}`}
                   className='transition hover:text-orangeText'
+                  aria-label={`Відіслати лист на пошту ${footer['@mail']}`}
                 >
-                  charity.vo.vesta@gmail.com
+                  {footer['@mail']}
                 </a>
               </div>
             </div>
@@ -79,10 +73,10 @@ export const Footer: FC = () => {
                 href={footer.linkPolicy}
                 rel='noopener noreferrer nofollow'
                 target='_blank'
-                aria-label='Відкрити сторінку політики'
+                aria-label={`Відкрити сторінку ${footer.namePolicy}`}
                 className='w-fit pr-3 text-body4 font-normal text-greenHover transition hover:text-orangeText'
               >
-                Політики
+                {footer.namePolicy}
               </a>
             </div>
           </div>
@@ -96,7 +90,7 @@ export const Footer: FC = () => {
                 href={footer.linkGOIT}
                 rel='noopener noreferrer nofollow'
                 target='_blank'
-                aria-label='Відкрити головну сторінку GOIT'
+                aria-label={`Відкрити головну сторінку ${footer.nameGOIT}`}
               >
                 <GoIt
                   className='fill-greenHover transition hover:fill-orangeText'
@@ -108,7 +102,7 @@ export const Footer: FC = () => {
                 href={footer.linkSoftRyzen}
                 rel='noopener noreferrer nofollow'
                 target='_blank'
-                aria-label='Відкрити головну сторінку SoftRyzen'
+                aria-label={`Відкрити головну сторінку ${footer.nameSoftRyzen}`}
               >
                 <SoftRyzen
                   className='fill-greenHover transition hover:fill-orangeText'

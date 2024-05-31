@@ -7,7 +7,8 @@ import localFont from 'next/font/local';
 import { clsx } from 'clsx';
 
 import { metaData } from '@/data';
-import { Footer } from '@/layout/Footer/Footer';
+import { Footer } from '@/layout/Footer';
+
 
 export const metadata: Metadata = {
   title: metaData.title,
