@@ -7,6 +7,8 @@ import localFont from 'next/font/local';
 import { clsx } from 'clsx';
 
 import { metaData } from '@/data';
+import { Footer } from '@/layout/Footer';
+
 
 import { Header } from './layout/Header';
 
@@ -75,6 +77,7 @@ export default function RootLayout({
       >
         <Header />
         <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );
