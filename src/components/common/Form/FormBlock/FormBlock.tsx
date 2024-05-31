@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from 'react';
+
 import { clsx } from 'clsx';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
@@ -16,6 +17,8 @@ import { formData } from '@/data';
 import { formSchema } from '@/utils';
 
 import { IFormBlockProps, IFormState } from './FormBlock.types';
+import { sendFormToEmail } from '@/lib/api';
+// import { sendFormToEmail } from '@/lib/api';
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   const {
@@ -45,9 +48,29 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
     exclude: ['privacy'],
   });
 
-  const onSubmit: SubmitHandler<IFormState> = data => {
+  const onSubmit: SubmitHandler<IFormState> = async data => {
     console.log(data);
-    reset();
+
+    // try {
+    //   await fetch('/api/sendEmail', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    //   });
+    //   reset();
+    // } catch (error) {
+    //   console.log('error');
+    // }
+    
+
+    try {
+      await sendFormToEmail(data);
+      reset();
+    } catch (error) {
+    console.log(error.message);
+    }
   };
 
   return (
