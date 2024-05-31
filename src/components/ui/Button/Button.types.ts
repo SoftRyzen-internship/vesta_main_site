@@ -1,15 +1,13 @@
 export interface IButtonProps {
-  handleClick: () => void;
+  handleClick?: () => void;
   text?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?:
     | 'primary'
-    | 'secondary'
     | 'closeModal'
     | 'closeMenu'
     | 'openTeamMember'
     | 'openMenu'
-    | 'play'
-    | 'contacts';
+    | 'play';
   className?: string;
 }

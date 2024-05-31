@@ -1,0 +1,1 @@
+export { GettingKnowTeamCard } from './GettingKnowTeamCard';
