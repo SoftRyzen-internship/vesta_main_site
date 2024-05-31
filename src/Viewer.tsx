@@ -15,8 +15,8 @@ import { TeamCard } from './components/common/TeamCard';
 import { FormInput } from '@/components/common/Form/Input';
 import { Textarea } from '@/components/common/Form/Textarea';
 import { Checkbox } from '@/components/common/Form/Checkbox';
-import { GettingKnowTeamCard } from './components/common/GettingKnowTeamCard';
-import { NavLink } from './components/ui/Link';
+import { NavLink } from '@/components/ui/Link';
+import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 
 import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
@@ -99,16 +99,15 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
+      <div className='py-16'>
+        <GettingKnowTeamCard />
+      </div>
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
         amountOfHelp={supportCards.amountOfHelp}
         typeOfHelp={supportCards.typeOfHelp}
       />
-      <div className='py-16'>
-        <GettingKnowTeamCard />
-      </div>
-      <SupportCards data={supportCards.supportsCards} />
       <ServiceCard />
 
       <div className='flex flex-col gap-6'>

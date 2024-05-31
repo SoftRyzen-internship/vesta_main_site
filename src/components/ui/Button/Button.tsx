@@ -44,7 +44,7 @@ export const Button: FC<IButtonProps> = ({
         <OpenIcon
           width={14}
           height={14}
-          aria-label={}
+          aria-label={buttons.openTeamMember}
           className='fill-inherit'
         />
       )}
