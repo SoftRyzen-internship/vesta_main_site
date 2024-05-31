@@ -5,18 +5,18 @@ import { Button } from './components/ui/Button';
 import { SocialMedia } from './components/ui/SocialMedia';
 import { ServiceCard } from './components/common/ServiceCard';
 import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/common/NewsCard';
-import { PartnerCard } from './components/common/PartnerCard';
-import { DwellingCard } from './components/common/DwellingCard';
+import { NewsCard } from '@/components/common/NewsCard';
+import { PartnerCard } from '@/components/common/PartnerCard';
+import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormBlock } from '@/components/common/Form';
 import { NavLink } from '@/components/ui/Link';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
+import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
 import { socialMedia } from '@/data';
-
 
 export const Viewer = () => {
   return (
@@ -105,12 +105,28 @@ export const Viewer = () => {
         typeOfHelp={supportCards.typeOfHelp}
       />
       <ServiceCard />
-      <FormBlock className='my-10'/>
+      <FormBlock className='my-10' />
       <section>
         <div className='container outline outline-slate-800'>
           <TeamCard />
         </div>
       </section>
+      <div className='flex flex-col gap-10 py-16'>
+        {projects.map(
+          ({ id, img, imgAlt, title, description, linkText, link }, index) => (
+            <ProjectCard
+              key={id}
+              img={img}
+              imgAlt={imgAlt}
+              title={title}
+              description={description}
+              linkText={linkText}
+              link={link}
+              isOddCard={index % 2 ? false : true}
+            />
+          ),
+        )}
+      </div>
     </div>
   );
 };
