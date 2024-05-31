@@ -4,5 +4,6 @@ export interface IProjectCardProps {
   title: string;
   description: string;
   linkText: string;
+  link: string;
   isOddCard: boolean;
 }

@@ -137,7 +137,7 @@ export const Viewer = () => {
       </section>
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(
-          ({ id, img, imgAlt, title, description, linkText }, index) => (
+          ({ id, img, imgAlt, title, description, linkText, link }, index) => (
             <ProjectCard
               key={id}
               img={img}
@@ -145,6 +145,7 @@ export const Viewer = () => {
               title={title}
               description={description}
               linkText={linkText}
+              link={link}
               isOddCard={index % 2 ? false : true}
             />
           ),

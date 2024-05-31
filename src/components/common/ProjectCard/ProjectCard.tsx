@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import clsx from 'clsx';
 
-import { Button } from '@/components/ui/Button';
+import { NavLink } from '@/components/ui/Link';
 
 import { IProjectCardProps } from './ProjectCard.types';
 
@@ -16,12 +16,15 @@ export const ProjectCard: FC<IProjectCardProps> = ({
   description,
   linkText,
   isOddCard,
+  link,
 }) => {
   return (
     <div
       className={clsx(
         'border-darkGrey  border-b-[0.50px] border-solid  pb-[30px] md:flex md:gap-[54px] md:pb-[63px] xl:gap-[129px] xl:pb-10 ',
-        isOddCard ? ' flex-row' : 'flex-row-reverse',
+        isOddCard
+          ? ' flex-row justify-start xl:gap-[129px]'
+          : 'flex-row-reverse justify-end xl:gap-[232px]',
       )}
     >
       <Image
@@ -42,11 +45,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         >
           {description}
         </p>
-        <Button
-          text={linkText}
-          variant='secondary'
-          handleClick={() => console.log('click')}
-        />
+        <NavLink href={link} text={linkText} variant='secondary' />
       </div>
     </div>
   );
