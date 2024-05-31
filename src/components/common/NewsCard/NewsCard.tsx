@@ -4,8 +4,9 @@ import Link from 'next/link';
 
 import { INewsCardProps } from './NewsCard.types';
 
-import s from './NewsCard.module.css';
 import image from '@/../public/images/news/ukrainian-soldier.webp';
+
+import s from './NewsCard.module.css';
 
 export const NewsCard: FC<INewsCardProps> = ({
   id,
@@ -29,7 +30,9 @@ export const NewsCard: FC<INewsCardProps> = ({
         className='mb-[25px]	h-[290px] w-full object-cover md:h-[356px]'
       />
       <p className='paragraph mb-[15px]'>{date}</p>
-      <h3 className='xl:text-body2_desk text-body3 md:text-body3_desk: mb-[15px]   font-medium text-inherit '>
+      <h3
+        className={`xl:text-body2_desk text-body3 md:text-body3_desk: mb-[15px]   font-medium text-inherit ${s.textEllipsis}`}
+      >
         {title}
       </h3>
       <p className={`paragraph ${s.textEllipsis}`}>{description}</p>
