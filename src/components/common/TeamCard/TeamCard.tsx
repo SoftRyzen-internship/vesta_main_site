@@ -19,7 +19,7 @@ export const TeamCard: FC<ITeamCardProps> = ({
   },
 }) => {
   return (
-    <div className='outline-dotted outline-yellow-400 smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
+    <div className='smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full md:h-[440px] xl:h-[463px]'>
         <Image
           className='object-cover'
