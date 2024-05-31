@@ -1,6 +1,6 @@
 'use client';
 
-import { socialMedia } from '@/data';
+import { socialMedia, supportAboutData } from '@/data';
 
 import { Logo } from '@/components/ui/Logo';
 import { Button } from './components/ui/Button';
@@ -19,6 +19,7 @@ import { Checkbox } from '@/components/common/Form/Checkbox';
 import { supportCards } from '@/data';
 import { dwellings, news, partners } from './data';
 import { formData } from '@/data';
+import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -119,6 +120,16 @@ export const Viewer = () => {
           <TeamCard />
         </div>
       </section>
+      <div className='py-16'>
+        {supportAboutData.map(({ icon, title, description }, index) => (
+          <SupportCardAbout
+            key={index}
+            icon={icon}
+            title={title}
+            description={description}
+          />
+        ))}
+      </div>
     </div>
   );
 };
