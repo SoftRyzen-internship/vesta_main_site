@@ -1,19 +1,5 @@
 {
-  "supportsCards": [
-    {
-      "id": 1,
-      "amountOfHelp": 451,
-      "typeOfHelp": "надано юридичну підтримку"
-    },
-    {
-      "id": 2,
-      "amountOfHelp": 212,
-      "typeOfHelp": "запитів на психологічну підтримку"
-    },
-    {
-      "id": 3,
-      "amountOfHelp": 771,
-      "typeOfHelp": "надано психологічну підтримку"
-    }
-  ]
+  "id": 1,
+  "amountOfHelp": 451,
+  "typeOfHelp": "надано юридичну підтримку"
 }
