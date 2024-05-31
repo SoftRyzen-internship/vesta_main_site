@@ -7,6 +7,7 @@ import localFont from 'next/font/local';
 import { clsx } from 'clsx';
 
 import { metaData } from '@/data';
+import { Footer } from '@/layout/Footer/Footer';
 
 export const metadata: Metadata = {
   title: metaData.title,
@@ -72,6 +73,7 @@ export default function RootLayout({
         )}
       >
         <main>{children}</main>
+        <Footer/>
       </body>
     </html>
   );
