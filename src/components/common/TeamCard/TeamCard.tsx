@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/Button';
@@ -14,12 +14,13 @@ export const TeamCard: FC<ITeamCardProps> = ({
   src = img,
   alt = teamCard.alt,
   position = teamCard.position,
-  onClick = () => {
-    console.log('Oops!');
-  },
 }) => {
+  const [openModal, setIsOpenModal] = useState(false);
+  const onClick = () => {
+    setIsOpenModal(true);
+  };
   return (
-    <div className='outline-dotted outline-yellow-400 smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
+    <div className='smOnly:max-w-[328px] outline-dotted outline-yellow-400 md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full md:h-[440px] xl:h-[463px]'>
         <Image
           className='object-cover'
@@ -34,7 +35,7 @@ export const TeamCard: FC<ITeamCardProps> = ({
           className='absolute right-5 top-5 xl:right-[22px]'
         />
       </div>
-      <h3 className='mb-2 text-body2 font-medium md:text-body2_tab xl:text-body2_desk'>
+      <h3 className='text-body2 md:text-body2_tab xl:text-body2_desk mb-2 font-medium'>
         {name}
       </h3>
       <p className='paragraph'>{position}</p>

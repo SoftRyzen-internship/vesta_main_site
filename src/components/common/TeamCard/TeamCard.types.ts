@@ -3,5 +3,4 @@ export interface ITeamCardProps {
   src?: string;
   alt?: string;
   position?: string;
-  onClick?: () => void;
 }
