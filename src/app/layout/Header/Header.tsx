@@ -3,8 +3,8 @@
 import { FC } from 'react';
 
 import { Logo } from '@/components/ui/Logo';
-import { NavList } from '@/components/common/NavList';
 import { Button } from '@/components/ui/Button';
+import { NavList } from '@/components/common/NavList';
 
 import { navListData } from '@/data';
 

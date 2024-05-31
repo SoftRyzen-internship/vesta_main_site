@@ -26,7 +26,6 @@ export const TeamCard: FC<ITeamCardProps> = ({
           src={src}
           alt={alt}
           sizes='(min-width: 768px) 330px, (min-width: 1280px) 389px, 328px'
-          priority
         />
         <Button
           variant='openTeamMember'
