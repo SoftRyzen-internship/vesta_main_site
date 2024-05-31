@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/layout/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
@@ -66,6 +67,7 @@ const config: Config = {
         caption_desk: ['18px', '1.4'],
       },
       colors: {
+        white: '#F2EFE9',
         whiteGrey: '#F2EFE933',
         bgWhite: '#FFFCF6',
         bgText: '#F3EFE9',
