@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { clsx } from 'clsx';
 
 import { NavLink } from '@/components/ui/Link';
+
+import { formatMainTitle } from '@/utils';
 
 import { mainHeroData } from '@/data';
 
@@ -10,15 +12,7 @@ import s from './MainHero.module.css';
 
 export const MainHero: FC = () => {
   const { type, title, requestButton, hrefLink } = mainHeroData;
-
-  const formatTitle = (title: string) => {
-    return title.split('\n').map((word, index) => (
-      <React.Fragment key={index}>
-        {word}
-        <br />
-      </React.Fragment>
-    ));
-  };
+  const partedTitle = formatMainTitle(title);
 
   return (
     <section
@@ -32,7 +26,7 @@ export const MainHero: FC = () => {
           {type}
         </p>
         <h1 className='mb-[30px] font-kyiv text-h1 font-bold uppercase text-bgText md:mb-[86px] md:text-h1_tab xl:mb-20 xl:text-h1_desk'>
-          {formatTitle(title)}
+          {partedTitle}
         </h1>
         <NavLink
           href={hrefLink}

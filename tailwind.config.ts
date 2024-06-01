@@ -21,6 +21,11 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+
+        'hero-gradient-top':
+          'linear-gradient(360deg, rgba(25, 34, 26, 0.47) 0%, rgba(25, 34, 26, 0.47) 100%)',
+        'hero-gradient-left':
+          'linear-gradient(96deg, rgba(25, 34, 26, 0.55) 0%, rgba(25, 34, 26, 0.55) 100%)',
       },
       container: {
         center: true,

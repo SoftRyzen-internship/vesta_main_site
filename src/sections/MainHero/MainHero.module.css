@@ -1,3 +1,44 @@
 .main-hero {
-  display: block;
+  background-image: var(--hero-gradient-top), var(--hero-gradient-left),
+    image-set(
+      url('/images/mainHero/main-hero-bg-mob@1x.webp') 1x,
+      url('/images/mainHero/main-hero-bg-mob@2x.webp') 2x
+    );
+  background-size:
+    100% 40%,
+    80% 100%,
+    cover;
+  background-position:
+    top,
+    left,
+    top center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .main-hero {
+    background-image: var(--hero-gradient-top), var(--hero-gradient-left),
+      image-set(
+        url('/images/mainHero/main-hero-bg-tab@1x.webp') 1x,
+        url('/images/mainHero/main-hero-bg-tab@2x.webp') 2x
+      );
+    background-size:
+      100% 30%,
+      60% 100%,
+      cover;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-hero {
+    background-image: var(--hero-gradient-top), var(--hero-gradient-left),
+      image-set(
+        url('/images/mainHero/main-hero-bg-desk@1x.webp') 1x,
+        url('/images/mainHero/main-hero-bg-desk@2x.webp') 2x
+      );
+    background-size:
+      100% 20%,
+      50% 100%,
+      cover;
+  }
 }

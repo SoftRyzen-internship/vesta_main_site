@@ -22,7 +22,7 @@ export const TeamCard: FC<ITeamCardProps> = ({
     <div className='smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full md:h-[440px] xl:h-[463px]'>
         <Image
-          className='object-cover'
+          className='h-[100%] w-[100%] object-cover'
           src={src}
           alt={alt}
           sizes='(min-width: 768px) 330px, (min-width: 1280px) 389px, 328px'
