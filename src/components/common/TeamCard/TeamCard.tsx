@@ -7,13 +7,17 @@ import { teamCard } from '@/data';
 
 import { ITeamCardProps } from './TeamCard.types';
 
-import img from '@/../public/images/team/BohdanaLevytska.webp';
+// import img from '@/../public/images/team/BohdanaLevytska.webp';
+import { TeamCardModal } from '../TeamCardModal';
 
 export const TeamCard: FC<ITeamCardProps> = ({
   name = teamCard.name,
-  src = img,
+  src = teamCard.src,
   alt = teamCard.alt,
   position = teamCard.position,
+  description = teamCard.description,
+  plug = teamCard.plug,
+  socialMedia = teamCard.socialMedia,
 }) => {
   const [openModal, setIsOpenModal] = useState(false);
   const onClick = () => {
@@ -26,6 +30,8 @@ export const TeamCard: FC<ITeamCardProps> = ({
           className='h-[100%] w-[100%] object-cover'
           src={src}
           alt={alt}
+          width={330}
+          height={440}
           sizes='(min-width: 768px) 330px, (min-width: 1280px) 389px, 328px'
         />
         <Button
@@ -38,6 +44,16 @@ export const TeamCard: FC<ITeamCardProps> = ({
         {name}
       </h3>
       <p className='paragraph'>{position}</p>
+      <TeamCardModal
+        openModal={openModal}
+        closeModal={() => setIsOpenModal(false)}
+        img={src}
+        name={name}
+        position={position}
+        description={description}
+        plug={plug}
+        socialMedia={socialMedia}
+      />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 export interface ITeamCardModalProps {
+  openModal: boolean;
+  closeModal: () => void;
   img: string;
   name: string;
   position: string;
