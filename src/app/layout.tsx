@@ -6,6 +6,9 @@ import localFont from 'next/font/local';
 
 import { clsx } from 'clsx';
 
+import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
+
 import { metaData } from '@/data';
 
 export const metadata: Metadata = {
@@ -71,7 +74,9 @@ export default function RootLayout({
           'h-full min-h-screen',
         )}
       >
+        <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
