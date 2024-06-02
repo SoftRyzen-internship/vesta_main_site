@@ -25,9 +25,7 @@ export const MainHero: FC = () => {
         <p className='mb-[14px] text-caption font-medium uppercase tracking-[-0.01em] text-accent md:mb-5 md:text-caption_tab xl:mb-[14px] xl:text-caption_desk'>
           {type}
         </p>
-        <h1 className='mb-[30px] font-kyiv text-h1 font-bold uppercase text-bgText md:mb-[86px] md:text-h1_tab xl:mb-20 xl:text-h1_desk'>
-          {partedTitle}
-        </h1>
+        <h1 className='title mb-[30px] md:mb-[86px] xl:mb-20'>{partedTitle}</h1>
         <NavLink
           href={hrefLink}
           text={requestButton}
