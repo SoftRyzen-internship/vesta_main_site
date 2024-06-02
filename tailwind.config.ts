@@ -2,8 +2,8 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/layout/**/*.{js,ts,jsx,tsx,mdx}',
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -18,9 +18,10 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero-gradient-top':
+          'linear-gradient(180deg, rgba(25, 34, 26, 0.47) 0%, rgba(25, 34, 26, 0) 100%)',
+        'hero-gradient-left':
+          'linear-gradient(90deg, rgba(25, 34, 26, 0.55) 0%, rgba(25, 34, 26, 0) 100%)',
       },
       container: {
         center: true,

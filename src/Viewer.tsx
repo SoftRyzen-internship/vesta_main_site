@@ -1,10 +1,10 @@
 'use client';
 
-import { Logo } from '@/components/ui/Logo';
-import { Button } from './components/ui/Button';
-import { SocialMedia } from './components/ui/SocialMedia';
-import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/common/SuppportCards';
+// import { Logo } from '@/components/ui/Logo';
+import { Button } from '@/components/ui/Button';
+import { SocialMedia } from '@/components/ui/SocialMedia';
+import { ServiceCard } from '@/components/common/ServiceCard';
+import { SupportCards } from '@/components/common/SuppportCards';
 import { NewsCard } from '@/components/common/NewsCard';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
@@ -15,15 +15,13 @@ import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, news, partners, projects } from './data';
+import { dwellings, news, partners, projects } from '@/data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <div className='h-[51px] w-full bg-[#1A341B]'>
-        <Logo />
-      </div>
+      <div className='h-[91px] w-full bg-[#1A341B]'>{/* <Logo /> */}</div>
       <div className='bg-darkGrey'>
         <Button
           text='Надіслати'

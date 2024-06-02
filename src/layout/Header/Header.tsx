@@ -17,7 +17,7 @@ export const Header: FC = () => {
   return (
     <header
       className={clsx(
-        'fixed left-0 top-0 w-full py-[20px]',
+        'absolute left-0 top-0 w-full py-[20px]',
         pathName === '/' || pathName === '/about'
           ? 'bg-transparent'
           : 'bg-green',

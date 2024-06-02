@@ -19,19 +19,18 @@ export const NewsCard: FC<INewsCardProps> = ({
   return (
     <Link
       href={`/news/${id}`}
-      className='focus:text-orangeText text-green w-full cursor-pointer transition-colors duration-300 hover:text-[rgba(242,96,12,0.6)] xl:w-[596px]'
+      className='w-full cursor-pointer text-green transition-colors duration-300 hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText xl:w-[596px]'
     >
       <Image
         width={328}
         height={290}
         alt={imgAlt}
         src={img}
-        priority
         className='mb-[25px]	h-[290px] w-full object-cover md:h-[356px]'
       />
       <p className='paragraph mb-[15px]'>{date}</p>
       <h3
-        className={`xl:text-body2_desk text-body3 md:text-body3_desk: mb-[15px]   font-medium text-inherit ${s.textEllipsis}`}
+        className={`md:text-body3_desk: mb-[15px] text-body3 font-medium   text-inherit xl:text-body2_desk ${s.textEllipsis}`}
       >
         {title}
       </h3>

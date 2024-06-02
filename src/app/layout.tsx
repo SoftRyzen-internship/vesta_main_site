@@ -6,10 +6,10 @@ import localFont from 'next/font/local';
 
 import { clsx } from 'clsx';
 
-import { metaData } from '@/data';
+import { Header } from '@/layout/Header';
 import { Footer } from '@/layout/Footer';
 
-import { Header } from '../layout/Header';
+import { metaData } from '@/data';
 
 export const metadata: Metadata = {
   title: metaData.title,
