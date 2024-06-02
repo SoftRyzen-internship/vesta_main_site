@@ -41,7 +41,6 @@ export const ServiceCard: FC<IServiceCardProps> = ({
           className='object-cover'
           src={src}
           alt={alt}
-          priority
           sizes='(max-width: 1280px) 496px, 402px'
         />
       </div>
