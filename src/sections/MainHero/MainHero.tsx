@@ -18,7 +18,7 @@ export const MainHero: FC = () => {
     <section
       className={clsx(
         s['main-hero'],
-        'pb-[108px] pt-[169px] md:pb-[60px] md:pt-[209px] xl:pb-[120px] xl:pt-[168px]',
+        'pb-[108px] pt-[168px] md:pb-[60px] xl:pb-[120px]',
       )}
     >
       <div className='container'>
