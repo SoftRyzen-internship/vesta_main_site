@@ -14,9 +14,10 @@ import { NavLink } from '@/components/ui/Link';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { supportCards } from '@/data';
+import { supportAboutData, supportCards } from '@/data';
 import { dwellings, news, partners, projects } from '@/data';
 import { socialMedia } from '@/data';
+import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -113,7 +114,12 @@ export const Viewer = () => {
         {supportAboutData.map(({ icon, title, description }, index) => (
           <SupportCardAbout
             key={index}
-            icon={icon}
+            icon={
+              (icon === 'balanceIcon' && icon) ||
+              (icon === 'infoIcon' && icon) ||
+              (icon === 'heartHandIcon' && icon) ||
+              'heartHandIcon'
+            }
             title={title}
             description={description}
           />
