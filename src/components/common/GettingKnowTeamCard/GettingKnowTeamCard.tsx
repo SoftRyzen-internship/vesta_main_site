@@ -1,5 +1,5 @@
 import VestaLogoIcon from '/public/icons/vestaLogo.svg';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 
 import { getFirstWord, getWordsWithoutFirst } from '@/utils';
 
@@ -20,7 +20,7 @@ export const GettingKnowTeamCard = () => {
         {getWordsWithoutFirst(title)}
       </h3>
       <p className='paragraph text-darkGrey mb-[45px]'>{description}</p>
-      <NavLink href={link} text={textLink} variant='secondary' />
+      <LinkButton href={link} text={textLink} variant='secondary' />
     </div>
   );
 };

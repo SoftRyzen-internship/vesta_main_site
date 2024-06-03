@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { clsx } from 'clsx';
 
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 
 import { mainHeroData } from '@/data';
 
@@ -19,13 +19,13 @@ export const MainHero: FC = () => {
       )}
     >
       <div className='container'>
-        <p className='mb-[14px] text-caption font-medium uppercase tracking-[-0.01em] text-accent md:mb-5 md:text-caption_tab xl:mb-[14px] xl:text-caption_desk'>
+        <p className='text-caption text-accent md:text-caption_tab xl:text-caption_desk mb-[14px] font-medium uppercase tracking-[-0.01em] md:mb-5 xl:mb-[14px]'>
           {type}
         </p>
         <h1 className='title mb-[30px] whitespace-pre-line md:mb-[86px] xl:mb-20'>
           {title}
         </h1>
-        <NavLink
+        <LinkButton
           href={hrefLink}
           text={requestButton}
           className='w-full md:w-60'
