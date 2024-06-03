@@ -9,7 +9,7 @@ import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormBlock } from '@/components/common/Form';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
@@ -26,7 +26,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='https://www.monobank.ua/?lang=uk'
           text='задонатити'
           target='_blank'
@@ -34,13 +34,13 @@ export const Viewer = () => {
           className='mr-10'
         />
 
-        <NavLink
+        <LinkButton
           href='/contacts'
           text='контакти'
           variant='contactsHeader'
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='/news'
           text='дивитись всі'
           variant='secondary'
@@ -52,7 +52,11 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink href='/contacts' text='Запит на підтримку' className='mr-10' />
+        <LinkButton
+          href='/contacts'
+          text='Запит на підтримку'
+          className='mr-10'
+        />
         <Button
           variant='play'
           handleClick={() => console.log('click')}
