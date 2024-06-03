@@ -1,4 +1,5 @@
 import { ChangeEvent, FC } from 'react';
+
 import { clsx } from 'clsx';
 
 import { ICheckboxProps } from './Checkbox.types';
