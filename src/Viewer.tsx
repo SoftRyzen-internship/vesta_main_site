@@ -1,6 +1,5 @@
 'use client';
 
-// import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { ServiceCard } from '@/components/common/ServiceCard';
@@ -21,7 +20,6 @@ import { socialMedia } from '@/data';
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <div className='h-[91px] w-full bg-[#1A341B]'>{/* <Logo /> */}</div>
       <div className='bg-darkGrey'>
         <Button
           text='Надіслати'
@@ -93,9 +91,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      <div className='py-16'>
-        <GettingKnowTeamCard />
-      </div>
+
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
@@ -105,8 +101,9 @@ export const Viewer = () => {
       <ServiceCard />
       <FormBlock className='my-10' />
       <section>
-        <div className='container outline outline-slate-800'>
+        <div className='container flex gap-6 outline outline-slate-800'>
           <TeamCard />
+          <GettingKnowTeamCard />
         </div>
       </section>
       <div className='flex flex-col gap-10 py-16'>
