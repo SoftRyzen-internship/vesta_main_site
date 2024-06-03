@@ -1,9 +1,0 @@
-@media screen and (max-width: 767px) {
-  .textScroll {
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 10;
-    overflow-y: auto;
-  }
-}

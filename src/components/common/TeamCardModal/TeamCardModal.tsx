@@ -8,8 +8,6 @@ import { Button } from '@/components/ui/Button';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
-import s from './TeamCardModal.module.css';
-
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
   openModal,
   closeModal,
@@ -65,7 +63,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
               </div>
               <div className='xl:flex xl:h-[463px] xl:w-[418px] xl:flex-col xl:justify-between'>
                 <p
-                  className={`paragraph text-darkGrey mb-[30px] md:mb-10 xl:mb-0 ${s.textScroll}`}
+                  className={`paragraph text-darkGrey mb-[30px] md:mb-10 xl:mb-0`}
                 >
                   {description}
                 </p>
