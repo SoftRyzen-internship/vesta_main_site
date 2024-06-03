@@ -1,9 +1,10 @@
 import { Viewer } from '@/Viewer';
+import { MainHero } from '@/sections/MainHero';
 
 export default function Home() {
   return (
     <>
-      <h1 className='font-kyiv'>Home</h1>
+      <MainHero />
       <Viewer />
     </>
   );

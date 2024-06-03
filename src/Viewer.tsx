@@ -1,52 +1,60 @@
 'use client';
 
-import { socialMedia } from '@/data';
-
-import { Logo } from '@/components/ui/Logo';
-import { Button } from './components/ui/Button';
-import { SocialMedia } from './components/ui/SocialMedia';
-
-import { ServiceCard } from './components/common/ServiceCard';
-import { SupportCards } from './components/common/SuppportCards';
-import { NewsCard } from './components/common/NewsCard';
-import { PartnerCard } from './components/common/PartnerCard';
-import { DwellingCard } from './components/common/DwellingCard';
+import { Button } from '@/components/ui/Button';
+import { SocialMedia } from '@/components/ui/SocialMedia';
+import { ServiceCard } from '@/components/common/ServiceCard';
+import { SupportCards } from '@/components/common/SuppportCards';
+import { NewsCard } from '@/components/common/NewsCard';
+import { PartnerCard } from '@/components/common/PartnerCard';
+import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
-import { FormInput } from '@/components/common/Form/Input';
-import { Textarea } from '@/components/common/Form/Textarea';
-import { Checkbox } from '@/components/common/Form/Checkbox';
+import { FormBlock } from '@/components/common/Form';
+import { LinkButton } from '@/components/ui/LinkButton';
+import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
+import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, news, partners } from './data';
-import { formData } from '@/data';
+import { dwellings, news, partners, projects } from '@/data';
+import { socialMedia } from '@/data';
 
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <div className='h-[51px] w-full bg-[#1A341B]'>
-        <Logo />
-      </div>
       <div className='bg-darkGrey'>
         <Button
-          text='Запит на підтримку'
+          text='Надіслати'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <Button
+        <LinkButton
+          href='https://www.monobank.ua/?lang=uk'
+          text='задонатити'
+          target='_blank'
+          rel='noopener noreferrer nofollow'
+          className='mr-10'
+        />
+
+        <LinkButton
+          href='/contacts'
           text='контакти'
-          variant='contacts'
-          handleClick={() => console.log('click')}
+          variant='contactsHeader'
           className='mr-10'
         />
-        <Button
+        <LinkButton
+          href='/news'
           text='дивитись всі'
           variant='secondary'
-          handleClick={() => console.log('click')}
           className='mr-10'
         />
+
         <Button
           variant='openTeamMember'
           handleClick={() => console.log('click')}
+          className='mr-10'
+        />
+        <LinkButton
+          href='/contacts'
+          text='Запит на підтримку'
           className='mr-10'
         />
         <Button
@@ -87,6 +95,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
+
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
@@ -94,31 +103,29 @@ export const Viewer = () => {
         typeOfHelp={supportCards.typeOfHelp}
       />
       <ServiceCard />
+      <FormBlock className='my-10' />
 
-      <div className='flex flex-col gap-6'>
-        <FormInput
-          label={formData.namedField.name.label}
-          placeholder={formData.namedField.name.placeholder}
-          // errorMessage={formData.namedField.name.errorMessage}
-        />
-        <Textarea
-          label={formData.namedField.textarea.label}
-          placeholder={formData.namedField.textarea.placeholder}
-          // errorMessage={formData.namedField.textarea.errorMessage}
-        />
-        <Checkbox
-          checked={false}
-          // handleChange={field.onChange}
-          // errorMessage={formData.namedField.checkbox.errorMessage}
-          text={formData.namedField.checkbox.label}
-        />
+      <div className=' flex flex-wrap gap-6 '>
+        <TeamCard />
+        <GettingKnowTeamCard />
       </div>
 
-      <section>
-        <div className='container outline outline-slate-800'>
-          <TeamCard />
-        </div>
-      </section>
+      <div className='flex flex-col gap-10 py-16'>
+        {projects.map(
+          ({ id, img, imgAlt, title, description, linkText, link }, index) => (
+            <ProjectCard
+              key={id}
+              img={img}
+              imgAlt={imgAlt}
+              title={title}
+              description={description}
+              linkText={linkText}
+              link={link}
+              isOddCard={index % 2 ? false : true}
+            />
+          ),
+        )}
+      </div>
     </div>
   );
 };
