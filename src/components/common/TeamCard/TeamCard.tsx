@@ -7,7 +7,8 @@ import { teamCard } from '@/data';
 
 import { ITeamCardProps } from './TeamCard.types';
 
-// import img from '@/../public/images/team/BohdanaLevytska.webp';
+import img from '@/../public/images/team/BohdanaLevytska.webp';
+
 import { TeamCardModal } from '../TeamCardModal';
 
 export const TeamCard: FC<ITeamCardProps> = ({
@@ -28,10 +29,8 @@ export const TeamCard: FC<ITeamCardProps> = ({
       <div className='relative mb-4 h-[330px] w-full md:h-[440px] xl:h-[463px]'>
         <Image
           className='h-[100%] w-[100%] object-cover'
-          src={src}
+          src={img}
           alt={alt}
-          width={330}
-          height={440}
           sizes='(min-width: 768px) 330px, (min-width: 1280px) 389px, 328px'
         />
         <Button

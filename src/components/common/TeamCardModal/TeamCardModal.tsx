@@ -22,10 +22,10 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
     <Transition
       appear
       show={openModal}
-      enter='duration-200 ease-out'
+      enter='transition'
       enterFrom='opacity-0'
       enterTo='opacity-100'
-      leave='duration-300 ease-out'
+      leave='transition'
       leaveFrom='opacity-100'
       leaveTo='opacity-0'
     >
@@ -35,7 +35,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
         onClose={closeModal}
       >
         <div
-          className=' fixed inset-0 xl:bg-[rgba(48,48,54,0.4)] xl:backdrop-blur-xl  '
+          className=' xl:bg-bgModalTeamMember fixed inset-0 xl:backdrop-blur-xl  '
           aria-hidden='true'
         />
         <div className='bg-bgText  fixed inset-0 z-10 w-screen overflow-y-auto xl:ml-auto xl:w-[1072px] '>
@@ -68,7 +68,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   {description}
                 </p>
                 <div className=' md:flex md:justify-between'>
-                  <p className='paragraph text-green mb-[30px] h-[42px] w-[262px] bg-[rgba(26,52,27,0.1)] px-[15px] py-[10px] md:mb-0'>
+                  <p className='paragraph text-green bg-bgPlug mb-[30px] h-[42px] w-[262px] px-[15px] py-[10px] md:mb-0'>
                     {plug}
                   </p>
                   {socialMedia && socialMedia?.length > 0 && (
