@@ -110,12 +110,6 @@ export const Viewer = () => {
         <TeamCard />
         <GettingKnowTeamCard />
       </div>
-
-      <section>
-        <div className='container outline outline-slate-800'>
-          <TeamCard />
-        </div>
-      </section>
       <div className='py-16'>
         {supportAboutData.map(({ icon, title, description }, index) => (
           <SupportCardAbout
