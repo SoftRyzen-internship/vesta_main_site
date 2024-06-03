@@ -10,7 +10,7 @@ import { NavList } from '@/components/common/NavList';
 import { NavLink } from '@/components/ui/Link';
 import { Button } from '@/components/ui/Button';
 import { navListData } from '@/data';
-import { BurgerMenu } from '@/components/common/BurgerMenu';
+import { BurgerMenu } from '@/components/ui/BurgerMenu';
 
 export const Header: FC = () => {
   const pathName = usePathname();

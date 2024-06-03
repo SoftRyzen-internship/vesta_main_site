@@ -5,4 +5,5 @@ export interface INavLinkProps {
   rel?: string;
   variant?: 'primary' | 'secondary' | 'contactsHeader';
   className?: string;
+  click?: () => void;
 }
