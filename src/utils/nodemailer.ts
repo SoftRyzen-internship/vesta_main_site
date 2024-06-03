@@ -5,6 +5,8 @@ const pass = process.env.NEXT_PUBLIC_EMAIL_PASS;
 
 export const transport = nodemailer.createTransport({
   service: 'gmail',
+  host: 'smtp.gmail.com',
+  secure: false,
   auth: {
     user: email,
     pass,
@@ -13,7 +15,7 @@ export const transport = nodemailer.createTransport({
 
 export const mailOptions = {
   from: email,
-  to: 'samohvalova520@gmail.com',
+  to: email,
 };
 
 // export interface ISendImail {

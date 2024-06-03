@@ -1,3 +1,4 @@
+import { NextRequest, NextResponse } from 'next/server';
 import { mailOptions } from './../../utils/nodemailer';
 // import { IFormState } from '@/components/common/Form/FormBlock/FormBlock.types';
 import { transport } from '@/utils/nodemailer';
@@ -53,7 +54,7 @@ import { transport } from '@/utils/nodemailer';
 // };
 // export default handler;
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const { name, phone, email, textarea } = await request.json();
 
@@ -66,12 +67,12 @@ export async function POST(request: Request) {
         <li> Message: ${textarea}</li>`,
     });
 
-    return Response.json(
+    return NextResponse.json(
       { message: 'Email Sent Successfully' },
       { status: 200 },
     );
   } catch (error) {
-    return Response.json(
+    return NextResponse.json(
       { message: 'Failed to Send Email' },
       { status: 500 },
     );
