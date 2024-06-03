@@ -1,8 +1,10 @@
 import { FC } from 'react';
-import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { clsx } from 'clsx';
+
 import { NavListProps } from './NavList.types';
+
 export const NavList: FC<NavListProps> = ({ navList, forFooter }) => {
   return (
     <ul
@@ -17,6 +19,7 @@ export const NavList: FC<NavListProps> = ({ navList, forFooter }) => {
           <Link
             href={path}
             className={clsx(
+              'text-bgText hover:text-hoverOrange focus:text-focusOrange active:text-orangeText',
               forFooter && 'text-body4_desk',
               !forFooter && 'text-body2_desk xl:text-body4_desk',
             )}
