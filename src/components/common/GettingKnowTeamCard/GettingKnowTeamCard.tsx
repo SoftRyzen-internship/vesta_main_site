@@ -1,7 +1,7 @@
 import VestaLogoIcon from '/public/icons/vestaLogo.svg';
 import { NavLink } from '@/components/ui/Link';
 
-import { getFirstWord, getWordsWithoutFirst } from '@/utils';
+import { getSpecialWords } from '@/utils';
 
 import { gettingKnowTeamCard } from '@/data';
 
@@ -15,9 +15,9 @@ export const GettingKnowTeamCard = () => {
         className='fill-accent mb-[30px] ml-auto md:mb-[114px]'
       />
       <h3 className='text-body1 text-green md:text-body1_tab xl:text-body1_desk mb-5 font-normal'>
-        {getFirstWord(title)}
+        {getSpecialWords(title, 1, 0, 1)}
         <br />
-        {getWordsWithoutFirst(title)}
+        {getSpecialWords(title, title.length - 1, 1, title.length - 2)}
       </h3>
       <p className='paragraph text-darkGrey mb-[45px]'>{description}</p>
       <NavLink href={link} text={textLink} variant='secondary' />
