@@ -100,12 +100,12 @@ export const Viewer = () => {
       />
       <ServiceCard />
       <FormBlock className='my-10' />
-      <section>
-        <div className='container flex gap-6 outline outline-slate-800'>
-          <TeamCard />
-          <GettingKnowTeamCard />
-        </div>
-      </section>
+
+      <div className=' flex flex-wrap gap-6 '>
+        <TeamCard />
+        <GettingKnowTeamCard />
+      </div>
+
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(
           ({ id, img, imgAlt, title, description, linkText, link }, index) => (
