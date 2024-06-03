@@ -88,6 +88,7 @@ const config: Config = {
         red: '#FF0000',
         logoWhite: '#F2EFE9',
         filledInputBg: '#EDE9E4',
+        tomorrow: 'rgba(218, 209, 197, 0.72)',
       },
     },
   },
