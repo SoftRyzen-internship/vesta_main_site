@@ -1,6 +1,5 @@
 'use client';
 
-// import { Logo } from '@/components/ui/Logo';
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { ServiceCard } from '@/components/common/ServiceCard';
@@ -10,7 +9,7 @@ import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormBlock } from '@/components/common/Form';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
@@ -22,14 +21,13 @@ import { SupportCardAbout } from './components/common/SupportCardAbout';
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <div className='h-[91px] w-full bg-[#1A341B]'>{/* <Logo /> */}</div>
       <div className='bg-darkGrey'>
         <Button
           text='Надіслати'
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='https://www.monobank.ua/?lang=uk'
           text='задонатити'
           target='_blank'
@@ -37,13 +35,13 @@ export const Viewer = () => {
           className='mr-10'
         />
 
-        <NavLink
+        <LinkButton
           href='/contacts'
           text='контакти'
           variant='contactsHeader'
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='/news'
           text='дивитись всі'
           variant='secondary'
@@ -55,7 +53,11 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink href='/contacts' text='Запит на підтримку' className='mr-10' />
+        <LinkButton
+          href='/contacts'
+          text='Запит на підтримку'
+          className='mr-10'
+        />
         <Button
           variant='play'
           handleClick={() => console.log('click')}
@@ -94,9 +96,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      <div className='py-16'>
-        <GettingKnowTeamCard />
-      </div>
+
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
@@ -105,6 +105,12 @@ export const Viewer = () => {
       />
       <ServiceCard />
       <FormBlock className='my-10' />
+
+      <div className=' flex flex-wrap gap-6 '>
+        <TeamCard />
+        <GettingKnowTeamCard />
+      </div>
+
       <section>
         <div className='container outline outline-slate-800'>
           <TeamCard />

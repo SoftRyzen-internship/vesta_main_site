@@ -26,9 +26,15 @@
   .transition {
     @apply transition-all duration-300 ease-in-out;
   }
-}
 
-@layer components {
+  .title {
+    @apply font-kyiv text-h1 font-bold uppercase text-bgText md:text-h1_tab xl:text-h1_desk;
+  }
+
+  .subtitle {
+    @apply font-kyiv text-h2 font-bold md:text-h2_tab xl:text-h2_desk;
+  }
+
   .paragraph {
     @apply text-body4 tracking-[-0.14px] text-darkGrey;
   }
