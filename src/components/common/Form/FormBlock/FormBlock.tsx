@@ -16,9 +16,10 @@ import { formData } from '@/data';
 
 import { formSchema } from '@/utils';
 
+import { sendEmail } from '@/actions';
+
 import { IFormBlockProps, IFormState } from './FormBlock.types';
-import { sendFormToEmail } from '@/lib/api';
-// import { sendFormToEmail } from '@/lib/api';
+
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   const {
@@ -49,27 +50,14 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   });
 
   const onSubmit: SubmitHandler<IFormState> = async data => {
-    console.log(data);
-
-    // try {
-    //   await fetch('/api/sendEmail', {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(data),
-    //   });
-    //   reset();
-    // } catch (error) {
-    //   console.log('error');
-    // }
-    
-
     try {
-      await sendFormToEmail(data);
+      await sendEmail(data)
       reset();
+      alert('Ваша заявка успішно відправлена!');
     } catch (error) {
-    console.log(error.message);
+      alert(
+        'Щось пішло не так... Ми не змогли отримати Вашу заявку. Будь ласка, спробуйте ще раз.',
+      );
     }
   };
 
