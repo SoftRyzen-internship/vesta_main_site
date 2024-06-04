@@ -71,6 +71,7 @@ export const Viewer = () => {
         />
         <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
+      {/* News & Publications */}
       <div className='py-16'>
         <ul className='flex flex-col gap-[25px] xl:flex-row'>
           {news.map(i => (
