@@ -31,11 +31,12 @@ export const Donation: FC = () => {
           </p>
           <LinkButton
             href={monobanka}
-            text={donateButton}
             rel={rel}
             target={target}
             className='w-full md:w-[240px]'
-          />
+          >
+            {donateButton}
+          </LinkButton>
         </div>
       </div>
     </section>

@@ -40,7 +40,10 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         <p className='paragraph mb-5 line-clamp-4 text-darkGrey md:mb-10 xl:w-[492px]'>
           {description}
         </p>
-        <LinkButton href={link} text={linkText} variant='secondary' />
+        <LinkButton href={link} variant='secondary'>
+         
+        {linkText}
+        </LinkButton>
       </div>
     </div>
   );

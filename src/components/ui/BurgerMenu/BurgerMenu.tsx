@@ -26,7 +26,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
             </div>
             <Button
               variant='closeMenu'
-              handleClick={close}
+              onClick={close}
               className='absolute right-[25px] top-[25px]'
             />
             <div className='flex h-full flex-col items-start justify-between'>
@@ -37,11 +37,12 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
                   onClick={close}
                 />
                 <LinkButton
-                  text={linkData.text}
                   href='/contacts'
                   variant='contactsHeader'
                   onClick={close}
-                />
+                >
+                  {linkData.text}
+                </LinkButton>
               </div>
               <SocialMedia forFooter={true} socialMedia={socialMedia} />
             </div>
