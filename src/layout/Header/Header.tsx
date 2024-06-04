@@ -31,14 +31,15 @@ export const Header: FC = () => {
           <NavList navList={navListData} forFooter={false} />
         </div>
         <LinkButton
-          text='Контакти'
           href='/contacts'
           variant='contactsHeader'
           className='hidden xl:block'
-        />
+        >
+          Контакти
+        </LinkButton>
         <Button
           variant='openMenu'
-          handleClick={() => setIsOpen(true)}
+          onClick={() => setIsOpen(true)}
           className='xl:hidden'
         />
       </div>

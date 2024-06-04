@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/Button';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
+import s from './TeamCardModal.module.css';
+
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
   openModal,
   closeModal,
@@ -35,17 +37,19 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
         onClose={closeModal}
       >
         <div
-          className=' xl:bg-bgModalTeamMember fixed inset-0 xl:backdrop-blur-xl  '
+          className=' fixed inset-0 xl:bg-bgModalTeamMember xl:backdrop-blur-xl  '
           aria-hidden='true'
         />
-        <div className='bg-bgText  fixed inset-0 z-10 w-screen overflow-y-auto xl:ml-auto xl:w-[1072px] '>
-          <DialogPanel className='mx-auto w-[360px] px-4 py-10 md:mx-0 md:w-[650px] md:px-[42px] md:py-[60px] xl:w-[967px]  xl:px-[60px] xl:py-[90px]'>
+        <div className='fixed  inset-0 z-10 h-screen w-screen overflow-hidden bg-bgText xl:ml-auto xl:w-[1072px] '>
+          <DialogPanel className='mx-auto   w-[365px] px-4 py-10 md:mx-0 md:w-[660px] md:px-[42px] md:py-[60px] xl:w-[967px]  xl:px-[60px] xl:py-[90px]'>
             <Button
-              handleClick={closeModal}
+              onClick={closeModal}
               variant='closeModal'
               className='mb-5 ml-auto block md:absolute md:right-[25px] md:top-[25px] md:mb-[11px] xl:right-[35px] xl:top-[35px] xl:mb-[31px]'
             />
-            <div className='xl:flex xl:gap-[43px]'>
+            <div
+              className={` overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ${s.contentHeight}`}
+            >
               <div className='xl:w-[386px]'>
                 <Image
                   src={img}
@@ -54,21 +58,19 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   height={330}
                   className='mb-4	h-[330px] w-full object-cover object-top md:h-[440px] xl:h-[463px]  '
                 />
-                <h3 className='text-body2_tab text-green xl:text-body2_desk mb-2 font-medium'>
+                <h3 className='mb-2 text-body2_tab font-medium text-green xl:text-body2_desk'>
                   {name}
                 </h3>
-                <p className='paragraph text-darkGrey mb-[30px] md:mb-10'>
+                <p className='paragraph mb-[30px] text-darkGrey md:mb-10'>
                   {position}
                 </p>
               </div>
               <div className='xl:flex xl:h-[463px] xl:w-[418px] xl:flex-col xl:justify-between'>
-                <p
-                  className={`paragraph text-darkGrey mb-[30px] md:mb-10 xl:mb-0`}
-                >
+                <p className='paragraph mb-[30px] text-darkGrey md:mb-10 xl:mb-0'>
                   {description}
                 </p>
                 <div className=' md:flex md:justify-between'>
-                  <p className='paragraph text-green bg-bgPlug mb-[30px] h-[42px] w-[262px] px-[15px] py-[10px] md:mb-0'>
+                  <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-green md:mb-0'>
                     {plug}
                   </p>
                   {socialMedia && socialMedia?.length > 0 && (
