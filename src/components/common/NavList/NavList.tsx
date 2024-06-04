@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 
 import { NavListProps } from './NavList.types';
 
-export const NavList: FC<NavListProps> = ({ navList, forFooter, click }) => {
+export const NavList: FC<NavListProps> = ({ navList, forFooter, onClick }) => {
   return (
     <ul
       className={clsx(
@@ -23,7 +23,7 @@ export const NavList: FC<NavListProps> = ({ navList, forFooter, click }) => {
               forFooter && 'text-body4_desk',
               !forFooter && 'text-body2_desk xl:text-body4_desk',
             )}
-            onClick={click}
+            onClick={onClick}
           >
             {title}
           </Link>

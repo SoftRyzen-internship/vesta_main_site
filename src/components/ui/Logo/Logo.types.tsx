@@ -1,3 +1,3 @@
 export interface LogoProps {
-  click?: () => void;
+  onClick?: () => void;
 }

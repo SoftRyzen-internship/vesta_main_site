@@ -4,13 +4,13 @@ import { Dialog, DialogPanel } from '@headlessui/react';
 
 import { BurgerMenuProps } from './BurgerMenu.types';
 
-import { NavList } from '../../common/NavList';
+import { NavList } from '@/components/common/NavList';
 import { Button } from '@/components/ui/Button';
 import { NavLink } from '@/components/ui/Link';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Logo } from '@/components/ui/Logo';
 
-import { navListData, socialMedia } from '@/data';
+import { navListData, socialMedia, linkData } from '@/data';
 
 export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
   return (
@@ -22,7 +22,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
         >
           <DialogPanel className='fixed right-0 top-0 h-screen w-screen bg-green px-[16px] pb-[118px] pt-[84px] md:h-[592px] md:w-[360px] md:px-[40px] md:pb-[70px] md:pt-[78px]'>
             <div className='absolute left-[25px] top-[25px] md:hidden'>
-              <Logo click={close} />
+              <Logo onClick={close} />
             </div>
             <Button
               variant='closeMenu'
@@ -34,13 +34,13 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
                 <NavList
                   navList={navListData}
                   forFooter={false}
-                  click={close}
+                  onClick={close}
                 />
                 <NavLink
-                  text='Контакти'
+                  text={linkData.text}
                   href='/contacts'
                   variant='contactsHeader'
-                  click={close}
+                  onClick={close}
                 />
               </div>
               <SocialMedia forFooter={true} socialMedia={socialMedia} />

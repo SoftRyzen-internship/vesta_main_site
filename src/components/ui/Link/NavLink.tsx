@@ -12,7 +12,7 @@ export const NavLink: FC<INavLinkProps> = ({
   target = undefined,
   variant = 'primary',
   className,
-  click,
+  onClick,
 }) => {
   return (
     <Link
@@ -29,7 +29,7 @@ export const NavLink: FC<INavLinkProps> = ({
           'border-b border-solid border-orangeText py-1 text-orangeText hover:border-green hover:text-green hover:opacity-60 focus:border-focusOrange focus:text-focusOrange active:border-green active:text-green',
         className,
       )}
-      onClick={click}
+      onClick={onClick}
     >
       {text}
     </Link>
