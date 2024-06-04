@@ -8,9 +8,12 @@ import { NavList } from '@/components/common/NavList';
 
 import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
 
+import { scrollToTop } from '@/utils';
+
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
+
 import { scrollToTop } from '@/utils/scrollUp';
 
 export const Footer: FC = () => {
@@ -36,7 +39,7 @@ export const Footer: FC = () => {
                     <a
                       href={`tel:${item.phone}`}
                       className='transition hover:text-orangeText'
-                      aria-label={`Позвонити за номером  ${item.phone}`}
+                      aria-label={item.aria}
                     >
                       {item.phone}
                     </a>
@@ -45,7 +48,7 @@ export const Footer: FC = () => {
                 <a
                   href={`mailto:${footer['@mail']}`}
                   className='transition hover:text-orangeText'
-                  aria-label={`Відіслати лист на пошту ${footer['@mail']}`}
+                  aria-label={footer.ariaEmail}
                 >
                   {footer['@mail']}
                 </a>
@@ -60,9 +63,9 @@ export const Footer: FC = () => {
               <SocialMedia forFooter={true} socialMedia={socialMedia} />
               <a
                 href={footer.linkPolicy}
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                aria-label={`Відкрити сторінку ${footer.namePolicy}`}
+                rel={footer.rel}
+                target={footer.target}
+                aria-label={footer.ariaPolicy}
                 className='w-fit pr-3 text-body4 font-normal text-greenHover transition hover:text-orangeText'
               >
                 {footer.namePolicy}
@@ -77,9 +80,9 @@ export const Footer: FC = () => {
             <div className='flex gap-5 md:pl-[30px] md:pt-5 xl:pl-0 xl:pt-0'>
               <a
                 href={footer.linkGOIT}
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                aria-label={`${footer.ariaLabelGOIT}`}
+                rel={footer.rel}
+                target={footer.target}
+                aria-label={footer.ariaGOIT}
               >
                 <GoIt
                   className='fill-greenHover transition hover:fill-orangeText'
@@ -89,9 +92,9 @@ export const Footer: FC = () => {
               </a>
               <a
                 href={footer.linkSoftRyzen}
-                rel='noopener noreferrer nofollow'
-                target='_blank'
-                aria-label={`${footer.ariaLabelSoftRyzen}`}
+                rel={footer.rel}
+                target={footer.target}
+                aria-label={footer.ariaSoftRyzen}
               >
                 <SoftRyzen
                   className='fill-greenHover transition hover:fill-orangeText'

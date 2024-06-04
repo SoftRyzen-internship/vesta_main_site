@@ -3,15 +3,16 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-import { INavLinkProps } from './NavLink.types';
+import { ILinkButtonProps } from './LinkButton.types';
 
-export const NavLink: FC<INavLinkProps> = ({
+export const LinkButton: FC<ILinkButtonProps> = ({
   text,
   href,
   rel = undefined,
   target = undefined,
   variant = 'primary',
   className,
+  onClick,
 }) => {
   return (
     <Link
@@ -28,6 +29,7 @@ export const NavLink: FC<INavLinkProps> = ({
           'border-b border-solid border-orangeText py-1 text-orangeText hover:border-green hover:text-green hover:opacity-60 focus:border-focusOrange focus:text-focusOrange active:border-green active:text-green',
         className,
       )}
+      onClick={onClick}
     >
       {text}
     </Link>

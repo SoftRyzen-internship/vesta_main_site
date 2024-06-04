@@ -8,13 +8,15 @@ import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
 import { FormBlock } from '@/components/common/Form';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
+import { AboutOrganisation } from './sections/AboutOrganisation';
 
 import { dwellings, news, partners, projects } from '@/data';
+import { supportAboutData, supportCards } from '@/data';
 import { socialMedia } from '@/data';
-import { AboutOrganisation } from './sections/AboutOrganisation';
+import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -26,7 +28,7 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='https://www.monobank.ua/?lang=uk'
           text='задонатити'
           target='_blank'
@@ -34,13 +36,13 @@ export const Viewer = () => {
           className='mr-10'
         />
 
-        <NavLink
+        <LinkButton
           href='/contacts'
           text='контакти'
           variant='contactsHeader'
           className='mr-10'
         />
-        <NavLink
+        <LinkButton
           href='/news'
           text='дивитись всі'
           variant='secondary'
@@ -52,7 +54,11 @@ export const Viewer = () => {
           handleClick={() => console.log('click')}
           className='mr-10'
         />
-        <NavLink href='/contacts' text='Запит на підтримку' className='mr-10' />
+        <LinkButton
+          href='/contacts'
+          text='Запит на підтримку'
+          className='mr-10'
+        />
         <Button
           variant='play'
           handleClick={() => console.log('click')}
@@ -94,12 +100,26 @@ export const Viewer = () => {
 
       <ServiceCard />
       <FormBlock className='my-10' />
-      <section>
-        <div className='container flex gap-6 outline outline-slate-800'>
-          <TeamCard />
-          <GettingKnowTeamCard />
-        </div>
-      </section>
+
+      <div className=' flex flex-wrap gap-6 '>
+        <TeamCard />
+        <GettingKnowTeamCard />
+      </div>
+      <div className='py-16'>
+        {supportAboutData.map(({ icon, title, description }, index) => (
+          <SupportCardAbout
+            key={index}
+            icon={
+              (icon === 'balanceIcon' && icon) ||
+              (icon === 'infoIcon' && icon) ||
+              (icon === 'heartHandIcon' && icon) ||
+              'heartHandIcon'
+            }
+            title={title}
+            description={description}
+          />
+        ))}
+      </div>
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(
           ({ id, img, imgAlt, title, description, linkText, link }, index) => (

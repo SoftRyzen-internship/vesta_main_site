@@ -1,17 +1,20 @@
 {
-    "namePolicy": "Політика",
-    "linkPolicy": "https://drive.google.com/drive/folders/1oJMi9-Rc2_kr_RFUNSzWWgZ5AZtrUB_y",
-  
+  "rel": "noopener noreferrer nofollow",
+  "target": "_blank",
 
-    "ariaLabelGOIT": "Відкрити головну сторінку GOIT",
-    "nameGOIT": "GOIT",
-    "linkGOIT": "https://goit.global/ua/",
-  
-    "ariaLabelSoftRyzen": "Відкрити головну сторінку SoftRyzen",
-    "nameSoftRyzen": "SoftRyzen",
-    "linkSoftRyzen": " https://www.softryzen.com/",
-    
-    "footerCreated": "Створено при підтримці",
-    "@mail": "charity.vo.vesta@gmail.com"
-    
-  }
+  "namePolicy": "Політика",
+  "linkPolicy": "https://drive.google.com/drive/folders/1oJMi9-Rc2_kr_RFUNSzWWgZ5AZtrUB_y",
+  "ariaPolicy": "Відкрити сторінку політики конфіденційності",
+
+  "nameGOIT": "GOIT",
+  "linkGOIT": "https://goit.global/ua/",
+  "ariaGOIT": "Перейти на офіційну сторінку GoIT",
+
+  "nameSoftRyzen": "SoftRyzen",
+  "linkSoftRyzen": " https://www.softryzen.com/",
+  "ariaSoftRyzen": "Перейти на офіційну сторінку SoftRyzen",
+
+  "footerCreated": "Створено при підтримці",
+  "@mail": "charity.vo.vesta@gmail.com",
+  "ariaEmail": "Відправити листа на електронну пошту charity.vo.vesta@gmail.com"
+}
