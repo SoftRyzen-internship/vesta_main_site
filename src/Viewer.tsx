@@ -21,60 +21,52 @@ export const Viewer = () => {
   return (
     <div className='container pb-16'>
       <div className='bg-darkGrey'>
-        <Button
-          text='Надіслати'
-          handleClick={() => console.log('click')}
-          className='mr-10'
-        />
+        <Button onClick={() => console.log('click')} className='mr-10'>
+          Надіслати
+        </Button>
         <LinkButton
           href='https://www.monobank.ua/?lang=uk'
-          text='задонатити'
           target='_blank'
           rel='noopener noreferrer nofollow'
           className='mr-10'
-        />
+        >
+          задонатити
+        </LinkButton>
 
-        <LinkButton
-          href='/contacts'
-          text='контакти'
-          variant='contactsHeader'
-          className='mr-10'
-        />
-        <LinkButton
-          href='/news'
-          text='дивитись всі'
-          variant='secondary'
-          className='mr-10'
-        />
+        <LinkButton href='/contacts' variant='contactsHeader' className='mr-10'>
+          контакти
+        </LinkButton>
+        <LinkButton href='/news' variant='secondary' className='mr-10'>
+          дивитись всі
+        </LinkButton>
 
         <Button
           variant='openTeamMember'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
-        <LinkButton
-          href='/contacts'
-          text='Запит на підтримку'
-          className='mr-10'
-        />
+        <LinkButton href='/contacts' className='mr-10'>
+
+          Запит на підтримку
+        </LinkButton>
         <Button
           variant='play'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='openMenu'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='closeMenu'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='closeModal'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <SocialMedia socialMedia={socialMedia} forFooter={true} />

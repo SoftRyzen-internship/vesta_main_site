@@ -1,0 +1,15 @@
+.contentHeight {
+  height: calc(100vh - 156px);
+}
+
+@media screen and (min-width: 768px) {
+  .contentHeight {
+    height: calc(100vh - 120px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contentHeight {
+    height: calc(100vh - 180px);
+  }
+}

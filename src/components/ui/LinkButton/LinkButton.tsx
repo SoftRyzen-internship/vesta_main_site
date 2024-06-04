@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { ILinkButtonProps } from './LinkButton.types';
 
 export const LinkButton: FC<ILinkButtonProps> = ({
-  text,
+  children,
   href,
   rel = undefined,
   target = undefined,
@@ -31,7 +31,7 @@ export const LinkButton: FC<ILinkButtonProps> = ({
       )}
       onClick={onClick}
     >
-      {text}
+      {children}
     </Link>
   );
 };
