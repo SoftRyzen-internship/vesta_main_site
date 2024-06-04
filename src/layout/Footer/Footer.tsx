@@ -11,6 +11,7 @@ import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
+
 import { scrollToTop } from '@/utils/scrollUp';
 
 export const Footer: FC = () => {

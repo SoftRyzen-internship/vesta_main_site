@@ -11,10 +11,10 @@ import { FormBlock } from '@/components/common/Form';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
-
 import { AboutOrganisation } from './sections/AboutOrganisation';
-import { supportAboutData } from '@/data';
+
 import { dwellings, news, partners, projects } from '@/data';
+import { supportAboutData } from '@/data';
 import { socialMedia } from '@/data';
 import { SupportCardAbout } from './components/common/SupportCardAbout';
 
