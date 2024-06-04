@@ -13,9 +13,10 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { supportCards } from '@/data';
+import { supportAboutData, supportCards } from '@/data';
 import { dwellings, news, partners, projects } from '@/data';
 import { socialMedia } from '@/data';
+import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -109,7 +110,21 @@ export const Viewer = () => {
         <TeamCard />
         <GettingKnowTeamCard />
       </div>
-
+      <div className='py-16'>
+        {supportAboutData.map(({ icon, title, description }, index) => (
+          <SupportCardAbout
+            key={index}
+            icon={
+              (icon === 'balanceIcon' && icon) ||
+              (icon === 'infoIcon' && icon) ||
+              (icon === 'heartHandIcon' && icon) ||
+              'heartHandIcon'
+            }
+            title={title}
+            description={description}
+          />
+        ))}
+      </div>
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(
           ({ id, img, imgAlt, title, description, linkText, link }, index) => (

@@ -1,0 +1,1 @@
+export { SupportCardAbout } from './SupportCardAbout';
