@@ -28,8 +28,9 @@ export const ProjectCard: FC<IProjectCardProps> = ({
       <Image
         src={img}
         alt={imgAlt}
-        width={328}
-        height={250}
+        width={0}
+        height={0}
+        sizes='100vw'
         className='mb-[30px] w-full object-cover object-center md:mb-0 md:h-[250px] md:w-[300px] xl:h-[300px] xl:w-[492px]'
       />
       <div>

@@ -1,0 +1,1 @@
+export { MainProjects } from './MainProjects';
