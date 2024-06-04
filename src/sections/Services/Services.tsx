@@ -1,5 +1,6 @@
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { ScrollBox } from '@/components/ui/ScrollBox';
+
 import { service } from '@/data';
 
 export const Services = () => {
