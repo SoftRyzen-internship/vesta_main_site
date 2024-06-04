@@ -41,11 +41,11 @@ export const MainProjects = () => {
         <div>
           <Image
             src={img}
-            width={0}
-            height={0}
+            width={328}
+            height={260}
             alt={imgAlt}
-            sizes='100vw'
-            className=' h-[260px] w-full object-cover md:h-[470px]  xl:h-[470px] xl:w-[562px]'
+            sizes='(min-width: 768px) 684px, (min-width: 1280px) 562px, 328px'
+            className='h-[100%] w-[100%] object-cover'
           />
         </div>
       </div>
