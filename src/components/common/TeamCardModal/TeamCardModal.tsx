@@ -8,6 +8,8 @@ import { Button } from '@/components/ui/Button';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
+import s from './TeamCardModal.module.css';
+
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
   openModal,
   closeModal,
@@ -38,14 +40,16 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
           className=' fixed inset-0 xl:bg-bgModalTeamMember xl:backdrop-blur-xl  '
           aria-hidden='true'
         />
-        <div className='fixed  inset-0 z-10 w-screen overflow-y-auto bg-bgText xl:ml-auto xl:w-[1072px] '>
-          <DialogPanel className='mx-auto w-[360px] px-4 py-10 md:mx-0 md:w-[650px] md:px-[42px] md:py-[60px] xl:w-[967px]  xl:px-[60px] xl:py-[90px]'>
+        <div className='fixed  inset-0 z-10 h-screen w-screen overflow-hidden bg-bgText xl:ml-auto xl:w-[1072px] '>
+          <DialogPanel className='mx-auto   w-[365px] px-4 py-10 md:mx-0 md:w-[660px] md:px-[42px] md:py-[60px] xl:w-[967px]  xl:px-[60px] xl:py-[90px]'>
             <Button
               onClick={closeModal}
               variant='closeModal'
               className='mb-5 ml-auto block md:absolute md:right-[25px] md:top-[25px] md:mb-[11px] xl:right-[35px] xl:top-[35px] xl:mb-[31px]'
             />
-            <div className='xl:flex xl:gap-[43px]'>
+            <div
+              className={` overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ${s.contentHeight}`}
+            >
               <div className='xl:w-[386px]'>
                 <Image
                   src={img}
@@ -62,9 +66,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                 </p>
               </div>
               <div className='xl:flex xl:h-[463px] xl:w-[418px] xl:flex-col xl:justify-between'>
-                <p
-                  className={`paragraph mb-[30px] text-darkGrey md:mb-10 xl:mb-0`}
-                >
+                <p className='paragraph mb-[30px] text-darkGrey md:mb-10 xl:mb-0'>
                   {description}
                 </p>
                 <div className=' md:flex md:justify-between'>
