@@ -35,11 +35,11 @@ export const TeamCard: FC<ITeamCardProps> = ({
         />
         <Button
           variant='openTeamMember'
-          handleClick={onClick}
+          onClick={onClick}
           className='absolute right-5 top-5 xl:right-[22px]'
         />
       </div>
-      <h3 className='text-body2 md:text-body2_tab xl:text-body2_desk mb-2 font-medium'>
+      <h3 className='mb-2 text-body2 font-medium md:text-body2_tab xl:text-body2_desk'>
         {name}
       </h3>
       <p className='paragraph'>{position}</p>
