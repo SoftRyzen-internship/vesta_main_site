@@ -1,4 +1,4 @@
-export interface INavLinkProps {
+export interface ILinkButtonProps {
   href: string;
   text: string;
   target?: string;
