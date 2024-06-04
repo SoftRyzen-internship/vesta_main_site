@@ -47,7 +47,6 @@ export const Viewer = () => {
           className='mr-10'
         />
         <LinkButton href='/contacts' className='mr-10'>
-
           Запит на підтримку
         </LinkButton>
         <Button
