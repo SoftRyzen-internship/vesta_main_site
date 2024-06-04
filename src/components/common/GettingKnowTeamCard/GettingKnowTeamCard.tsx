@@ -8,18 +8,18 @@ import { gettingKnowTeamCard } from '@/data';
 export const GettingKnowTeamCard = () => {
   const { title, description, link, textLink } = gettingKnowTeamCard;
   return (
-    <div className='bg-bgText h-[422px] w-[328px] p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>
+    <div className='h-[422px] w-[328px] bg-bgText p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>
       <VestaLogoIcon
         width={72}
         height={72}
-        className='fill-accent mb-[30px] ml-auto md:mb-[114px]'
+        className='mb-[30px] ml-auto fill-accent md:mb-[114px]'
       />
-      <h3 className='text-body1 text-green md:text-body1_tab xl:text-body1_desk mb-5 font-normal'>
-        {getSpecialWords(title, 1, 0, 1)}
+      <h3 className='mb-5 text-body1 font-normal text-green md:text-body1_tab xl:text-body1_desk'>
+        {getSpecialWords(title, 0, 1)}
         <br />
-        {getSpecialWords(title, title.length - 1, 1, title.length - 2)}
+        {getSpecialWords(title, 1, title.length - 1)}
       </h3>
-      <p className='paragraph text-darkGrey mb-[45px]'>{description}</p>
+      <p className='paragraph mb-[45px] text-darkGrey'>{description}</p>
       <LinkButton href={link} text={textLink} variant='secondary' />
     </div>
   );
