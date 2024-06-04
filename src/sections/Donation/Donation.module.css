@@ -1,3 +1,14 @@
 .donation {
-  display: block;
+  background-image: var(--donation-overlay),
+    image-set(
+      url('/images/donation/donate-bg-mob@1x.webp') 1x,
+      url('/images/donation/donate-bg-mob@2x.webp') 2x
+    );
+  background-size:
+    100% 100%,
+    cover;
+  background-position:
+    center,
+    center top;
+  background-repeat: no-repeat;
 }
