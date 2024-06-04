@@ -32,10 +32,11 @@ export const MainProjects = () => {
             {description}
           </p>
           <LinkButton
-            text={text}
             href={link}
             className='mb-[30px] smOnly:w-full md:mb-10 md:inline-block xl:mb-0'
-          />
+          >
+            {text}
+          </LinkButton>
         </div>
         <div>
           <Image

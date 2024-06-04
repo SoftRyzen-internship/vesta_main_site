@@ -38,7 +38,6 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
       >
         <div
           className=' fixed inset-0 xl:bg-bgModalTeamMember xl:backdrop-blur-xl  '
-          className=' fixed inset-0 xl:bg-bgModalTeamMember xl:backdrop-blur-xl  '
           aria-hidden='true'
         />
         <div className='fixed  inset-0 z-10 h-screen w-screen overflow-hidden bg-bgText xl:ml-auto xl:w-[1072px] '>
@@ -60,10 +59,8 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   className='mb-4	h-[330px] w-full object-cover object-top md:h-[440px] xl:h-[463px]  '
                 />
                 <h3 className='mb-2 text-body2_tab font-medium text-green xl:text-body2_desk'>
-                <h3 className='mb-2 text-body2_tab font-medium text-green xl:text-body2_desk'>
                   {name}
                 </h3>
-                <p className='paragraph mb-[30px] text-darkGrey md:mb-10'>
                 <p className='paragraph mb-[30px] text-darkGrey md:mb-10'>
                   {position}
                 </p>
@@ -73,7 +70,6 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   {description}
                 </p>
                 <div className=' md:flex md:justify-between'>
-                  <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-green md:mb-0'>
                   <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-green md:mb-0'>
                     {plug}
                   </p>
