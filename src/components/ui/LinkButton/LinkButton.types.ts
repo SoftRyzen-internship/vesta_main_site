@@ -5,4 +5,5 @@ export interface ILinkButtonProps {
   rel?: string;
   variant?: 'primary' | 'secondary' | 'contactsHeader';
   className?: string;
+  onClick?: () => void;
 }
