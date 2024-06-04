@@ -6,7 +6,7 @@ import { BurgerMenuProps } from './BurgerMenu.types';
 
 import { NavList } from '@/components/common/NavList';
 import { Button } from '@/components/ui/Button';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Logo } from '@/components/ui/Logo';
 
@@ -36,7 +36,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
                   forFooter={false}
                   onClick={close}
                 />
-                <NavLink
+                <LinkButton
                   text={linkData.text}
                   href='/contacts'
                   variant='contactsHeader'
