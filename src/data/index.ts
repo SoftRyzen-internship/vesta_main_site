@@ -14,6 +14,7 @@ export { default as supportCards } from './supportCards.json';
 export { default as buttons } from './buttons.json';
 export { default as gettingKnowTeamCard } from './gettingKnowTeamCard.json';
 export { default as projects } from './projects.json';
+export { default as aboutOrganisation} from './aboutOrganisation.json'
 
 export { default as footer } from './footer.json';
 export { default as footerNavigation } from './footerNavigation.json';

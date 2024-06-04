@@ -2,9 +2,12 @@
     "namePolicy": "Політика",
     "linkPolicy": "https://drive.google.com/drive/folders/1oJMi9-Rc2_kr_RFUNSzWWgZ5AZtrUB_y",
   
+
+    "ariaLabelGOIT": "Відкрити головну сторінку GOIT",
     "nameGOIT": "GOIT",
     "linkGOIT": "https://goit.global/ua/",
   
+    "ariaLabelSoftRyzen": "Відкрити головну сторінку SoftRyzen",
     "nameSoftRyzen": "SoftRyzen",
     "linkSoftRyzen": " https://www.softryzen.com/",
     

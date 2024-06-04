@@ -11,20 +11,7 @@ import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
-
-const scrollToTop = () => {
-  const scrollDuration = 1000;
-  const scrollStep = -window.scrollY / (scrollDuration / 15);
-
-  const scrollInterval = () => {
-    if (window.scrollY !== 0) {
-      window.scrollBy(0, scrollStep);
-      requestAnimationFrame(scrollInterval);
-    }
-  };
-
-  requestAnimationFrame(scrollInterval);
-};
+import { scrollToTop } from '@/utils/scrollUp';
 
 export const Footer: FC = () => {
   return (
@@ -92,7 +79,7 @@ export const Footer: FC = () => {
                 href={footer.linkGOIT}
                 rel='noopener noreferrer nofollow'
                 target='_blank'
-                aria-label={`Відкрити головну сторінку ${footer.nameGOIT}`}
+                aria-label={`${footer.ariaLabelGOIT}`}
               >
                 <GoIt
                   className='fill-greenHover transition hover:fill-orangeText'
@@ -104,7 +91,7 @@ export const Footer: FC = () => {
                 href={footer.linkSoftRyzen}
                 rel='noopener noreferrer nofollow'
                 target='_blank'
-                aria-label={`Відкрити головну сторінку ${footer.nameSoftRyzen}`}
+                aria-label={`${footer.ariaLabelSoftRyzen}`}
               >
                 <SoftRyzen
                   className='fill-greenHover transition hover:fill-orangeText'
