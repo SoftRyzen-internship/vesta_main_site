@@ -12,7 +12,7 @@ import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
 
-import { scrollToTop } from '@/utils/scrollUp';
+import { scrollToTop } from '@/utils/scrollToTop';
 
 export const Footer: FC = () => {
   return (

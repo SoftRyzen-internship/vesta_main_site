@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import { supportCards , aboutOrganisation} from '@/data';
 import { SupportCards } from '@/components/common/SupportCards';
+
+import { supportCards , aboutOrganisation} from '@/data';
 
 export const AboutOrganisation: FC = () => {
   return (
