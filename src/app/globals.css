@@ -14,6 +14,11 @@
     rgba(25, 34, 26, 0.55) 0%,
     rgba(25, 34, 26, 0) 100%
   );
+  /* Donation */
+  --donation-overlay: linear-gradient(
+    rgba(25, 34, 26, 0.48),
+    rgba(25, 34, 26, 0.48)
+  );
 }
 
 @layer base {

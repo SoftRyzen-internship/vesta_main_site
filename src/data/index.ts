@@ -4,6 +4,7 @@ export { default as mainHeroData } from './mainHeroData.json';
 export { default as navListData } from './navListData.json';
 export { default as formData } from './formData.json';
 export { default as linkData } from './headerLink.json';
+export { default as donationData } from './donationData.json';
 
 export { default as socialMedia } from './socialMedia.json';
 export { default as service } from './service.json';
