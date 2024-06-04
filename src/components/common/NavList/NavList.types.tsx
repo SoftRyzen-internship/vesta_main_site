@@ -7,4 +7,5 @@ type NavListItem = {
 export interface NavListProps {
   navList: NavListItem[];
   forFooter: boolean;
+  onClick?: () => void;
 }
