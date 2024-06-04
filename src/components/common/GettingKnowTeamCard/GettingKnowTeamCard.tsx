@@ -8,7 +8,7 @@ import { gettingKnowTeamCard } from '@/data';
 export const GettingKnowTeamCard = () => {
   const { title, description, link, textLink } = gettingKnowTeamCard;
   return (
-    <div className='bg-bgText w-full p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>
+    <div className='bg-bgText h-[422px] w-[328px] p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>
       <VestaLogoIcon
         width={72}
         height={72}

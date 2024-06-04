@@ -23,7 +23,7 @@ export const Button: FC<IButtonProps> = ({
       type={type}
       onClick={handleClick}
       className={clsx(
-        'transition-colors duration-300',
+        'transition',
         variant === 'primary' &&
           ' text-button bg-orangeText text-bgText hover:bg-green active:bg-green focus:bg-greenFocus inline-block h-[57px] w-60 px-6 py-[18px] font-bold uppercase tracking-[0.03em] hover:opacity-60',
         variant === 'openTeamMember' &&
