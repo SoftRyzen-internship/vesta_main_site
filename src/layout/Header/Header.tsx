@@ -1,18 +1,20 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
 
 import { Logo } from '@/components/ui/Logo';
 import { NavList } from '@/components/common/NavList';
-import { NavLink } from '@/components/ui/Link';
+import { LinkButton } from '@/components/ui/LinkButton';
 import { Button } from '@/components/ui/Button';
 import { navListData } from '@/data';
+import { BurgerMenu } from '@/components/ui/BurgerMenu';
 
 export const Header: FC = () => {
   const pathName = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header
@@ -28,7 +30,7 @@ export const Header: FC = () => {
         <div className='hidden xl:block'>
           <NavList navList={navListData} forFooter={false} />
         </div>
-        <NavLink
+        <LinkButton
           text='Контакти'
           href='/contacts'
           variant='contactsHeader'
@@ -36,10 +38,11 @@ export const Header: FC = () => {
         />
         <Button
           variant='openMenu'
-          handleClick={() => console.log('click')}
+          handleClick={() => setIsOpen(true)}
           className='xl:hidden'
         />
       </div>
+      <BurgerMenu isOpen={isOpen} close={() => setIsOpen(false)} />
     </header>
   );
 };

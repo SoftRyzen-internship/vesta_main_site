@@ -1,4 +1,4 @@
-- #### component navLink
+- #### component linkButton
 
 The component is for navigation with all variants of style from layout
 

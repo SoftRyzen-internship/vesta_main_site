@@ -1,0 +1,1 @@
+export { TeamCardModal } from './TeamCardModal';

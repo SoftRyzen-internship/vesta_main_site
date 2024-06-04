@@ -1,5 +1,5 @@
-.card {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .card {
     background-repeat: no-repeat;
     background-position: bottom;
     background-image: image-set(
@@ -7,8 +7,10 @@
       url(/images/services/service-bg-tab@2x.webp) 2x
     );
   }
+}
 
-  @media screen and (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
+  .card {
     background-position: right;
     background-image: image-set(
       url(/images/services/service-bg-desk@1x.webp) 1x,
