@@ -90,6 +90,7 @@ const config: Config = {
         filledInputBg: '#EDE9E4',
         bgModalTeamMember: 'rgba(48,48,54,0.4)',
         bgPlug: 'rgba(26,52,27,0.1)',
+        tomorrow: 'rgba(218, 209, 197, 0.72)',
       },
     },
   },
