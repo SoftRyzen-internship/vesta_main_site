@@ -12,3 +12,26 @@
     center top;
   background-repeat: no-repeat;
 }
+
+@media (min-width: 768px) {
+  .donation {
+    background-image: var(--donation-overlay),
+      image-set(
+        url('/images/donation/donate-bg-tab@1x.webp') 1x,
+        url('/images/donation/donate-bg-tab@2x.webp') 2x
+      );
+  }
+}
+
+@media (min-width: 1280px) {
+  .donation {
+    background-image: var(--donation-overlay),
+      image-set(
+        url('/images/donation/donate-bg-desk@1x.webp') 1x,
+        url('/images/donation/donate-bg-desk@2x.webp') 2x
+      );
+    background-size:
+      1440px auto,
+      1440px auto;
+  }
+}
