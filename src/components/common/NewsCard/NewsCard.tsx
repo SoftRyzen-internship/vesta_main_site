@@ -21,9 +21,10 @@ export const NewsCard: FC<INewsCardProps> = ({
       <Image
         src={img}
         alt={imgAlt}
-        width={368}
-        height={356}
-        sizes='100vw'
+        width={2512}
+        height={2512}
+        // layout='responsive'
+        sizes='100%'
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
       />
       {/* </div> */}
