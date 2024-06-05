@@ -107,12 +107,9 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
             />
           )}
         />
-        <Button
-          type='submit'
-          variant='primary'
-          className='w-full'
-          text={buttonText}
-        />
+        <Button type='submit' variant='primary' className='w-full'>
+          {buttonText}
+        </Button>
       </form>
     </>
   );

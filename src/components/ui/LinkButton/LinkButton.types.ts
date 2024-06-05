@@ -1,6 +1,6 @@
 export interface ILinkButtonProps {
   href: string;
-  text: string;
+  children: React.ReactNode;
   target?: string;
   rel?: string;
   variant?: 'primary' | 'secondary' | 'contactsHeader';

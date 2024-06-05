@@ -5,6 +5,6 @@
   "donateButton": "Задонатити",
 
   "rel": "noopener noreferrer nofollow",
-  "target": "_blanck",
+  "target": "_blank",
   "monobanka": "https://send.monobank.ua/jar/6qzViPvsHw"
 }

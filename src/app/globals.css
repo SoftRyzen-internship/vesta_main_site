@@ -19,6 +19,11 @@
     rgba(25, 34, 26, 0.48),
     rgba(25, 34, 26, 0.48)
   );
+  /* Contacts */
+  --contacts-overlay: linear-gradient(
+    rgba(25, 34, 26, 0.38),
+    rgba(25, 34, 26, 0.38)
+  );
 }
 
 @layer base {

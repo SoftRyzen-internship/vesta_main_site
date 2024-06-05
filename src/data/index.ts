@@ -5,6 +5,7 @@ export { default as navListData } from './navListData.json';
 export { default as formData } from './formData.json';
 export { default as linkData } from './headerLink.json';
 export { default as donationData } from './donationData.json';
+export { default as contactsData } from './contactsData.json';
 
 export { default as socialMedia } from './socialMedia.json';
 export { default as service } from './service.json';
@@ -21,3 +22,4 @@ export { default as footer } from './footer.json';
 export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
 export { default as supportAboutData } from './supportAboutData.json';
+export { default as mainProjectsData } from './mainProjectsData.json';

@@ -20,9 +20,7 @@ export const Donation: FC = () => {
     >
       <div className='container'>
         <div className='relative border-t-[0.5px] border-solid border-bgText pt-[15px]'>
-          <h2 className='subtitle pb-5 text-h2 font-bold text-bgText md:text-h2_tab xl:text-h2_desk'>
-            {title}
-          </h2>
+          <h2 className='subtitle pb-5 text-bgText'>{title}</h2>
           <p className='pb-5 font-kyiv text-body3 text-bgText md:w-[334px] md:pb-10 md:text-body3_tab xl:w-[370px] xl:text-body3_desk'>
             {description}
           </p>
@@ -31,11 +29,12 @@ export const Donation: FC = () => {
           </p>
           <LinkButton
             href={monobanka}
-            text={donateButton}
             rel={rel}
             target={target}
             className='w-full md:w-[240px]'
-          />
+          >
+            {donateButton}
+          </LinkButton>
         </div>
       </div>
     </section>
