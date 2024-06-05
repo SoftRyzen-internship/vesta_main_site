@@ -28,7 +28,7 @@ export const POST = async (request: NextRequest) => {
       to: myEmail,
       subject: `Новий запит про допомогу`,
       html: `
-            <p><span style=" font-size: 14px; font-weight: 600; ">Им'я: </span>${name} </p>
+            <p><span style=" font-size: 14px; font-weight: 600; ">Ім'я: </span>${name} </p>
             <p><span style=" font-size: 14px; font-weight: 600; ">Email: </span>${email} </p>
             <p><span style=" font-size: 14px; font-weight: 600; ">Телефон: </span>${phone} </p>
             <p><span style=" font-size: 14px; font-weight: 600; ">Повідомлення: </span>${textarea} </p>
