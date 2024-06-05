@@ -23,7 +23,6 @@ export const NewsCard: FC<INewsCardProps> = ({
         alt={imgAlt}
         width={2512}
         height={2512}
-        // layout='responsive'
         sizes='100%'
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
       />
