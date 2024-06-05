@@ -10,17 +10,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { FormInput } from '../FormInput';
 import { Textarea } from '../Textarea';
 import { Checkbox } from '../Checkbox';
+import { FormModal } from '../../FormModal';
 import { Button } from '@/components/ui/Button';
-
-import { formData } from '@/data';
 
 import { formSchema } from '@/utils';
 
 import { sendEmail } from '@/actions';
 
 import { IFormBlockProps, IFormState } from './FormBlock.types';
-import { FormModal } from '../../FormModal';
 
+import { formData } from '@/data';
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -119,8 +118,7 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
         />
       </form>
       <FormModal
-        // openModal={modalOpen}
-        openModal={true}
+        openModal={modalOpen}
         closeModal={() => setModalOpen(false)}
         title={sendError ? failure.title : successful.title}
         text={sendError ? failure.text : successful.text}
