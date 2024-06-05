@@ -1,0 +1,54 @@
+{
+  "title": "Партнери",
+  "link": "/about#partners",
+  "textLink": "дивитись всі",
+  "partnersDataList" : [
+  {
+    "id": 1,
+    "img": "/images/partners/Ministry-of-veterans.png",
+    "name": "Міністерство у справах ветеранів України"
+  },
+  { "id": 2, "img": "/images/partners/NADS.png", "name": "НАДС" },
+  {
+    "id": 3,
+    "img": "/images/partners/Free-choose.png",
+    "name": "Вільний вибір"
+  },
+  {
+    "id": 4,
+    "img": "/images/partners/Space-of-possibility.png",
+    "name": "Простір Можливостей"
+  },
+  {
+    "id": 5,
+    "img": "/images/partners/Bugurt-jan.png",
+    "name": "Бугурт Cіч"
+  },
+  { "id": 6, "img": "/images/partners/Vapc.png", "name": "Вапц" },
+  { "id": 7, "img": "/images/partners/Medok.png", "name": "Medok" },
+  {
+    "id": 8,
+    "img": "/images/partners/Next-step-ukraine.png",
+    "name": "NextStep Ukraine"
+  },
+  {
+    "id": 9,
+    "img": "/images/partners/Ukraine-women-power.png",
+    "name": "Жіноча Сила України"
+  },
+  {
+    "id": 10,
+    "img": "/images/partners/Kyiv-military-hub.png",
+    "name": "Kyiv military hub"
+  },
+  {
+    "id": 11,
+    "img": "/images/partners/After-service.png",
+    "name": "Після служби"
+  },
+  {
+    "id": 12,
+    "img": "/images/partners/Reincarnation.png",
+    "name": "Відродження"
+  }]
+}
