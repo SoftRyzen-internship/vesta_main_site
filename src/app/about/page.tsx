@@ -1,7 +1,9 @@
+import { Support } from '@/sections/Support';
+
 export default function Page() {
   return (
     <>
-      <h1>About Us</h1>
+      <Support />
     </>
   );
 }
