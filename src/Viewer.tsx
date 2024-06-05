@@ -17,7 +17,6 @@ import { supportAboutData, supportCards } from '@/data';
 import { dwellings, news, partners, projects } from '@/data';
 import { socialMedia } from '@/data';
 import { SupportCardAbout } from './components/common/SupportCardAbout';
-import { Dwelling } from './sections/Dwelling';
 
 export const Viewer = () => {
   return (
@@ -94,7 +93,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      <Dwelling/>
+      
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
