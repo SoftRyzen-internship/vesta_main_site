@@ -17,16 +17,14 @@ export const NewsCard: FC<INewsCardProps> = ({
       href={`/news/${id}`}
       className='inline-block w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:w-[684px] xl:w-[596px]'
     >
-      {/* <div className='mb-[25px] overflow-hidden '> */}
       <Image
         src={img}
         alt={imgAlt}
-        width={2512}
-        height={2512}
+        width={2880}
+        height={2880}
         sizes='100%'
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
       />
-      {/* </div> */}
       <p className='paragraph mb-[15px]'>{date}</p>
       <h3 className='md:text-body3_desk: mb-[15px] text-body3 font-medium text-inherit xl:text-body2_desk '>
         {title}
