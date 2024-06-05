@@ -22,73 +22,70 @@ export const Viewer = () => {
   return (
     <div className='container pb-16'>
       <div className='bg-darkGrey'>
-        <Button
-          text='Надіслати'
-          handleClick={() => console.log('click')}
-          className='mr-10'
-        />
+        <Button onClick={() => console.log('click')} className='mr-10'>
+          Надіслати
+        </Button>
         <LinkButton
           href='https://www.monobank.ua/?lang=uk'
-          text='задонатити'
           target='_blank'
           rel='noopener noreferrer nofollow'
           className='mr-10'
-        />
+        >
+          задонатити
+        </LinkButton>
 
-        <LinkButton
-          href='/contacts'
-          text='контакти'
-          variant='contactsHeader'
-          className='mr-10'
-        />
-        <LinkButton
-          href='/news'
-          text='дивитись всі'
-          variant='secondary'
-          className='mr-10'
-        />
+        <LinkButton href='/contacts' variant='contactsHeader' className='mr-10'>
+          контакти
+        </LinkButton>
+        <LinkButton href='/news' variant='secondary' className='mr-10'>
+          дивитись всі
+        </LinkButton>
 
         <Button
           variant='openTeamMember'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
-        <LinkButton
-          href='/contacts'
-          text='Запит на підтримку'
-          className='mr-10'
-        />
+        <LinkButton href='/contacts' className='mr-10'>
+          Запит на підтримку
+        </LinkButton>
         <Button
           variant='play'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='openMenu'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='closeMenu'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <Button
           variant='closeModal'
-          handleClick={() => console.log('click')}
+          onClick={() => console.log('click')}
           className='mr-10'
         />
         <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
       <div className='py-16'>
-        <NewsCard
-          id={news.id}
-          // img={news.img}
-          imgAlt={news.imgAlt}
-          date={news.date}
-          title={news.title}
-          description={news.description}
-        />
+        <ul className='flex flex-col gap-[25px] xl:flex-row'>
+          {news.map(i => (
+            <li key={i.id}>
+              <NewsCard
+                id={i.id}
+                img={i.img}
+                imgAlt={i.imgAlt}
+                date={i.date}
+                title={i.title}
+                description={i.description}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
@@ -106,7 +103,7 @@ export const Viewer = () => {
       <ServiceCard />
       <FormBlock className='my-10' />
 
-      <div className=' flex flex-wrap gap-6 '>
+      <div className='flex flex-wrap gap-6 '>
         <TeamCard />
         <GettingKnowTeamCard />
       </div>

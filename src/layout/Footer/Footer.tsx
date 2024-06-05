@@ -72,7 +72,7 @@ export const Footer: FC = () => {
           </div>
           <hr className='border-0.3px	 absolute left-0 w-full border-accent border-opacity-[0.3] ' />
           <div className='flex flex-col gap-[10px] transition md:flex-row md:items-center xl:pt-[20px]'>
-            <p className='pt-[15px] text-body4 font-normal text-greenHover xl:pr-[30px] xl:pt-0'>
+            <p className='pt-[15px] text-body4 text-greenHover xl:pr-[30px] xl:pt-0'>
               {footer.footerCreated}
             </p>
             <div className='flex gap-5 md:pl-[30px] md:pt-5 xl:pl-0 xl:pt-0'>
