@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/Button';
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
 import s from './TeamCardModal.module.css';
+import clsx from 'clsx';
 
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
   openModal,
@@ -48,7 +49,10 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
               className='mb-5 ml-auto block md:absolute md:right-[25px] md:top-[25px] md:mb-[11px] xl:right-[35px] xl:top-[35px] xl:mb-[31px]'
             />
             <div
-              className={` overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ${s.contentHeight}`}
+              className={clsx(
+                'overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ',
+                s.contentHeight,
+              )}
             >
               <div className='xl:w-[386px]'>
                 <Image
