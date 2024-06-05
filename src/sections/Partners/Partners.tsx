@@ -7,8 +7,8 @@ import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { useWindowSize } from '@/utils/getWindowSize';
-import { partners, partnersSection } from '@/data';
+import { useWindowSize } from '@/utils';
+import { partners, partnersData } from '@/data';
 
 export const Partners: FC = () => {
   const pathName = usePathname();
@@ -21,7 +21,7 @@ export const Partners: FC = () => {
       <div className='container pt-[60px] md:pt-[100px] xl:pt-[130px]'>
         <div className='mb-[40px] flex  flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
           <h2 className='xl:text-h2_desc text-h2 md:text-h2_tab'>
-            {partnersSection.title}
+            {partnersData.title}
           </h2>
           {pathName !== '/about' && (
             <LinkButton
@@ -29,7 +29,7 @@ export const Partners: FC = () => {
               href='/about#partners'
               className='h-[28px] w-[125px]'
             >
-              {partnersSection.button}
+              {partnersData.button}
             </LinkButton>
           )}
         </div>
