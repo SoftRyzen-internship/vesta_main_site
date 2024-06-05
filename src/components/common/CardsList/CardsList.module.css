@@ -1,4 +1,4 @@
-.partnersList {
+.cardsList {
     gap: 10px;
     overflow-x: auto;
     padding-bottom: 40px;
@@ -6,27 +6,27 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.partnerCard {
+.cardItem {
     scroll-snap-align: start;
     flex: 0 0 auto;
 }
 
-.partnersList::-webkit-scrollbar {
+.cardsList::-webkit-scrollbar {
     height: 5px;
 }
 
-.partnersList::-webkit-scrollbar-thumb {
+.cardsList::-webkit-scrollbar-thumb {
     background-color: #1A341B;
     border-radius: 15px;
 }
 
-.partnersList::-webkit-scrollbar-track {
+.cardsList::-webkit-scrollbar-track {
     background-color: #F3EFE9;
     border-radius: 15px;
 }
 
 @media (min-width: 768px) {
-    .partnersList {
+    .cardsList {
         overflow-x: visible;
         scroll-snap-type: none;
         padding: 0;

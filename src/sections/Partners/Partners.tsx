@@ -3,13 +3,12 @@
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
 import { useWindowSize } from '@/utils/getWindowSize';
 import { partners, partnersSection } from '@/data';
-
-import styles from './Partners.module.css';
 
 export const Partners: FC = () => {
   const pathName = usePathname();
@@ -34,16 +33,10 @@ export const Partners: FC = () => {
             </LinkButton>
           )}
         </div>
-
-        <ul
-          className={`${styles.partnersList} flex gap-[10px] md:flex-wrap md:gap-[24px] xl:gap-[25px]`}
-        >
-          {partners.slice(0, numberOfCards).map(({ id, img, name }) => (
-            <li key={id} className={styles.partnerCard}>
-              <PartnerCard img={img} name={name} />
-            </li>
-          ))}
-        </ul>
+        <CardsList
+          items={partners.slice(0, numberOfCards)}
+          CardComponent={PartnerCard}
+        />
       </div>
     </section>
   );
