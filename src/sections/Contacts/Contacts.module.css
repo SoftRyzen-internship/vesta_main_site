@@ -1,0 +1,35 @@
+.contacts {
+  background-image: var(--contacts-overlay),
+    image-set(
+      url('/images/contacts/contacts-bg-mob@1x.webp') 1x,
+      url('/images/contacts/contacts-bg-mob@2x.webp') 2x
+    );
+  background-size:
+    100% 100%,
+    cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .contacts {
+    background-image: var(--contacts-overlay),
+      image-set(
+        url('/images/contacts/contacts-bg-tab@1x.webp') 1x,
+        url('/images/contacts/contacts-bg-tab@2x.webp') 2x
+      );
+  }
+}
+
+@media (min-width: 1280px) {
+  .contacts {
+    background-image: var(--contacts-overlay),
+      image-set(
+        url('/images/contacts/contacts-bg-desk@1x.webp') 1x,
+        url('/images/contacts/contacts-bg-desk@2x.webp') 2x
+      );
+    background-size:
+      1440px auto,
+      1440px auto;
+  }
+}

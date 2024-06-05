@@ -46,7 +46,6 @@ export const Viewer = () => {
           className='mr-10'
         />
         <LinkButton href='/contacts' className='mr-10'>
-
           Запит на підтримку
         </LinkButton>
         <Button
@@ -72,14 +71,20 @@ export const Viewer = () => {
         <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
       <div className='py-16'>
-        <NewsCard
-          id={news.id}
-          // img={news.img}
-          imgAlt={news.imgAlt}
-          date={news.date}
-          title={news.title}
-          description={news.description}
-        />
+        <ul className='flex flex-col gap-[25px] xl:flex-row'>
+          {news.map(i => (
+            <li key={i.id}>
+              <NewsCard
+                id={i.id}
+                img={i.img}
+                imgAlt={i.imgAlt}
+                date={i.date}
+                title={i.title}
+                description={i.description}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
@@ -96,7 +101,7 @@ export const Viewer = () => {
       />
       <FormBlock className='my-10' />
 
-      <div className=' flex flex-wrap gap-6 '>
+      <div className='flex flex-wrap gap-6 '>
         <TeamCard />
         <GettingKnowTeamCard />
       </div>

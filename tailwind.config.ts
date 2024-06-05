@@ -18,12 +18,6 @@ const config: Config = {
       notXl: { max: '1279.98px' },
     },
     extend: {
-      backgroundImage: {
-        'hero-gradient-top':
-          'linear-gradient(180deg, rgba(25, 34, 26, 0.47) 0%, rgba(25, 34, 26, 0) 100%)',
-        'hero-gradient-left':
-          'linear-gradient(90deg, rgba(25, 34, 26, 0.55) 0%, rgba(25, 34, 26, 0) 100%)',
-      },
       container: {
         center: true,
         padding: {
