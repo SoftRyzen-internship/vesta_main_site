@@ -8,7 +8,11 @@ import { Button } from '@/components/ui/Button';
 import { newsPageData } from '@/data';
 
 export const NewsPage = () => {
-  const { title, buttonText, news } = newsPageData;
+  const {
+    title,
+    buttonText: { more, hide },
+    news,
+  } = newsPageData;
   const initialNewsList = 4;
   const incrementInitialNewsList = 4;
   const [displayNews, setDisplayNews] = useState(initialNewsList);
@@ -20,6 +24,22 @@ export const NewsPage = () => {
   const hideAll = () => {
     setDisplayNews(initialNewsList);
   };
+
+  const dateString = '05.05.2023';
+  const timestamp = Date.parse(dateString);
+  const dateObject = new Date(timestamp);
+  console.log(dateObject.getMonth());
+
+  const sortByDate = () => {
+    return news.sort((a, b) => {
+      const parsDate: number = Date.parse(a.date);
+      const parsDate2: number = Date.parse(b.date);
+      const date = new Date(parsDate);
+      const date2 = new Date(parsDate2);
+      return date2 - date;
+    });
+  };
+  sortByDate();
   return (
     <section className='pb-[60px] pt-[140px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
       <div className='container'>
@@ -44,11 +64,11 @@ export const NewsPage = () => {
         </ul>
         {news.length > displayNews ? (
           <Button onClick={loadMore} className='block xl:mx-auto'>
-            {buttonText}
+            {more}
           </Button>
         ) : (
           <Button onClick={hideAll} className='block xl:mx-auto'>
-            {buttonText}
+            {hide}
           </Button>
         )}
       </div>
