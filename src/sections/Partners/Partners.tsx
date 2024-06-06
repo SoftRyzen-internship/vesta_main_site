@@ -36,6 +36,8 @@ export const Partners: FC = () => {
         <CardsList
           items={partners.slice(0, numberOfCards)}
           CardComponent={PartnerCard}
+          path={pathName}
+          section='partners'
         />
       </div>
     </section>

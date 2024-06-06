@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 import { IPartnerCardProps } from './PartnerCard.types';
 
-export const PartnerCard: FC<IPartnerCardProps> = ({ img, name }) => {
+export const PartnerCard: FC<IPartnerCardProps> = ({ src, name }) => {
   return (
     <div className='flex h-[263px] w-[250px] flex-col justify-end bg-bgText p-5 pt-[67px] md:w-[212px] md:pt-[74px] xl:h-[294px] xl:w-[285px] xl:pt-[60px]'>
       <Image
-        src={img}
+        src={src}
         alt={name}
         width={0}
         height={0}
