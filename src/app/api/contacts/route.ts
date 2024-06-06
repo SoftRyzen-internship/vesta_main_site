@@ -28,10 +28,10 @@ export const POST = async (request: NextRequest) => {
       to: myEmail,
       subject: `Новий запит про допомогу`,
       html: `
-            <p>Name: ${name} </p>
-            <p>Email: ${email} </p>
-            <p>Phone: ${phone} </p>
-            <p>Message: ${textarea} </p>
+            <p><span style=" font-size: 14px; font-weight: 600; ">Ім'я: </span>${name} </p>
+            <p><span style=" font-size: 14px; font-weight: 600; ">Ел. пошта: </span>${email} </p>
+            <p><span style=" font-size: 14px; font-weight: 600; ">Телефон: </span>${phone} </p>
+            <p><span style=" font-size: 14px; font-weight: 600; ">Повідомлення: </span>${textarea} </p>
             `,
     };
 
