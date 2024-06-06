@@ -37,8 +37,9 @@
         url('/images/mainHero/main-hero-bg-desk@2x.webp') 2x
       );
     background-size:
-      100% 20%,
-      50% 100%,
-      cover;
+      1440px 20%,
+      1440px auto,
+      1440px auto;
+    background-position: top center;
   }
 }
