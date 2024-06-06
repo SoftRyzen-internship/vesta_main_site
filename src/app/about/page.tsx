@@ -7,9 +7,9 @@ import { News } from '@/sections/News';
 export default function Page() {
   return (
     <>
-      <HeroAboutPage/>
+      <HeroAboutPage />
       <Support />
-       <Partners />
+      <Partners />
       <Team />
       <News />
     </>
