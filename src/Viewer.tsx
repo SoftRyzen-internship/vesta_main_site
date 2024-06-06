@@ -77,7 +77,7 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-
+      
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
