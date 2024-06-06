@@ -1,3 +1,7 @@
+**FormBlock** includes a form assembly that includes custom inputs, textarea, and checkboxe
+
+**The remark:** To apply with React-Hook-Form using the library's component - <Controller />
+
 - #### component FormBlock
 
 | Prop         | Type           | Description                                                                                     |
