@@ -2,18 +2,17 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
-import { ServiceCard } from '@/components/common/ServiceCard';
+
 import { SupportCards } from '@/components/common/SuppportCards';
 import { DwellingCard } from '@/components/common/DwellingCard';
-import { FormBlock } from '@/components/common/Form';
+
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { supportAboutData, supportCards } from '@/data';
+import { supportCards } from '@/data';
 import { dwellings, projects } from '@/data';
 import { socialMedia } from '@/data';
-import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -75,33 +74,15 @@ export const Viewer = () => {
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-
+      
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
         amountOfHelp={supportCards.amountOfHelp}
         typeOfHelp={supportCards.typeOfHelp}
       />
-      <ServiceCard />
-      <FormBlock className='my-10' />
-
       <div className='flex flex-wrap gap-6 '>
         <GettingKnowTeamCard />
-      </div>
-      <div className='py-16'>
-        {supportAboutData.map(({ icon, title, description }, index) => (
-          <SupportCardAbout
-            key={index}
-            icon={
-              (icon === 'balanceIcon' && icon) ||
-              (icon === 'infoIcon' && icon) ||
-              (icon === 'heartHandIcon' && icon) ||
-              'heartHandIcon'
-            }
-            title={title}
-            description={description}
-          />
-        ))}
       </div>
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(

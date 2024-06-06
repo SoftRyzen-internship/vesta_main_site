@@ -19,7 +19,7 @@ export const GettingKnowTeamCard = () => {
         <br />
         {getSpecialWords(title, 1, title.length - 1)}
       </h3>
-      <p className='paragraph mb-[45px] text-darkGrey'>{description}</p>
+      <p className='paragraph mb-[45px]'>{description}</p>
       <LinkButton href={link} variant='secondary'>
         {textLink}
       </LinkButton>

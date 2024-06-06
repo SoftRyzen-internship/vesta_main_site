@@ -1,0 +1,17 @@
+{
+  "title": "Ми завжди на зв’язку",
+  "email": "charity.vo.vesta@gmail.com",
+  "phoneTitle": "Керівниця Організації",
+  "phone": "+38 (098) 513 73 11",
+  "services": [
+    {
+      "typeOfService": "Юридичні послуги",
+      "phone": "+38 (068) 924 32 34"
+    },
+    {
+      "typeOfService": "Психологічні послуги:",
+      "phone": "+38 (097) 595 33 50"
+    }
+  ],
+  "formTitle": "Звʼяжіться з нами"
+}

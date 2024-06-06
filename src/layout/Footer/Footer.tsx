@@ -58,7 +58,7 @@ export const Footer: FC = () => {
           <hr className='border-0.3px	 absolute left-0 w-full border-accent border-opacity-[0.3] transition xl:hidden' />
           <div className='flex flex-col py-[15px] transition md:py-5 md:pl-[10px] xl:pb-0 xl:pl-0 xl:pt-[20px]'>
             <div className='flex flex-col gap-[15px] transition md:flex-row-reverse md:items-center md:justify-between xl:gap-[270px]'>
-              <SocialMedia forFooter={true} socialMedia={socialMedia} />
+              <SocialMedia lightMode={true} socialMedia={socialMedia} />
               <a
                 href={footer.linkPolicy}
                 rel={footer.rel}
