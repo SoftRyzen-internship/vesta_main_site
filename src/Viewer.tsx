@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { SupportCards } from '@/components/common/SuppportCards';
-import { NewsCard } from '@/components/common/NewsCard';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
@@ -14,7 +13,7 @@ import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, news, partners, projects } from '@/data';
+import { dwellings, partners, projects } from '@/data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
@@ -70,22 +69,7 @@ export const Viewer = () => {
         />
         <SocialMedia socialMedia={socialMedia} forFooter={true} />
       </div>
-      <div className='py-16'>
-        <ul className='flex flex-col gap-[25px] xl:flex-row'>
-          {news.map(i => (
-            <li key={i.id}>
-              <NewsCard
-                id={i.id}
-                img={i.img}
-                imgAlt={i.imgAlt}
-                date={i.date}
-                title={i.title}
-                description={i.description}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
       </div>
