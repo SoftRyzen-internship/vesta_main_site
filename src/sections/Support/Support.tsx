@@ -37,9 +37,8 @@ export const Support = () => {
         <div className='relative xl:flex xl:justify-between'>
           <Image
             src={img}
-            width={0}
-            height={0}
-            sizes='100vw'
+            width={328}
+            height={437}
             alt={imgAlt}
             className='mb-[50px] h-[437px] w-[328px] rounded-ee-[150px] object-cover md:h-[691px] md:w-[566px] md:rounded-ee-[200px] xl:mb-0 xl:h-[872px] xl:w-[596px]'
           />
