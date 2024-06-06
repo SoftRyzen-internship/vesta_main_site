@@ -67,9 +67,9 @@ export const Viewer = () => {
           onClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedia socialMedia={socialMedia} forFooter={true} />
+        <SocialMedia socialMedia={socialMedia} lightMode={true} />
       </div>
-      
+
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
       </div>
