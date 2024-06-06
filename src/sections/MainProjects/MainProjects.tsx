@@ -29,7 +29,7 @@ export const MainProjects: FC = () => {
             </span>
             {getSpecialWords(title, 8, 5, { start: true })}
           </h2>
-          <p className='paragraph mb-[30px] text-darkGrey md:mb-10 md:w-[415px] xl:mb-10'>
+          <p className='paragraph mb-[30px] md:mb-10 md:w-[415px] xl:mb-10'>
             {description}
           </p>
           <LinkButton
