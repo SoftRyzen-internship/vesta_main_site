@@ -2,11 +2,12 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
+
 import { SupportCards } from '@/components/common/SuppportCards';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
-import { FormBlock } from '@/components/common/Form';
+
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
@@ -83,8 +84,6 @@ export const Viewer = () => {
         amountOfHelp={supportCards.amountOfHelp}
         typeOfHelp={supportCards.typeOfHelp}
       />
-      <FormBlock className='my-10' />
-
       <div className='flex flex-wrap gap-6 '>
         <TeamCard />
         <GettingKnowTeamCard />
