@@ -21,7 +21,7 @@ export const ContactsPage: FC = () => {
           <address className='text-body2 font-medium not-italic md:text-body2_tab xl:text-body2_desk'>
             <div className='mb-5 flex items-center gap-[15px]'>
               <div className='flex h-10 w-10 items-center justify-center rounded-full border-[0.5px] border-current '>
-                <EmailIcon width={24} height={24} className='fill-current' />
+                <EmailIcon width={24} height={24} className='fill-current'/>
               </div>
               <a
                 href={`mailto:${email}`}
