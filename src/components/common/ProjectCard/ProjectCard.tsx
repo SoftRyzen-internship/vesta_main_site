@@ -19,9 +19,9 @@ export const ProjectCard: FC<IProjectCardProps> = ({
   return (
     <div
       className={clsx(
-        'border-b-[0.50px]  border-solid border-darkGrey  pb-[30px] md:flex md:gap-[54px] md:pb-[63px] xl:gap-[129px] xl:pb-10 ',
+        'border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:flex md:gap-[54px] md:pb-[63px] xl:gap-[129px] xl:pb-10',
         isOddCard
-          ? ' flex-row justify-start xl:gap-[129px]'
+          ? 'flex-row justify-start xl:gap-[129px]'
           : 'flex-row-reverse justify-end xl:gap-[232px]',
       )}
     >
@@ -41,8 +41,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
           {description}
         </p>
         <LinkButton href={link} variant='secondary'>
-         
-        {linkText}
+          {linkText}
         </LinkButton>
       </div>
     </div>

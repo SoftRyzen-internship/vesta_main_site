@@ -14,7 +14,7 @@ export const PartnerCard: FC<IPartnerCardProps> = ({ img, name }) => {
         sizes='100vw'
         className='mx-auto h-[130px] w-[130px] md:h-[116px] md:w-[116px]  xl:h-[140px] xl:w-[140px]'
       />
-      <h3 className='paragraph mt-auto font-normal text-green  '>{name}</h3>
+      <h3 className='paragraph mt-auto font-normal text-green'>{name}</h3>
     </div>
   );
 };
