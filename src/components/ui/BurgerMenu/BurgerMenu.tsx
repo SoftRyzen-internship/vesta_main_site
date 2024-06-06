@@ -44,7 +44,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
                   {linkData.text}
                 </LinkButton>
               </div>
-              <SocialMedia forFooter={true} socialMedia={socialMedia} />
+              <SocialMedia lightMode={true} socialMedia={socialMedia} />
             </div>
           </DialogPanel>
         </div>
