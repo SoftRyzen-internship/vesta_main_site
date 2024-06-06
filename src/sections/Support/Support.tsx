@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import Image from 'next/image';
 
 import { SupportCardAbout } from '@/components/common/SupportCardAbout';
@@ -7,7 +8,7 @@ import { supportAboutData } from '@/data';
 
 import { getSpecialWords } from '@/utils';
 
-export const Support = () => {
+export const Support: FC = () => {
   const {
     title,
     description,
