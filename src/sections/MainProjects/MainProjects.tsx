@@ -1,5 +1,6 @@
 'use client';
 
+import { FC } from 'react';
 import Image from 'next/image';
 
 import { LinkButton } from '@/components/ui/LinkButton';
@@ -8,7 +9,7 @@ import { mainProjectsData } from '@/data';
 
 import { getSpecialWords } from '@/utils';
 
-export const MainProjects = () => {
+export const MainProjects: FC = () => {
   const {
     title,
     description,

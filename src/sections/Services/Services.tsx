@@ -1,9 +1,11 @@
+import { FC } from 'react';
+
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { ScrollBox } from '@/components/ui/ScrollBox';
 
 import { service } from '@/data';
 
-export const Services = () => {
+export const Services: FC = () => {
   const { title, services } = service;
   return (
     <section className=' py-[60px] md:py-[50px] xl:py-[65px]'>
