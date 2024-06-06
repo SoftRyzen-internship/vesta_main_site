@@ -1,6 +1,6 @@
 export interface IButtonProps {
-  handleClick?: () => void;
-  text?: string;
+  onClick?: () => void;
+  children?: React.ReactNode;
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?:
     | 'primary'

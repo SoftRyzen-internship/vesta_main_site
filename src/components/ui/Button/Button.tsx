@@ -12,8 +12,8 @@ import CloseIcon from '/public/icons/burgerClosed.svg';
 import { buttons } from '@/data';
 
 export const Button: FC<IButtonProps> = ({
-  text,
-  handleClick,
+  children,
+  onClick,
   type = 'button',
   variant = 'primary',
   className,
@@ -21,25 +21,25 @@ export const Button: FC<IButtonProps> = ({
   return (
     <button
       type={type}
-      onClick={handleClick}
+      onClick={onClick}
       className={clsx(
-        'transition-colors duration-300',
+        'transition',
         variant === 'primary' &&
-          ' text-button bg-orangeText text-bgText hover:bg-green active:bg-green focus:bg-greenFocus inline-block h-[57px] w-60 px-6 py-[18px] font-bold uppercase tracking-[0.03em] hover:opacity-60',
+          'inline-block h-[57px] w-60 bg-orangeText px-6 py-[18px] text-button font-bold uppercase tracking-[0.03em] text-bgText hover:bg-green hover:opacity-60 focus:bg-greenFocus active:bg-green',
         variant === 'openTeamMember' &&
-          ' fill-bgText active:bg-green focus-within:fill-greenFocus hover:bg-greenHover h-[50px] w-[50px] rounded-full bg-[rgba(242,239,233,0.2)] p-[18px] backdrop-blur-sm     focus-within:bg-[rgba(132,144,128,0.2)]',
+          'h-[50px] w-[50px] rounded-full bg-[rgba(242,239,233,0.2)] fill-bgText p-[18px] backdrop-blur-sm focus-within:bg-[rgba(132,144,128,0.2)] focus-within:fill-greenFocus hover:bg-greenHover     active:bg-green',
         variant === 'play' &&
-          ' bg-orangeText active:bg-green focus:bg-focusOrange hover:bg-greenHover h-[51px] w-[51px] rounded-full pb-4 pl-[21px] pr-[17px] pt-[17px]',
+          'h-[51px] w-[51px] rounded-full bg-orangeText pb-4 pl-[21px] pr-[17px] pt-[17px] hover:bg-greenHover focus:bg-focusOrange active:bg-green',
         variant === 'closeModal' &&
-          'stroke-green hover:stroke-orangeText active:stroke-hoverOrange focus:stroke-greenFocus',
+          'stroke-green hover:stroke-orangeText focus:stroke-greenFocus active:stroke-hoverOrange',
         variant === 'closeMenu' &&
-          'stroke-bgWhite hover:stroke-hoverDark active:stroke-orangeText focus:stroke-[#B25A17]',
+          'stroke-bgWhite hover:stroke-hoverDark focus:stroke-[#B25A17] active:stroke-orangeText',
         variant === 'openMenu' &&
-          'stroke-bgWhite hover:stroke-orangeText active:stroke-hoverDark focus:stroke-[#B25A17]',
+          'stroke-bgWhite hover:stroke-orangeText focus:stroke-[#B25A17] active:stroke-hoverDark',
         className,
       )}
     >
-      {text && text}
+      {children}
       {variant === 'openTeamMember' && (
         <OpenIcon
           width={14}

@@ -1,6 +1,7 @@
 'use client';
 
 import { FC } from 'react';
+
 import { clsx } from 'clsx';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import useFormPersist from 'react-hook-form-persist';
@@ -15,7 +16,10 @@ import { formData } from '@/data';
 
 import { formSchema } from '@/utils';
 
+import { sendEmail } from '@/actions';
+
 import { IFormBlockProps, IFormState } from './FormBlock.types';
+
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   const {
@@ -45,9 +49,16 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
     exclude: ['privacy'],
   });
 
-  const onSubmit: SubmitHandler<IFormState> = data => {
-    console.log(data);
-    reset();
+  const onSubmit: SubmitHandler<IFormState> = async data => {
+    try {
+      await sendEmail(data)
+      reset();
+      alert('Ваша заявка успішно відправлена!');
+    } catch (error) {
+      alert(
+        'Щось пішло не так... Ми не змогли отримати Вашу заявку. Будь ласка, спробуйте ще раз.',
+      );
+    }
   };
 
   return (
@@ -96,12 +107,9 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
             />
           )}
         />
-        <Button
-          type='submit'
-          variant='primary'
-          className='w-full'
-          text={buttonText}
-        />
+        <Button type='submit' variant='primary' className='w-full'>
+          {buttonText}
+        </Button>
       </form>
     </>
   );
