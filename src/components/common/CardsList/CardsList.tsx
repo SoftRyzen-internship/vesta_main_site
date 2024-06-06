@@ -18,7 +18,7 @@ export const CardsList: FC<CardListProps> = ({
   const isMobile = width && width < 768 ? true : false;
   return (
     <>
-      <ul className='scrollbar scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-green scrollbar-track-bgText flex gap-2.5 overflow-x-auto pb-10 sm:mb-[60px] md:flex-wrap md:gap-6 xl:gap-6'>
+      <ul className='flex gap-2.5 overflow-x-auto pb-10 scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full sm:mb-[60px] md:flex-wrap md:gap-6 xl:gap-6'>
         {items.map(
           ({
             id,
