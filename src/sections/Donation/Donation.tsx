@@ -15,7 +15,7 @@ export const Donation: FC = () => {
     <section
       className={clsx(
         s.donation,
-        'pb-10 pt-[168px] md:pb-[60px] md:pt-[282px] xl:pb-[45px] xl:pt-[346px]',
+        'pb-10 pt-[168px] md:pb-[60px] md:pt-[282px] xl:pb-[75px] xl:pt-[346px]',
       )}
     >
       <div className='container'>
