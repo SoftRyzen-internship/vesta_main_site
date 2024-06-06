@@ -45,7 +45,7 @@ export const FormModal: FC<IFormModalProps> = ({
         >
           <DialogPanel className='relative flex h-[300px] w-[328px] flex-col items-center justify-center rounded-[10px] bg-bgWhite text-center md:h-[370px] md:w-[624px] xl:h-[438px] xl:w-[802px]'>
             <Button
-              handleClick={closeModal}
+              onClick={closeModal}
               variant='closeModal'
               className='absolute right-5 top-5 mb-4 md:right-[25px] md:top-[25px] md:mb-10 xl:mb-[63px]'
             />
