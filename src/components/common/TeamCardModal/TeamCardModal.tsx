@@ -77,7 +77,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                     {socialMedia && socialMedia?.length > 0 && (
                       <SocialMedia
                         socialMedia={socialMedia}
-                        forFooter={false}
+                        lightMode={false}
                       />
                     )}
                   </div>
