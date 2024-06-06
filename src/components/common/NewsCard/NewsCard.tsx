@@ -20,9 +20,8 @@ export const NewsCard: FC<INewsCardProps> = ({
       <Image
         src={img}
         alt={imgAlt}
-        width={2880}
-        height={2880}
-        sizes='100%'
+        width={448}
+        height={290}
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
       />
       <p className='paragraph mb-[15px]'>{date}</p>
