@@ -2,23 +2,41 @@ import { FC } from 'react';
 
 import { SupportCards } from '@/components/common/SupportCards';
 
-import { supportCards , aboutOrganisation} from '@/data';
+import { supportCards, aboutOrganisation } from '@/data';
+import { getSpecialWords } from '@/utils';
 
 export const AboutOrganisation: FC = () => {
+  const { caption, title, titleText, refreshData } = aboutOrganisation;
+
   return (
-    <section >
-      <div className='py-[60px] md:py-[100px]'>
-        <p className='text-caption font-medium text-darkGrey'>{aboutOrganisation.caption}</p>
-        <h3 className='my-[30px] text-h3 font-bold font-kyiv text-green 
-        md:w-[596px] md:text-h3_tab xl:text-h3_desk xl:w-[700px] transition'>
-          {aboutOrganisation.title}
-        </h3>
-        <p className='text-body4 font-normal text-darkGrey md:w-[492px] md:text-body4_tab xl:text-body4_desk xl:w-[465px] transition'>
-          {aboutOrganisation.titleText}
+    <section>
+      <div className='container py-[60px] md:py-[100px] xl:flex xl:justify-between'>
+        <p className='text-caption font-medium uppercase text-darkGrey'>
+          {caption}
         </p>
+        <div className='xl:flex xl:flex-col'>
+          <h3
+            className='my-[30px] font-kyiv text-h3 font-bold text-green 
+        transition md:w-[596px] md:text-h3_tab xl:mb-[20px] xl:mt-0 xl:w-[700px] xl:text-h3_desk'
+          >
+            {getSpecialWords(title, 0, 8, { end: true })}
+            <span className='bg-yellowLight'>
+              {getSpecialWords(title, 8, 2)}
+            </span>
+            {getSpecialWords(title, 10, 4, { start: true })}
+          </h3>
+          <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
+            {titleText}
+          </p>
+        </div>
       </div>
-      <div>
-        <p className='text-darkGrey text-body4 font-normal pb-[10px] transition'>{aboutOrganisation.refreshData}</p>
+      <div className='container'>
+        <p
+          className='pb-[10px] text-body4 font-normal text-darkGrey transition
+        xl:flex xl:justify-end'
+        >
+          {refreshData}
+        </p>
         <ul className='flex gap-5 overflow-x-auto whitespace-nowrap transition'>
           {supportCards.map(card => (
             <SupportCards

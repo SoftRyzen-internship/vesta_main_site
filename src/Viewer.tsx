@@ -10,7 +10,6 @@ import { FormBlock } from '@/components/common/Form';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
-import { AboutOrganisation } from './sections/AboutOrganisation';
 
 import { dwellings, partners, projects } from '@/data';
 import { supportAboutData } from '@/data';
@@ -20,7 +19,7 @@ import { SupportCardAbout } from './components/common/SupportCardAbout';
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      <AboutOrganisation/>
+      
       <div className='bg-darkGrey'>
         <Button onClick={() => console.log('click')} className='mr-10'>
           Надіслати
