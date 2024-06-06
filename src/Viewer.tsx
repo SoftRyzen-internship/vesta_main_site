@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
-import { ServiceCard } from '@/components/common/ServiceCard';
 import { SupportCards } from '@/components/common/SuppportCards';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
@@ -83,6 +82,7 @@ export const Viewer = () => {
         amountOfHelp={supportCards.amountOfHelp}
         typeOfHelp={supportCards.typeOfHelp}
       />
+
       <ServiceCard />
 
       <div className='flex flex-wrap gap-6 '>
