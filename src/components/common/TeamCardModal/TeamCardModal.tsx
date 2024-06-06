@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 
 import { Dialog, DialogPanel, Transition } from '@headlessui/react';
+import clsx from 'clsx';
 
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Button } from '@/components/ui/Button';
@@ -9,7 +10,6 @@ import { Button } from '@/components/ui/Button';
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
 import s from './TeamCardModal.module.css';
-import clsx from 'clsx';
 
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
   openModal,
