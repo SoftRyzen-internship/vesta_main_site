@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <MainHero />
-     
+      <AboutOrganisation/>
       <MainProjects />
       <Services />
       <Donation />
