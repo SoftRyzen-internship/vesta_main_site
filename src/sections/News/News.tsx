@@ -1,4 +1,7 @@
+'use client';
+
 import { FC } from 'react';
+import { useParams } from 'next/navigation';
 
 import { NewsCard } from '@/components/common/NewsCard';
 import { LinkButton } from '@/components/ui/LinkButton';
@@ -6,12 +9,16 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { news, newsData } from '@/data';
 
 export const News: FC = () => {
-  const { title, newsButton, hrefLink } = newsData;
+  const params = useParams();
+  const { title, openNewsTitle, newsButton, hrefLink } = newsData;
+
   return (
     <section className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
         <div className='mb-10 md:mb-[60px] xl:flex xl:items-center xl:justify-between'>
-          <h2 className='subtitle notXl:mb-5'>{title}</h2>
+          <h2 className='subtitle notXl:mb-5'>
+            {!params ? title : openNewsTitle}
+          </h2>
           <LinkButton
             href={hrefLink}
             variant='secondary'
