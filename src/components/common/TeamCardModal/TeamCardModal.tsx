@@ -2,7 +2,6 @@ import { FC } from 'react';
 import Image from 'next/image';
 
 import { Dialog, DialogPanel, Transition } from '@headlessui/react';
-import clsx from 'clsx';
 
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Button } from '@/components/ui/Button';
@@ -78,7 +77,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                     {socialMedia && socialMedia?.length > 0 && (
                       <SocialMedia
                         socialMedia={socialMedia}
-                        forFooter={false}
+                        lightMode={false}
                       />
                     )}
                   </div>
