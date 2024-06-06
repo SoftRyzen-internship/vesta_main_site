@@ -24,6 +24,17 @@
     rgba(25, 34, 26, 0.38),
     rgba(25, 34, 26, 0.38)
   );
+  /* Hero About */
+  --hero-about-gradient-left: linear-gradient(
+    90deg,
+    rgba(25, 34, 26, 0.48) 0%,
+    rgba(25, 34, 26, 0) 100%
+  );
+  --hero-about-gradient-top: linear-gradient(
+    180deg,
+    rgba(25, 34, 26, 0.47) 0%,
+    rgba(25, 34, 26, 0) 100%
+  );
 }
 
 @layer base {

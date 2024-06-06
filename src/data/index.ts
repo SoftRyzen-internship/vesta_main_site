@@ -25,4 +25,5 @@ export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
 export { default as supportAboutData } from './supportAboutData.json';
 export { default as mainProjectsData } from './mainProjectsData.json';
+export { default as heroAboutData } from './heroAboutData.json';
 export { default as contactsPageData } from './contactsPageData.json';
