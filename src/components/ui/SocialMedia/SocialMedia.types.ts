@@ -5,5 +5,5 @@ type SocialMediaItem = {
 
 export interface SocialMediaProps {
   socialMedia: SocialMediaItem[];
-  forFooter: boolean;
+  lightMode: boolean;
 }

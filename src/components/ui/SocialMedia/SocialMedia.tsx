@@ -15,7 +15,7 @@ import Diya from '@/../public/icons/diya.svg';
 
 export const SocialMedia: FC<SocialMediaProps> = ({
   socialMedia,
-  forFooter,
+  lightMode,
 }) => {
   return (
     <ul className='flex gap-[20px]'>
@@ -29,9 +29,9 @@ export const SocialMedia: FC<SocialMediaProps> = ({
               href={link}
               className={clsx(
                 'flex h-full w-full items-center justify-center rounded-[50%]',
-                forFooter &&
+                lightMode &&
                   'bg-whiteGrey text-logoWhite hover:bg-[#9C4E12] focus:bg-[#B25A17]',
-                !forFooter &&
+                !lightMode &&
                   'border-[0.5px] border-solid border-green bg-transparent text-green hover:border-hoverOrange hover:text-hoverOrange focus:border-greenFocus focus:text-greenFocus',
               )}
             >
