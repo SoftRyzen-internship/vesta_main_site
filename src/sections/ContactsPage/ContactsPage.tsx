@@ -32,7 +32,7 @@ export const ContactsPage: FC = () => {
             </div>
             <div className='mb-[30px] flex items-center gap-[15px]'>
               <div className='flex h-10 w-10 items-center justify-center rounded-full border-[0.5px] border-current'>
-                <PhoneIcon width={24} height={24} className='m-10 fill-green' />
+                <PhoneIcon width={24} height={24} className='fill-current' />
               </div>
               <div className='flex flex-col gap-2'>
                 <p className='paragraph font-normal'>{phoneTitle}</p>
