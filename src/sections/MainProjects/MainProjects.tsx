@@ -18,12 +18,12 @@ export const MainProjects = () => {
   } = mainProjectsData;
 
   return (
-    <section className=' py-[60px] md:py-[50px] xl:py-[65px]'>
+    <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
       <div className='container xl:flex xl:items-center xl:gap-[104px]'>
-        <div className=' xl:w-[549px]'>
+        <div className='xl:w-[549px]'>
           <h2 className='mb-[30px] font-kyiv text-h3 font-bold text-green md:text-h3_tab mdOnly:w-[598px] xl:mb-5 xl:text-h3_desk'>
             {getSpecialWords(title, 0, 4, { end: true })}
-            <span className=' bg-yellowLight'>
+            <span className='bg-yellowLight'>
               {getSpecialWords(title, 4, 4)}
             </span>
             {getSpecialWords(title, 8, 5, { start: true })}
@@ -41,11 +41,11 @@ export const MainProjects = () => {
         <div>
           <Image
             src={img}
-            width={0}
-            height={0}
+            width={328}
+            height={260}
             alt={imgAlt}
-            sizes='100vw'
-            className=' h-[260px] w-full object-cover md:h-[470px]  xl:h-[470px] xl:w-[562px]'
+            sizes='(min-width: 1280px) 562px, 100%'
+            className='h-[260px] w-full object-cover md:h-[470px] xl:h-[470px] xl:w-[562px]'
           />
         </div>
       </div>

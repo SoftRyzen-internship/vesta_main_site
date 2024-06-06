@@ -3,7 +3,6 @@
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { ServiceCard } from '@/components/common/ServiceCard';
-import { NewsCard } from '@/components/common/NewsCard';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
@@ -13,7 +12,7 @@ import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 import { AboutOrganisation } from './sections/AboutOrganisation';
 
-import { dwellings, news, partners, projects } from '@/data';
+import { dwellings, partners, projects } from '@/data';
 import { supportAboutData } from '@/data';
 import { socialMedia } from '@/data';
 import { SupportCardAbout } from './components/common/SupportCardAbout';
@@ -70,18 +69,9 @@ export const Viewer = () => {
           onClick={() => console.log('click')}
           className='mr-10'
         />
-        <SocialMedia socialMedia={socialMedia} forFooter={true} />
+        <SocialMedia socialMedia={socialMedia} lightMode={true} />
       </div>
-      <div className='py-16'>
-        <NewsCard
-          id={news.id}
-          // img={news.img}
-          imgAlt={news.imgAlt}
-          date={news.date}
-          title={news.title}
-          description={news.description}
-        />
-      </div>
+
       <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
       </div>
@@ -92,7 +82,7 @@ export const Viewer = () => {
       <ServiceCard />
       <FormBlock className='my-10' />
 
-      <div className=' flex flex-wrap gap-6 '>
+      <div className='flex flex-wrap gap-6 '>
         <TeamCard />
         <GettingKnowTeamCard />
       </div>
