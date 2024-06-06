@@ -41,18 +41,15 @@
       );
     background-size:
       1440px 20%,
-      50% 100%,
+      1440px 100%,
       1440px auto;
-    background-position:
-      top center,
-      calc((100vw - 1440px) / 2) 0,
-      top center;
+    background-position: top center;
   }
 }
 
 .description {
   &::before {
-    content: url('../../../public/icons/arrowDown.svg');
+    content: url('/icons/arrowDown.svg');
     width: 36px;
     height: 36px;
     position: absolute;

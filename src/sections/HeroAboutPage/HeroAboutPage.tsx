@@ -12,7 +12,7 @@ export const HeroAboutPage: FC = () => {
   return (
     <section
       className={clsx(
-        'pb-[118px] pt-[187px] md:pb-[80px] md:pt-[209px] xl:pb-[103px] xl:pt-[206px]',
+        'pb-[118px] pt-[187px] md:pb-20 md:pt-[209px] xl:pb-[103px] xl:pt-[206px]',
         s.heroAbout,
       )}
     >
@@ -22,7 +22,7 @@ export const HeroAboutPage: FC = () => {
         </h1>
         <p
           className={clsx(
-            'xl:body3_desk relative ml-[51px] max-w-[255px] text-body3 text-bgText',
+            'xl:text-body3_desk relative ml-[51px] max-w-[255px] text-body3 text-bgText',
             s.description,
           )}
         >
