@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
-import { ServiceCard } from '@/components/common/ServiceCard';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { TeamCard } from './components/common/TeamCard';
@@ -19,7 +18,6 @@ import { SupportCardAbout } from './components/common/SupportCardAbout';
 export const Viewer = () => {
   return (
     <div className='container pb-16'>
-      
       <div className='bg-darkGrey'>
         <Button onClick={() => console.log('click')} className='mr-10'>
           Надіслати
@@ -78,7 +76,6 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
 
-      <ServiceCard />
       <FormBlock className='my-10' />
 
       <div className='flex flex-wrap gap-6 '>
