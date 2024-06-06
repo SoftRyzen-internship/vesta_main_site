@@ -24,12 +24,14 @@ const {
 export const formSchema = yup.object({
   name: yup
     .string()
+    .trim()
     .required(required)
     .min(2, nameMin)
     .max(30, nameMax)
     .matches(nameRegExp, namePattern),
   phone: yup
     .string()
+    .trim()
     .required(required)
     .min(13, phoneMin)
     .max(13, phoneMax)
@@ -39,6 +41,6 @@ export const formSchema = yup.object({
     .required(required)
     .max(63, emailMax)
     .matches(emailRegExp, emailPattern),
-  textarea: yup.string().max(500, textareaMax),
+  textarea: yup.string().trim().max(500, textareaMax),
   privacy: yup.boolean().oneOf([true]).required(),
 });
