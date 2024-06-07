@@ -4,7 +4,7 @@ import { ISupportProps } from './SupportCards.types';
 
 export const SupportCards: FC<ISupportProps> = ({ id, amountOfHelp, typeOfHelp }) => {
   return (
-    <li
+    <div
       className={clsx('bg-bgText list-none h-[300px] w-[260px] md:h-[340px] md:w-[300px] xl:h-[368px] xl:w-[390px] flex-shrink-0', {
         'rounded-tl-[120px]': id === 1,
         'rounded-bl-[120px] rounded-br-[120px]': id === 2,
@@ -17,6 +17,6 @@ export const SupportCards: FC<ISupportProps> = ({ id, amountOfHelp, typeOfHelp }
         </p>
         <p className='text-body3 xl:text-body3_desk'>{typeOfHelp}</p>
       </div>
-    </li>
+    </div>
   );
 };

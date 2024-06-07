@@ -8,7 +8,7 @@ import { NavList } from '@/components/common/NavList';
 
 import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
 
-import { scrollToTop } from '@/utils/scrollToTop';
+import { scrollToTop } from '@/utils';
 
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';

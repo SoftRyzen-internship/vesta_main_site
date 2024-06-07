@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
 import { SupportCards } from '@/components/common/SupportCards';
-import { supportCards, aboutOrganisation } from '@/data';
-import { getSpecialWords } from '@/utils';
 import { ScrollBox } from '@/components/ui/ScrollBox';
+import { getSpecialWords } from '@/utils';
+
+import { supportCards, aboutOrganisation } from '@/data';
 
 export const AboutOrganisation: FC = () => {
   const { caption, title, titleText, refreshData } = aboutOrganisation;
@@ -31,20 +33,20 @@ export const AboutOrganisation: FC = () => {
       </div>
       <div className='container'>
         <p
-          className=' pb-[10px] text-body4 font-normal text-darkGrey transition
-          xl:flex xl:justify-end'
+          className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
         >
           {refreshData}
         </p>
         <ScrollBox className='overflow-x-auto'>
           <ul className='flex gap-5 transition pb-10'>
-            {supportCards.map(card => (
-              <SupportCards
-                key={card.id}
-                id={card.id}
-                amountOfHelp={card.amountOfHelp}
-                typeOfHelp={card.typeOfHelp}
-              />
+            {supportCards.map((card) => (
+              <li key={card.id}>
+                <SupportCards
+                  id={card.id}
+                  amountOfHelp={card.amountOfHelp}
+                  typeOfHelp={card.typeOfHelp}
+                />
+              </li>
             ))}
           </ul>
         </ScrollBox>
