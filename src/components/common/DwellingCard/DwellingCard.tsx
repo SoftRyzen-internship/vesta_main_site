@@ -16,7 +16,7 @@ export const DwellingCard: FC<IDwellingCardProps> = ({ city, contacts }) => {
               href={link}
               target={target}
               rel={rel}
-              className='paragraph text-darkGrey hover:text-hoverDark focus:text-orangeText'
+              className='paragraph  hover:text-hoverDark focus:text-orangeText'
             >
               {text}
             </Link>

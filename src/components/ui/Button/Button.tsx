@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 import { IButtonProps } from './Button.types';
 
 import PlayIcon from '/public/icons/playButton.svg';
-import OpenIcon from '/public/icons/Plus.svg';
+import OpenIcon from '/public/icons/plus.svg';
 import OpenMenuIcon from '/public/icons/burgerMenu.svg';
 import CloseIcon from '/public/icons/burgerClosed.svg';
 

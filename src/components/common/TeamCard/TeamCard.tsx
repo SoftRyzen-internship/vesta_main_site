@@ -3,20 +3,18 @@ import Image from 'next/image';
 
 import { Button } from '@/components/ui/Button';
 
-import { teamCard } from '@/data';
-
 import { ITeamCardProps } from './TeamCard.types';
 
 import { TeamCardModal } from '../TeamCardModal';
 
 export const TeamCard: FC<ITeamCardProps> = ({
-  name = teamCard.name,
-  src = teamCard.src,
-  alt = teamCard.alt,
-  position = teamCard.position,
-  description = teamCard.description,
-  plug = teamCard.plug,
-  socialMedia = teamCard.socialMedia,
+  name,
+  src,
+  alt,
+  position,
+  description,
+  plug,
+  socialMedia,
 }) => {
   const [openModal, setIsOpenModal] = useState(false);
   const onClick = () => {
