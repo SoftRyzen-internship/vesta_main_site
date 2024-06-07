@@ -32,3 +32,5 @@ export { default as mainProjectsData } from './mainProjectsData.json';
 export { default as newsPageData } from './newsPageData.json';
 export { default as heroAboutData } from './heroAboutData.json';
 export { default as contactsPageData } from './contactsPageData.json';
+export { default as projectTemplateData } from './projectTemplateData.json';
+
