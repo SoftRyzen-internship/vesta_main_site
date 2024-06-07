@@ -4,16 +4,14 @@ import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { SupportCards } from '@/components/common/SuppportCards';
-import { PartnerCard } from '@/components/common/PartnerCard';
 import { DwellingCard } from '@/components/common/DwellingCard';
-import { TeamCard } from './components/common/TeamCard';
 
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { supportCards } from '@/data';
-import { dwellings, partners, projects } from '@/data';
+import { dwellings, projects } from '@/data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
@@ -70,13 +68,13 @@ export const Viewer = () => {
         <SocialMedia socialMedia={socialMedia} lightMode={true} />
       </div>
 
-      <div className='py-16'>
+      {/* <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
-      </div>
+      </div> */}
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
-      
+
       <SupportCards
         key={supportCards.id}
         id={supportCards.id}
@@ -84,7 +82,6 @@ export const Viewer = () => {
         typeOfHelp={supportCards.typeOfHelp}
       />
       <div className='flex flex-wrap gap-6 '>
-        <TeamCard />
         <GettingKnowTeamCard />
       </div>
       <div className='flex flex-col gap-10 py-16'>
