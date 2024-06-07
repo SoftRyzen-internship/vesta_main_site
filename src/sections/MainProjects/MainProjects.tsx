@@ -1,5 +1,6 @@
 'use client';
 
+import { FC } from 'react';
 import Image from 'next/image';
 
 import { LinkButton } from '@/components/ui/LinkButton';
@@ -8,7 +9,7 @@ import { mainProjectsData } from '@/data';
 
 import { getSpecialWords } from '@/utils';
 
-export const MainProjects = () => {
+export const MainProjects: FC = () => {
   const {
     title,
     description,
@@ -28,7 +29,7 @@ export const MainProjects = () => {
             </span>
             {getSpecialWords(title, 8, 5, { start: true })}
           </h2>
-          <p className='paragraph mb-[30px] text-darkGrey md:mb-10 md:w-[415px] xl:mb-10'>
+          <p className='paragraph mb-[30px] md:mb-10 md:w-[415px] xl:mb-10'>
             {description}
           </p>
           <LinkButton

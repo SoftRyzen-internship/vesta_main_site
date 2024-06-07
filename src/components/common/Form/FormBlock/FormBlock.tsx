@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
@@ -10,9 +10,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { FormInput } from '../FormInput';
 import { Textarea } from '../Textarea';
 import { Checkbox } from '../Checkbox';
+import { FormModal } from '../../FormModal';
 import { Button } from '@/components/ui/Button';
-
-import { formData } from '@/data';
 
 import { formSchema } from '@/utils';
 
@@ -20,11 +19,15 @@ import { sendEmail } from '@/actions';
 
 import { IFormBlockProps, IFormState } from './FormBlock.types';
 
+import { formData } from '@/data';
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const {
     formProps: { name, phone, email, textarea, checkbox },
     buttonText,
+    modalInfo: { successful, failure },
   } = formData;
 
   const {
@@ -50,14 +53,14 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   });
 
   const onSubmit: SubmitHandler<IFormState> = async data => {
+    setSendError(false);
     try {
-      await sendEmail(data)
+      await sendEmail(data);
       reset();
-      alert('Ваша заявка успішно відправлена!');
     } catch (error) {
-      alert(
-        'Щось пішло не так... Ми не змогли отримати Вашу заявку. Будь ласка, спробуйте ще раз.',
-      );
+      setSendError(true);
+    } finally {
+      setModalOpen(true);
     }
   };
 
@@ -111,6 +114,13 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
           {buttonText}
         </Button>
       </form>
+      <FormModal
+        openModal={modalOpen}
+        closeModal={() => setModalOpen(false)}
+        title={sendError ? failure.title : successful.title}
+        text={sendError ? failure.text : successful.text}
+        isSuccessful={!sendError}
+      />
     </>
   );
 };

@@ -1,7 +1,9 @@
+import { NewsPage } from '@/sections/NewsPage';
+
 export default function Page() {
   return (
     <>
-      <h1>News</h1>
+      <NewsPage />
     </>
   );
 }
