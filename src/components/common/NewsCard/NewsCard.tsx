@@ -22,7 +22,7 @@ export const NewsCard: FC<INewsCardProps> = ({
         alt={imgAlt}
         width={448}
         height={290}
-        className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
+        className='mb-[25px] h-[290px] w-full object-cover md:h-[356px] md:w-[684px] xl:w-[595px]'
       />
       <p className='paragraph mb-[15px]'>{date}</p>
       <h3 className='md:text-body3_desk: mb-[15px] text-body3 font-medium text-inherit xl:text-body2_desk'>
