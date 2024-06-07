@@ -15,7 +15,7 @@ export const NewsCard: FC<INewsCardProps> = ({
   return (
     <Link
       href={`/news/${id}`}
-      className='inline-block w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:w-[684px] xl:w-[596px]'
+      className='inline-block w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:w-[684px] xl:w-[595px]'
     >
       <Image
         src={img}
