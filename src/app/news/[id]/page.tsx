@@ -30,22 +30,15 @@ export default function Page({ params }: { params: { id: string } }) {
               <video
                 width='328'
                 height='260'
-                controls
-                preload='none'
+                poster={oneNews.video.poster}
                 className='mb-10'
               >
-                <source src='/path/to/video.mp4' type='video/mp4' />
-                <track
-                  src='/path/to/captions.vtt'
-                  kind='subtitles'
-                  srcLang='en'
-                  label='English'
-                />
-                Your browser does not support the video tag.
+                <source src={oneNews.video.src} type={'video/mp4'} />
+                <p>Your browser doesn&#39;t support HTML video.</p>
               </video>
             )}
-            {oneNews.videoDescription && (
-              <p className='paragraph'> {oneNews.videoDescription}</p>
+            {oneNews.secondDescription && (
+              <p className='paragraph'> {oneNews.secondDescription}</p>
             )}
           </div>
         )}
