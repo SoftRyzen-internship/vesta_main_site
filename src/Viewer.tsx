@@ -2,18 +2,15 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
-import { PartnerCard } from '@/components/common/PartnerCard';
+
 import { DwellingCard } from '@/components/common/DwellingCard';
-import { TeamCard } from './components/common/TeamCard';
-import { FormBlock } from '@/components/common/Form';
+
 import { LinkButton } from '@/components/ui/LinkButton';
 import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { dwellings, partners, projects } from '@/data';
-import { supportAboutData } from '@/data';
+import { dwellings, projects } from '@/data';
 import { socialMedia } from '@/data';
-import { SupportCardAbout } from './components/common/SupportCardAbout';
 
 export const Viewer = () => {
   return (
@@ -69,33 +66,15 @@ export const Viewer = () => {
         <SocialMedia socialMedia={socialMedia} lightMode={true} />
       </div>
 
-      <div className='py-16'>
+      {/* <div className='py-16'>
         <PartnerCard img={partners.img} name={partners.name} />
-      </div>
+      </div> */}
       <div className='py-16'>
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
 
-      <FormBlock className='my-10' />
-
       <div className='flex flex-wrap gap-6 '>
-        <TeamCard />
         <GettingKnowTeamCard />
-      </div>
-      <div className='py-16'>
-        {supportAboutData.map(({ icon, title, description }, index) => (
-          <SupportCardAbout
-            key={index}
-            icon={
-              (icon === 'balanceIcon' && icon) ||
-              (icon === 'infoIcon' && icon) ||
-              (icon === 'heartHandIcon' && icon) ||
-              'heartHandIcon'
-            }
-            title={title}
-            description={description}
-          />
-        ))}
       </div>
       <div className='flex flex-col gap-10 py-16'>
         {projects.map(

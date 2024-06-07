@@ -37,7 +37,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         <h2 className='mb-5 line-clamp-2 font-kyiv text-h3 font-bold text-green text-inherit md:mb-10 md:text-h3_tab xl:text-h3_desk'>
           {title}
         </h2>
-        <p className='paragraph mb-5 line-clamp-4 text-darkGrey md:mb-10 xl:w-[492px]'>
+        <p className='paragraph mb-5 line-clamp-4 md:mb-10 xl:w-[492px]'>
           {description}
         </p>
         <LinkButton href={link} variant='secondary'>

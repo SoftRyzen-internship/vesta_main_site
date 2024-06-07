@@ -90,6 +90,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require('tailwind-scrollbar'),
     tailwindScrollbar({
       nocompatible: true,
       preferredStrategy: 'pseudoelements',

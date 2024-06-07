@@ -1,12 +1,9 @@
-import { FormBlock } from '@/components/common/Form';
+import { ContactsPage } from '@/sections/ContactsPage';
 
 export default function Page() {
   return (
     <>
-      <h1>Contacts</h1>
-      <div className='container'>
-        <FormBlock className='my-20' />
-      </div>
+        <ContactsPage />
     </>
   );
 }
