@@ -2,6 +2,8 @@
 
 import { FC, useState } from 'react';
 
+import { clsx } from 'clsx';
+
 import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
@@ -34,7 +36,12 @@ export const ProjectsPage: FC = () => {
   return (
     <section id='projects' className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
-        <ul>
+        <ul
+          className={clsx(
+            projects.length > initialProjectsList && 'mb-10 mdOnly:mb-[30px]',
+            'flex flex-col gap-10 mdOnly:gap-[30px]',
+          )}
+        >
           {projects
             .slice(0, displayProjects)
             .map(({ id, img, imgAlt, title, description }, index) => (
