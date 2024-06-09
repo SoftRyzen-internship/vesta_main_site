@@ -10,9 +10,8 @@ import { ProjectCard } from '@/components/common/ProjectCard';
 import { projectsJson } from '@/data';
 
 export const ProjectsPage: FC = () => {
-  const initialProjectsList = 6;
-  const incrementProjectsList = 6;
-  const [displayProjects, setDisplayProjects] = useState(initialProjectsList);
+  const visibleProjects = 6;
+  const [displayProjects, setDisplayProjects] = useState(visibleProjects);
 
   const {
     linkText,
@@ -21,11 +20,11 @@ export const ProjectsPage: FC = () => {
   } = projectsJson;
 
   const loadMore = () => {
-    setDisplayProjects(displayProjects + incrementProjectsList);
+    setDisplayProjects(displayProjects + visibleProjects);
   };
 
   const hideAll = () => {
-    setDisplayProjects(initialProjectsList);
+    setDisplayProjects(visibleProjects);
   };
 
   const sortById = () => {
@@ -38,7 +37,7 @@ export const ProjectsPage: FC = () => {
       <div className='container'>
         <ul
           className={clsx(
-            projects.length > initialProjectsList && 'mb-10 mdOnly:mb-[30px]',
+            projects.length > visibleProjects && 'mb-10 mdOnly:mb-[30px]',
             'flex flex-col gap-10 mdOnly:gap-[30px]',
           )}
         >

@@ -15,16 +15,15 @@ export const NewsPage = () => {
     buttonText: { more, hide },
     news,
   } = newsPageData;
-  const initialNewsList = 4;
-  const incrementInitialNewsList = 4;
-  const [displayNews, setDisplayNews] = useState(initialNewsList);
+  const visibleNews = 4;
+  const [displayNews, setDisplayNews] = useState(visibleNews);
 
   const loadMore = () => {
-    setDisplayNews(displayNews + incrementInitialNewsList);
+    setDisplayNews(displayNews + visibleNews);
   };
 
   const hideAll = () => {
-    setDisplayNews(initialNewsList);
+    setDisplayNews(visibleNews);
   };
 
   const sortByDate = () => {
