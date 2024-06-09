@@ -8,6 +8,7 @@ export interface IButtonProps {
     | 'closeMenu'
     | 'openTeamMember'
     | 'openMenu'
-    | 'play';
+    | 'play'
+    | 'moreProjects';
   className?: string;
 }

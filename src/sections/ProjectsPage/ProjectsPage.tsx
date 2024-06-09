@@ -32,7 +32,7 @@ export const ProjectsPage: FC = () => {
   sortById();
 
   return (
-    <section id='projects'>
+    <section id='projects' className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
         <ul>
           {projects
@@ -53,11 +53,19 @@ export const ProjectsPage: FC = () => {
         </ul>
 
         {projects.length > displayProjects ? (
-          <Button onClick={loadMore} className='xl:mx-auto xl:block'>
+          <Button
+            variant='moreProjects'
+            onClick={loadMore}
+            className='md:w-[200px] xl:mx-auto xl:block xl:w-[200px]'
+          >
             {more}
           </Button>
         ) : projects.length <= displayProjects && displayProjects > 6 ? (
-          <Button onClick={hideAll} className='xl:mx-auto xl:block'>
+          <Button
+            variant='moreProjects'
+            onClick={hideAll}
+            className='md:w-[200px] xl:mx-auto xl:block xl:w-[200px]'
+          >
             {hide}
           </Button>
         ) : null}

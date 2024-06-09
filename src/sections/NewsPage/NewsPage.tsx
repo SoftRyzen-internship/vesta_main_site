@@ -55,14 +55,20 @@ export const NewsPage = () => {
             ))}
         </ul>
         {news.length > displayNews ? (
-          <Button onClick={loadMore} className='xl:mx-auto xl:block'>
+          <Button
+            onClick={loadMore}
+            className='w-full md:w-[328px] xl:mx-auto xl:block xl:w-[240px]'
+          >
             {more}
           </Button>
-        ) : (
-          <Button onClick={hideAll} className='xl:mx-auto xl:block'>
+        ) : news.length <= displayNews && displayNews > 4 ? (
+          <Button
+            onClick={hideAll}
+            className='w-full md:w-[328px] xl:mx-auto xl:block xl:w-[240px]'
+          >
             {hide}
           </Button>
-        )}
+        ) : null}
       </div>
     </section>
   );
