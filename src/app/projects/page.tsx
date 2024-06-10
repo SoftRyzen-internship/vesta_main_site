@@ -1,9 +1,8 @@
-import { ProjectTemplate } from "@/sections/ProjectTemplate";
 
 export default function Page() {
   return (
-    <>
-      <ProjectTemplate/>
-    </>
+    <h1>
+      Projects
+    </h1>
   );
 }

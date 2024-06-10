@@ -2,14 +2,15 @@ import { FC } from 'react';
 
 import Image from 'next/image';
 
-import { projectTemplateData } from '@/data';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
+import { projectTemplateData } from '@/data';
 
 export const ProjectTemplate: FC = () => {
   const {
     full: { title, description, socials, img, imgAlt, subtitle, text },
   } = projectTemplateData;
+
   // const {
   //   short: { title, description, socials, img, imgAlt, subtitle, text },
   // } = projectTemplateData;
