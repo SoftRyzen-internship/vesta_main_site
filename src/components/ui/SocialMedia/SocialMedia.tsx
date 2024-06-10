@@ -12,6 +12,7 @@ import SocialsTwitter from '@/../public/icons/socialsTwitter.svg';
 import SoundCloud from '@/../public/icons/soundCloud.svg';
 import SpotifyIcon from '@/../public/icons/spotifyIcon.svg';
 import Diya from '@/../public/icons/diya.svg';
+import YoutubeMusic from '@/../public/icons/youtubeMusic.svg';
 
 export const SocialMedia: FC<SocialMediaProps> = ({
   socialMedia,
@@ -58,6 +59,12 @@ export const SocialMedia: FC<SocialMediaProps> = ({
               )}
               {value === 'diya' && (
                 <Diya width={24} height={24} fill='currentColor' />
+              )}
+              {value === 'diya' && (
+                <Diya width={24} height={24} fill='currentColor' />
+              )}
+              {value === 'youtubeMisic' && (
+                <YoutubeMusic width={22} height={22} fill='currentColor' />
               )}
             </a>
           </li>
