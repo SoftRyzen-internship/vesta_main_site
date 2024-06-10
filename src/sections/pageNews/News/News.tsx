@@ -9,7 +9,7 @@ import { formatDate } from '@/utils';
 
 import { newsPageData } from '@/data';
 
-export const NewsPage = () => {
+export const News = () => {
   const {
     title,
     buttonText: { more, hide },

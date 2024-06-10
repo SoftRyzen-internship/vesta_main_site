@@ -8,7 +8,7 @@ import { LinkButton } from '@/components/ui/LinkButton';
 
 import { formatDate } from '@/utils';
 
-import { news, newsData } from '@/data';
+import { newsPageData, newsData } from '@/data';
 
 export const News: FC = () => {
   const { id } = useParams();
@@ -16,7 +16,9 @@ export const News: FC = () => {
   const { title, openNewsTitle, newsButton, hrefLink, lastVisible } = newsData;
 
   const sortByDate = () => {
-    return news.sort((a, b) => formatDate(b.date) - formatDate(a.date));
+    return newsPageData.news.sort(
+      (a, b) => formatDate(b.date) - formatDate(a.date),
+    );
   };
   sortByDate();
 
@@ -34,7 +36,7 @@ export const News: FC = () => {
           </LinkButton>
         </div>
         <ul className='flex flex-col gap-[25px] xl:flex-row'>
-          {news.slice(0, lastVisible).map(i => (
+          {newsPageData.news.slice(0, lastVisible).map(i => (
             <li key={i.id}>
               <NewsCard
                 id={i.id}
