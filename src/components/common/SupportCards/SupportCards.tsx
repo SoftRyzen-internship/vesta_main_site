@@ -21,7 +21,7 @@ export const SupportCards: FC<ISupportProps> = ({
 
   useEffect(() => {
     if (isDesktop) {
-      const animation = animate(initialValue, amountOfHelp, { duration: 3 });
+      const animation = animate(initialValue, amountOfHelp, { duration: 5 });
       return animation.stop;
     }
   }, [isDesktop, initialValue, amountOfHelp]);
@@ -38,7 +38,17 @@ export const SupportCards: FC<ISupportProps> = ({
       )}
     >
       <div className='flex flex-col gap-2 px-[2px] py-[100px] text-center md:px-[22px] md:py-[108px] xl:px-[66px] xl:py-[113px]'>
-        <motion.p className='font-kyiv text-h1 font-bold md:text-h1_tab xl:text-h1_desk'>
+        <motion.p
+          className='font-kyiv text-h1 font-bold md:text-h1_tab xl:text-h1_desk'
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.8 }}
+          variants={{
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+        >
           {isDesktop ? animatedValue : amountOfHelp}
         </motion.p>
         <p className='text-body3 xl:text-body3_desk'>{typeOfHelp}</p>
