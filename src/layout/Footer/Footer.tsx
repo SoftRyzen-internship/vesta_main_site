@@ -14,6 +14,7 @@ import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
 
+
 export const Footer: FC = () => {
   return (
     <footer className='bg-green'>
