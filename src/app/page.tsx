@@ -10,7 +10,6 @@ import { Contacts } from '@/sections/Contacts';
 import { Dwelling } from '@/sections/Dwelling';
 import { News } from '@/sections/News';
 
-
 export default function Home() {
   return (
     <>
