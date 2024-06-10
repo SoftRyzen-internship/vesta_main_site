@@ -5,18 +5,18 @@ import Image from 'next/image';
 
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { mainProjectsData } from '@/data';
+import { projectsData } from '@/data';
 
 import { getSpecialWords } from '@/utils';
 
-export const MainProjects: FC = () => {
+export const Projects: FC = () => {
   const {
     title,
     description,
     img,
     imgAlt,
     buttonProps: { text, link },
-  } = mainProjectsData;
+  } = projectsData;
 
   return (
     <section className='py-[60px] md:py-[50px] xl:py-[65px]'>

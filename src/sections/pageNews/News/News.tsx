@@ -9,22 +9,21 @@ import { formatDate } from '@/utils';
 
 import { newsPageData } from '@/data';
 
-export const NewsPage = () => {
+export const News = () => {
   const {
     title,
     buttonText: { more, hide },
     news,
   } = newsPageData;
-  const initialNewsList = 4;
-  const incrementInitialNewsList = 4;
-  const [displayNews, setDisplayNews] = useState(initialNewsList);
+  const visibleNews = 4;
+  const [displayNews, setDisplayNews] = useState(visibleNews);
 
   const loadMore = () => {
-    setDisplayNews(displayNews + incrementInitialNewsList);
+    setDisplayNews(displayNews + visibleNews);
   };
 
   const hideAll = () => {
-    setDisplayNews(initialNewsList);
+    setDisplayNews(visibleNews);
   };
 
   const sortByDate = () => {
@@ -55,14 +54,20 @@ export const NewsPage = () => {
             ))}
         </ul>
         {news.length > displayNews ? (
-          <Button onClick={loadMore} className='block xl:mx-auto'>
+          <Button
+            onClick={loadMore}
+            className='w-full md:w-[328px] xl:mx-auto xl:block xl:w-[240px]'
+          >
             {more}
           </Button>
-        ) : (
-          <Button onClick={hideAll} className='block xl:mx-auto'>
+        ) : news.length <= displayNews && displayNews > 4 ? (
+          <Button
+            onClick={hideAll}
+            className='w-full md:w-[328px] xl:mx-auto xl:block xl:w-[240px]'
+          >
             {hide}
           </Button>
-        )}
+        ) : null}
       </div>
     </section>
   );

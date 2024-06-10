@@ -36,6 +36,8 @@ export const Button: FC<IButtonProps> = ({
           'stroke-bgWhite hover:stroke-hoverDark focus:stroke-[#B25A17] active:stroke-orangeText',
         variant === 'openMenu' &&
           'stroke-bgWhite hover:stroke-orangeText focus:stroke-[#B25A17] active:stroke-hoverDark',
+        variant === 'moreProjects' &&
+          'flex h-[53px] w-full items-center justify-center border-[0.50px] border-solid border-orangeText bg-transparent text-button font-bold uppercase tracking-[0.03em] text-orangeText hover:bg-orangeText hover:text-bgWhite focus:bg-orangeText focus:text-bgWhite active:bg-orangeText active:text-bgWhite',
         className,
       )}
     >

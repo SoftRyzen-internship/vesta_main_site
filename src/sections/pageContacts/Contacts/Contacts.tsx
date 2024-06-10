@@ -7,7 +7,7 @@ import { contactsPageData } from '@/data';
 import EmailIcon from '@/../public/icons/mail.svg';
 import PhoneIcon from '@/../public/icons/phone.svg';
 
-export const ContactsPage: FC = () => {
+export const Contacts: FC = () => {
   const { title, email, phoneTitle, phone, services, formTitle } =
     contactsPageData;
 
