@@ -9,7 +9,7 @@ import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { projectsJson } from '@/data';
 
-export const ProjectsPage: FC = () => {
+export const Projects: FC = () => {
   const visibleProjects = 6;
   const [displayProjects, setDisplayProjects] = useState(visibleProjects);
 

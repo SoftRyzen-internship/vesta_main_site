@@ -1,11 +1,11 @@
 import { HeroLess } from '@/sections/HeroLess';
-import { ProjectsPage } from '@/sections/ProjectsPage';
+import { Projects } from '@/sections/pageProjects/Projects';
 
 export default function Page() {
   return (
     <>
       <HeroLess />
-      <ProjectsPage />
+      <Projects />
     </>
   );
 }

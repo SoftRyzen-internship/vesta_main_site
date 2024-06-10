@@ -9,8 +9,8 @@ export default function Page() {
     <>
       <HeroLess />
       <Support />
-      <Partners />
       <Team />
+      <Partners />
       <News />
     </>
   );

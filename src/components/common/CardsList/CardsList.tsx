@@ -7,6 +7,8 @@ import { GettingKnowTeamCard } from '../GettingKnowTeamCard';
 import { CardListProps } from './CardList.types';
 
 import { useWindowSize } from '@/utils';
+import { clsx } from 'clsx';
+import { usePathname } from 'next/navigation';
 
 export const CardsList: FC<CardListProps> = ({
   items,
@@ -14,11 +16,17 @@ export const CardsList: FC<CardListProps> = ({
   path,
   section,
 }) => {
+  const pathname = usePathname();
   const { width } = useWindowSize();
   const isMobile = width && width < 768 ? true : false;
   return (
     <>
-      <ul className='mb-[60px] flex gap-2.5 overflow-x-auto pb-10 scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full sm:mb-[60px] md:mb-0 md:flex-wrap md:gap-6 xl:gap-6'>
+      <ul
+        className={clsx(
+          pathname === '/about' && 'mb-0',
+          'mb-[60px] flex gap-2.5 overflow-x-auto scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full smOnly:pb-10 md:mb-0 md:flex-wrap md:gap-6 xl:gap-6',
+        )}
+      >
         {items.map(
           ({
             id,

@@ -19,7 +19,7 @@ export const Support: FC = () => {
     cards,
   } = supportAboutData;
   return (
-    <section className='pb-[60px] pt-[136px]'>
+    <section className='smOnly:py-[60px] md:pt-[100px] xl:pt-[130]'>
       <div className='container'>
         <div className='xl:mb-[130px] xl:flex xl:justify-between'>
           <h2 className='mb-[30px] font-kyiv text-h3 text-green md:w-[596px] md:text-h3_tab xl:mb-0 xl:text-h3_desk'>
