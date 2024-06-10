@@ -4,10 +4,7 @@ import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { DwellingCard } from '@/components/common/DwellingCard';
-
 import { LinkButton } from '@/components/ui/LinkButton';
-import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
-import { ProjectCard } from '@/components/common/ProjectCard';
 
 import { dwellings, projects } from '@/data';
 import { socialMedia } from '@/data';
@@ -92,6 +89,7 @@ export const Viewer = () => {
           ),
         )}
       </div>
+      
     </div>
   );
 };

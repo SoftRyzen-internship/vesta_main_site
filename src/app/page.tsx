@@ -11,7 +11,6 @@ import { Dwelling } from '@/sections/Dwelling';
 import { News } from '@/sections/News';
 import { AboutOrganisation } from '@/sections/AboutOrganisation';
 
-
 export default function Home() {
   return (
     <>
