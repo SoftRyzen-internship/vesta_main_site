@@ -9,11 +9,13 @@ import { Services } from '@/sections/Services';
 import { Contacts } from '@/sections/Contacts';
 import { Dwelling } from '@/sections/Dwelling';
 import { News } from '@/sections/News';
+import { AboutOrganisation } from '@/sections/AboutOrganisation';
 
 export default function Home() {
   return (
     <>
       <MainHero />
+      <AboutOrganisation/>
       <MainProjects />
       <Services />
       <Donation />
