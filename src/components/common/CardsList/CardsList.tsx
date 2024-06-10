@@ -1,14 +1,15 @@
 'use client';
 
 import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+
+import { clsx } from 'clsx';
 
 import { GettingKnowTeamCard } from '../GettingKnowTeamCard';
 
 import { CardListProps } from './CardList.types';
 
 import { useWindowSize } from '@/utils';
-import { clsx } from 'clsx';
-import { usePathname } from 'next/navigation';
 
 export const CardsList: FC<CardListProps> = ({
   items,

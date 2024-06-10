@@ -3,12 +3,14 @@
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { clsx } from 'clsx';
+
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
 import { useWindowSize } from '@/utils';
+
 import { teamCard, teamData } from '@/data';
-import { clsx } from 'clsx';
 
 export const Team: FC = () => {
   const pathName = usePathname();
