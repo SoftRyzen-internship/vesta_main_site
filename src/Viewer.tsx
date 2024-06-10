@@ -5,6 +5,7 @@ import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { DwellingCard } from '@/components/common/DwellingCard';
 
+
 import { LinkButton } from '@/components/ui/LinkButton';
 
 import { dwellings } from '@/data';
