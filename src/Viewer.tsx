@@ -6,10 +6,8 @@ import { SocialMedia } from '@/components/ui/SocialMedia';
 import { DwellingCard } from '@/components/common/DwellingCard';
 
 import { LinkButton } from '@/components/ui/LinkButton';
-import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
-import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { dwellings, projects } from '@/data';
+import { dwellings } from '@/data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
@@ -73,25 +71,6 @@ export const Viewer = () => {
         <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
       </div>
 
-      <div className='flex flex-wrap gap-6 '>
-        <GettingKnowTeamCard />
-      </div>
-      <div className='flex flex-col gap-10 py-16'>
-        {projects.map(
-          ({ id, img, imgAlt, title, description, linkText, link }, index) => (
-            <ProjectCard
-              key={id}
-              img={img}
-              imgAlt={imgAlt}
-              title={title}
-              description={description}
-              linkText={linkText}
-              link={link}
-              isOddCard={index % 2 ? false : true}
-            />
-          ),
-        )}
-      </div>
     </div>
   );
 };
