@@ -42,10 +42,9 @@ export const MainProjects: FC = () => {
         <div>
           <Image
             src={img}
-            width={328}
+            width={448}
             height={260}
             alt={imgAlt}
-            sizes='(min-width: 1280px) 562px, 100%'
             className='h-[260px] w-full object-cover md:h-[470px] xl:h-[470px] xl:w-[562px]'
           />
         </div>
