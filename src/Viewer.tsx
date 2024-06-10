@@ -3,12 +3,8 @@
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
-import { DwellingCard } from '@/components/common/DwellingCard';
-
-
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { dwellings } from '@/data';
 import { socialMedia } from '@/data';
 
 export const Viewer = () => {
@@ -64,14 +60,6 @@ export const Viewer = () => {
         />
         <SocialMedia socialMedia={socialMedia} lightMode={true} />
       </div>
-
-      {/* <div className='py-16'>
-        <PartnerCard img={partners.img} name={partners.name} />
-      </div> */}
-      <div className='py-16'>
-        <DwellingCard city={dwellings.city} contacts={dwellings.contacts} />
-      </div>
-
     </div>
   );
 };

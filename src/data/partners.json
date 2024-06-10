@@ -1,13 +1,34 @@
-
-[{ "id":1,"src": "/images/partners/bugurt.png", "name": "Бугурт Cіч" },
-{ "id":2,"src": "/images/partners/vaps.png", "name": "Вапц" },
-{ "id":3,"src": "/images/partners/medok.png", "name": "Medok" },
-{ "id":4,"src": "/images/partners/nextstep.png", "name": "NextStep Ukraine" },
-{ "id":5,"src": "/images/partners/women.png", "name": "Жіноча Сила України" },
-{ "id":6,"src": "/images/partners/nads.png", "name": "НАДС" },
-{ "id":7,"src": "/images/partners/militaryhub.png", "name": "Kyiv military hub" },
-{ "id":8,"src": "/images/partners/freedom.png", "name": "Вільний вибір" },
-{ "id":9,"src": "/images/partners/afterarmy.png", "name": "Після служби" },
-{ "id":10,"src": "/images/partners/revival.png", "name": "Відродження" },
-{ "id":11,"src": "/images/partners/opportunities.png", "name": "Простір Можливостей" },
-{ "id":12,"src": "/images/partners/ministry.png", "name": "Міністерство у справах ветеранів України" }]
+[
+  { "id": 1, "src": "/images/partners/bugurt.png", "name": "Бугурт Cіч" },
+  { "id": 2, "src": "/images/partners/vaps.png", "name": "Вапц" },
+  { "id": 3, "src": "/images/partners/medok.png", "name": "Medok" },
+  {
+    "id": 4,
+    "src": "/images/partners/nextstep.png",
+    "name": "NextStep Ukraine"
+  },
+  {
+    "id": 5,
+    "src": "/images/partners/women.png",
+    "name": "Жіноча Сила України"
+  },
+  { "id": 6, "src": "/images/partners/nads.png", "name": "НАДС" },
+  {
+    "id": 7,
+    "src": "/images/partners/militaryhub.png",
+    "name": "Kyiv military hub"
+  },
+  { "id": 8, "src": "/images/partners/freedom.png", "name": "Вільний вибір" },
+  { "id": 9, "src": "/images/partners/afterarmy.png", "name": "Після служби" },
+  { "id": 10, "src": "/images/partners/revival.png", "name": "Відродження" },
+  {
+    "id": 11,
+    "src": "/images/partners/opportunities.png",
+    "name": "Простір Можливостей"
+  },
+  {
+    "id": 12,
+    "src": "/images/partners/veterano.png",
+    "name": "Міністерство у справах ветеранів України"
+  }
+]

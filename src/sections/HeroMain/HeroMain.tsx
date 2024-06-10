@@ -4,12 +4,12 @@ import { clsx } from 'clsx';
 
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { mainHeroData } from '@/data';
+import { heroMainData } from '@/data';
 
-import s from './MainHero.module.css';
+import s from './HeroMain.module.css';
 
-export const MainHero: FC = () => {
-  const { type, title, requestButton, hrefLink } = mainHeroData;
+export const HeroMain: FC = () => {
+  const { type, title, requestButton, hrefLink } = heroMainData;
 
   return (
     <section
