@@ -5,18 +5,18 @@ import { IDwellingCardProps } from './DwellingCard.types';
 
 export const DwellingCard: FC<IDwellingCardProps> = ({ city, contacts }) => {
   return (
-    <div className='border-darkGrey flex w-full items-start gap-[38px] border-b-[0.50px] border-solid pb-[30px] md:gap-[49px] xl:w-[595px]'>
-      <h3 className='text-body2 text-green md:text-body2_tab xl:text-body2_desk w-[115px] font-medium md:w-[261px]'>
+    <div className='flex h-[84px] w-full items-start gap-[38px] border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:gap-[49px] xl:w-[595px]'>
+      <h3 className='w-[115px] text-body2 font-medium text-green md:w-[261px] md:text-body2_tab xl:text-body2_desk'>
         {city}
       </h3>
       <ul>
         {contacts.map(({ link, text, target, rel }, index) => (
-          <li key={index} className=' leading-none  first:mb-[10px]'>
+          <li key={index} className='leading-none first:mb-[10px]'>
             <Link
               href={link}
               target={target}
               rel={rel}
-              className='paragraph text-darkGrey hover:text-hoverDark focus:text-orangeText'
+              className='paragraph  hover:text-hoverDark focus:text-orangeText'
             >
               {text}
             </Link>

@@ -19,8 +19,16 @@ export { default as buttons } from './buttons.json';
 export { default as gettingKnowTeamCard } from './gettingKnowTeamCard.json';
 export { default as projects } from './projects.json';
 
+export {default as partnersData} from './partnersData.json'
+export {default as teamData} from './teamData.json'
+
+export { default as dwellingData } from './dwellingData.json';
+
 export { default as footer } from './footer.json';
 export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
 export { default as supportAboutData } from './supportAboutData.json';
 export { default as mainProjectsData } from './mainProjectsData.json';
+export { default as newsPageData } from './newsPageData.json';
+export { default as heroAboutData } from './heroAboutData.json';
+export { default as contactsPageData } from './contactsPageData.json';

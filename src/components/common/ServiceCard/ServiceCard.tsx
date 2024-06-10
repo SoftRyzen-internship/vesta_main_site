@@ -3,19 +3,16 @@ import Image from 'next/image';
 
 import { IServiceCardProps } from './ServiceCard.types';
 
-import { service } from '@/data';
-
 import img from '@/../public/images/services/service-desk@1x.png';
 
 import s from './ServiceCard.module.css';
 
 export const ServiceCard: FC<IServiceCardProps> = ({
-  title = service.title,
-  src = img,
-  alt = service.alt,
-  description = service.description,
-  count = '01',
-  countAll = '03',
+  title,
+  alt,
+  description,
+  count,
+  countAll,
 }) => {
   return (
     <div
@@ -39,7 +36,7 @@ export const ServiceCard: FC<IServiceCardProps> = ({
         <Image
           fill
           className='object-cover'
-          src={src}
+          src={img}
           alt={alt}
           sizes='(max-width: 1280px) 496px, 402px'
         />
