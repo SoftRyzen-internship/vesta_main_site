@@ -29,3 +29,4 @@ export { default as aboutOrganisation } from './aboutOrganisation.json';
 export { default as footer } from './footer.json';
 export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
+export { default as projectTemplateData } from './projectTemplateData.json';
