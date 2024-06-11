@@ -19,7 +19,7 @@ export const Partners: FC = () => {
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
-        <div className='mb-[40px] flex  flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
+        <div className='mb-[40px] flex flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
           <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
             {partnersData.title}
           </h2>

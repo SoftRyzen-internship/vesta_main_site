@@ -1,9 +1,5 @@
-import { ContactsPage } from '@/sections/ContactsPage';
+import { Contacts } from '@/sections/pageContacts/Contacts';
 
 export default function Page() {
-  return (
-    <>
-        <ContactsPage />
-    </>
-  );
+  return <Contacts />;
 }

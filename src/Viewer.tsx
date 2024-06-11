@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/Button';
 import { SocialMedia } from '@/components/ui/SocialMedia';
+
 import { LinkButton } from '@/components/ui/LinkButton';
 
 import { socialMedia } from '@/data';

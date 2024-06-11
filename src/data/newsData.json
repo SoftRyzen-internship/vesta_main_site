@@ -2,5 +2,7 @@
   "title": "Новини та публікації",
   "openNewsTitle": "Інші новини",
   "newsButton": "Дивитись всі",
-  "hrefLink": "/news"
+  "buttonText": { "more": "Більше", "hide": "Сховати" },
+  "hrefLink": "/news",
+  "lastVisible": 2
 }
