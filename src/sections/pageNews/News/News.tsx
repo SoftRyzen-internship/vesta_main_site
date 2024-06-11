@@ -38,20 +38,11 @@ export const News = () => {
           {title}
         </h1>
         <ul className='mb-[64px] flex flex-col items-center gap-10 md:mb-[100px] md:gap-[60px] xl:mb-[60px] xl:flex-row xl:flex-wrap xl:gap-x-[25px] xl:gap-y-10'>
-          {news
-            .slice(0, displayNews)
-            .map(({ id, img, imgAlt, date, title, description }) => (
-              <li key={id}>
-                <NewsCard
-                  id={id}
-                  img={img}
-                  imgAlt={imgAlt}
-                  date={date}
-                  title={title}
-                  description={description}
-                />
-              </li>
-            ))}
+          {news.slice(0, displayNews).map(item => (
+            <li key={item.id}>
+              <NewsCard item={item} />
+            </li>
+          ))}
         </ul>
         {news.length > displayNews ? (
           <Button

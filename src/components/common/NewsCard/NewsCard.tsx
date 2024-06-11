@@ -5,12 +5,7 @@ import Link from 'next/link';
 import { INewsCardProps } from './NewsCard.types';
 
 export const NewsCard: FC<INewsCardProps> = ({
-  id,
-  img,
-  imgAlt,
-  date,
-  title,
-  description,
+  item: { id, img, imgAlt, date, title, description },
 }) => {
   return (
     <Link

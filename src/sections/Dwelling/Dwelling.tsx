@@ -18,9 +18,9 @@ export const Dwelling: FC = () => {
           </LinkButton>
         </div>
         <ul className='flex flex-col gap-[30px]'>
-          {dwellings.map(({ id, city, contacts }) => (
-            <li key={id}>
-              <DwellingCard city={city} contacts={contacts} />
+          {dwellings.map(item => (
+            <li key={item.id}>
+              <DwellingCard item={item} />
             </li>
           ))}
         </ul>
