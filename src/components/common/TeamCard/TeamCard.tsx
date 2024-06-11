@@ -8,13 +8,7 @@ import { ITeamCardProps } from './TeamCard.types';
 import { TeamCardModal } from '../TeamCardModal';
 
 export const TeamCard: FC<ITeamCardProps> = ({
-  name,
-  src,
-  alt,
-  position,
-  description,
-  plug,
-  socialMedia,
+  item: { name, src, alt, position, description, plug, socialMedia },
 }) => {
   const [openModal, setIsOpenModal] = useState(false);
   const onClick = () => {

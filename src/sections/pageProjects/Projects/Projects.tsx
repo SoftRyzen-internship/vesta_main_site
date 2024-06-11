@@ -41,21 +41,15 @@ export const Projects: FC = () => {
             'flex flex-col gap-10 mdOnly:gap-[30px]',
           )}
         >
-          {projects
-            .slice(0, displayProjects)
-            .map(({ id, img, imgAlt, title, description }, index) => (
-              <li key={id}>
-                <ProjectCard
-                  id={id}
-                  img={img}
-                  imgAlt={imgAlt}
-                  title={title}
-                  description={description}
-                  linkText={linkText}
-                  isOddCard={index % 2 ? false : true}
-                />
-              </li>
-            ))}
+          {projects.slice(0, displayProjects).map((item, index) => (
+            <li key={item.id}>
+              <ProjectCard
+                item={item}
+                linkText={linkText}
+                isOddCard={index % 2 ? false : true}
+              />
+            </li>
+          ))}
         </ul>
 
         {projects.length > displayProjects ? (

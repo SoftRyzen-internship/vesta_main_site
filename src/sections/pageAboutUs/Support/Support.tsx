@@ -47,17 +47,17 @@ export const Support: FC = () => {
             {subtitle}
           </p>
           <ul className='md:w-[566px] xl:w-[492px]'>
-            {cards.map(({ icon, title, description }, index) => (
+            {cards.map((item, index) => (
               <li key={index} className='mb-10 last:mb-0'>
                 <SupportCardAbout
-                  icon={
-                    (icon === 'balanceIcon' && icon) ||
-                    (icon === 'infoIcon' && icon) ||
-                    (icon === 'heartHandIcon' && icon) ||
-                    'heartHandIcon'
-                  }
-                  title={title}
-                  description={description}
+                  item={{
+                    ...item,
+                    icon:
+                      (item.icon === 'balanceIcon' && item.icon) ||
+                      (item.icon === 'infoIcon' && item.icon) ||
+                      (item.icon === 'heartHandIcon' && item.icon) ||
+                      'heartHandIcon',
+                  }}
                 />
               </li>
             ))}

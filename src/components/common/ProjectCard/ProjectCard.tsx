@@ -8,11 +8,7 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { IProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard: FC<IProjectCardProps> = ({
-  id,
-  img,
-  imgAlt,
-  title,
-  description,
+  item: { id, img, imgAlt, title, description },
   linkText,
   isOddCard,
 }) => {
