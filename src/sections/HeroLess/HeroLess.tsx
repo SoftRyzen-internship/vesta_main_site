@@ -64,7 +64,7 @@ export const HeroLess: FC = () => {
             width={36}
             height={36}
             fill='#F3EFE9'
-            className='transition group-hover:fill-orangeText group-focus:fill-orangeText'
+            className='transition group-hover:fill-hoverOrange group-focus:fill-focusOrange'
           />
           <p
             className={clsx(
