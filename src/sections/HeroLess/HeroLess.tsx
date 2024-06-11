@@ -8,6 +8,8 @@ import { Link as ScrollLink } from 'react-scroll';
 
 import { heroLessData } from '@/data';
 
+import ArrowDown from '@/../public/icons/arrowDown.svg';
+
 import s from './HeroLess.module.css';
 
 export const HeroLess: FC = () => {
@@ -56,11 +58,17 @@ export const HeroLess: FC = () => {
           smooth={true}
           duration={800}
           offset={13}
+          className='group mr-auto flex w-max items-center gap-[15px]'
         >
+          <ArrowDown
+            width={36}
+            height={36}
+            fill='#F3EFE9'
+            className='transition group-hover:fill-orangeText group-focus:fill-orangeText'
+          />
           <p
             className={clsx(
-              'relative ml-[51px] max-w-[255px] text-body3 text-bgText xl:text-body3_desk',
-              s.description,
+              'max-w-[255px] text-body3 text-bgText xl:text-body3_desk',
             )}
           >
             {description}
