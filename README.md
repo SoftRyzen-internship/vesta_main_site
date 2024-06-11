@@ -1,7 +1,7 @@
 # Vesta
 
   <a href="https://vesta-main-site.vercel.app/">
-    <img src="/public/images/read-me/image.png" alt="Vesta" />
+    <img src="/public/images/readme/image.png" alt="Vesta" />
   </a>
 
 ##
