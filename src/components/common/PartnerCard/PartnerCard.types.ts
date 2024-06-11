@@ -1,4 +1,6 @@
 export interface IPartnerCardProps {
-  src: string;
-  name: string;
+  item: {
+    src: string;
+    name: string;
+  }
 }

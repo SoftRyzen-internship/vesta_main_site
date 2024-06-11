@@ -29,30 +29,11 @@ export const CardsList: FC<CardListProps> = ({
           'mb-[60px] flex gap-2.5 overflow-x-auto scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full smOnly:pb-10 md:mb-0 md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-6',
         )}
       >
-        {items.map(
-          ({
-            id,
-            src,
-            name,
-            alt,
-            position,
-            description,
-            plug,
-            socialMedia,
-          }) => (
-            <li key={id} className='scroll-snap-align-start flex-none'>
-              <CardComponent
-                src={src}
-                name={name}
-                alt={alt}
-                position={position}
-                description={description}
-                plug={plug}
-                socialMedia={socialMedia}
-              />
-            </li>
-          ),
-        )}
+        {items.map(item => (
+          <li key={item.id} className='scroll-snap-align-start flex-none'>
+            <CardComponent item={item} />
+          </li>
+        ))}
         {path !== '/about' && section === 'team' && !isMobile && (
           <GettingKnowTeamCard />
         )}
