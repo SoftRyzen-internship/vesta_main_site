@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description: metaData.description,
   keywords: metaData.keywords,
   icons: metaData.icons,
+  alternates: {
+    canonical: `${BASE_APP_URL}`,
+  },
   openGraph: {
     type: 'website',
     url: BASE_APP_URL,
