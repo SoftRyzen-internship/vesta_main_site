@@ -287,16 +287,6 @@ The component is designed to create a team's card.
         </li>
         <li>
           <a
-            href="https://www.sanity.io/"
-          >
-            <img
-              src="https://img.shields.io/badge/sanity-black?style=for-the-badge&logo=sanity"
-              alt="Sanity"
-            />
-          </a>
-        </li>
-        <li>
-          <a
             href="https://react-hook-form.com/"
           >
             <img
