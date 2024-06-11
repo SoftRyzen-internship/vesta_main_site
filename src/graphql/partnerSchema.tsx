@@ -1,13 +1,15 @@
-export const getPartners = `
+import { gql } from 'graphql-request';
+
+export const getPartners = gql`
   query {
     partner {
-      data{
-        attributes{
-          item{
+      data {
+        attributes {
+          item {
             name
             image {
               data {
-                attributes{
+                attributes {
                   url
                 }
               }
@@ -16,4 +18,5 @@ export const getPartners = `
         }
       }
     }
-  }`;
+  }
+`;

@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 
-export const getNews = gql`
+export const getNewsCard = gql`
   query {
     news {
       data {
@@ -8,8 +8,6 @@ export const getNews = gql`
           date
           title
           text
-          videoLink
-          descriptionVideo
           slug
           image {
             data {

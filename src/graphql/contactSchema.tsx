@@ -1,4 +1,7 @@
-export const getContact = `query {
+import { gql } from 'graphql-request';
+
+export const getContact = gql`
+  query {
     contact {
       data {
         attributes {
@@ -9,4 +12,5 @@ export const getContact = `query {
         }
       }
     }
-}`;
+  }
+`;

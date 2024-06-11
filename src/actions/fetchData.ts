@@ -1,15 +1,11 @@
-export const fetchData = async (query: string) => {
+import { request } from 'graphql-request';
 
-    await fetch('https://vesta-admin.onrender.com/graphql', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            query: query,
-        }),
-    })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+export const fetchData = async (query: string) => {
+  try {
+    const data = await request('https://vesta-admin.onrender.com/graphql', query);
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
 };
