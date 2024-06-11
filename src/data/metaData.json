@@ -23,5 +23,17 @@
   "image": {
     "url": "/images/og-image/ogImage.jpg",
     "alt": "Веста"
-  }
+  },
+
+  "titleProjects": "Проекти",
+  "descriptionProjects": "All Vesta projects",
+
+  "titleNews": "Новини",
+  "descriptionNews": "All Vesta News",
+  
+  "titleContacts": "Контакти",
+  "descriptionContacts": "All Vesta Contacts",
+
+  "titleAbout": "Про нас",
+  "descriptionAbout": "All Vesta About"
 }
