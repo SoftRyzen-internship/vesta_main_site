@@ -1,9 +1,5 @@
-import { NewsPage } from '@/sections/NewsPage';
+import { News } from '@/sections/pageNews/News';
 
 export default function Page() {
-  return (
-    <>
-      <NewsPage />
-    </>
-  );
+  return <News />;
 }

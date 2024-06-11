@@ -1,6 +1,9 @@
 'use client';
 
 import { FC } from 'react';
+import { usePathname } from 'next/navigation';
+
+import { clsx } from 'clsx';
 
 import { GettingKnowTeamCard } from '../GettingKnowTeamCard';
 
@@ -14,35 +17,23 @@ export const CardsList: FC<CardListProps> = ({
   path,
   section,
 }) => {
+  const pathname = usePathname();
   const { width } = useWindowSize();
   const isMobile = width && width < 768 ? true : false;
+
   return (
     <>
-      <ul className='mb-[60px] flex gap-2.5 overflow-x-auto pb-10 scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full sm:mb-[60px] md:mb-0 md:flex-wrap md:gap-6 xl:gap-6'>
-        {items.map(
-          ({
-            id,
-            src,
-            name,
-            alt,
-            position,
-            description,
-            plug,
-            socialMedia,
-          }) => (
-            <li key={id} className='scroll-snap-align-start flex-none'>
-              <CardComponent
-                src={src}
-                name={name}
-                alt={alt}
-                position={position}
-                description={description}
-                plug={plug}
-                socialMedia={socialMedia}
-              />
-            </li>
-          ),
+      <ul
+        className={clsx(
+          pathname === '/about' && 'mb-0',
+          'mb-[60px] flex gap-2.5 overflow-x-auto scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full smOnly:pb-10 md:mb-0 md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-6',
         )}
+      >
+        {items.map(item => (
+          <li key={item.id} className='scroll-snap-align-start flex-none'>
+            <CardComponent item={item} />
+          </li>
+        ))}
         {path !== '/about' && section === 'team' && !isMobile && (
           <GettingKnowTeamCard />
         )}

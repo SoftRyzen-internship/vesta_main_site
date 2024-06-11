@@ -1,25 +1,21 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { LinkButton } from '@/components/ui/LinkButton';
 
 import { IProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard: FC<IProjectCardProps> = ({
-  img,
-  imgAlt,
-  title,
-  description,
+  item: { id, img, imgAlt, title, description },
   linkText,
   isOddCard,
-  link,
 }) => {
   return (
     <div
       className={clsx(
-        'border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:flex md:gap-[54px] md:pb-[63px] xl:gap-[129px] xl:pb-10',
+        'overflow-hidden border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:flex md:gap-[54px] md:pb-10 xl:gap-[129px]',
         isOddCard
           ? 'flex-row justify-start xl:gap-[129px]'
           : 'flex-row-reverse justify-end xl:gap-[232px]',
@@ -39,7 +35,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         <p className='paragraph mb-5 line-clamp-4 md:mb-10 xl:w-[492px]'>
           {description}
         </p>
-        <LinkButton href={link} variant='secondary'>
+        <LinkButton href={`/projects/${id}`} variant='secondary'>
           {linkText}
         </LinkButton>
       </div>

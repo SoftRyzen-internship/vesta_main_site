@@ -7,9 +7,7 @@ import { ISupportCardAboutProps } from './SupportCardAbout.types';
 import { getSpecialWords, supportIconTypes } from '@/utils';
 
 export const SupportCardAbout: FC<ISupportCardAboutProps> = ({
-  icon,
-  title,
-  description,
+  item: { icon, title, description },
 }) => {
   const Icon = supportIconTypes[icon];
   return (

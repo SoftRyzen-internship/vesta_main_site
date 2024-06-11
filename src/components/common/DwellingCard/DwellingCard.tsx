@@ -3,7 +3,9 @@ import Link from 'next/link';
 
 import { IDwellingCardProps } from './DwellingCard.types';
 
-export const DwellingCard: FC<IDwellingCardProps> = ({ city, contacts }) => {
+export const DwellingCard: FC<IDwellingCardProps> = ({
+  item: { city, contacts },
+}) => {
   return (
     <div className='flex h-[84px] w-full items-start gap-[38px] border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:gap-[49px] xl:w-[595px]'>
       <h3 className='w-[115px] text-body2 font-medium text-green md:w-[261px] md:text-body2_tab xl:text-body2_desk'>
@@ -16,7 +18,7 @@ export const DwellingCard: FC<IDwellingCardProps> = ({ city, contacts }) => {
               href={link}
               target={target}
               rel={rel}
-              className='paragraph  hover:text-hoverDark focus:text-orangeText'
+              className='paragraph hover:text-hoverDark focus:text-orangeText'
             >
               {text}
             </Link>
