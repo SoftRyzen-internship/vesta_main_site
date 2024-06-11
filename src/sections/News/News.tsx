@@ -38,14 +38,7 @@ export const News: FC = () => {
         <ul className='flex flex-col gap-[25px] xl:flex-row'>
           {newsPageData.news.slice(0, lastVisible).map(i => (
             <li key={i.id}>
-              <NewsCard
-                id={i.id}
-                img={i.img}
-                imgAlt={i.imgAlt}
-                date={i.date}
-                title={i.title}
-                description={i.description}
-              />
+              <NewsCard item={i} />
             </li>
           ))}
         </ul>
