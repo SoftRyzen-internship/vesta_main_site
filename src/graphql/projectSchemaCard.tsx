@@ -1,15 +1,12 @@
 import { gql } from 'graphql-request';
 
-export const getNews = gql`
+export const getProjects = gql`
   query {
-    news {
+    projects {
       data {
         attributes {
-          date
           title
-          text
-          videoLink
-          descriptionVideo
+          description
           slug
           image {
             data {

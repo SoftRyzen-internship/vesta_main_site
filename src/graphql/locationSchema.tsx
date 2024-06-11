@@ -1,5 +1,7 @@
-export const getLocation = `
-query {
+import { gql } from 'graphql-request';
+
+export const getLocation = gql`
+  query {
     location {
       data {
         attributes {
@@ -12,4 +14,5 @@ query {
         }
       }
     }
-}`;
+  }
+`;
