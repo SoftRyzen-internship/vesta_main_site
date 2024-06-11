@@ -82,88 +82,173 @@ $ npm run dev
 ## Components API
 
 <details><summary>Show</summary>
+- #### component Button
 
-- Logo
+The component is for handle click with all style variants of button from layout
 
-| Prop | Default | Description |
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `onClick` | `() => void` | -- | required, function for handle click |
+| `children` | `string` | -- | optional, button children |
+| `variant` | `'primary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` | `'primary'` | optional, variant of button style |
+| `type` | `'button'` `'submit'` `'reset' ` | `'button'` | optional, type of button |
+| `className` | `string` | -- | optional, custom styles |
+
+- #### component Checkbox
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `path` | -- | required, `header` or `footer` and styled is changing |
-| `className` | `""` | optinal, `string` add tailwind styles |
+| `checked` | `boolean` | required, starting value for checked |
+| `handleChange` | `function` | required, the function to control the value into state in the parent component |
+| `errorMessage` | `string or undefined` | optional, can pass text displaying for an error |
+| `text` | `string` | optional, text for the checkbox |
+| `className` | `string` | optional, styles can be passed for the component wrapper |
+| `{...rest}` | `string` | optional, any other attributes that are characteristic of the checkbox (type, etc) |
 
-- ScrollLink
+- #### component dwellingCard
 
-| Prop | Default | Description |
+The component is designed to create a dwelling card.
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `label` | -- | required, `string` button's text |
-| `href` | -- | required, `string` path to page or name of id section for scroll, examples 'policy' or '#sectionId' |
-| `variant` | -- | required, `string` 'primary', 'secondary', 'primary2' see UiKIt (Buttons), 'navlink' for NavBar (desktop, mobile), "policy" for policy page; |
-| `className` | `""` | optinal, `string` add tailwind styles |
+| `city` | `string` | required, dwelling city |
+| `contacts` | `{ link: string; text: string; target?: string; rel?: string }[]` | required, links for contacts info |
 
-- Button
+**FormBlock** includes a form assembly that includes custom inputs, textarea, and checkboxe
 
-| Prop | Default | Description |
+**The remark:** To apply with React-Hook-Form using the library's component - <Controller />
+
+- #### component FormBlock
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `label` | -- | required, `string` button's text |
-| `variant` | -- | required, `string` 'primary' see UiKIt (Buttons), 'readmore' for comments button; |
-| `type` | `button` | optinal, `string` 'button''submit' |
-| `onCLick` | `undefined` | optinal, `() => void` , add the function |
-| `className` | `""` | optinal, `string` add tailwind styles |
+| `className` | `string` | optional, the style can be passed to manage placing the component next to others in the section |
 
-- Modal
+- #### component FormInput
 
-| Prop | Default | Description |
+| Prop | Type | Description |
 | --- | --- | --- |
-| `children` | -- | optional, `ReactNode` content of the modal window with own styles |
-| `isOpen` | -- | required, `boolean` - current state of modal |
-| `close` | `undefined` | required, `() => void`, add the function for closeModal |
-| `variant` | -- | required, `string` "comments" - for comments modal, "burger" - for burgerMenu, "simple" - for other modals |
-| `className` | `""` | optinal, `string` add tailwind styles |
+| `label` | `string` | optional, can pass text displaying for a label |
+| `errorMessage` | `string or undefined` | optional, can pass text displaying for an error message |
+| `className` | `string` | optional, styles can be passed for the component wrapper |
+| `isFilled` | `boolean or undefined` | optional, can pass the status of filling |
+| `{...rest}` | `string` | optional, any other attributes that are characteristic of the input (type, placeholder, etc) |
 
-- ProductAction
+- #### component FormModal
 
-| Prop | Default | Description |
+1. Create state for control showing modal `const [modalOpen, setModalOpen] = useState<boolean>(false);`
+2. The application example - `<FormModal/>`
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `data` | menu | Taka data productAction with massive :id: `number`, action: `string` |
+| `openModal` | `boolean` | required, give created state `show={openModal}` |
+| `onClose` | `() => void` | required, callback with false for your components state `onClose={() => setModalOpen(false)}` |
+| `title` | `string` | required, text for the Title FormModal |
+| `text` | `string` | required, text for the discription FormModal |
+| `isSuccessful` | `boolean` | required, set status for change title and text color |
 
-- Telephones
+- #### component linkButton
 
-| Prop | Default | Description |
+The component is for navigation with all variants of style from layout
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `href` | `string` | -- | required, link path to page |
+| `children` | `string` | -- | required, element children |
+| `variant` | `'primary'` `'secondary'` `'contacts'` | `'primary'` | optional, variant of link style |
+| `rel` | `'string'` | `undefined` | optional, attribute for link |
+| `target` | `'string'` | `undefined` | optional,attribute for link |
+| `className` | `string` | -- | optional, custom styles |
+
+- #### component newsCard
+
+The component is designed to create a news card.
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `id`          | `string` | required, card id             |
+| `img`         | `string` | required, img src             |
+| `imgAlt`      | `string` | required, description for img |
+| `date`        | `string` | required, date of news        |
+| `title`       | `string` | required, title of news       |
+| `description` | `string` | required, description of news |
+
+- #### component partnerCard
+
+The component is designed to create a partner card.
+
+| Prop   | Type     | Description               |
+| ------ | -------- | ------------------------- |
+| `img`  | `string` | required, img src         |
+| `name` | `string` | required, name of partner |
+
+- #### component projectCard
+
+The component is designed to create a project card.
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `path` | -- | required, `contacts` or `footer` and styled is changing |
-| `className` | `""` | optinal, `string` add tailwind styles |
+| `id` | `string` | required, project id |
+| `img` | `string` | required, img src |
+| `imgAlt` | `string` | required, description for img |
+| `title` | `string` | required, title of project |
+| `description` | `string` | required, description of project |
+| `linkText` | `string` | required, button text of project card |
+| `isOddCard` | `boolean` | required, for changing direction of elements (see layout) |
 
-- CardsBenefits
+- #### component scrollBox
 
-| Prop   | Default | Description                       |
-| ------ | ------- | --------------------------------- |
-| `icon` | --      | `JSX.Element`and show icons       |
-| `text` | ---     | `string`, text can change in data |
-| `id`   | ---     | `number`, text can change in data |
+The component is designed to create custom scrollBox.
 
-- SocialMedia
+| Prop        | Type     | Description                 |
+| ----------- | -------- | --------------------------- |
+| `children`  | `string` | required, element children  |
+| `className` | `string` | optional, add custom styles |
 
-| Prop        | Default | Description                              |
-| ----------- | ------- | ---------------------------------------- |
-| `section`   | menu    | required, `menu`, `contacts` or `footer` |
-| `className` | --      | optinal, `string` add tailwind styles    |
+- #### component ServiceCard
 
-- ProductCard
+The component is designed to create a service card.
 
-| Prop | Default | Description |
+| Prop       | Type     | Description                               |
+| ---------- | -------- | ----------------------------------------- |
+| `title`    | `string` | required, sets the title                  |
+| `src`      | `string` | required, sets the src of image           |
+| `alt`      | `string` | required, sets the alt of image           |
+| `count`    | `string` | required, sets the count of service.      |
+| `countAll` | `string` | required, sets the count of all services. |
+
+- #### component supportCards
+
+The component is designed to create a supports card.
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `img` | - | required, `string`, image url |
-| `imgBg` | - | required, `beans`, `wheat`, `vegetables`, `corn`, or `seaweed` |
-| `alt` | - | required, `string`, image description |
-| `name` | - | required, `string`, product name |
-| `descriptionItems` | - | required, `string`,product description |
-| `link` | - | required, `string`, link to product page |
-| `buttonText` | - | required, `string`, text for button |
+| `supportsCards` | `massive` | required, massive include :id, amountOfHelp, typeOfHelp |
+| `id` | `number` | required, sets the id of card |
+| `amountOfHelp` | `number` | required, sets the card helps amount |
+| `typeOfHelp` | `string` | required, sets the card type helps |
 
-- ProductPreference
+- #### component TeamCard
 
-| Prop | Default | Description |
+The component is designed to create a team's card.
+
+| Prop       | Type       | Description                   |
+| ---------- | ---------- | ----------------------------- |
+| `name`     | `string`   | required, team member's name  |
+| `src`      | `string`   | required, img src             |
+| `alt`      | `string`   | required, description for img |
+| `position` | `string`   | required, member's position   |
+| `onClick`  | `()=>void` | optional, function if needed  |
+
+- #### component Textarea
+
+| Prop | Type | Description |
 | --- | --- | --- |
-| `data` | menu | Taka data productPreference with massive :id: `number`, preference: `string` |
+| `label` | `string` | optional, can pass text displaying for a label |
+| `errorMessage` | `string or undefined` | optional, can pass text displaying for an error message |
+| `className` | `string` | optional, styles can be passed for the component wrapper |
+| `isFilled` | `boolean or undefined` | optional, can pass the status of filling |
+| `{...rest}` | `string` | optional, any other attributes that are characteristic of the textarea (placeholder, rows, cols, etc) |
 
 </details>
 
