@@ -32,9 +32,9 @@ export const AboutOrganisation: FC = () => {
   }, []);
 
   const updatedSupportCards = organizationData ? [
-    { id: 1, amountOfHelp: organizationData.legal_support, typeOfHelp: 'Legal Support' },
-    { id: 2, amountOfHelp: organizationData.request_psychologist, typeOfHelp: 'Request Psychologist' },
-    { id: 3, amountOfHelp: organizationData.help_psyhologist, typeOfHelp: 'Help Psychologist' }
+    { id: 1, amountOfHelp: organizationData.legal_support, typeOfHelp: 'надано юридичну підтримку' },
+    { id: 2, amountOfHelp: organizationData.request_psychologist, typeOfHelp: 'запитів на психологічну підтримку' },
+    { id: 3, amountOfHelp: organizationData.help_psyhologist, typeOfHelp: 'надано психологічну підтримку' }
   ] : [];
 
 
