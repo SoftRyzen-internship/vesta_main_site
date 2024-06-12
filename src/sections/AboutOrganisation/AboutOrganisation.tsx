@@ -1,13 +1,19 @@
 'use client';
 
 import { FC, useEffect, useState } from 'react';
+
 import { ScrollBox } from '@/components/ui/ScrollBox';
-import { getSpecialWords } from '@/utils';
-import { fetchData } from '@/actions/fetchData';
-import { getOrganization } from '@/graphql/organizationSchema';
-import { OrganizationResponse, OrganizationAttributes } from './AboutOrganisation.types';
-import { aboutOrganisation } from '@/data';
 import { SupportCards } from '@/components/common/SupportCards';
+
+import { aboutOrganisation } from '@/data';
+
+import { fetchData } from '@/actions/fetchData';
+
+import { getOrganization } from '@/graphql/organizationSchema';
+
+import { getSpecialWords } from '@/utils';
+
+import { OrganizationResponse, OrganizationAttributes } from './AboutOrganisation.types';
 
 
 export const AboutOrganisation: FC = () => {

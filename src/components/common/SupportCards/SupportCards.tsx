@@ -1,10 +1,13 @@
 'use client';
 
 import { FC, useEffect } from 'react';
+
+import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
 import { clsx } from 'clsx';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useWindowSize } from '@/utils';
+
 import { ISupportProps } from './SupportCards.types';
+
+import { useWindowSize } from '@/utils';
 
 export const SupportCards: FC<ISupportProps> = ({
   id,
