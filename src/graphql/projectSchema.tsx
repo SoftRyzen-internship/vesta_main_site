@@ -4,7 +4,9 @@ export const getProjects = gql`
   query {
     projects {
       data {
+        id
         attributes {
+          publishedAt
           title
           description
           pageText
@@ -15,6 +17,7 @@ export const getProjects = gql`
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }
