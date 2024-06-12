@@ -1,16 +1,8 @@
 import { ElementType } from 'react';
+import { IItem } from '@/sections/Partners/Partners.types';
 
 export interface CardListProps {
-  items: {
-    id: number;
-    src: string;
-    name: string;
-    alt?: string;
-    position?: string;
-    description?: string;
-    plug?: string;
-    socialMedia?: { value: string; link: string }[];
-  }[];
+  items: IItem[];
   CardComponent: ElementType;
   path: string;
   section: string
