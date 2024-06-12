@@ -1,13 +1,36 @@
-import { FC } from 'react';
+'use client';
 
-import { SupportCards } from '@/components/common/SupportCards';
+import { FC, useEffect, useState } from 'react';
 import { ScrollBox } from '@/components/ui/ScrollBox';
 import { getSpecialWords } from '@/utils';
+import { fetchData } from '@/actions/fetchData';
+import { getOrganization } from '@/graphql/organizationSchema';
+import { OrganizationResponse, OrganizationAttributes } from './AboutOrganisation.types';
+import { aboutOrganisation } from '@/data';
+import { SupportCards } from '@/components/common/SupportCards';
 
-import { supportCards, aboutOrganisation } from '@/data';
 
 export const AboutOrganisation: FC = () => {
-  const { caption, title, titleText, refreshData } = aboutOrganisation;
+  const { caption, title } = aboutOrganisation;
+  const [organizationData, setOrganizationData] = useState<OrganizationAttributes | null>(null);
+
+  useEffect(() => {
+    fetchData(getOrganization)
+      .then((response) => {
+        const data = (response as OrganizationResponse).organization.data.attributes;
+        setOrganizationData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  const updatedSupportCards = organizationData ? [
+    { id: 1, amountOfHelp: organizationData.legal_support, typeOfHelp: 'Legal Support' },
+    { id: 2, amountOfHelp: organizationData.request_psychologist, typeOfHelp: 'Request Psychologist' },
+    { id: 3, amountOfHelp: organizationData.help_psyhologist, typeOfHelp: 'Help Psychologist' }
+  ] : [];
+
 
   return (
     <section>
@@ -27,7 +50,7 @@ export const AboutOrganisation: FC = () => {
             {getSpecialWords(title, 10, 4, { start: true })}
           </h3>
           <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
-            {titleText}
+            {organizationData?.text}
           </p>
         </div>
       </div>
@@ -35,11 +58,11 @@ export const AboutOrganisation: FC = () => {
         <p
           className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
         >
-          {refreshData}
+          *станом на {organizationData?.date}
         </p>
         <ScrollBox className='overflow-x-auto'>
           <ul className='flex gap-5 transition pb-10'>
-            {supportCards.map((card) => (
+            {updatedSupportCards.map((card: { id: number; amountOfHelp: number; typeOfHelp: string }) => (
               <li key={card.id}>
                 <SupportCards
                   id={card.id}
