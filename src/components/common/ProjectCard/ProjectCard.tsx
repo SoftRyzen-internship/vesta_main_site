@@ -8,7 +8,7 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { IProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard: FC<IProjectCardProps> = ({
-  item: { id, img, imgAlt, title, description },
+  item: { id, image, imgAlt = '', title, description },
   linkText,
   isOddCard,
 }) => {
@@ -22,7 +22,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
       )}
     >
       <Image
-        src={img}
+        src={image.data.attributes.url}
         alt={imgAlt}
         width={448}
         height={250}
