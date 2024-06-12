@@ -4,7 +4,7 @@ export const getProjects = (start: number, limit: number) => gql`
   query {
     projects(
       pagination: { start: ${start}, limit: ${limit} },
-      sort: ["createdAt:asc"]
+      sort: ["publishedAt:asc"]
       ) {
       meta {
         pagination {
@@ -14,6 +14,7 @@ export const getProjects = (start: number, limit: number) => gql`
       data {
         id
         attributes {
+          publishedAt
           title
           description
           slug
@@ -25,7 +26,6 @@ export const getProjects = (start: number, limit: number) => gql`
               }
             }
           }
-          createdAt
         }
       }
     }

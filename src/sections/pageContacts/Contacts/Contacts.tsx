@@ -2,13 +2,23 @@ import { FC } from 'react';
 
 import { FormBlock } from '@/components/common/Form';
 
+import { fetchData } from '@/actions/fetchData';
+import { getContact } from '@/graphql/contactSchema';
+
+import { IContactsData } from './Contacts.types';
+
 import { contactsPageData } from '@/data';
 
 import EmailIcon from '@/../public/icons/mail.svg';
 import PhoneIcon from '@/../public/icons/phone.svg';
 
-export const Contacts: FC = () => {
-  const { title, email, phoneTitle, phone, services, formTitle } =
+export const Contacts: FC = async () => {
+  const data: IContactsData = await fetchData<IContactsData>(getContact);
+
+  const { legal_support, psychological_support, head_organization, email } =
+    data.contact.data.attributes;
+  
+  const { title, phoneTitle, legalService, psychologicalService, formTitle } =
     contactsPageData;
 
   return (
@@ -21,7 +31,7 @@ export const Contacts: FC = () => {
           <address className='text-body2 font-medium not-italic md:text-body2_tab xl:text-body2_desk'>
             <div className='mb-5 flex items-center gap-[15px]'>
               <div className='flex h-10 w-10 items-center justify-center rounded-full border-[0.5px] border-current '>
-                <EmailIcon width={24} height={24} className='fill-current'/>
+                <EmailIcon width={24} height={24} className='fill-current' />
               </div>
               <a
                 href={`mailto:${email}`}
@@ -37,25 +47,32 @@ export const Contacts: FC = () => {
               <div className='flex flex-col gap-2'>
                 <p className='paragraph font-normal'>{phoneTitle}</p>
                 <a
-                  href={`tel:${phone.replace(/-/g, '').replace(/\s/g, '')}`}
+                  href={`tel:${head_organization.replace(/-/g, '').replace(/\s/g, '')}`}
                   className='transition hover:text-greenHover'
                 >
-                  {phone}
+                  {head_organization}
                 </a>
               </div>
             </div>
             <ul className='flex flex-col gap-5 border-t-[0.5px] border-solid border-darkGrey pt-[30px]'>
-              {services.map(item => (
-                <li key={item.phone} className='flex flex-col gap-2'>
-                  <p className='paragraph font-normal'>{item.typeOfService}</p>
-                  <a
-                    href={`tel:${item.phone.replace(/-/g, '').replace(/\s/g, '')}`}
-                    className='transition hover:text-greenHover'
-                  >
-                    {item.phone}
-                  </a>
-                </li>
-              ))}
+              <li className='flex flex-col gap-2'>
+                <p className='paragraph font-normal'>{legalService}</p>
+                <a
+                  href={`tel:${legal_support.replace(/-/g, '').replace(/\s/g, '')}`}
+                  className='transition hover:text-greenHover'
+                >
+                  {legal_support}
+                </a>
+              </li>
+              <li className='flex flex-col gap-2'>
+                <p className='paragraph font-normal'>{psychologicalService}</p>
+                <a
+                  href={`tel:${psychological_support.replace(/-/g, '').replace(/\s/g, '')}`}
+                  className='transition hover:text-greenHover'
+                >
+                  {psychological_support}
+                </a>
+              </li>
             </ul>
           </address>
         </div>
