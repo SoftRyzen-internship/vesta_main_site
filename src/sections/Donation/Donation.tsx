@@ -35,17 +35,9 @@ export const Donation: FC = () => {
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
-              transition={{ duration: 2, delay: 4 }}
+              transition={{ duration: 2, delay: 2 }}
               viewport={{ once: true }}
-              style={{
-                position: 'absolute',
-                top: '24px',
-                left: 0,
-                height: '3px',
-                backgroundColor: 'rgba(218, 209, 197, 0.72)',
-                transform: 'translateY(-50%)',
-              }}
-              className='hidden xl:block'
+              className='absolute left-0 top-6 hidden h-[3px] translate-y-[-60%] bg-tomorrow xl:block'
             />
           </div>
 
