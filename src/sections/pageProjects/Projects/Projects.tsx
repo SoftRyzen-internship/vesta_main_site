@@ -1,50 +1,78 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useCallback, useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 
 import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
 
-import { projectsJson } from '@/data';
+import { fetchData } from '@/actions/fetchData';
+import { getProjects } from '@/graphql/projectSchemaCard';
+
+import { IProject, IProjectsData } from './Projects.types';
+
+import { projectsData } from '@/data';
+
+const LIMIT_PROJECTS = 6;
 
 export const Projects: FC = () => {
-  const visibleProjects = 6;
-  const [displayProjects, setDisplayProjects] = useState(visibleProjects);
+  const [projects, setProjects] = useState<IProject[]>([]);
+  const [start, setStart] = useState<number>(0);
+  const [total, setTotal] = useState<number>(0);
 
   const {
     linkText,
     buttonText: { more, hide },
-    projects,
-  } = projectsJson;
+  } = projectsData;
 
-  const loadMore = () => {
-    setDisplayProjects(displayProjects + visibleProjects);
+  const loadProjects = useCallback(async (start: number, limit: number) => {
+    const projectsResponse = await fetchData<IProjectsData>(
+      getProjects(start, limit),
+    );
+    const newProjects = projectsResponse.projects.data ?? [];
+    setTotal(projectsResponse.projects.meta.pagination.total);
+
+    return newProjects;
+  }, []);
+
+  useEffect(() => {
+    async function loadInitialProjects() {
+      const initialProjects = await loadProjects(0, LIMIT_PROJECTS);
+      setProjects(initialProjects);
+      setStart(LIMIT_PROJECTS);
+    }
+
+    loadInitialProjects();
+  }, [loadProjects]);
+
+  const loadMore = async () => {
+    const newProjects = await loadProjects(start, LIMIT_PROJECTS);
+    setProjects(prevProjects => [...prevProjects, ...newProjects]);
+    setStart(prevStart => prevStart + LIMIT_PROJECTS);
   };
 
-  const hideAll = () => {
-    setDisplayProjects(visibleProjects);
+  const hideAll = async () => {
+    const initialProjects = await loadProjects(0, LIMIT_PROJECTS);
+    setProjects(initialProjects);
+    setStart(LIMIT_PROJECTS);
   };
-
-  const sortById = () => {
-    return projects.sort((a, b) => Number(b.id) - Number(a.id));
-  };
-  sortById();
 
   return (
     <section id='projects' className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
         <ul
           className={clsx(
-            projects.length > visibleProjects && 'mb-10 mdOnly:mb-[30px]',
+            projects.length <= total &&
+              total !== LIMIT_PROJECTS &&
+              'mb-10 mdOnly:mb-[30px]',
             'flex flex-col gap-10 mdOnly:gap-[30px]',
           )}
         >
-          {projects.slice(0, displayProjects).map((item, index) => (
-            <li key={item.id}>
+          {projects.map((project, index) => (
+            <li key={project.id}>
               <ProjectCard
-                item={item}
+                item={project.attributes}
                 linkText={linkText}
                 isOddCard={index % 2 ? false : true}
               />
@@ -52,7 +80,7 @@ export const Projects: FC = () => {
           ))}
         </ul>
 
-        {projects.length > displayProjects ? (
+        {projects.length < total ? (
           <Button
             variant='moreProjects'
             onClick={loadMore}
@@ -60,7 +88,7 @@ export const Projects: FC = () => {
           >
             {more}
           </Button>
-        ) : projects.length <= displayProjects && displayProjects > 6 ? (
+        ) : projects.length > LIMIT_PROJECTS ? (
           <Button
             variant='moreProjects'
             onClick={hideAll}
