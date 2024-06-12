@@ -4,6 +4,7 @@ export const getService = gql`
   query {
     service {
       data {
+        id
         attributes {
           serviceItem {
             title
@@ -12,6 +13,7 @@ export const getService = gql`
               data {
                 attributes {
                   url
+                  alternativeText
                 }
               }
             }

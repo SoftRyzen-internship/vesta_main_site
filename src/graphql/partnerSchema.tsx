@@ -4,6 +4,7 @@ export const getPartners = gql`
   query {
     partner {
       data {
+        id
         attributes {
           item {
             name
@@ -11,6 +12,7 @@ export const getPartners = gql`
               data {
                 attributes {
                   url
+                  alternativeText
                 }
               }
             }

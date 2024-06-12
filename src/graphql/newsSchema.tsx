@@ -4,6 +4,7 @@ export const getNews = gql`
   query {
     news {
       data {
+        id
         attributes {
           date
           title
@@ -15,6 +16,7 @@ export const getNews = gql`
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }
