@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 
-export const getProjects = gql`
+export const getProjectsCard = (start: number, limit: number) => gql`
 query {
   projects(
     pagination: { start: ${start}, limit: ${limit} },
