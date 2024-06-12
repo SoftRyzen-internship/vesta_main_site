@@ -1,17 +1,16 @@
 export interface IProjectCardProps {
   item: {
-    id?: string;
+    title: string;
+    slug: string;
+    description: string;
     image: {
       data: {
         attributes: {
           url: string;
+          alternativeText: string;
         };
       };
     };
-    imgAlt?: string;
-    title: string;
-    slug: string;
-    description: string;
   };
   linkText: string;
   isOddCard: boolean;

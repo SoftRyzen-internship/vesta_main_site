@@ -4,7 +4,7 @@ export const getProjects = (start: number, limit: number) => gql`
   query {
     projects(
       pagination: { start: ${start}, limit: ${limit} },
-      sort: ["publishedAt:asc"]
+      sort: ["publishedAt:desc"]
       ) {
       meta {
         pagination {
