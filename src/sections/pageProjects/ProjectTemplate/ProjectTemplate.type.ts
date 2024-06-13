@@ -25,7 +25,7 @@ export interface IProjectAttributes {
   add_text: string;
   slug: string;
   image: IProjectImageData;
-  social: ISocialData;
+  social: ISocialData[];
 }
 
 export interface IProjectData {
@@ -34,11 +34,25 @@ export interface IProjectData {
 }
 
 export interface IProject {
-  data: IProjectData;
+  data: IProjectData[];
 }
 
 export interface IProjectsData {
   projects: IProject;
+}
+
+export interface IOneProjectsProps {
+  oneProject: {
+    publishedAt: string;
+    title: string;
+    description: string;
+    pageText: string;
+    add_title: string;
+    add_text: string;
+    slug: string;
+    image: IProjectImageData;
+    social: ISocialData[];
+  };
 }
 
 // projects {

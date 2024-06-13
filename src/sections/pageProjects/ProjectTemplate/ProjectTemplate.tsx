@@ -5,10 +5,14 @@ import Image from 'next/image';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { projectTemplateData } from '@/data';
+import { IOneProjectsProps } from './ProjectTemplate.type';
 
-export const ProjectTemplate: FC = () => {
+export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
+  console.log('oneProject', oneProject)
+  const { title, description, pageText, add_title, add_text, image, social } =
+    oneProject;
   const {
-    full: { title, description, socials, img, imgAlt, subtitle, text },
+    full: { socials, img, imgAlt, subtitle, text },
   } = projectTemplateData;
 
   // const {
@@ -37,7 +41,7 @@ export const ProjectTemplate: FC = () => {
 
         <div className='mt-[60px] justify-between md:mt-[100px] xl:mt-[130px] xl:flex '>
           {subtitle ? (
-            <h2 className='text-body1 md:max-w-[566px] md:text-body1_tab xl:text-body1_desk xl:max-w-[492px]'>
+            <h2 className='text-body1 md:max-w-[566px] md:text-body1_tab xl:max-w-[492px] xl:text-body1_desk'>
               {subtitle}
             </h2>
           ) : null}
