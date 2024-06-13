@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
-export const getNewsCard = gql`
+export const getNewsCard = (start: number, limit: number) => gql`
   query {
-    news {
+    news(pagination: { start: ${start}, limit: ${limit} }, sort: ["date:desc"]) {
       data {
         attributes {
           date
@@ -13,9 +13,15 @@ export const getNewsCard = gql`
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }
+        }
+      }
+         meta {
+        pagination {
+          total
         }
       }
     }

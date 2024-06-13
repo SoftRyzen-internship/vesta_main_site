@@ -1,20 +1,19 @@
-// 'use client';
 import { FC } from 'react';
 
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { ScrollBox } from '@/components/ui/ScrollBox';
 
-import { service } from '@/data';
 import { fetchData } from '@/actions/fetchData';
 import { getService } from '@/graphql/serviceSchema';
-import { IServiceCardProps } from '@/components/common/ServiceCard/ServiceCard.types';
+
+import { IServicesData } from './Services.types';
+
+import { service } from '@/data';
 
 export const Services: FC = async () => {
   const { title } = service;
-  const data = await fetchData(getService);
-  // console.log(data.service.data.attributes.serviceItem);
-  const services: IServiceCardProps[] =
-    data.service.data.attributes.serviceItem;
+  const data: IServicesData = await fetchData<IServicesData>(getService);
+  const services = data.service.data.attributes.serviceItem;
   return (
     <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
       <div className='container'>
@@ -27,8 +26,8 @@ export const Services: FC = async () => {
               <li key={index}>
                 <ServiceCard
                   title={title}
-                  src={image.data.attributes.url || ''}
-                  alt={'alt'}
+                  src={image.data.attributes.url}
+                  alt={image.data.attributes.alternativeText}
                   description={description}
                   count={String(index + 1)}
                   countAll={services.length.toString()}

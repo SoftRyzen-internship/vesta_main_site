@@ -1,10 +1,10 @@
 export interface INewsCardProps {
   item: {
-    id: string;
+    slug: string;
     img: string;
     imgAlt: string;
     date: string;
     title: string;
-    description: string;
+    text: string;
   };
 }

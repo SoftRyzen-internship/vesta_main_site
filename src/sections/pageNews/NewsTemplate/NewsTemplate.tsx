@@ -16,9 +16,9 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
     imgAlt,
     date,
     title,
-    description,
-    video = '',
-    secondDescription = '',
+    text,
+    videoLink = '',
+    descriptionVideo = '',
   },
 }) => {
   const [isClient, setIsClient] = useState(false);
@@ -43,15 +43,15 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
         <p
           className={clsx(
             'paragraph xl:w-[802px]',
-            video && 'mb-10 xl:mb-[50px]',
+            videoLink && 'mb-10 xl:mb-[50px]',
           )}
         >
-          {description}
+          {text}
         </p>
-        {video && isClient && (
+        {videoLink && isClient && (
           <div className='change mb-10 h-[260px] w-full md:h-[360px] xl:mb-[50px] xl:h-[349px] xl:w-[802px]'>
             <ReactPlayer
-              url={video}
+              url={videoLink}
               light={true}
               playIcon={<Button variant='play' />}
               width='100%'
@@ -59,8 +59,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
             />
           </div>
         )}
-        {secondDescription && (
-          <p className='paragraph xl:w-[802px]'>{secondDescription}</p>
+        {descriptionVideo && (
+          <p className='paragraph xl:w-[802px]'>{descriptionVideo}</p>
         )}
       </div>
     </section>
