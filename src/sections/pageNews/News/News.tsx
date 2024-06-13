@@ -24,10 +24,7 @@ export const News = () => {
 
   useEffect(() => {
     const loadNews = async () => {
-      const newNews = await fetchData<INewsData>(getNewsCard(start, limit), {
-        limit,
-        start,
-      });
+      const newNews = await fetchData<INewsData>(getNewsCard(start, limit));
       if (newNews.news.data) {
         if (start === 0) {
           setNews(newNews.news.data);
@@ -56,15 +53,10 @@ export const News = () => {
           {title}
         </h1>
         <ul className='mb-[64px] flex flex-col items-center gap-10 md:mb-[100px] md:gap-[60px] xl:mb-[60px] xl:flex-row xl:flex-wrap xl:gap-x-[25px] xl:gap-y-10'>
+          {/* add id */}
           {news?.map(({ attributes }, index) => (
             <li key={index}>
-              <NewsCard
-                item={{
-                  ...attributes,
-                  img: attributes.image.data[0].attributes.url,
-                  imgAlt: attributes.image.data[0].attributes.alternativeText,
-                }}
-              />
+              <NewsCard item={attributes} />
             </li>
           ))}
         </ul>

@@ -19,7 +19,7 @@ export const getNewsCard = (start: number, limit: number) => gql`
           }
         }
       }
-         meta {
+      meta {
         pagination {
           total
         }

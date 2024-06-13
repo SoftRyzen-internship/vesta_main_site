@@ -11,15 +11,7 @@ import { Button } from '@/components/ui/Button';
 import { INewsTemplateProps } from './NewsTemplate.types';
 
 export const NewsTemplate: FC<INewsTemplateProps> = ({
-  oneNews: {
-    img,
-    imgAlt,
-    date,
-    title,
-    text,
-    videoLink = '',
-    descriptionVideo = '',
-  },
+  item: { image, date, title, text, videoLink = '', descriptionVideo = '' },
 }) => {
   const [isClient, setIsClient] = useState(false);
 
@@ -34,8 +26,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
           {title}
         </h2>
         <Image
-          src={img}
-          alt={imgAlt}
+          src={image.data[0].attributes.url}
+          alt={image.data[0].attributes.alternativeText}
           width={328}
           height={260}
           className='mb-10 h-[260px] w-full object-cover md:h-[360px] md:w-[684px] xl:mb-[50px] xl:h-[500px] xl:w-[1216px]'

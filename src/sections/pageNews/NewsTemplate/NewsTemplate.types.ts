@@ -1,8 +1,7 @@
 export interface INewsTemplateProps {
-  oneNews: {
+  item: {
     slug: string;
-    img: string;
-    imgAlt: string;
+    image: { data: [{ attributes: { url: string; alternativeText: string } }] };
     date: string;
     title: string;
     text: string;

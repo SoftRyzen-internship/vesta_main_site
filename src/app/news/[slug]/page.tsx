@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   },
 };
 
+//add generate static params
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const data = await fetchData<INewsData>(getNews);
   const oneNews = data.news.data.find(
@@ -26,15 +28,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   console.log(data.news.data);
   return (
     <>
-      {oneNews && (
-        <NewsTemplate
-          oneNews={{
-            ...oneNews.attributes,
-            img: oneNews.attributes.image.data[0].attributes.url,
-            imgAlt: oneNews.attributes.image.data[0].attributes.alternativeText,
-          }}
-        />
-      )}
+      {oneNews && <NewsTemplate item={oneNews.attributes} />}
       <News />
     </>
   );
