@@ -10,7 +10,6 @@ export const getNews = gql`
           title
           text
           videoLink
-          descriptionVideo
           slug
           image {
             data {
