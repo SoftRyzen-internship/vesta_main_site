@@ -6,7 +6,6 @@ import { SocialMedia } from '@/components/ui/SocialMedia';
 import { LinkButton } from '@/components/ui/LinkButton';
 
 import { socialMedia } from '@/data';
-import { NoDataTemplate } from './sections/NoDataTemplate/NoDataTemplate';
 
 export const Viewer = () => {
   return (
@@ -67,7 +66,6 @@ export const Viewer = () => {
           <SocialMedia socialMedia={socialMedia} lightMode={true} />
         </div>
       </div>
-      <NoDataTemplate />
     </>
   );
 };
