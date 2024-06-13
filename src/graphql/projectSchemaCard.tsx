@@ -1,10 +1,20 @@
 import { gql } from 'graphql-request';
 
-export const getProjects = gql`
+export const getProjects = (start: number, limit: number) => gql`
   query {
-    projects {
+    projects(
+      pagination: { start: ${start}, limit: ${limit} },
+      sort: ["publishedAt:desc"]
+      ) {
+      meta {
+        pagination {
+          total
+        }
+      }
       data {
+        id
         attributes {
+          publishedAt
           title
           description
           slug
@@ -12,6 +22,7 @@ export const getProjects = gql`
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }

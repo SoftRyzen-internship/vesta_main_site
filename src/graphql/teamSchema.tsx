@@ -4,6 +4,7 @@ export const getTeam = gql`
   query {
     team {
       data {
+        id
         attributes {
           itemTeam {
             name
@@ -14,6 +15,7 @@ export const getTeam = gql`
               data {
                 attributes {
                   url
+                  alternativeText
                 }
               }
             }
