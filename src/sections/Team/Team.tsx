@@ -8,7 +8,7 @@ import { clsx } from 'clsx';
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
-import { ITeamData, IItemTeam } from './Team.styles';
+import { ITeamData, IItemTeam } from './Team.types';
 
 import { fetchData } from '@/actions/fetchData';
 import { getTeam } from '@/graphql/teamSchema';
