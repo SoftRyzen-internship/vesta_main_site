@@ -1,12 +1,11 @@
 'use client';
-
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import { Logo } from '@/components/ui/Logo';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { NavList } from '@/components/common/NavList';
 
-import { socialMedia, footer, footerNavigation } from '@/data';
+import { socialMedia, footer, footerNavigation} from '@/data';
 
 import { scrollToTop } from '@/utils';
 
@@ -14,31 +13,21 @@ import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
 import { fetchData } from '@/actions/fetchData';
-import { FooterAttributes, FooterOrganizationResponse } from './Footer.types';
+
 import { getContact } from '@/graphql/contactSchema';
+import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
 
-export const Footer: FC = () => {
-  const [footerPhones, setFooterPhones] = useState<FooterAttributes | null>(null);
+export const Footer: FC = async () => {
+  const data: FooterOrganizationResponse = await fetchData<FooterOrganizationResponse>(getContact);
 
-  useEffect(() => {
-    fetchData(getContact)
-      .then((response) => {
-        const data = (response as FooterOrganizationResponse).contact.data.attributes;
-        setFooterPhones(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  const { legal_support, psychological_support, head_organization, email } =
+  data.contact.data.attributes;
 
-  console.log(footerPhones);
-
-  const updatedSupportCards = footerPhones ? [
-    { id: 1, phones: footerPhones.legal_support, serviceNumber: 'Юридичні послуги:' },
-    { id: 2, phones: footerPhones.psychological_support, serviceNumber: 'Психологічні послуги:' },
-    { id: 3, phones: footerPhones.head_organization, serviceNumber: 'Головна організація:' }
-  ] : [];
-
+const updatedSupportCards: FooterPhones[] = [
+  { id: 1, typeOfHelp: 'Юридичні послуги', aria: 'Зателефонувати за юридичною допомогою', phone: legal_support },
+  { id: 2, typeOfHelp: 'Психологічні послуги:', aria: 'Зателефонувати за психологічною допомогою', phone: psychological_support },
+  { id: 3, typeOfHelp: 'Зв\'язатися за нами', aria: 'Зателефонувати організції', phone: head_organization }
+];
   return (
     <footer className='bg-green'>
       <div className='container pb-[15px] pt-[50px] text-white transition md:pb-[23px] md:pt-[60px] xl:pb-[28px]'>
@@ -53,26 +42,26 @@ export const Footer: FC = () => {
                 </button>
               </div>
               <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white transition md:pb-[96px] md:pl-[169px] md:pt-[40px] xl:pb-[100px] xl:pl-[236px] xl:pt-0'>
-                {updatedSupportCards.map(({ id, phones, serviceNumber }) => (
+                {updatedSupportCards.map(({ id, typeOfHelp,aria, phone }) => (
                   <div key={id} className='flex flex-col gap-1'>
                     <p className='text-greenHover text-whiteGrey'>
-                      {serviceNumber}
+                      {typeOfHelp}
                     </p>
                     <a
-                      href={`tel:${phones}`}
+                      href={`tel:${phone}`}
                       className='transition hover:text-orangeText'
-                      aria-label={`Зателефонувати ${serviceNumber}`}
+                      aria-label={`${aria}`}
                     >
-                      {phones}
+                      {phone}
                     </a>
                   </div>
                 ))}
                 <a
-                  href={`mailto:${footer['@mail']}`}
+                  href={`mailto:${email}`}
                   className='transition hover:text-orangeText'
                   aria-label={footer.ariaEmail}
                 >
-                  {footer['@mail']}
+                  {email}
                 </a>
               </div>
             </div>

@@ -14,3 +14,10 @@ export interface FooterAttributes {
       data: FooterData;
     };
   }
+
+  export interface FooterPhones {
+    id: number,
+    typeOfHelp: string;
+    aria: string; 
+    phone: string;
+  }
