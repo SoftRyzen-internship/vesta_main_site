@@ -27,12 +27,14 @@ export const Projects: FC = () => {
     buttonText: { more, hide },
   } = projectsData;
 
+  const { wait, waitText, titleProjects, descriptionProjects } = templateNoData;
+
   const loadProjects = useCallback(async (start: number, limit: number) => {
     const projectsResponse = await fetchData<IProjectsData>(
       getProjects(start, limit),
     );
     const newProjects = projectsResponse.projects.data ?? [];
-    setTotal(projectsResponse.projects.meta.pagination.total);
+    setTotal(0);
 
     return newProjects;
   }, []);
@@ -61,16 +63,11 @@ export const Projects: FC = () => {
 
   return (
     <>
-      {isLoading && (
-        <NoDataTemplate
-          title={templateNoData.wait}
-          description={templateNoData.waitText}
-        />
-      )}
+      {isLoading && <NoDataTemplate title={wait} description={waitText} />}
       {!isLoading && total === 0 && (
         <NoDataTemplate
-          title={templateNoData.titleProjects}
-          description={templateNoData.descriptionProjects}
+          title={titleProjects}
+          description={descriptionProjects}
         />
       )}
       {!isLoading && total > 0 && (

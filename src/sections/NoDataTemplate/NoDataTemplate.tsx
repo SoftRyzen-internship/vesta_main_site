@@ -25,7 +25,11 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   return (
     <section className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
-        {sectionTitle && <h2 className='subtitle mb-10'>{sectionTitle}</h2>}
+        {sectionTitle && (
+          <h2 className='subtitle x mb-10 md:mb-[60px] xl:w-[744px] xl:uppercase'>
+            {sectionTitle}
+          </h2>
+        )}
         <div
           className={clsx(
             background,
@@ -35,7 +39,7 @@ export const NoDataTemplate: FC<INoDataProps> = ({
           <h3 className='mb-6 font-kyiv text-h3 font-bold text-bgText md:text-h3_tab xl:mb-9 xl:text-h3_desk'>
             {title}
           </h3>
-          <p className='font-eukraine text-caption font-normal text-bgText md:text-caption_tab xl:text-caption_desk'>
+          <p className='font-eukraine text-caption font-normal text-bgText md:text-caption_tab xl:mx-auto xl:w-[628px] xl:text-caption_desk'>
             {description}
           </p>
         </div>
