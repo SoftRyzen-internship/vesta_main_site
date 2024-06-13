@@ -6,6 +6,7 @@ import { INewsCardProps } from './NewsCard.types';
 export const NewsCard: FC<INewsCardProps> = ({
   item: { slug, image, date, title, text },
 }) => {
+  console.log(image);
   return (
     <Link
       href={`/news/${slug}`}

@@ -22,8 +22,8 @@ export const Services: FC = async () => {
         </h2>
         <ScrollBox className='overflow-x-auto md:overflow-hidden'>
           <ul className='flex items-center gap-10 pb-10 md:flex-col md:gap-[30px] xl:gap-10'>
-            {services.map(({ title, image, description }, index) => (
-              <li key={index}>
+            {services.map(({ title, image, description, id }, index) => (
+              <li key={id}>
                 <ServiceCard
                   title={title}
                   src={image.data.attributes.url}

@@ -2,6 +2,7 @@ export interface IServicesAttributes {
   title: string;
   image: { data: { attributes: { url: string; alternativeText: string } } };
   description: string;
+  id: string;
 }
 
 export interface IServicesItem {

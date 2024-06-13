@@ -9,6 +9,7 @@ export interface INewsAttributes {
 
 export interface IDataAttributes {
   attributes: INewsAttributes;
+  id: string;
 }
 
 export interface IMetaData {
