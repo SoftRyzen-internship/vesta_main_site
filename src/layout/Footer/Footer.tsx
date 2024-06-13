@@ -1,16 +1,23 @@
 'use client';
 import React, { FC, useEffect, useState } from 'react';
+
 import { Logo } from '@/components/ui/Logo';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { NavList } from '@/components/common/NavList';
-import { socialMedia, footer, footerNavigation } from '@/data';
-import { scrollToTop } from '@/utils';
+
 import SoftRyzen from '/public/icons/softryzen.svg';
 import GoIt from '/public/icons/goIt.svg';
 import ScrollUp from '/public/icons/scrollUp.svg';
+
 import { fetchData } from '@/actions/fetchData';
+
 import { getContact } from '@/graphql/contactSchema';
+
 import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
+
+import { scrollToTop } from '@/utils';
+
+import { socialMedia, footer, footerNavigation } from '@/data';
 
 export const Footer: FC = () => {
   const [supportCards, setSupportCards] = useState<FooterPhones[]>([]);
