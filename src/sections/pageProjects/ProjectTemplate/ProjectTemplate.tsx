@@ -1,14 +1,14 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-import { SocialMedia } from '@/components/ui/SocialMedia';
+// import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { IOneProjectsProps } from './ProjectTemplate.type';
 
 export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
-
-  const { title, pageText, add_title, add_text, image, social } =
-    oneProject;
+  const { title, pageText, add_title, add_text, image,
+    // social
+  } = oneProject;
 
   return (
     <section className='pb-[60px] pt-[134px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
@@ -19,7 +19,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
             <p className='mt-5 pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
               {pageText}
             </p>
-            <SocialMedia lightMode={false} socialMedia={social} />
+            {/* <SocialMedia lightMode={false} socialMedia={social} /> */}
           </div>
           <Image
             src={image.data.attributes.url}
@@ -37,7 +37,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
             </h2>
           ) : null}
           {add_text ? (
-            <p className='whitespace-pre-wrap marker:paragraph md:max-w-[566px] xl:max-w-[595px] notXl:mt-10'>
+            <p className='marker:paragraph whitespace-pre-wrap md:max-w-[566px] xl:max-w-[595px] notXl:mt-10'>
               {add_text}
             </p>
           ) : null}
