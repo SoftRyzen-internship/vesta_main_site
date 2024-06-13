@@ -6,7 +6,7 @@ import { clsx } from 'clsx';
 
 import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
-import { NoDataTemplate } from '@/sections/NoDataTemplate/NoDataTemplate';
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
 import { fetchData } from '@/actions/fetchData';
 import { getProjects } from '@/graphql/projectSchemaCard';
@@ -34,7 +34,7 @@ export const Projects: FC = () => {
       getProjects(start, limit),
     );
     const newProjects = projectsResponse.projects.data ?? [];
-    setTotal(0);
+    setTotal(projectsResponse.projects.meta.pagination.total);
 
     return newProjects;
   }, []);
