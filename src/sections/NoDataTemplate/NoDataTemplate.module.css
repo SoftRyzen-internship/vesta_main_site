@@ -1,0 +1,13 @@
+.no-data-projects {
+  background-image: image-set(
+    url('/images/noData/no-data-bg-mob@1x.png') 1x,
+    url('/images/noData/no-data-bg-mob@2x.png') 2x
+  );
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.no-data-news {
+  display: block;
+}

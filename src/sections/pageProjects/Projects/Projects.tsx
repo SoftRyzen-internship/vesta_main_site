@@ -14,14 +14,13 @@ import { IProject, IProjectsData } from './Projects.types';
 
 import { projectsData } from '@/data';
 
-const LIMIT_PROJECTS = 6;
-
 export const Projects: FC = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
   const [start, setStart] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
 
   const {
+    LIMIT_PROJECTS,
     linkText,
     buttonText: { more, hide },
   } = projectsData;
@@ -44,7 +43,7 @@ export const Projects: FC = () => {
     }
 
     loadInitialProjects();
-  }, [loadProjects]);
+  }, [LIMIT_PROJECTS, loadProjects]);
 
   const loadMore = async () => {
     const newProjects = await loadProjects(start, LIMIT_PROJECTS);
