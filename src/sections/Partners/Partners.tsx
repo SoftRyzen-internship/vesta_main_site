@@ -23,14 +23,9 @@ export const Partners: FC = () => {
 
   useEffect(() => {
     const fetchPartnersData = async () => {
-      try {
-        const data: IPartnersData = await fetchData<IPartnersData>(getPartners);
-        setPartners(data.partner.data.attributes.item);
-      } catch (error) {
-        console.error('Error fetching partners data:', error);
-      }
+      const data: IPartnersData = await fetchData<IPartnersData>(getPartners);
+      setPartners(data.partner.data.attributes.item);
     };
-
     fetchPartnersData();
   }, []);
   return (

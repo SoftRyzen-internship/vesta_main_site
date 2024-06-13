@@ -1,11 +1,5 @@
+import { IItemTeam } from "@/sections/Team/Team.styles";
+
 export interface ITeamCardProps {
-  item: {
-    name: string;
-    src: string;
-    alt: string;
-    position: string;
-    description: string;
-    plug: string;
-    socialMedia?: { value: string; link: string }[];
-  }
+  item: IItemTeam
 }
