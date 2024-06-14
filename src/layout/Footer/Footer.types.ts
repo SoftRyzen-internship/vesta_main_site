@@ -19,5 +19,5 @@ export interface FooterPhones {
   id: number;
   typeOfHelp: string;
   aria: string;
-  phone: string;
+  phone?: string; 
 }
