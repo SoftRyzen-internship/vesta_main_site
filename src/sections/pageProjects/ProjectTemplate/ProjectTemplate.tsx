@@ -24,7 +24,6 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
             className='h-[232px] w-full object-cover md:h-[366px] md:w-[684px] xl:w-[595px]'
           />
         </div>
-
         <div className='mt-[60px] justify-between md:mt-[100px] xl:mt-[130px] xl:flex '>
           {add_title ? (
             <h2 className='text-body1 md:max-w-[566px] md:text-body1_tab xl:max-w-[492px] xl:text-body1_desk'>
