@@ -21,7 +21,7 @@ export default function Home() {
       <Team />
       <Contacts />
       <Dwelling />
-      {/* <News /> */}
+      <News />
     </>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { NewsCard } from '@/components/common/NewsCard';
+// import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
 
 import { fetchData } from '@/actions/fetchData';
@@ -57,7 +57,7 @@ export const News = () => {
             <li key={id}>
               <NewsCard item={attributes} />
             </li>
-          ))}
+          ))} */}
         </ul>
         {total > news?.length ? (
           <Button

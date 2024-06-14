@@ -1,20 +1,26 @@
+'use client';
+
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { INewsCardProps } from './NewsCard.types';
 export const NewsCard: FC<INewsCardProps> = ({
-  item: { slug, image, date, title, text },
+  item: { slug, date, title, text, image },
 }) => {
-  console.log(image);
+  const url =
+    image.data[0]?.attributes?.url ??
+    '/images/mainHero/main-hero-bg-tab@1x.webp';
+  const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
+
   return (
     <Link
       href={`/news/${slug}`}
       className='inline-block w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:w-[684px] xl:w-[595px]'
     >
       <Image
-        src={image.data[0].attributes.url}
-        alt={image.data[0].attributes.alternativeText}
+        src={url}
+        alt={alternativeText}
         width={448}
         height={290}
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'

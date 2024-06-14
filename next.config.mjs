@@ -2,7 +2,8 @@
 const nextConfig = {
   // Load images from cloudinary
   images: {
-    domains: ['res.cloudinary.com'],
+    formats: ['image/webp'],
+    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
   },
 
   webpack(config) {

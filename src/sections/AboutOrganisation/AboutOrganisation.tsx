@@ -1,6 +1,4 @@
-'use client';
-
-import { FC, useEffect, useState } from 'react';
+import { FC} from 'react';
 
 import { ScrollBox } from '@/components/ui/ScrollBox';
 import { SupportCards } from '@/components/common/SupportCards';
@@ -13,29 +11,23 @@ import { getOrganization } from '@/graphql/organizationSchema';
 
 import { getSpecialWords } from '@/utils';
 
-import { OrganizationResponse, OrganizationAttributes } from './AboutOrganisation.types';
+import { OrganizationResponse, AboutOrganisationHelps } from './AboutOrganisation.types';
 
 
-export const AboutOrganisation: FC = () => {
+export const AboutOrganisation: FC = async () => {
   const { caption, title } = aboutOrganisation;
-  const [organizationData, setOrganizationData] = useState<OrganizationAttributes | null>(null);
 
-  useEffect(() => {
-    fetchData(getOrganization)
-      .then((response) => {
-        const data = (response as OrganizationResponse).organization.data.attributes;
-        setOrganizationData(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  const data: OrganizationResponse = await fetchData<OrganizationResponse>(getOrganization);
 
-  const updatedSupportCards = organizationData ? [
-    { id: 1, amountOfHelp: organizationData.legal_support, typeOfHelp: 'надано юридичну підтримку' },
-    { id: 2, amountOfHelp: organizationData.request_psychologist, typeOfHelp: 'запитів на психологічну підтримку' },
-    { id: 3, amountOfHelp: organizationData.help_psyhologist, typeOfHelp: 'надано психологічну підтримку' }
-  ] : [];
+  const { help_psyhologist, legal_support, date, request_psychologist, text } =
+    data.organization.data.attributes;
+
+
+  const updatedSupportCards: AboutOrganisationHelps[] = [
+    { id: 1, amountOfHelp: legal_support, typeOfHelp: 'надано юридичну підтримку' },
+    { id: 2, amountOfHelp: request_psychologist, typeOfHelp: 'запитів на психологічну підтримку' },
+    { id: 3, amountOfHelp: help_psyhologist, typeOfHelp: 'надано психологічну підтримку' }
+  ] ;
 
 
   return (
@@ -56,7 +48,7 @@ export const AboutOrganisation: FC = () => {
             {getSpecialWords(title, 10, 4, { start: true })}
           </h3>
           <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
-            {organizationData?.text}
+            {text}
           </p>
         </div>
       </div>
@@ -64,7 +56,7 @@ export const AboutOrganisation: FC = () => {
         <p
           className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
         >
-          *станом на {organizationData?.date}
+          *станом на {date}
         </p>
         <ScrollBox className='overflow-x-auto'>
           <ul className='flex gap-5 transition pb-10'>
