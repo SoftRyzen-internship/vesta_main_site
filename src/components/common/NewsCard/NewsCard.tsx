@@ -9,9 +9,8 @@ import { INewsCardProps } from './NewsCard.types';
 export const NewsCard: FC<INewsCardProps> = ({
   item: { slug, date, title, text, image },
 }) => {
-  const url =
-    image.data[0].attributes.url || '/images/projects/main-projects@2x.webp';
-  const alternativeText = image.data[0].attributes.alternativeText || title;
+  const url = image.data[0].attributes.url;
+  const alternativeText = image.data[0].attributes.alternativeText;
 
   return (
     <Link

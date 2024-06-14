@@ -2,6 +2,7 @@
 const nextConfig = {
   // Load images from cloudinary
   images: {
+    formats: ['image/webp'],
     remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
   },
 
