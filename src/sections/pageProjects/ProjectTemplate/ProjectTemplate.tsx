@@ -37,7 +37,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
             </h2>
           ) : null}
           {add_text ? (
-            <p className='marker:paragraph whitespace-pre-wrap md:max-w-[566px] xl:max-w-[595px] notXl:mt-10'>
+            <p className='paragraph whitespace-pre-wrap md:max-w-[566px] xl:max-w-[595px] notXl:mt-10'>
               {add_text}
             </p>
           ) : null}
