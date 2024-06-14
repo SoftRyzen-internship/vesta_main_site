@@ -29,7 +29,7 @@ export interface IProjectAttributes {
 }
 
 export interface IProjectData {
-  id: string | number;
+  id: string;
   attributes: IProjectAttributes;
 }
 
