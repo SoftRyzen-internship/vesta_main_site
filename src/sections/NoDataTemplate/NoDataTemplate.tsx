@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -11,6 +13,7 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   sectionTitle,
   title,
   description,
+  className,
 }) => {
   const pathname = usePathname();
   const classes = [s['no-data-projects'], s['no-data-news']];
@@ -25,7 +28,7 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   const background = bgs[pathname] || bgs['else'];
 
   return (
-    <section className='py-[60px] md:py-[100px] xl:py-[130px]'>
+    <section className={clsx('py-[60px] md:py-[100px] xl:py-[130px]', className)}>
       <div className='container'>
         {sectionTitle && (
           <h2 className='subtitle mb-10 md:mb-[60px] xl:w-[744px] xl:uppercase'>

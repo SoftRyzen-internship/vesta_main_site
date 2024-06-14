@@ -16,7 +16,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
         <div className='justify-between xl:flex'>
           <div className='mb-[30px] md:mb-10 md:max-w-[492px] xl:mb-0'>
             <h1 className='subtitle'>{title}</h1>
-            <p className='mt-5 pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
+            <p className='whitespace-pre-wrap mt-5 pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
               {pageText}
             </p>
             {/* <SocialMedia lightMode={false} socialMedia={social} /> */}
