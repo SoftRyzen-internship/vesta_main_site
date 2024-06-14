@@ -13,11 +13,13 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   description,
 }) => {
   const pathname = usePathname();
+  const classes = [s['no-data-projects'], s['no-data-news']];
+  const randomClass = classes[Math.floor(Math.random() * classes.length)];
 
   const bgs: { [key: string]: string } = {
     '/news': s['no-data-news'],
     '/projects': s['no-data-projects'],
-    else: s['no-data-projects'],
+    else: randomClass,
   };
 
   const background = bgs[pathname] || bgs['else'];
