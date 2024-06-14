@@ -51,7 +51,6 @@ const OneProjectPage: FC<IOneProjectPageProps> = async ({ params }) => {
 
   return (
     <>
-      <b>{slug}</b>
       {project && <ProjectTemplate oneProject={project.attributes} />}
     </>
   );
