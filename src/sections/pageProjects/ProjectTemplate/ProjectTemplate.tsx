@@ -1,13 +1,12 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-// import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { IOneProjectsProps } from './ProjectTemplate.type';
 
 export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
   const { title, pageText, add_title, add_text, image,
-    // social
+
   } = oneProject;
 
   return (
@@ -19,7 +18,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
             <p className='whitespace-pre-wrap mt-5 pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
               {pageText}
             </p>
-            {/* <SocialMedia lightMode={false} socialMedia={social} /> */}
+            
           </div>
           <Image
             src={image.data.attributes.url}
