@@ -9,7 +9,6 @@ export { default as contactsData } from './contactsData.json';
 export { default as newsData } from './newsData.json';
 export { default as supportAboutData } from './supportAboutData.json';
 export { default as projectsData } from './projectsData.json';
-export { default as newsPageData } from './newsPageData.json';
 export { default as heroLessData } from './heroLessData.json';
 export { default as contactsPageData } from './contactsPageData.json';
 export { default as partnersData } from './partnersData.json';
