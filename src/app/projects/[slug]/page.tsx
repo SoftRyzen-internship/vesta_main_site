@@ -11,7 +11,6 @@ import { IProjectsData } from '@/sections/pageProjects/ProjectTemplate/ProjectTe
 
 import { templateNoData } from '@/data';
 
-
 export interface IOneProjectPageProps {
   params: { slug: string };
 }
