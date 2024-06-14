@@ -14,6 +14,7 @@ export { default as contactsPageData } from './contactsPageData.json';
 export { default as partnersData } from './partnersData.json';
 export { default as teamData } from './teamData.json';
 export { default as dwellingData } from './dwellingData.json';
+export { default as templateNoData } from './templateNoData.json';
 
 export { default as newsPageData } from './newsPageData.json';
 
