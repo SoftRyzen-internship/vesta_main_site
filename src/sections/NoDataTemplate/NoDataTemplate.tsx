@@ -26,7 +26,7 @@ export const NoDataTemplate: FC<INoDataProps> = ({
     <section className='py-[60px] md:py-[100px] xl:py-[130px]'>
       <div className='container'>
         {sectionTitle && (
-          <h2 className='subtitle x mb-10 md:mb-[60px] xl:w-[744px] xl:uppercase'>
+          <h2 className='subtitle mb-10 md:mb-[60px] xl:w-[744px] xl:uppercase'>
             {sectionTitle}
           </h2>
         )}
