@@ -4,5 +4,5 @@
   "newsButton": "Дивитись всі",
   "buttonText": { "more": "Більше", "hide": "Сховати" },
   "hrefLink": "/news",
-  "lastVisible": 2
+  "LIMIT_NEWS": 2
 }
