@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { NewsCard } from '@/components/common/NewsCard';
+// import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
 
 import { formatDate } from '@/utils';
@@ -38,11 +38,11 @@ export const News = () => {
           {title}
         </h1>
         <ul className='mb-[64px] flex flex-col items-center gap-10 md:mb-[100px] md:gap-[60px] xl:mb-[60px] xl:flex-row xl:flex-wrap xl:gap-x-[25px] xl:gap-y-10'>
-          {news.slice(0, displayNews).map(item => (
+          {/* {news.slice(0, displayNews).map(item => (
             <li key={item.id}>
               <NewsCard item={item} />
             </li>
-          ))}
+          ))} */}
         </ul>
         {news.length > displayNews ? (
           <Button
