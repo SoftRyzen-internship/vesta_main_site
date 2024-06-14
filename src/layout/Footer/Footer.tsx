@@ -5,16 +5,16 @@ import { NavList } from '@/components/common/NavList';
 import { ScrollButtonUp } from '@/components/ui/ScrollButtonUp/ScrollButtonUp';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
-import GoIt from '/public/icons/goIt.svg';
-import SoftRyzen from '/public/icons/softryzen.svg';
-
 import { fetchData } from '@/actions/fetchData';
 
 import { getContact } from '@/graphql/contactSchema';
 
+import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
+
 import { footer, footerNavigation, footerPhones, socialMedia } from '@/data';
 
-import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
+import GoIt from '/public/icons/goIt.svg';
+import SoftRyzen from '/public/icons/softryzen.svg';
 
 export const Footer: FC = async () => {
   const data = await fetchData<FooterOrganizationResponse>(getContact);
