@@ -11,10 +11,6 @@ export const ProjectTemplate: FC = () => {
     full: { title, description, socials, img, imgAlt, subtitle, text },
   } = projectTemplateData;
 
-  // const {
-  //   short: { title, description, socials, img, imgAlt, subtitle, text },
-  // } = projectTemplateData;
-
   return (
     <section className='pb-[60px] pt-[134px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
       <div className='container'>
