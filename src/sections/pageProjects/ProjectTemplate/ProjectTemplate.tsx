@@ -6,7 +6,7 @@ import { IOneProjectsProps } from './ProjectTemplate.type';
 export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
   const { title, pageText, add_title, add_text, image } = oneProject;
   const url =
-    image.data?.attributes?.url ?? '/images/mainHero/main-hero-bg-tab@1x.webp';
+    image.data?.attributes?.url ?? '/images/noData/no-data-image.webp';
   const alternativeText = image.data?.attributes?.alternativeText ?? title;
   return (
     <section className='pb-[60px] pt-[134px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>

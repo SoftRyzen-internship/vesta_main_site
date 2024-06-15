@@ -13,7 +13,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
   isOddCard,
 }) => {
   const url =
-    image.data?.attributes?.url ?? '/images/mainHero/main-hero-bg-tab@1x.webp';
+    image.data?.attributes?.url ?? '/images/noData/no-data-image.webp';
   const alternativeText = image.data?.attributes?.alternativeText ?? title;
 
   return (
