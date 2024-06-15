@@ -1,4 +1,4 @@
-import { FC} from 'react';
+import { FC } from 'react';
 
 import { ScrollBox } from '@/components/ui/ScrollBox';
 import { SupportCards } from '@/components/common/SupportCards';
@@ -11,24 +11,37 @@ import { getOrganization } from '@/graphql/organizationSchema';
 
 import { getSpecialWords } from '@/utils';
 
-import { OrganizationResponse, AboutOrganisationHelps } from './AboutOrganisation.types';
-
+import {
+  OrganizationResponse,
+  AboutOrganisationHelps,
+} from './AboutOrganisation.types';
 
 export const AboutOrganisation: FC = async () => {
   const { caption, title } = aboutOrganisation;
 
-  const data: OrganizationResponse = await fetchData<OrganizationResponse>(getOrganization);
+  const data: OrganizationResponse =
+    await fetchData<OrganizationResponse>(getOrganization);
 
   const { help_psyhologist, legal_support, date, request_psychologist, text } =
     data.organization.data.attributes;
 
-
   const updatedSupportCards: AboutOrganisationHelps[] = [
-    { id: 1, amountOfHelp: legal_support, typeOfHelp: 'надано юридичну підтримку' },
-    { id: 2, amountOfHelp: request_psychologist, typeOfHelp: 'запитів на психологічну підтримку' },
-    { id: 3, amountOfHelp: help_psyhologist, typeOfHelp: 'надано психологічну підтримку' }
-  ] ;
-
+    {
+      id: 1,
+      amountOfHelp: legal_support,
+      typeOfHelp: 'надано юридичну підтримку',
+    },
+    {
+      id: 2,
+      amountOfHelp: request_psychologist,
+      typeOfHelp: 'запитів на психологічну підтримку',
+    },
+    {
+      id: 3,
+      amountOfHelp: help_psyhologist,
+      typeOfHelp: 'надано психологічну підтримку',
+    },
+  ];
 
   return (
     <section>
@@ -53,22 +66,26 @@ export const AboutOrganisation: FC = async () => {
         </div>
       </div>
       <div className='container'>
-        <p
-          className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
-        >
+        <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
           *станом на {date}
         </p>
-        <ScrollBox className='overflow-x-auto'>
-          <ul className='flex gap-5 transition pb-10'>
-            {updatedSupportCards.map((card: { id: number; amountOfHelp: number; typeOfHelp: string }) => (
-              <li key={card.id}>
-                <SupportCards
-                  id={card.id}
-                  amountOfHelp={card.amountOfHelp}
-                  typeOfHelp={card.typeOfHelp}
-                />
-              </li>
-            ))}
+        <ScrollBox className='overflow-x-scroll scrollbar-thin'>
+          <ul className='flex gap-5 pb-10 transition'>
+            {updatedSupportCards.map(
+              (card: {
+                id: number;
+                amountOfHelp: number;
+                typeOfHelp: string;
+              }) => (
+                <li key={card.id}>
+                  <SupportCards
+                    id={card.id}
+                    amountOfHelp={card.amountOfHelp}
+                    typeOfHelp={card.typeOfHelp}
+                  />
+                </li>
+              ),
+            )}
           </ul>
         </ScrollBox>
       </div>

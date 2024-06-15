@@ -1,6 +1,7 @@
 import { FC, Fragment } from 'react';
 import Image from 'next/image';
 
+import { clsx } from 'clsx';
 import {
   Dialog,
   DialogPanel,
@@ -10,6 +11,7 @@ import {
 
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Button } from '@/components/ui/Button';
+import { ScrollBox } from '@/components/ui/ScrollBox';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
@@ -52,8 +54,11 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   variant='closeModal'
                   className='mb-5 ml-auto block md:absolute md:right-[25px] md:top-[25px] md:mb-[11px] xl:right-[35px] xl:top-[35px] xl:mb-[31px]'
                 />
-                <div
-                  className={`overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ${s.contentHeight}`}
+                <ScrollBox
+                  className={clsx(
+                    s.contentHeight,
+                    'overflow-y-scroll pr-[5px] scrollbar-thin md:pr-[10px] xl:flex xl:gap-[43px]',
+                  )}
                 >
                   <div className='xl:w-[386px]'>
                     <Image
@@ -84,7 +89,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                       )}
                     </div>
                   </div>
-                </div>
+                </ScrollBox>
               </div>
             </DialogPanel>
           </div>
