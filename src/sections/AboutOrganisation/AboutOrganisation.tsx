@@ -15,9 +15,13 @@ import {
   OrganizationResponse,
   AboutOrganisationHelps,
 } from './AboutOrganisation.types';
+import {
+  OrganizationResponse,
+  AboutOrganisationHelps,
+} from './AboutOrganisation.types';
 
 export const AboutOrganisation: FC = async () => {
-  const { caption, title } = aboutOrganisation;
+  const { caption, title, sectionOrganisationHelp } = aboutOrganisation;
 
   const data: OrganizationResponse =
     await fetchData<OrganizationResponse>(getOrganization);
@@ -42,6 +46,19 @@ export const AboutOrganisation: FC = async () => {
       typeOfHelp: 'надано психологічну підтримку',
     },
   ];
+  const updatedSupportCards: AboutOrganisationHelps[] =
+    sectionOrganisationHelp.map(card => {
+      switch (card.typeOfHelp) {
+        case 'надано юридичну підтримку':
+          return { ...card, amountOfHelp: help_psyhologist ?? 0 };
+        case 'запитів на психологічну підтримку':
+          return { ...card, amountOfHelp: legal_support ?? 0 };
+        case 'надано психологічну підтримку':
+          return { ...card, amountOfHelp: request_psychologist ?? 0 };
+        default:
+          return { ...card, amountOfHelp: 0 };
+      }
+    });
 
   return (
     <section>
@@ -71,21 +88,15 @@ export const AboutOrganisation: FC = async () => {
         </p>
         <ScrollBox className='overflow-x-scroll scrollbar-thin'>
           <ul className='flex gap-5 pb-10 transition'>
-            {updatedSupportCards.map(
-              (card: {
-                id: number;
-                amountOfHelp: number;
-                typeOfHelp: string;
-              }) => (
-                <li key={card.id}>
-                  <SupportCards
-                    id={card.id}
-                    amountOfHelp={card.amountOfHelp}
-                    typeOfHelp={card.typeOfHelp}
-                  />
-                </li>
-              ),
-            )}
+            {updatedSupportCards.map(card => (
+              <li key={card.id}>
+                <SupportCards
+                  id={card.id}
+                  amountOfHelp={card.amountOfHelp!}
+                  typeOfHelp={card.typeOfHelp}
+                />
+              </li>
+            ))}
           </ul>
         </ScrollBox>
       </div>
