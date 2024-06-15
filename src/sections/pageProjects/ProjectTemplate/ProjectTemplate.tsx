@@ -1,28 +1,26 @@
 import { FC } from 'react';
 import Image from 'next/image';
 
-
 import { IOneProjectsProps } from './ProjectTemplate.type';
 
 export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
-  const { title, pageText, add_title, add_text, image,
-
-  } = oneProject;
-
+  const { title, pageText, add_title, add_text, image } = oneProject;
+  const url =
+    image.data?.attributes?.url ?? '/images/mainHero/main-hero-bg-tab@1x.webp';
+  const alternativeText = image.data?.attributes?.alternativeText ?? title;
   return (
     <section className='pb-[60px] pt-[134px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
       <div className='container'>
         <div className='justify-between xl:flex'>
           <div className='mb-[30px] md:mb-10 md:max-w-[492px] xl:mb-0'>
             <h1 className='subtitle'>{title}</h1>
-            <p className='whitespace-pre-wrap mt-5 pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
+            <p className='mt-5 whitespace-pre-wrap pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
               {pageText}
             </p>
-            
           </div>
           <Image
-            src={image.data.attributes.url}
-            alt={image.data.attributes.alternativeText}
+            src={url}
+            alt={alternativeText}
             width={448}
             height={232}
             className='h-[232px] w-full object-cover md:h-[366px] md:w-[684px] xl:w-[595px]'
