@@ -21,7 +21,7 @@ export const Footer: FC = async () => {
 
   const { legal_support, psychological_support, head_organization, email } = data.contact.data.attributes;
 
-  const updatedSupportCards: FooterPhones[] = footerPhones.map((card) => {
+  const footerHelpPhones: FooterPhones[] = footerPhones.map((card) => {
     switch (card.typeOfHelp) {
       case 'Юридичні послуги:':
         return { ...card, phone: legal_support };
@@ -46,7 +46,7 @@ export const Footer: FC = async () => {
                 <ScrollButtonUp/>
               </div>
               <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white transition md:pb-[96px] md:pl-[169px] md:pt-[40px] xl:pb-[100px] xl:pl-[236px] xl:pt-0'>
-                {updatedSupportCards.map(({ id, typeOfHelp, aria, phone }) => (
+                {footerHelpPhones.map(({ id, typeOfHelp, aria, phone }) => (
                   <div key={id} className='flex flex-col gap-1'>
                     <p className='text-greenHover text-whiteGrey'>
                       {typeOfHelp}
