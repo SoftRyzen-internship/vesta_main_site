@@ -15,10 +15,6 @@ import {
   OrganizationResponse,
   AboutOrganisationHelps,
 } from './AboutOrganisation.types';
-import {
-  OrganizationResponse,
-  AboutOrganisationHelps,
-} from './AboutOrganisation.types';
 
 export const AboutOrganisation: FC = async () => {
   const { caption, title, sectionOrganisationHelp } = aboutOrganisation;
@@ -29,23 +25,6 @@ export const AboutOrganisation: FC = async () => {
   const { help_psyhologist, legal_support, date, request_psychologist, text } =
     data.organization.data.attributes;
 
-  const updatedSupportCards: AboutOrganisationHelps[] = [
-    {
-      id: 1,
-      amountOfHelp: legal_support,
-      typeOfHelp: 'надано юридичну підтримку',
-    },
-    {
-      id: 2,
-      amountOfHelp: request_psychologist,
-      typeOfHelp: 'запитів на психологічну підтримку',
-    },
-    {
-      id: 3,
-      amountOfHelp: help_psyhologist,
-      typeOfHelp: 'надано психологічну підтримку',
-    },
-  ];
   const updatedSupportCards: AboutOrganisationHelps[] =
     sectionOrganisationHelp.map(card => {
       switch (card.typeOfHelp) {
