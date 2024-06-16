@@ -18,6 +18,6 @@ export interface OrganizationAttributes {
   
   export interface AboutOrganisationHelps  {
     id: number,
-    amountOfHelp: number,
+    amountOfHelp?: number,
     typeOfHelp:string
   }
