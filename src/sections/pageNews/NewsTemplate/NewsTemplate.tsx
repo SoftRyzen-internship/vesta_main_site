@@ -7,27 +7,48 @@ import ReactPlayer from 'react-player';
 import clsx from 'clsx';
 
 import { Button } from '@/components/ui/Button';
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
-import { INewsTemplateProps } from './NewsTemplate.types';
+import {
+  IDataAttributes,
+  INewsData,
+  INewsTemplateProps,
+} from './NewsTemplate.types';
 
-export const NewsTemplate: FC<INewsTemplateProps> = ({
-  item: { image, date, title, text, videoLink = '', descriptionVideo = '' },
-}) => {
+import { fetchData } from '@/actions/fetchData';
+import { getNews } from '@/graphql/newsSchema';
+
+import { newsTemplatePageData } from '@/data';
+
+export const NewsTemplate: FC<INewsTemplateProps> = ({ paramsSlug }) => {
   const [isClient, setIsClient] = useState(false);
+  const [news, setNews] = useState<IDataAttributes[]>();
+
+  const oneNews = news?.find(({ attributes: { slug } }) => slug === paramsSlug);
 
   useEffect(() => {
     setIsClient(true);
+    const getAllNews = async () => {
+      const data = await fetchData<INewsData>(getNews);
+      if (data.news.data) {
+        setNews(data.news.data);
+      }
+    };
+    getAllNews();
   }, []);
-  return (
+
+  return oneNews ? (
     <section className='pt-[141px] md:pt-[154px] xl:pt-[191px]'>
       <div className='container xl:flex xl:flex-col xl:items-center'>
-        <p className='paragraph mb-[30px] xl:w-[802px] '>{date}</p>
+        <p className='paragraph mb-[30px] xl:w-[802px] '>
+          {oneNews.attributes.date}
+        </p>
         <h2 className='mb-[50px] text-h3 text-green md:text-h3_tab xl:w-[802px] xl:text-h3_desk'>
-          {title}
+          {oneNews.attributes.title}
         </h2>
         <Image
-          src={image.data[0].attributes.url}
-          alt={image.data[0].attributes.alternativeText}
+          src={oneNews.attributes.image.data[0].attributes.url}
+          alt={oneNews.attributes.image.data[0].attributes.alternativeText}
           width={328}
           height={260}
           className='mb-10 h-[260px] w-full object-cover md:h-[360px] md:w-[684px] xl:mb-[50px] xl:h-[500px] xl:w-[1216px]'
@@ -35,15 +56,15 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
         <p
           className={clsx(
             'paragraph xl:w-[802px]',
-            videoLink && 'mb-10 xl:mb-[50px]',
+            oneNews.attributes.videoLink && 'mb-10 xl:mb-[50px]',
           )}
         >
-          {text}
+          {oneNews.attributes.text}
         </p>
-        {videoLink && isClient && (
+        {oneNews.attributes.videoLink && isClient && (
           <div className='change mb-10 h-[260px] w-full md:h-[360px] xl:mb-[50px] xl:h-[349px] xl:w-[802px]'>
             <ReactPlayer
-              url={videoLink}
+              url={oneNews.attributes.videoLink}
               light={true}
               playIcon={<Button variant='play' />}
               width='100%'
@@ -51,10 +72,17 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
             />
           </div>
         )}
-        {descriptionVideo && (
-          <p className='paragraph xl:w-[802px]'>{descriptionVideo}</p>
+        {oneNews.attributes.descriptionVideo && (
+          <p className='paragraph xl:w-[802px]'>
+            {oneNews.attributes.descriptionVideo}
+          </p>
         )}
       </div>
     </section>
+  ) : (
+    <NoDataTemplate
+      title={newsTemplatePageData.errorTitle}
+      description={newsTemplatePageData.errorDescription}
+    />
   );
 };

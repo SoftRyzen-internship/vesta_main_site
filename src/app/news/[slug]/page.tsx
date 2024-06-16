@@ -2,34 +2,47 @@ import { Metadata } from 'next';
 
 import { News } from '@/sections/News';
 import { NewsTemplate } from '@/sections/pageNews/NewsTemplate';
+import { INewsData } from '@/sections/pageNews/NewsTemplate/NewsTemplate.types';
 
-import { metaData } from '@/data';
 import { fetchData } from '@/actions/fetchData';
 import { getNews } from '@/graphql/newsSchema';
-import { INewsData } from '@/sections/pageNews/NewsTemplate/NewsTemplate.types';
 
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
 
-export const metadata: Metadata = {
-  title: metaData.titleNews,
-  description: metaData.descriptionNews,
-  alternates: {
-    canonical: `${BASE_APP_URL}/news`,
-  },
-};
-
-//add generate static params
-
-export default async function Page({ params }: { params: { slug: string } }) {
+export async function generateStaticParams() {
   const data = await fetchData<INewsData>(getNews);
-  const oneNews = data.news.data.find(
+
+  return data.news.data.map(({ attributes }) => ({
+    slug: attributes.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const data = await fetchData<INewsData>(getNews);
+  const news = data.news.data.find(
     ({ attributes: { slug } }) => slug === params.slug,
   );
-  console.log(data.news.data);
+
+  return {
+    title: news?.attributes.title,
+    description: news?.attributes.text,
+    alternates: {
+      canonical: `${BASE_APP_URL}/news/${news?.attributes.slug}`,
+    },
+  };
+}
+
+export default async function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params;
+
   return (
     <>
-      {oneNews && <NewsTemplate item={oneNews.attributes} />}
-      <News />
+      <NewsTemplate paramsSlug={slug} />
+      <News slug={slug} />
     </>
   );
 }

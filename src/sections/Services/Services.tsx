@@ -2,19 +2,20 @@ import { FC } from 'react';
 
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { ScrollBox } from '@/components/ui/ScrollBox';
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
 import { fetchData } from '@/actions/fetchData';
 import { getService } from '@/graphql/serviceSchema';
 
 import { IServicesData } from './Services.types';
 
-import { service } from '@/data';
+import { servicesData } from '@/data';
 
 export const Services: FC = async () => {
-  const { title } = service;
+  const { title, errorTitle, errorDescription } = servicesData;
   const data: IServicesData = await fetchData<IServicesData>(getService);
   const services = data.service.data.attributes.serviceItem;
-  return (
+  return services.length > 0 ? (
     <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
       <div className='container'>
         <h2 className='subtitle mb-10 md:mb-[50px] md:text-center xl:mb-[60px]'>
@@ -38,5 +39,11 @@ export const Services: FC = async () => {
         </ScrollBox>
       </div>
     </section>
+  ) : (
+    <NoDataTemplate
+      sectionTitle={title}
+      title={errorTitle}
+      description={errorDescription}
+    />
   );
 };

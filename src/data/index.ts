@@ -19,7 +19,7 @@ export { default as templateNoData } from './templateNoData.json';
 export { default as newsPageData } from './newsPageData.json';
 
 export { default as socialMedia } from './socialMedia.json';
-export { default as service } from './service.json';
+export { default as servicesData } from './servicesData.json';
 export { default as partners } from './partners.json';
 export { default as dwellings } from './dwellings.json';
 export { default as teamCard } from './teamCard.json';
@@ -32,3 +32,4 @@ export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
 
 export { default as projectTemplateData } from './projectTemplateData.json';
+export { default as newsTemplatePageData } from './newsTemplatePageData.json';
