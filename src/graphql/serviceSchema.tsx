@@ -4,9 +4,9 @@ export const getService = gql`
   query {
     service {
       data {
-        id
         attributes {
           serviceItem {
+            id
             title
             description
             image {

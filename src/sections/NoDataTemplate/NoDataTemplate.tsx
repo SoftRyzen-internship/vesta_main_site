@@ -28,7 +28,9 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   const background = bgs[pathname] || bgs['else'];
 
   return (
-    <section className={clsx('py-[60px] md:py-[100px] xl:py-[130px]', className)}>
+    <section
+      className={clsx('py-[60px] md:py-[100px] xl:py-[130px]', className)}
+    >
       <div className='container'>
         {sectionTitle && (
           <h2 className='subtitle mb-10 md:mb-[60px] xl:w-[744px] xl:uppercase'>
