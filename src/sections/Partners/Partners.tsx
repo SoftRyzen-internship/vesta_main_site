@@ -23,7 +23,7 @@ export const Partners: FC = () => {
 
   useEffect(() => {
     const fetchPartnersData = async () => {
-      const data: IPartnersData = await fetchData<IPartnersData>(getPartners);
+      const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, numberOfCards));
       setPartners(data.partner.data.attributes.item);
     };
     fetchPartnersData();
