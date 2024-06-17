@@ -19,9 +19,11 @@ export const News = () => {
     buttonText: { more, hide },
     limit,
   } = newsPageData;
+  const { descriptionNews, titleNews, wait, waitText } = templateNoData;
   const [news, setNews] = useState<IDataAttributes[]>([]);
   const [start, setStart] = useState(0);
   const [total, setTotal] = useState(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const loadNews = async () => {
@@ -34,6 +36,7 @@ export const News = () => {
         }
       }
       setTotal(newNews.news.meta.pagination.total);
+      setIsLoading(false);
     };
     loadNews();
   }, [start, limit]);
@@ -46,6 +49,13 @@ export const News = () => {
   };
   return (
     <>
+      {isLoading && (
+        <NoDataTemplate
+          sectionTitle={title}
+          title={wait}
+          description={waitText}
+        />
+      )}
       {news.length > 0 ? (
         <section className='pb-[60px] pt-[140px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
           <div className='container'>
@@ -81,8 +91,8 @@ export const News = () => {
       ) : (
         <NoDataTemplate
           sectionTitle={title}
-          title={templateNoData.titleNews}
-          description={templateNoData.descriptionNews}
+          title={titleNews}
+          description={descriptionNews}
         />
       )}
     </>
