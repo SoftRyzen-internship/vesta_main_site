@@ -83,6 +83,7 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({ paramsSlug }) => {
     <NoDataTemplate
       title={newsTemplatePageData.errorTitle}
       description={newsTemplatePageData.errorDescription}
+      className='pb-0 pt-[100px] md:py-0  md:pt-[100px] xl:py-0 xl:pt-[130px]'
     />
   );
 };
