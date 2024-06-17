@@ -32,4 +32,3 @@ export { default as footerNavigation } from './footerNavigation.json';
 export { default as footerPhones } from './footerPhones.json';
 
 export { default as projectTemplateData } from './projectTemplateData.json';
-export { default as newsTemplatePageData } from './newsTemplatePageData.json';

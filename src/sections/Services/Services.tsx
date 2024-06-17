@@ -9,10 +9,10 @@ import { getService } from '@/graphql/serviceSchema';
 
 import { IServicesData } from './Services.types';
 
-import { servicesData } from '@/data';
+import { servicesData, templateNoData } from '@/data';
 
 export const Services: FC = async () => {
-  const { title, errorTitle, errorDescription } = servicesData;
+  const { title } = servicesData;
   const data: IServicesData = await fetchData<IServicesData>(getService);
   const services = data.service.data.attributes.serviceItem;
   return services.length > 0 ? (
@@ -42,8 +42,8 @@ export const Services: FC = async () => {
   ) : (
     <NoDataTemplate
       sectionTitle={title}
-      title={errorTitle}
-      description={errorDescription}
+      title={templateNoData.titleServices}
+      description={templateNoData.descriptionServices}
     />
   );
 };

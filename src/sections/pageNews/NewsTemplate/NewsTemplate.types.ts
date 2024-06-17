@@ -1,5 +1,13 @@
 export interface INewsTemplateProps {
-  paramsSlug: string;
+  oneNews: {
+    image: { data: [{ attributes: { url: string; alternativeText: string } }] };
+    slug: string;
+    date: string;
+    title: string;
+    text: string;
+    videoLink?: string;
+    descriptionVideo?: string;
+  };
 }
 
 export interface INewsAttributes {

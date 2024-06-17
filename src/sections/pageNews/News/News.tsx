@@ -6,24 +6,22 @@ import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
+import { IDataAttributes, INewsData } from './News.types';
 
 import { fetchData } from '@/actions/fetchData';
 import { getNewsCard } from '@/graphql/newsSchemaCard';
 
-import { newsPageData } from '@/data';
-
-import { IDataAttributes, INewsData } from './News.types';
+import { newsPageData, templateNoData } from '@/data';
 
 export const News = () => {
   const {
     title,
     buttonText: { more, hide },
-    error: { errorTitle, description },
+    limit,
   } = newsPageData;
   const [news, setNews] = useState<IDataAttributes[]>([]);
   const [start, setStart] = useState(0);
   const [total, setTotal] = useState(0);
-  const limit = 4;
 
   useEffect(() => {
     const loadNews = async () => {
@@ -38,7 +36,7 @@ export const News = () => {
       setTotal(newNews.news.meta.pagination.total);
     };
     loadNews();
-  }, [start]);
+  }, [start, limit]);
   const loadMore = () => {
     setStart(start + limit);
   };
@@ -83,8 +81,8 @@ export const News = () => {
       ) : (
         <NoDataTemplate
           sectionTitle={title}
-          title={errorTitle}
-          description={description}
+          title={templateNoData.titleNews}
+          description={templateNoData.descriptionNews}
         />
       )}
     </>
