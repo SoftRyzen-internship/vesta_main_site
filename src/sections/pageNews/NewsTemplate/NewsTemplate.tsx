@@ -14,7 +14,9 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
   oneNews: { image, date, title, text, videoLink = '', descriptionVideo = '' },
 }) => {
   const [isClient, setIsClient] = useState(false);
-
+  const url =
+    image.data[0]?.attributes?.url ?? '/images/noData/no-data-image.webp';
+  const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -27,8 +29,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
           {title}
         </h2>
         <Image
-          src={image.data[0].attributes.url}
-          alt={image.data[0].attributes.alternativeText}
+          src={url}
+          alt={alternativeText}
           width={328}
           height={260}
           className='mb-10 h-[260px] w-full object-cover md:h-[360px] md:w-[684px] xl:mb-[50px] xl:h-[500px] xl:w-[1216px]'
