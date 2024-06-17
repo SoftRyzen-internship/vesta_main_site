@@ -37,7 +37,7 @@ export const ServiceCard: FC<IServiceCardProps> = ({
         <Image
           fill
           className='object-cover'
-          src={src ? src : ''}
+          src={src}
           alt={alt}
           sizes='(max-width: 1280px) 496px, 402px'
         />
