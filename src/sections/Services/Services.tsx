@@ -15,6 +15,7 @@ export const Services: FC = async () => {
   const { title } = servicesData;
   const data: IServicesData = await fetchData<IServicesData>(getService);
   const services = data.service.data.attributes.serviceItem;
+
   return services.length > 0 ? (
     <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
       <div className='container'>
@@ -23,13 +24,10 @@ export const Services: FC = async () => {
         </h2>
         <ScrollBox className='overflow-x-auto md:overflow-hidden'>
           <ul className='flex items-center gap-10 pb-10 md:flex-col md:gap-[30px] xl:gap-10'>
-            {services.map(({ title, image, description, id }, index) => (
-              <li key={id}>
+            {services.map((service, index) => (
+              <li key={service.id}>
                 <ServiceCard
-                  title={title}
-                  src={image.data.attributes.url}
-                  alt={image.data.attributes.alternativeText}
-                  description={description}
+                  item={service}
                   count={String(index + 1)}
                   countAll={services.length.toString()}
                 />
