@@ -34,13 +34,21 @@ export const ServiceCard: FC<IServiceCardProps> = ({
       </div>
       <div className='relative smOnly:hidden md:h-[400px] md:w-[496px] xl:h-[439px] xl:w-[402px]'>
         <Image
-          fill
-          className='object-cover'
           src={img}
           alt={alt}
-          sizes='(max-width: 1280px) 496px, 402px'
+          width={448}
+          height={400}
+          className='object-cover object-center md:h-[400px] md:w-[496px] xl:h-[402px] xl:w-[439px]'
         />
       </div>
     </div>
   );
 };
+
+{/* <Image
+  src={url}
+  alt={alternativeText}
+  width={448}
+  height={250}
+  className='mb-[30px] h-[250px] w-full object-cover object-center md:mb-0 md:h-[250px] md:w-[300px] xl:h-[300px] xl:w-[492px]'
+/>; */}
