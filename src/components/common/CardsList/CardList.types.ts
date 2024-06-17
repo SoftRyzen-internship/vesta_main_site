@@ -9,9 +9,9 @@ export interface CardListProps {
     position?: string;
     description?: string;
     plug?: string;
-    socialMedia?: { value: string; link: string }[];
+    socialMedia?: { social: string; link: string }[];
   }[];
   CardComponent: ElementType;
   path: string;
-  section: string
+  section: string;
 }

@@ -20,13 +20,13 @@ export const SocialMedia: FC<SocialMediaProps> = ({
 }) => {
   return (
     <ul className='flex gap-[20px]'>
-      {socialMedia.map(({ value, link }) => {
+      {socialMedia.map(({ social, link }) => {
         return (
-          <li key={value} className='h-[40px] w-[40px]'>
+          <li key={social} className='h-[40px] w-[40px]'>
             <a
               target='_blank'
               rel='noopener noreferrer nofollow'
-              aria-label={`відкрити ${value}`}
+              aria-label={`відкрити ${social}`}
               href={link}
               className={clsx(
                 'flex h-full w-full items-center justify-center rounded-[50%]',
@@ -36,34 +36,31 @@ export const SocialMedia: FC<SocialMediaProps> = ({
                   'border-[0.5px] border-solid border-green bg-transparent text-green hover:border-hoverOrange hover:text-hoverOrange focus:border-greenFocus focus:text-greenFocus',
               )}
             >
-              {value === 'facebook' && (
+              {social === 'Facebook' && (
                 <SocialsFacebook width={24} height={24} fill='currentColor' />
               )}
-              {value === 'instagram' && (
+              {social === 'Instagram' && (
                 <SocialsInstagram width={24} height={24} fill='currentColor' />
               )}
-              {value === 'youtube' && (
+              {social === 'YouTube' && (
                 <SocialsYoutube width={28} height={24} fill='currentColor' />
               )}
-              {value === 'tiktok' && (
+              {social === 'TikTok' && (
                 <SocialsTikTok width={24} height={24} fill='currentColor' />
               )}
-              {value === 'twitter' && (
+              {social === 'Twitter' && (
                 <SocialsTwitter width={24} height={20} fill='currentColor' />
               )}
-              {value === 'soundCloud' && (
+              {social === 'SoundCloud' && (
                 <SoundCloud width={24} height={22} fill='currentColor' />
               )}
-              {value === 'spotify' && (
+              {social === 'Spotify' && (
                 <SpotifyIcon width={24} height={24} fill='currentColor' />
               )}
-              {value === 'diya' && (
+              {social === 'Diya' && (
                 <Diya width={24} height={24} fill='currentColor' />
               )}
-              {value === 'diya' && (
-                <Diya width={24} height={24} fill='currentColor' />
-              )}
-              {value === 'youtubeMisic' && (
+              {social === 'YouTube Music' && (
                 <YoutubeMusic width={22} height={22} fill='currentColor' />
               )}
             </a>
