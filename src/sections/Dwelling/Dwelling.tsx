@@ -3,9 +3,21 @@ import { FC } from 'react';
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { dwellings, dwellingData } from '@/data';
+import { dwellingData } from '@/data';
 
-export const Dwelling: FC = () => {
+import { fetchData } from '@/actions/fetchData';
+
+import { getLocation } from '@/graphql/locationSchema';
+
+import { DwellingsResponse,  } from '@/sections/Dwelling/Dwellings.types';
+
+
+
+export const Dwelling: FC = async() => {
+  const data: DwellingsResponse = await fetchData<DwellingsResponse>(getLocation);
+  const locationItems = data.location.data.attributes.locationItem;
+console.log(locationItems);
+
   return (
     <section className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container  flex flex-col transition xl:flex-row xl:gap-[145px]'>
@@ -18,8 +30,8 @@ export const Dwelling: FC = () => {
           </LinkButton>
         </div>
         <ul className='flex flex-col gap-[30px]'>
-          {dwellings.map(item => (
-            <li key={item.id}>
+          {locationItems.map((item) => (
+            <li key={item.address}>
               <DwellingCard item={item} />
             </li>
           ))}
