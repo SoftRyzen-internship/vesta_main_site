@@ -81,7 +81,7 @@ $ npm run dev
 
 ## Components API
 
-<!-- <details><summary>Show</summary> -->
+<details><summary>Show</summary>
 
 - #### component **BurgerMenu**
 
@@ -149,7 +149,7 @@ SocialMediaItem:
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `social` | `string` | required, sets the type of social network |
 | `link` | `string` | required, sets the link of social network |
 <hr>
 
@@ -410,7 +410,7 @@ SocialMediaItem:
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `social` | `string` | required, sets the type of social network |
 | `link` | `string` | required, sets the link of social network |
 <hr>
 
@@ -439,11 +439,11 @@ SocialMediaItem:
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `social` | `string` | required, sets the type of social network |
 | `link` | `string` | required, sets the link of social network |
 <hr>
 
-<!-- </details> -->
+</details>
 
 ## Technologies
 

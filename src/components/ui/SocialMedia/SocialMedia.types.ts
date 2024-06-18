@@ -1,16 +1,7 @@
 export interface SocialMediaItem {
-  social:
-    | 'Facebook'
-    | 'Instagram'
-    | 'YouTube'
-    | 'TikTok'
-    | 'Twitter'
-    | 'SoundCloud'
-    | 'Spotify'
-    | 'Diya'
-    | 'YouTube Music';
+  social: string;
   link: string;
-};
+}
 
 export interface SocialMediaProps {
   socialMedia: SocialMediaItem[];
