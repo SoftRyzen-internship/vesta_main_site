@@ -4,9 +4,9 @@ export const getLocation = gql`
   query {
     location {
       data {
-        id
         attributes {
           locationItem {
+            id
             city
             address
             phone

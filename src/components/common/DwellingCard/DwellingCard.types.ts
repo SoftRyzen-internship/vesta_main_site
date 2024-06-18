@@ -1,6 +1,10 @@
-export interface IDwellingCardProps {
-  item: {
-    city: string;
-    contacts: { link: string; text: string; target?: string; rel?: string }[];
-  };
+export interface DwellingsAttributes {
+  address: string;
+  city: string;
+  locationLink: string;
+  phone: string;
 }
+
+export interface DwellingCardProps {
+    item: DwellingsAttributes;
+  }

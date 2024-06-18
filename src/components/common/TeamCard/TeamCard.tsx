@@ -8,19 +8,19 @@ import { ITeamCardProps } from './TeamCard.types';
 import { TeamCardModal } from '../TeamCardModal';
 
 export const TeamCard: FC<ITeamCardProps> = ({
-  item: { name, src, alt, position, description, plug, socialMedia },
+  item: { name, image, position, status, text, socialItem },
 }) => {
   const [openModal, setIsOpenModal] = useState(false);
   const onClick = () => {
     setIsOpenModal(true);
   };
-
+  const { url, alternativeText } = image.data.attributes;
   return (
     <div className='smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full overflow-hidden md:h-[440px] xl:h-[463px]'>
         <Image
-          src={src}
-          alt={alt}
+          src={url}
+          alt={alternativeText}
           width={328}
           height={330}
           className='h-[100%] w-[100%] object-cover'
@@ -38,12 +38,12 @@ export const TeamCard: FC<ITeamCardProps> = ({
       <TeamCardModal
         openModal={openModal}
         closeModal={() => setIsOpenModal(false)}
-        img={src}
+        img={url}
         name={name}
         position={position}
-        description={description}
-        plug={plug}
-        socialMedia={socialMedia}
+        description={text}
+        plug={status}
+        socialMedia={socialItem}
       />
     </div>
   );

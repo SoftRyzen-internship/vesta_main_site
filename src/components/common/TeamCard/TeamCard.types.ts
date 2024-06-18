@@ -14,12 +14,12 @@ export interface ITeamCardSocials {
 
 export interface ITeamCardProps {
   item: {
+    id: string;
     name: string;
-    src: string;
-    alt: string;
+    image: ITeamCardImage;
     position: string;
-    description: string;
-    plug: string;
-    socialMedia?: { social: string; link: string }[];
+    text: string;
+    status: string;
+    socialItem?: ITeamCardSocials[];
   };
 }

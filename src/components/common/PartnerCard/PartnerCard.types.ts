@@ -1,6 +1,5 @@
+import { IItem } from "@/sections/Partners/Partners.types";
+
 export interface IPartnerCardProps {
-  item: {
-    src: string;
-    name: string;
-  }
+  item: IItem
 }

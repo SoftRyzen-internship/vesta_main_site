@@ -1,21 +1,41 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
+import { IPartnersData, IItem } from './Partners.types';
+
+import { fetchData } from '@/actions/fetchData';
+import { getPartners } from '@/graphql/partnerSchema';
 import { useWindowSize } from '@/utils';
-import { partners, partnersData } from '@/data';
+import { partnersData } from '@/data';
 
 export const Partners: FC = () => {
   const pathName = usePathname();
   const sizes = useWindowSize();
-  const numberOfCards =
-    pathName === '/about' ? 12 : sizes.width && sizes.width >= 1280 ? 4 : 3;
+  const [partners, setPartners] = useState<IItem[]>([]);
+  const [numberOfCards, setNumberOfCards] = useState(4)
+  useEffect(() => {
+    if (pathName === '/about') {
+      setNumberOfCards(12);
+    } else if (sizes.width && sizes.width >= 1280) {
+      setNumberOfCards(4);
+    } else {
+      setNumberOfCards(3);
+    }
+  }, [pathName, sizes.width]);
 
+  useEffect(() => {
+    const fetchPartnersData = async () => {
+      const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, numberOfCards));
+      setPartners(data.partner.data.attributes.item);
+    };
+    fetchPartnersData();
+  }, [numberOfCards]);
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
@@ -34,7 +54,7 @@ export const Partners: FC = () => {
           )}
         </div>
         <CardsList
-          items={partners.slice(0, numberOfCards)}
+          items={partners}
           CardComponent={PartnerCard}
           path={pathName}
           section='partners'
