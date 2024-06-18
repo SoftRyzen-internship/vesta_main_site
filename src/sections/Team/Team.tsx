@@ -38,7 +38,6 @@ export const Team: FC = () => {
         getTeam(0, numberOfCards),
       );
       setTeam(data.team.data.attributes.itemTeam);
-      console.log(data);
     };
     fetchPartnersData();
   }, [numberOfCards]);
