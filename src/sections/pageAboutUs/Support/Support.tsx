@@ -21,11 +21,11 @@ export const Support: FC = () => {
   return (
     <section className='smOnly:py-[60px] md:pt-[100px] xl:pt-[130]'>
       <div className='container'>
-        <div className='xl:mb-[130px] xl:flex xl:justify-between'>
+        <div className='xl:mb-[130px] xl:flex xl:gap-[128px]'>
           <h2 className='mb-[30px] font-kyiv text-h3 text-green md:w-[596px] md:text-h3_tab xl:mb-0 xl:text-h3_desk'>
             <span className='bg-yellowLight'>
               {getSpecialWords(title, 0, 3)}
-            </span>{' '}
+            </span>
             {getSpecialWords(title, 3, title.length - 4, { start: true })}
           </h2>
           <div>
@@ -35,7 +35,7 @@ export const Support: FC = () => {
             </LinkButton>
           </div>
         </div>
-        <div className='relative xl:flex xl:justify-between'>
+        <div className='relative xl:flex xl:gap-[128px]'>
           <Image
             src={img}
             width={328}
