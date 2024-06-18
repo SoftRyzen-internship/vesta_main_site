@@ -11,21 +11,16 @@ import { Button } from '@/components/ui/Button';
 import { INewsTemplateProps } from './NewsTemplate.types';
 
 export const NewsTemplate: FC<INewsTemplateProps> = ({
-  oneNews: {
-    img,
-    imgAlt,
-    date,
-    title,
-    description,
-    video = '',
-    secondDescription = '',
-  },
+  oneNews: { image, date, title, text, videoLink = '', descriptionVideo = '' },
 }) => {
   const [isClient, setIsClient] = useState(false);
-
+  const url =
+    image.data[0]?.attributes?.url ?? '/images/noData/no-data-image.webp';
+  const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
   useEffect(() => {
     setIsClient(true);
   }, []);
+
   return (
     <section className='pt-[141px] md:pt-[154px] xl:pt-[191px]'>
       <div className='container xl:flex xl:flex-col xl:items-center'>
@@ -34,8 +29,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
           {title}
         </h2>
         <Image
-          src={img}
-          alt={imgAlt}
+          src={url}
+          alt={alternativeText}
           width={328}
           height={260}
           className='mb-10 h-[260px] w-full object-cover md:h-[360px] md:w-[684px] xl:mb-[50px] xl:h-[500px] xl:w-[1216px]'
@@ -43,15 +38,15 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
         <p
           className={clsx(
             'paragraph xl:w-[802px]',
-            video && 'mb-10 xl:mb-[50px]',
+            videoLink && 'mb-10 xl:mb-[50px]',
           )}
         >
-          {description}
+          {text}
         </p>
-        {video && isClient && (
+        {videoLink && isClient && (
           <div className='change mb-10 h-[260px] w-full md:h-[360px] xl:mb-[50px] xl:h-[349px] xl:w-[802px]'>
             <ReactPlayer
-              url={video}
+              url={videoLink}
               light={true}
               playIcon={<Button variant='play' />}
               width='100%'
@@ -59,8 +54,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
             />
           </div>
         )}
-        {secondDescription && (
-          <p className='paragraph xl:w-[802px]'>{secondDescription}</p>
+        {descriptionVideo && (
+          <p className='paragraph xl:w-[802px]'>{descriptionVideo}</p>
         )}
       </div>
     </section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useCallback, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -29,36 +29,31 @@ export const Projects: FC = () => {
 
   const { wait, waitText, titleProjects, descriptionProjects } = templateNoData;
 
-  const loadProjects = useCallback(async (start: number, limit: number) => {
-    const projectsResponse = await fetchData<IProjectsData>(
-      getProjects(start, limit),
-    );
-    const newProjects = projectsResponse.projects.data ?? [];
-    setTotal(projectsResponse.projects.meta.pagination.total);
-
-    return newProjects;
-  }, []);
-
   useEffect(() => {
-    async function loadInitialProjects() {
-      const initialProjects = await loadProjects(0, LIMIT_PROJECTS);
-      setProjects(initialProjects);
-      setStart(LIMIT_PROJECTS);
+    const loadProjects = async () => {
+      const newProjects = await fetchData<IProjectsData>(
+        getProjects(start, LIMIT_PROJECTS),
+      );
+      if (newProjects.projects.data) {
+        if (start === 0) {
+          setProjects(newProjects.projects.data);
+        } else {
+          setProjects(prev => [...prev, ...newProjects.projects.data]);
+        }
+      }
+      setTotal(newProjects.projects.meta.pagination.total);
       setIsLoading(false);
-    }
-    loadInitialProjects();
-  }, [LIMIT_PROJECTS, loadProjects]);
+    };
+
+    loadProjects();
+  }, [start, LIMIT_PROJECTS]);
 
   const loadMore = async () => {
-    const newProjects = await loadProjects(start, LIMIT_PROJECTS);
-    setProjects(prevProjects => [...prevProjects, ...newProjects]);
-    setStart(prevStart => prevStart + LIMIT_PROJECTS);
+    setStart(start + LIMIT_PROJECTS);
   };
 
   const hideAll = async () => {
-    const initialProjects = await loadProjects(0, LIMIT_PROJECTS);
-    setProjects(initialProjects);
-    setStart(LIMIT_PROJECTS);
+    setStart(0);
   };
 
   return (

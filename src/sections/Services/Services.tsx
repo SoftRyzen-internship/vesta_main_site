@@ -2,12 +2,21 @@ import { FC } from 'react';
 
 import { ServiceCard } from '@/components/common/ServiceCard';
 import { ScrollBox } from '@/components/ui/ScrollBox';
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
-import { service } from '@/data';
+import { fetchData } from '@/actions/fetchData';
+import { getService } from '@/graphql/serviceSchema';
 
-export const Services: FC = () => {
-  const { title, services } = service;
-  return (
+import { IServicesData } from './Services.types';
+
+import { servicesData, templateNoData } from '@/data';
+
+export const Services: FC = async () => {
+  const { title } = servicesData;
+  const data: IServicesData = await fetchData<IServicesData>(getService);
+  const services = data.service.data.attributes.serviceItem;
+
+  return services.length > 0 ? (
     <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
       <div className='container'>
         <h2 className='subtitle mb-10 md:mb-[50px] md:text-center xl:mb-[60px]'>
@@ -15,13 +24,10 @@ export const Services: FC = () => {
         </h2>
         <ScrollBox className='overflow-x-auto md:overflow-hidden'>
           <ul className='flex items-center gap-10 pb-10 md:flex-col md:gap-[30px] xl:gap-10'>
-            {services.map(({ title, src, alt, description }, index) => (
-              <li key={index}>
+            {services.map((service, index) => (
+              <li key={service.id}>
                 <ServiceCard
-                  title={title}
-                  src={src}
-                  alt={alt}
-                  description={description}
+                  item={service}
                   count={String(index + 1)}
                   countAll={services.length.toString()}
                 />
@@ -31,5 +37,11 @@ export const Services: FC = () => {
         </ScrollBox>
       </div>
     </section>
+  ) : (
+    <NoDataTemplate
+      sectionTitle={title}
+      title={templateNoData.titleServices}
+      description={templateNoData.descriptionServices}
+    />
   );
 };

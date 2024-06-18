@@ -1,12 +1,13 @@
 import { gql } from 'graphql-request';
 
-export const getTeam = gql`
+export const getTeam = (start: number, limit: number) =>  gql`
   query {
-    team {
+    team{
       data {
-        id
         attributes {
-          itemTeam {
+          itemTeam(
+      pagination: { start: ${start}, limit: ${limit} }
+      )  {  id
             name
             position
             status

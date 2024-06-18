@@ -24,6 +24,11 @@ export const getNewsCard = (start: number, limit: number, slug?: string) => gql`
           }
         }
       }
+        meta {
+        pagination {
+          total
+        }
+      }
     }
   }
 `;

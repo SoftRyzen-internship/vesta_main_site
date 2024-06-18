@@ -11,28 +11,33 @@ import { getOrganization } from '@/graphql/organizationSchema';
 
 import { getSpecialWords } from '@/utils';
 
-import { OrganizationResponse, AboutOrganisationHelps } from './AboutOrganisation.types';
+import {
+  OrganizationResponse,
+  AboutOrganisationHelps,
+} from './AboutOrganisation.types';
 
 export const AboutOrganisation: FC = async () => {
   const { caption, title, sectionOrganisationHelp } = aboutOrganisation;
 
-  const data: OrganizationResponse = await fetchData<OrganizationResponse>(getOrganization);
+  const data: OrganizationResponse =
+    await fetchData<OrganizationResponse>(getOrganization);
 
   const { help_psyhologist, legal_support, date, request_psychologist, text } =
     data.organization.data.attributes;
 
-  const updatedSupportCards: AboutOrganisationHelps[] = sectionOrganisationHelp.map((card) => {
-    switch (card.typeOfHelp) {
-      case 'надано юридичну підтримку':
-        return { ...card, amountOfHelp: help_psyhologist ?? 0 };
-      case 'запитів на психологічну підтримку':
-        return { ...card, amountOfHelp: legal_support ?? 0 };
-      case "надано психологічну підтримку":
-        return { ...card, amountOfHelp: request_psychologist ?? 0 };
-      default:
-        return { ...card, amountOfHelp: 0 };
-    }
-  });
+  const updatedSupportCards: AboutOrganisationHelps[] =
+    sectionOrganisationHelp.map(card => {
+      switch (card.typeOfHelp) {
+        case 'надано юридичну підтримку':
+          return { ...card, amountOfHelp: help_psyhologist ?? 0 };
+        case 'запитів на психологічну підтримку':
+          return { ...card, amountOfHelp: legal_support ?? 0 };
+        case 'надано психологічну підтримку':
+          return { ...card, amountOfHelp: request_psychologist ?? 0 };
+        default:
+          return { ...card, amountOfHelp: 0 };
+      }
+    });
 
   return (
     <section>
@@ -57,9 +62,7 @@ export const AboutOrganisation: FC = async () => {
         </div>
       </div>
       <div className='container'>
-        <p
-          className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
-        >
+        <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
           *станом на {date}
         </p>
         <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
