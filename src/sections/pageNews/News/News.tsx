@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import { animateScroll as scroll } from 'react-scroll';
+
 import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
@@ -40,13 +42,16 @@ export const News = () => {
     };
     loadNews();
   }, [start, limit]);
+
   const loadMore = () => {
     setStart(start + limit);
   };
 
   const hideAll = () => {
     setStart(0);
+    scroll.scrollToTop();
   };
+
   return (
     <>
       {isLoading && (

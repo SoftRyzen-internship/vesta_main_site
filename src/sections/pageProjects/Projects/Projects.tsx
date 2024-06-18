@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from 'react';
 
 import { clsx } from 'clsx';
+import { animateScroll as scroll } from 'react-scroll';
 
 import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
@@ -54,6 +55,7 @@ export const Projects: FC = () => {
 
   const hideAll = async () => {
     setStart(0);
+    scroll.scrollTo(800);
   };
 
   return (
