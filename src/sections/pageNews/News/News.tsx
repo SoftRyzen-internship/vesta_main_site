@@ -61,7 +61,14 @@ export const News = () => {
           description={waitText}
         />
       )}
-      {news.length > 0 ? (
+      {!isLoading && total === 0 && (
+        <NoDataTemplate
+          sectionTitle={title}
+          title={titleNews}
+          description={descriptionNews}
+        />
+      )}
+      {!isLoading && total > 0 && (
         <section className='pb-[60px] pt-[140px] md:pb-[100px] md:pt-[154px] xl:pb-[130px] xl:pt-[191px]'>
           <div className='container'>
             <h1 className='mb-10 text-h1 text-green md:mb-[60px] md:text-h2_tab xl:w-[744px] xl:text-h1_desk'>
@@ -93,12 +100,6 @@ export const News = () => {
               ))}
           </div>
         </section>
-      ) : (
-        <NoDataTemplate
-          sectionTitle={title}
-          title={titleNews}
-          description={descriptionNews}
-        />
       )}
     </>
   );
