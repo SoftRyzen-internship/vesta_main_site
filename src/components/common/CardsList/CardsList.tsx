@@ -20,6 +20,7 @@ export const CardsList: FC<CardListProps> = ({
   const pathname = usePathname();
   const { width } = useWindowSize();
   const isMobile = width && width < 768 ? true : false;
+
   return (
     <>
       <ul

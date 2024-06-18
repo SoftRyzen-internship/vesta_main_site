@@ -4,7 +4,6 @@ import { News } from '@/sections/pageNews/News';
 
 import { metaData } from '@/data';
 
-
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
 
 export const metadata: Metadata = {
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_APP_URL}/news`,
   },
-}
+};
 
 export default function Page() {
   return <News />;

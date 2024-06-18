@@ -8,7 +8,7 @@ import { clsx } from 'clsx';
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
-import { ITeamData, IDataAttributes } from './Team.types';
+import { ITeamData, IItemTeam } from './Team.types';
 
 import { fetchData } from '@/actions/fetchData';
 import { getTeam } from '@/graphql/teamSchema';
@@ -20,24 +20,25 @@ import { teamData } from '@/data';
 export const Team: FC = () => {
   const pathName = usePathname();
   const sizes = useWindowSize();
-  let numberOfCards;
-  const [team, setTeam] = useState<IDataAttributes[]>([]);
-  if (pathName === '/about') {
-    numberOfCards = 24;
-  } else if (sizes.width && sizes.width >= 768) {
-    numberOfCards = 5;
-  } else {
-    numberOfCards = 3;
-  }
+  const [team, setTeam] = useState<IItemTeam[]>([]);
+  const [numberOfCards, setNumberOfCards] = useState(3)
+  useEffect(() => {
+    if (pathName === '/about') {
+      setNumberOfCards(24);
+    } else if (sizes.width && sizes.width >= 768) {
+      setNumberOfCards(5);
+    } else {
+      setNumberOfCards(3);
+    }
+  }, [pathName, sizes.width]);
 
   useEffect(() => {
     const fetchPartnersData = async () => {
-      const data: ITeamData = await fetchData<ITeamData>(getTeam(1, numberOfCards));
-      setTeam(data.team.data);
+      const data: ITeamData = await fetchData<ITeamData>(getTeam(0, numberOfCards));
+      setTeam(data.team.data.attributes.itemTeam);
     };
     fetchPartnersData();
-  }, []);
-
+  }, [numberOfCards]);
   return (
     <section
       id='team'

@@ -12,7 +12,8 @@ export interface IImageData {
 }
 
 export interface IItem {
-  name: string;
+  id: string;
+ name: string;
   image: IImageData;
 }
 
@@ -27,6 +28,7 @@ export interface IDataAttributes {
 export interface IData {
   data: IDataAttributes;
 }
+
 
 export interface IPartnersData {
   partner: IData;

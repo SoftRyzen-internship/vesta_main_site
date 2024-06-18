@@ -17,9 +17,17 @@ import { partnersData } from '@/data';
 export const Partners: FC = () => {
   const pathName = usePathname();
   const sizes = useWindowSize();
-  const numberOfCards =
-    pathName === '/about' ? 12 : sizes.width && sizes.width >= 1280 ? 4 : 3;
   const [partners, setPartners] = useState<IItem[]>([]);
+  const [numberOfCards, setNumberOfCards] = useState(4)
+  useEffect(() => {
+    if (pathName === '/about') {
+      setNumberOfCards(12);
+    } else if (sizes.width && sizes.width >= 1280) {
+      setNumberOfCards(4);
+    } else {
+      setNumberOfCards(3);
+    }
+  }, [pathName, sizes.width]);
 
   useEffect(() => {
     const fetchPartnersData = async () => {
@@ -27,7 +35,7 @@ export const Partners: FC = () => {
       setPartners(data.partner.data.attributes.item);
     };
     fetchPartnersData();
-  }, []);
+  }, [numberOfCards]);
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
@@ -46,7 +54,7 @@ export const Partners: FC = () => {
           )}
         </div>
         <CardsList
-          items={partners.slice(0, numberOfCards)}
+          items={partners}
           CardComponent={PartnerCard}
           path={pathName}
           section='partners'

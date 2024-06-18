@@ -30,7 +30,7 @@ export const Header: FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        className='hidden xl:block'
+        className={clsx('hidden', pathName === '/' && 'xl:block')}
       >
         <div className='container flex items-center justify-between'>
           <Logo />
@@ -51,7 +51,12 @@ export const Header: FC = () => {
           />
         </div>
       </motion.div>
-      <div className='container flex items-center justify-between xl:hidden'>
+      <div
+        className={clsx(
+          'container flex items-center justify-between',
+          pathName === '/' && 'xl:hidden',
+        )}
+      >
         <Logo />
         <div className='hidden xl:block'>
           <NavList navList={navListData} forFooter={false} />

@@ -1,5 +1,3 @@
-import { Viewer } from '@/Viewer';
-
 import { HeroMain } from '@/sections/HeroMain';
 import { AboutOrganisation } from '@/sections/AboutOrganisation';
 import { Projects } from '@/sections/Projects';
@@ -24,8 +22,6 @@ export default function Home() {
       <Contacts />
       <Dwelling />
       <News />
-
-      <Viewer />
     </>
   );
 }

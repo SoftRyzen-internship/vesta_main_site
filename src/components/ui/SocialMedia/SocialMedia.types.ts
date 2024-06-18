@@ -1,5 +1,5 @@
 type SocialMediaItem = {
-  value: string;
+  social: string;
   link: string;
 };
 

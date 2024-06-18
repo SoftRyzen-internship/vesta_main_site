@@ -1,6 +1,4 @@
-'use client';
-
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 import { ScrollBox } from '@/components/ui/ScrollBox';
 import { SupportCards } from '@/components/common/SupportCards';
@@ -13,30 +11,33 @@ import { getOrganization } from '@/graphql/organizationSchema';
 
 import { getSpecialWords } from '@/utils';
 
-import { OrganizationResponse, OrganizationAttributes } from './AboutOrganisation.types';
+import {
+  OrganizationResponse,
+  AboutOrganisationHelps,
+} from './AboutOrganisation.types';
 
+export const AboutOrganisation: FC = async () => {
+  const { caption, title, sectionOrganisationHelp } = aboutOrganisation;
 
-export const AboutOrganisation: FC = () => {
-  const { caption, title } = aboutOrganisation;
-  const [organizationData, setOrganizationData] = useState<OrganizationAttributes | null>(null);
+  const data: OrganizationResponse =
+    await fetchData<OrganizationResponse>(getOrganization);
 
-  useEffect(() => {
-    fetchData(getOrganization)
-      .then((response) => {
-        const data = (response as OrganizationResponse).organization.data.attributes;
-        setOrganizationData(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+  const { help_psyhologist, legal_support, date, request_psychologist, text } =
+    data.organization.data.attributes;
 
-  const updatedSupportCards = organizationData ? [
-    { id: 1, amountOfHelp: organizationData.legal_support, typeOfHelp: 'Legal Support' },
-    { id: 2, amountOfHelp: organizationData.request_psychologist, typeOfHelp: 'Request Psychologist' },
-    { id: 3, amountOfHelp: organizationData.help_psyhologist, typeOfHelp: 'Help Psychologist' }
-  ] : [];
-
+  const updatedSupportCards: AboutOrganisationHelps[] =
+    sectionOrganisationHelp.map(card => {
+      switch (card.typeOfHelp) {
+        case 'надано юридичну підтримку':
+          return { ...card, amountOfHelp: help_psyhologist ?? 0 };
+        case 'запитів на психологічну підтримку':
+          return { ...card, amountOfHelp: legal_support ?? 0 };
+        case 'надано психологічну підтримку':
+          return { ...card, amountOfHelp: request_psychologist ?? 0 };
+        default:
+          return { ...card, amountOfHelp: 0 };
+      }
+    });
 
   return (
     <section>
@@ -56,23 +57,21 @@ export const AboutOrganisation: FC = () => {
             {getSpecialWords(title, 10, 4, { start: true })}
           </h3>
           <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
-            {organizationData?.text}
+            {text}
           </p>
         </div>
       </div>
       <div className='container'>
-        <p
-          className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
-        >
-          *станом на {organizationData?.date}
+        <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
+          *станом на {date}
         </p>
-        <ScrollBox className='overflow-x-auto'>
-          <ul className='flex gap-5 transition pb-10'>
-            {updatedSupportCards.map((card: { id: number; amountOfHelp: number; typeOfHelp: string }) => (
+        <ScrollBox className='overflow-x-scroll scrollbar-thin xl:scrollbar-none'>
+          <ul className='flex gap-5 pb-10 transition'>
+            {updatedSupportCards.map(card => (
               <li key={card.id}>
                 <SupportCards
                   id={card.id}
-                  amountOfHelp={card.amountOfHelp}
+                  amountOfHelp={card.amountOfHelp!}
                   typeOfHelp={card.typeOfHelp}
                 />
               </li>
