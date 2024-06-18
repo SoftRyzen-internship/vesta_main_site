@@ -23,7 +23,8 @@ export const Services: FC = async () => {
           {title}
         </h2>
         <ScrollBox className='overflow-x-auto md:overflow-hidden'>
-          <ul className='flex items-center gap-10 pb-10 md:flex-col md:gap-[30px] xl:gap-10'>
+          {/* <div className='scrollbar-thumb-green-900 overflow-y-scroll scrollbar-thin scrollbar-track-gray-100'> */}
+          <ul className='flex items-center gap-10  pb-10 md:flex-col  md:gap-[30px] xl:gap-10'>
             {services.map((service, index) => (
               <li key={service.id}>
                 <ServiceCard
@@ -34,6 +35,7 @@ export const Services: FC = async () => {
               </li>
             ))}
           </ul>
+          {/* </div> */}
         </ScrollBox>
       </div>
     </section>
