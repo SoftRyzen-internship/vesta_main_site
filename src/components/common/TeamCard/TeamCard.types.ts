@@ -18,8 +18,8 @@ export interface ITeamCardProps {
     name: string;
     image: ITeamCardImage;
     position: string;
-    description: string;
-    plug: string;
-    socialMedia?: { social: string; link: string }[];
+    text: string;
+    status: string;
+    socialItem?: ITeamCardSocials[];
   };
 }
