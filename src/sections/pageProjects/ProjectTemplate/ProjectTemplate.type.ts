@@ -1,7 +1,4 @@
-export interface ISocialData {
-  link: string;
-  social: string;
-}
+import { SocialMediaItem } from "@/components/ui/SocialMedia/SocialMedia.types";
 
 export interface IImageAttributes {
   url: string;
@@ -25,7 +22,7 @@ export interface IProjectAttributes {
   add_text: string;
   slug: string;
   image: IProjectImageData;
-  social: ISocialData[];
+  social: SocialMediaItem[];
 }
 
 export interface IProjectData {
@@ -51,6 +48,6 @@ export interface IOneProjectsProps {
     add_text: string;
     slug: string;
     image: IProjectImageData;
-    social: ISocialData[];
+    social: SocialMediaItem[];
   };
 }
