@@ -62,7 +62,7 @@ export const AboutOrganisation: FC = async () => {
         >
           *станом на {date}
         </p>
-        <ScrollBox className='overflow-x-auto'>
+        <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
           <ul className='flex gap-5 transition pb-10'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
