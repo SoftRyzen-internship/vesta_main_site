@@ -65,8 +65,8 @@ export const AboutOrganisation: FC = async () => {
         <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
           *станом на {date}
         </p>
-        <ScrollBox className='overflow-x-scroll scrollbar-thin xl:scrollbar-none'>
-          <ul className='flex gap-5 pb-10 transition'>
+        <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
+          <ul className='flex gap-5 transition pb-10'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
                 <SupportCards
