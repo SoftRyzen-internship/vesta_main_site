@@ -11,12 +11,10 @@ import { getLocation } from '@/graphql/locationSchema';
 
 import { DwellingsResponse } from '@/sections/Dwelling/Dwellings.types';
 
-
-
-export const Dwelling: FC = async() => {
-  const data: DwellingsResponse = await fetchData<DwellingsResponse>(getLocation);
+export const Dwelling: FC = async () => {
+  const data: DwellingsResponse =
+    await fetchData<DwellingsResponse>(getLocation);
   const locationItems = data.location.data.attributes.locationItem;
-console.log(locationItems);
 
   return (
     <section className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
@@ -30,7 +28,7 @@ console.log(locationItems);
           </LinkButton>
         </div>
         <ul className='flex flex-col gap-[30px]'>
-          {locationItems.map((item) => (
+          {locationItems.map(item => (
             <li key={item.id}>
               <DwellingCard item={item} />
             </li>
