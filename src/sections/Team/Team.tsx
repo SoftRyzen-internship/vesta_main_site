@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
@@ -8,23 +8,37 @@ import { clsx } from 'clsx';
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
+import { ITeamData, IItemTeam } from './Team.types';
+
+import { fetchData } from '@/actions/fetchData';
+import { getTeam } from '@/graphql/teamSchema';
+
 import { useWindowSize } from '@/utils';
 
-import { teamCard, teamData } from '@/data';
+import { teamData } from '@/data';
 
 export const Team: FC = () => {
   const pathName = usePathname();
   const sizes = useWindowSize();
-  let numberOfCards;
+  const [team, setTeam] = useState<IItemTeam[]>([]);
+  const [numberOfCards, setNumberOfCards] = useState(3)
+  useEffect(() => {
+    if (pathName === '/about') {
+      setNumberOfCards(24);
+    } else if (sizes.width && sizes.width >= 768) {
+      setNumberOfCards(5);
+    } else {
+      setNumberOfCards(3);
+    }
+  }, [pathName, sizes.width]);
 
-  if (pathName === '/about') {
-    numberOfCards = 24;
-  } else if (sizes.width && sizes.width >= 768) {
-    numberOfCards = 5;
-  } else {
-    numberOfCards = 3;
-  }
-
+  useEffect(() => {
+    const fetchPartnersData = async () => {
+      const data: ITeamData = await fetchData<ITeamData>(getTeam(0, numberOfCards));
+      setTeam(data.team.data.attributes.itemTeam);
+    };
+    fetchPartnersData();
+  }, [numberOfCards]);
   return (
     <section
       id='team'
@@ -41,7 +55,7 @@ export const Team: FC = () => {
           </h2>
         </div>
         <CardsList
-          items={teamCard.slice(0, numberOfCards)}
+          items={team}
           CardComponent={TeamCard}
           path={pathName}
           section='team'

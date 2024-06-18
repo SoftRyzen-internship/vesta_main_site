@@ -1,17 +1,10 @@
 import { ElementType } from 'react';
+import { IItem } from '@/sections/Partners/Partners.types';
+import { IItemTeam } from '@/sections/Team/Team.types';
 
 export interface CardListProps {
-  items: {
-    id: number;
-    src: string;
-    name: string;
-    alt?: string;
-    position?: string;
-    description?: string;
-    plug?: string;
-    socialMedia?: { social: string; link: string }[];
-  }[];
+  items: IItem[] | IItemTeam[];
   CardComponent: ElementType;
   path: string;
-  section: string;
+  section: string
 }
