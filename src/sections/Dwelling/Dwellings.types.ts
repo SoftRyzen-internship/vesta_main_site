@@ -1,4 +1,5 @@
 export interface DwellingsAttributes {
+  id: string,
   address: string;
   city: string;
   locationLink: string;

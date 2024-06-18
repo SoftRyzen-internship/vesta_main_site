@@ -31,7 +31,7 @@ console.log(locationItems);
         </div>
         <ul className='flex flex-col gap-[30px]'>
           {locationItems.map((item) => (
-            <li key={`${Date.now()}`} >
+            <li key={item.id}>
               <DwellingCard item={item} />
             </li>
           ))}
