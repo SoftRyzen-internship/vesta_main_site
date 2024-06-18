@@ -57,7 +57,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                 <ScrollBox
                   className={clsx(
                     s.contentHeight,
-                    'overflow-y-scroll pr-[5px] scrollbar-thin md:pr-[10px] xl:flex xl:gap-[43px]',
+                    'overflow-y-auto pr-[5px] scrollbar-track-bgPlug md:pr-[10px] xl:flex xl:gap-[43px]',
                   )}
                 >
                   <div className='xl:w-[386px]'>
