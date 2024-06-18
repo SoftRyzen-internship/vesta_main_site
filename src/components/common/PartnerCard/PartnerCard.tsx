@@ -17,7 +17,7 @@ export const PartnerCard: FC<IPartnerCardProps> = ({
         alt={alternativeText}
         width={130}
         height={130}
-        className='mx-auto h-[130px] w-[130px] md:h-[116px] md:w-[116px] xl:h-[140px] xl:w-[140px]'
+        className='mx-auto h-[130px] w-[130px] object-contain md:h-[116px] md:w-[116px] xl:h-[140px] xl:w-[140px]'
       />
       <h3 className='mt-auto text-body4 tracking-[-0.14px] text-green'>
         {name}
