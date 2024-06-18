@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { DwellingCardProps } from './DwellingCard.types';
-import {dwellings} from '@/data'
+import { dwellings } from '@/data';
 
 export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
   return (
@@ -10,18 +10,17 @@ export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
         {item.city}
       </h3>
       <ul>
-        <li className='leading-none first:mb-[10px] flex flex-col gap-[10px]'>
+        <li className='flex flex-col gap-[10px] leading-none first:mb-[10px]'>
           <Link
             href={item.locationLink}
             target={dwellings.target}
             rel={dwellings.rel}
             className='paragraph hover:text-hoverDark focus:text-orangeText'
           >
-           {item.address}
+            {item.address}
           </Link>
           <Link
             href={`tel:${item.phone}`}
-            target={dwellings.target}
             rel={dwellings.rel}
             className='paragraph hover:text-hoverDark focus:text-orangeText'
           >
