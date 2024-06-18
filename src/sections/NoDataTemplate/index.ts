@@ -1,0 +1,1 @@
+export { NoDataTemplate } from './NoDataTemplate';

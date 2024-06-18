@@ -4,3 +4,4 @@ export { supportIconTypes } from './supportIconTypes';
 export { getSpecialWords } from './getSpecialWords';
 export { useWindowSize } from './useWindowSize';
 export { formatDate } from './formatDate';
+export { teamPlugTypes } from './teamPlugTypes';

@@ -1,6 +1,7 @@
 import { FC, Fragment } from 'react';
 import Image from 'next/image';
 
+import { clsx } from 'clsx';
 import {
   Dialog,
   DialogPanel,
@@ -10,8 +11,11 @@ import {
 
 import { SocialMedia } from '@/components/ui/SocialMedia';
 import { Button } from '@/components/ui/Button';
+import { ScrollBox } from '@/components/ui/ScrollBox';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
+
+import { teamPlugTypes } from '@/utils';
 
 import s from './TeamCardModal.module.css';
 
@@ -52,8 +56,11 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                   variant='closeModal'
                   className='mb-5 ml-auto block md:absolute md:right-[25px] md:top-[25px] md:mb-[11px] xl:right-[35px] xl:top-[35px] xl:mb-[31px]'
                 />
-                <div
-                  className={`overflow-y-auto pr-[5px] md:pr-[10px] xl:flex xl:gap-[43px] ${s.contentHeight}`}
+                <ScrollBox
+                  className={clsx(
+                    s.contentHeight,
+                    'overflow-y-auto pr-[5px] scrollbar-track-bgPlug md:pr-[10px] xl:flex xl:gap-[43px]',
+                  )}
                 >
                   <div className='xl:w-[386px]'>
                     <Image
@@ -73,8 +80,8 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                       {description}
                     </p>
                     <div className='md:flex md:justify-between'>
-                      <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-green md:mb-0'>
-                        {plug}
+                      <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-center text-green md:mb-0'>
+                        {teamPlugTypes[plug]}
                       </p>
                       {socialMedia && socialMedia?.length > 0 && (
                         <SocialMedia
@@ -84,7 +91,7 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                       )}
                     </div>
                   </div>
-                </div>
+                </ScrollBox>
               </div>
             </DialogPanel>
           </div>

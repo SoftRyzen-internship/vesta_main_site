@@ -5,5 +5,6 @@
   "imgAlt": "малюнок - українські військовослужбовці їдуть в авто",
   "linkText": "Детальніше",
   "buttonText": { "more": "Більше", "hide": "Сховати" },
-  "buttonProps": { "text": "інші проєкти", "link": "/projects" }
+  "buttonProps": { "text": "інші проєкти", "link": "/projects" },
+  "LIMIT_PROJECTS": 6
 }

@@ -1,41 +1,4 @@
-[
-  {
-    "id": 1,
-    "city": "Вінниця",
-    "contacts": [
-      {
-        "link": "https://maps.app.goo.gl/jK3VzY27HqnBsiVe8",
-        "text": "вул. Янгеля, 4.",
-        "target": "_blank",
-        "rel": "noopener noreferrer nofollow"
-      },
-      { "link": "tel:0661472983", "text": "066 147 29 83" }
-    ]
-  },
-  {
-    "id": 2,
-    "city": "Черкаси",
-    "contacts": [
-      {
-        "link": "https://maps.app.goo.gl/jK3VzY27HqnBsiVe8",
-        "text": "вул. Янгеля, 4.",
-        "target": "_blank",
-        "rel": "noopener noreferrer nofollow"
-      },
-      { "link": "tel:0661472983", "text": "066 147 29 83" }
-    ]
-  },
-  {
-    "id": 3,
-    "city": "Київ",
-    "contacts": [
-      {
-        "link": "https://maps.app.goo.gl/jK3VzY27HqnBsiVe8",
-        "text": "вул. Янгеля, 4.",
-        "target": "_blank",
-        "rel": "noopener noreferrer nofollow"
-      },
-      { "link": "tel:0661472983", "text": "066 147 29 83" }
-    ]
-  }
-]
+{
+  "target": "_blank",
+  "rel": "noopener noreferrer nofollow"
+}

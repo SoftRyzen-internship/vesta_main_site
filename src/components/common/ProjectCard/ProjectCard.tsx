@@ -8,10 +8,14 @@ import { LinkButton } from '@/components/ui/LinkButton';
 import { IProjectCardProps } from './ProjectCard.types';
 
 export const ProjectCard: FC<IProjectCardProps> = ({
-  item: { id, img, imgAlt, title, description },
+  item: { slug, image, title, description },
   linkText,
   isOddCard,
 }) => {
+  const url =
+    image.data?.attributes?.url ?? '/images/noData/no-data-image.webp';
+  const alternativeText = image.data?.attributes?.alternativeText ?? title;
+
   return (
     <div
       className={clsx(
@@ -22,8 +26,8 @@ export const ProjectCard: FC<IProjectCardProps> = ({
       )}
     >
       <Image
-        src={img}
-        alt={imgAlt}
+        src={url}
+        alt={alternativeText}
         width={448}
         height={250}
         className='mb-[30px] h-[250px] w-full object-cover object-center md:mb-0 md:h-[250px] md:w-[300px] xl:h-[300px] xl:w-[492px]'
@@ -35,7 +39,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         <p className='paragraph mb-5 line-clamp-4 md:mb-10 xl:w-[492px]'>
           {description}
         </p>
-        <LinkButton href={`/projects/${id}`} variant='secondary'>
+        <LinkButton href={`/projects/${slug}`} variant='secondary'>
           {linkText}
         </LinkButton>
       </div>

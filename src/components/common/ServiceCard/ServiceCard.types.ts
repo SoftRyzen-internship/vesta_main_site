@@ -1,8 +1,17 @@
 export interface IServiceCardProps {
-  title?: string;
-  src?: string;
-  alt: string;
-  description?: string;
-  count?: string;
-  countAll?: string;
+  item: {
+    id: string;
+    title: string;
+    description: string;
+    image: {
+      data: {
+        attributes: {
+          url: string;
+          alternativeText: string;
+        };
+      };
+    };
+  };
+  count: string;
+  countAll: string;
 }

@@ -10,6 +10,7 @@ import { GettingKnowTeamCard } from '../GettingKnowTeamCard';
 import { CardListProps } from './CardList.types';
 
 import { useWindowSize } from '@/utils';
+import { ScrollBox } from '@/components/ui/ScrollBox';
 
 export const CardsList: FC<CardListProps> = ({
   items,
@@ -23,21 +24,25 @@ export const CardsList: FC<CardListProps> = ({
 
   return (
     <>
-      <ul
-        className={clsx(
-          pathname === '/about' && 'mb-0',
-          'mb-[60px] flex gap-2.5 overflow-x-auto scrollbar scrollbar-track-bgText scrollbar-thumb-green scrollbar-track-rounded-full scrollbar-thumb-rounded-full smOnly:pb-10 md:mb-0 md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-6',
-        )}
-      >
-        {items.map(item => (
-          <li key={item.id} className='scroll-snap-align-start flex-none'>
-            <CardComponent item={item} />
-          </li>
-        ))}
-        {path !== '/about' && section === 'team' && !isMobile && (
-          <GettingKnowTeamCard />
-        )}
-      </ul>
+      <ScrollBox className='mb-[60px] overflow-x-auto smOnly:pb-10 md:mb-0'>
+        <ul
+          className={clsx(
+            pathname === '/about' && 'mb-0',
+            ' flex gap-2.5  md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-6',
+          )}
+        >
+          {items.map(item => {
+            return (
+              <li key={item.name} className='scroll-snap-align-start flex-none'>
+                <CardComponent item={item} />
+              </li>
+            );
+          })}
+          {path !== '/about' && section === 'team' && !isMobile && (
+            <GettingKnowTeamCard />
+          )}
+        </ul>
+      </ScrollBox>
       {path !== '/about' && section === 'team' && isMobile && (
         <GettingKnowTeamCard />
       )}

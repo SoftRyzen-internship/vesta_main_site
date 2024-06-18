@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
+import { motion } from 'framer-motion';
 
 import { Logo } from '@/components/ui/Logo';
 import { NavList } from '@/components/common/NavList';
@@ -25,7 +26,37 @@ export const Header: FC = () => {
           : 'bg-green',
       )}
     >
-      <div className='container flex items-center justify-between'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className={clsx('hidden', pathName === '/' && 'xl:block')}
+      >
+        <div className='container flex items-center justify-between'>
+          <Logo />
+          <div className='hidden xl:block'>
+            <NavList navList={navListData} forFooter={false} />
+          </div>
+          <LinkButton
+            href='/contacts'
+            variant='contactsHeader'
+            className='hidden xl:block'
+          >
+            Контакти
+          </LinkButton>
+          <Button
+            variant='openMenu'
+            onClick={() => setIsOpen(true)}
+            className='xl:hidden'
+          />
+        </div>
+      </motion.div>
+      <div
+        className={clsx(
+          'container flex items-center justify-between',
+          pathName === '/' && 'xl:hidden',
+        )}
+      >
         <Logo />
         <div className='hidden xl:block'>
           <NavList navList={navListData} forFooter={false} />
@@ -43,6 +74,7 @@ export const Header: FC = () => {
           className='xl:hidden'
         />
       </div>
+
       <BurgerMenu isOpen={isOpen} close={() => setIsOpen(false)} />
     </header>
   );

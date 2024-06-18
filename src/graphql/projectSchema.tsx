@@ -1,23 +1,32 @@
-export const getProjects = `query {
+import { gql } from 'graphql-request';
+
+export const getProjects = gql`
+  query {
     projects {
-     data {
-      attributes {
-       description
-        pageText
-        add_title
-        add_text
-        image {
-          data {
-            attributes{
-              url
+      data {
+        id
+        attributes {
+          publishedAt
+          title
+          description
+          pageText
+          add_title
+          add_text
+          slug
+          image {
+            data {
+              attributes {
+                url
+                alternativeText
+              }
             }
           }
-        }
-        social {
-          link
-          social
-        }
+          social {
+            link
+            social
+          }
         }
       }
     }
-   }`
+  }
+`;

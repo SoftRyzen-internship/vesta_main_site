@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Load images from cloudinary
+  images: {
+    formats: ['image/webp'],
+    remotePatterns: [{ protocol: 'https', hostname: 'res.cloudinary.com' }],
+  },
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find(rule =>

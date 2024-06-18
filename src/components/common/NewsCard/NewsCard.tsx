@@ -1,20 +1,26 @@
+'use client';
+
 import { FC } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { INewsCardProps } from './NewsCard.types';
-
 export const NewsCard: FC<INewsCardProps> = ({
-  item: { id, img, imgAlt, date, title, description },
+  item: { slug, date, title, text, image },
 }) => {
+  const url =
+    image.data[0]?.attributes?.url ??
+    '/images/mainHero/main-hero-bg-tab@1x.webp';
+  const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
+
   return (
     <Link
-      href={`/news/${id}`}
-      className='inline-block w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:w-[684px] xl:w-[595px]'
+      href={`/news/${slug}`}
+      className='inline-block h-[503px] w-full cursor-pointer overflow-hidden text-green transition hover:text-[rgba(242,96,12,0.6)] focus:text-orangeText md:h-[551px] md:w-[684px] xl:h-[557px] xl:w-[595px]'
     >
       <Image
-        src={img}
-        alt={imgAlt}
+        src={url}
+        alt={alternativeText}
         width={448}
         height={290}
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
@@ -23,7 +29,7 @@ export const NewsCard: FC<INewsCardProps> = ({
       <h3 className='md:text-body3_desk: mb-[15px] text-body3 font-medium text-inherit xl:text-body2_desk'>
         {title}
       </h3>
-      <p className='paragraph line-clamp-2'>{description}</p>
+      <p className='paragraph line-clamp-2'>{text}</p>
     </Link>
   );
 };

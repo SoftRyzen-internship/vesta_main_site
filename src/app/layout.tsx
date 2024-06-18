@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   description: metaData.description,
   keywords: metaData.keywords,
   icons: metaData.icons,
+  alternates: {
+    canonical: `${BASE_APP_URL}`,
+  },
   openGraph: {
     type: 'website',
     url: BASE_APP_URL,
@@ -91,7 +94,7 @@ export default function RootLayout({
         className={clsx(
           eUkraine.variable,
           KyivTypeSans.variable,
-          'h-full min-h-screen',
+          'h-full min-h-screen scrollbar-thin scrollbar-track-bgText scrollbar-thumb-tomorrow scrollbar-thumb-rounded-full ',
         )}
       >
         <Header />

@@ -1,5 +1,7 @@
-export const getOrganization = `
-query {
+import { gql } from 'graphql-request';
+
+export const getOrganization = gql`
+  query {
     organization {
       data {
         attributes {
@@ -11,4 +13,5 @@ query {
         }
       }
     }
-}`
+  }
+`;

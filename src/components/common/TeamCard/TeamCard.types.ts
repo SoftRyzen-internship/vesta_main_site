@@ -1,11 +1,29 @@
+export interface ITeamCardImage {
+  data: {
+    attributes: {
+      url: string;
+      alternativeText: string;
+    };
+  };
+}
+
+export interface ITeamCardSocials {
+  link: string;
+  social: string;
+}
+
 export interface ITeamCardProps {
   item: {
+    id: string;
     name: string;
-    src: string;
-    alt: string;
+    image: ITeamCardImage;
     position: string;
-    description: string;
-    plug: string;
-    socialMedia?: { value: string; link: string }[];
-  }
+    text: string;
+    status:
+      | 'vijskova_veteranka'
+      | 'vijskovij_veteran'
+      | 'rodina_vijskovoyi_veteranki'
+      | 'rodina_vijskovogo_veterana';
+    socialItem?: ITeamCardSocials[];
+  };
 }

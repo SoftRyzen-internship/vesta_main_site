@@ -35,6 +35,8 @@
     rgba(25, 34, 26, 0.47) 0%,
     rgba(25, 34, 26, 0) 100%
   );
+  /* No Data */
+  --no-data-overlay: linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08));
 }
 
 @layer base {

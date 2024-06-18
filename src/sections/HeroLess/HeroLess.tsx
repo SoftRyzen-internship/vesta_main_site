@@ -1,45 +1,17 @@
 'use client';
 
 import { FC } from 'react';
-import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
 import { Link as ScrollLink } from 'react-scroll';
 
-import { heroLessData } from '@/data';
+import { IHeroLessProps } from './HeroLess.types';
 
 import ArrowDown from '@/../public/icons/arrowDown.svg';
 
 import s from './HeroLess.module.css';
 
-export const HeroLess: FC = () => {
-  const pathname = usePathname();
-  const {
-    toAboutId,
-    toProjectsId,
-    titleAbout,
-    titleProjects,
-    descriptionAbout,
-    descriptionProjects,
-  } = heroLessData;
-
-  const scrollTo: { [key: string]: string } = {
-    '/about': toAboutId,
-    '/projects': toProjectsId,
-  };
-  const titles: { [key: string]: string } = {
-    '/about': titleAbout,
-    '/projects': titleProjects,
-  };
-  const descriptions: { [key: string]: string } = {
-    '/about': descriptionAbout,
-    '/projects': descriptionProjects,
-  };
-
-  const to = scrollTo[pathname];
-  const title = titles[pathname];
-  const description = descriptions[pathname];
-
+export const HeroLess: FC<IHeroLessProps> = ({ link, title, description }) => {
   return (
     <section
       className={clsx(
@@ -53,7 +25,7 @@ export const HeroLess: FC = () => {
         </h1>
         <ScrollLink
           href='#'
-          to={to}
+          to={link}
           spy={true}
           smooth={true}
           duration={800}

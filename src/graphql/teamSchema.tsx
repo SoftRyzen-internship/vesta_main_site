@@ -1,26 +1,32 @@
-export const getTeam = `
-query {
-    team {
-     data {
-      attributes {
-        itemTeam {
-          name
-          position
-          status
-          text
-          image {
-            data {
-              attributes {
-                url
+import { gql } from 'graphql-request';
+
+export const getTeam = (start: number, limit: number) =>  gql`
+  query {
+    team{
+      data {
+        attributes {
+          itemTeam(
+      pagination: { start: ${start}, limit: ${limit} }
+      )  {  id
+            name
+            position
+            status
+            text
+            image {
+              data {
+                attributes {
+                  url
+                  alternativeText
+                }
               }
             }
-          }
-          socialItem {
-            link
-            social
+            socialItem {
+              link
+              social
+            }
           }
         }
       }
     }
-   }
-}`
+  }
+`;

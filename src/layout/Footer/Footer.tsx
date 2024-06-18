@@ -1,21 +1,39 @@
-'use client';
-
 import { FC } from 'react';
 
 import { Logo } from '@/components/ui/Logo';
-import { SocialMedia } from '@/components/ui/SocialMedia';
 import { NavList } from '@/components/common/NavList';
+import { ScrollButtonUp } from '@/components/ui/ScrollButtonUp/ScrollButtonUp';
+import { SocialMedia } from '@/components/ui/SocialMedia';
 
-import { socialMedia, footer, footerPhones, footerNavigation } from '@/data';
+import { fetchData } from '@/actions/fetchData';
 
-import { scrollToTop } from '@/utils';
+import { getContact } from '@/graphql/contactSchema';
 
-import SoftRyzen from '/public/icons/softryzen.svg';
+import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
+
+import { footer, footerNavigation, footerPhones, socialMedia } from '@/data';
+
 import GoIt from '/public/icons/goIt.svg';
-import ScrollUp from '/public/icons/scrollUp.svg';
+import SoftRyzen from '/public/icons/softryzen.svg';
 
+export const Footer: FC = async () => {
+  const data = await fetchData<FooterOrganizationResponse>(getContact);
 
-export const Footer: FC = () => {
+  const { legal_support, psychological_support, head_organization, email } = data.contact.data.attributes;
+
+  const footerHelpPhones: FooterPhones[] = footerPhones.map((card) => {
+    switch (card.typeOfHelp) {
+      case 'Юридичні послуги:':
+        return { ...card, phone: legal_support };
+      case 'Психологічні послуги:':
+        return { ...card, phone: psychological_support };
+      case "Зв'язатися за нами:":
+        return { ...card, phone: head_organization };
+      default:
+        return card;
+    }
+  });
+  
   return (
     <footer className='bg-green'>
       <div className='container pb-[15px] pt-[50px] text-white transition md:pb-[23px] md:pt-[60px] xl:pb-[28px]'>
@@ -23,40 +41,38 @@ export const Footer: FC = () => {
           <div className='xl:flex'>
             <Logo />
             <div className='relative flex flex-col transition md:flex-row xl:w-full xl:pl-[277px]'>
-              <div className='mb-10  mt-[43px] flex flex-col gap-[15px] text-body4 font-normal text-white transition md:mt-[40px] xl:mt-0'>
+              <div className='mb-10 mt-[43px] flex flex-col gap-[15px] text-body4 font-normal text-white transition md:mt-[40px] xl:mt-0'>
                 <NavList navList={footerNavigation} forFooter={true} />
-                <button className='absolute right-0' onClick={scrollToTop}>
-                  <ScrollUp className='fill-bgText transition hover:fill-orangeText focus:fill-orangeText' />
-                </button>
+                <ScrollButtonUp/>
               </div>
-              <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white transition md:pb-[96px] md:pl-[169px]  md:pt-[40px] xl:pb-[100px]  xl:pl-[236px] xl:pt-0'>
-                {footerPhones.map((item, index) => (
-                  <div key={index} className='flex flex-col gap-1'>
+              <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white transition md:pb-[96px] md:pl-[169px] md:pt-[40px] xl:pb-[100px] xl:pl-[236px] xl:pt-0'>
+                {footerHelpPhones.map(({ id, typeOfHelp, aria, phone }) => (
+                  <div key={id} className='flex flex-col gap-1'>
                     <p className='text-greenHover text-whiteGrey'>
-                      {item.typeOfHelp}
+                      {typeOfHelp}
                     </p>
                     <a
-                      href={`tel:${item.phone}`}
+                      href={`tel:${phone}`}
                       className='transition hover:text-orangeText'
-                      aria-label={item.aria}
+                      aria-label={`${aria}`}
                     >
-                      {item.phone}
+                      {phone}
                     </a>
                   </div>
                 ))}
                 <a
-                  href={`mailto:${footer['@mail']}`}
+                  href={`mailto:${email}`}
                   className='transition hover:text-orangeText'
                   aria-label={footer.ariaEmail}
                 >
-                  {footer['@mail']}
+                  {email}
                 </a>
               </div>
             </div>
           </div>
         </div>
         <div className='transition xl:flex xl:gap-[91px]'>
-          <hr className='border-0.3px	 absolute left-0 w-full border-accent border-opacity-[0.3] transition xl:hidden' />
+          <hr className='border-0.3px absolute left-0 w-full border-accent border-opacity-[0.3] transition xl:hidden' />
           <div className='flex flex-col py-[15px] transition md:py-5 md:pl-[10px] xl:pb-0 xl:pl-0 xl:pt-[20px]'>
             <div className='flex flex-col gap-[15px] transition md:flex-row-reverse md:items-center md:justify-between xl:gap-[270px]'>
               <SocialMedia lightMode={true} socialMedia={socialMedia} />
@@ -71,7 +87,7 @@ export const Footer: FC = () => {
               </a>
             </div>
           </div>
-          <hr className='border-0.3px	 absolute left-0 w-full border-accent border-opacity-[0.3] ' />
+          <hr className='border-0.3px absolute left-0 w-full border-accent border-opacity-[0.3]' />
           <div className='flex flex-col gap-[10px] transition md:flex-row md:items-center xl:pt-[20px]'>
             <p className='pt-[15px] text-body4 text-greenHover xl:pr-[30px] xl:pt-0'>
               {footer.footerCreated}
