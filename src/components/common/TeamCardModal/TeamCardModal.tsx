@@ -15,6 +15,8 @@ import { ScrollBox } from '@/components/ui/ScrollBox';
 
 import { ITeamCardModalProps } from './TeamCardModal.types';
 
+import { teamPlugTypes } from '@/utils';
+
 import s from './TeamCardModal.module.css';
 
 export const TeamCardModal: FC<ITeamCardModalProps> = ({
@@ -78,8 +80,8 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                       {description}
                     </p>
                     <div className='md:flex md:justify-between'>
-                      <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-green md:mb-0'>
-                        {plug}
+                      <p className='paragraph mb-[30px] h-[42px] w-[262px] bg-bgPlug px-[15px] py-[10px] text-center text-green md:mb-0'>
+                        {teamPlugTypes[plug]}
                       </p>
                       {socialMedia && socialMedia?.length > 0 && (
                         <SocialMedia

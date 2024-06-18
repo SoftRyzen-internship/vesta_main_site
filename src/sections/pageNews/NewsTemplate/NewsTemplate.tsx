@@ -37,7 +37,7 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
         />
         <p
           className={clsx(
-            'paragraph xl:w-[802px]',
+            'paragraph whitespace-pre-wrap xl:w-[802px]',
             videoLink && 'mb-10 xl:mb-[50px]',
           )}
         >

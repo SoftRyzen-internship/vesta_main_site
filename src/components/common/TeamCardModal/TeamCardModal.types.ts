@@ -5,6 +5,10 @@ export interface ITeamCardModalProps {
   name: string;
   position: string;
   description: string;
-  plug: string;
+  plug:
+    | 'vijskova_veteranka'
+    | 'vijskovij_veteran'
+    | 'rodina_vijskovoyi_veteranki'
+    | 'rodina_vijskovogo_veterana';
   socialMedia?: { social: string; link: string }[];
 }
