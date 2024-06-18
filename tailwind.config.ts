@@ -18,6 +18,10 @@ const config: Config = {
       notXl: { max: '1279.98px' },
     },
     extend: {
+      scrollbar: {
+        width: '5px',
+        height: '5px',
+      },
       container: {
         center: true,
         padding: {
@@ -90,7 +94,6 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar'),
     tailwindScrollbar({
       nocompatible: true,
       preferredStrategy: 'pseudoelements',

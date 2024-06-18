@@ -94,7 +94,7 @@ export default function RootLayout({
         className={clsx(
           eUkraine.variable,
           KyivTypeSans.variable,
-          'h-full min-h-screen',
+          'h-full min-h-screen scrollbar-thin scrollbar-track-bgText scrollbar-thumb-tomorrow scrollbar-thumb-rounded-full ',
         )}
       >
         <Header />
