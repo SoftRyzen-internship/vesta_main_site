@@ -1,5 +1,14 @@
-type SocialMediaItem = {
-  social: string;
+export interface SocialMediaItem {
+  social:
+    | 'Facebook'
+    | 'Instagram'
+    | 'YouTube'
+    | 'TikTok'
+    | 'Twitter'
+    | 'SoundCloud'
+    | 'Spotify'
+    | 'Diya'
+    | 'YouTube Music';
   link: string;
 };
 

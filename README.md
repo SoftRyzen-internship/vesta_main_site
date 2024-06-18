@@ -6,13 +6,13 @@
 
 ##
 
-Welcome Welcome to the official website of the Volunteer Association "Vesta" Charity Fund! We are glad you visited us and hope that our work inspires you to take part in our noble cause. Our fund is dedicated to supporting those who need it the most, particularly our brave military personnel and their families.
+Welcome to the official website of the Volunteer Association "Vesta" Charity Fund! We are glad you visited us and hope that our work inspires you to take part in our noble cause. Our fund is dedicated to supporting those who need it the most, particularly our brave military personnel and their families.
 
 Mission The Volunteer Association "Vesta" Charity Fund is committed to supporting military personnel on the front lines by providing vehicles, ammunition, weapon upgrades, and other essential supplies. Additionally, we offer legal and psychological support to servicemen and veterans, their families, as well as the families of the fallen and the missing.
 
 Our Programs
 
-1. Support for Military Personnel We provide essential equipment and supplies to those on the front lines, including:
+1. Support for Military Personnel. We provide essential equipment and supplies to those on the front lines, including:
 <ul>
 <li>Vehicles</li>
 <li>Ammunition</li>
@@ -20,14 +20,14 @@ Our Programs
 <li>Other necessary supplies</li>
 </ul>
 
-2. Legal and Psychological Assistance We offer comprehensive support to servicemen, veterans, and their families, including:
+2. Legal and Psychological Assistance. We offer comprehensive support to servicemen, veterans, and their families, including:
 <ul>
 <li>Legal advice on issues such as whether military personnel can operate a private business and the consequences of doing so. </li>
 <li>Assistance with obtaining the status of a war veteran (UDB). </li>
 <li>Guidance on state benefits and entitlements. Step-by-step actions for when a loved one goes missing.</li>
 </ul>
 
-3. Family Support We assist families of the fallen and the missing by providing:
+3. Family Support. We assist families of the fallen and the missing by providing:
 <ul>
 <li>Psychological support and counseling.</li>
 <li>Legal guidance and assistance with state benefits and entitlements.</li>
@@ -81,50 +81,139 @@ $ npm run dev
 
 ## Components API
 
-<details><summary>Show</summary>
-- #### component Button
+<!-- <details><summary>Show</summary> -->
+
+- #### component **BurgerMenu**
+
+The component is designed to create BurgerMenu for tablet and mobile sizes
+
+| Prop     | Type        | Description                                           |
+| -------- | ----------- | ------------------------------------------------------|
+| `close`  | `() => void`| required, add the function of closing the burger menu |
+| `isOpen` | `boolean`   | required, sets open state |
+<hr>
+
+- #### component **Button**
 
 The component is for handle click with all style variants of button from layout
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `onClick` | `() => void` | -- | required, function for handle click |
+| `onClick` | `() => void` | -- | optional, function for handle click |
 | `children` | `string` | -- | optional, button children |
-| `variant` | `'primary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` | `'primary'` | optional, variant of button style |
+| `variant` | `'primary'` `'closeModal'` `'closeMenu'` `'openTeamMember'` `'openMenu'` `'play'` `'moreProjects'` | `'primary'` | optional, variant of button style |
 | `type` | `'button'` `'submit'` `'reset' ` | `'button'` | optional, type of button |
 | `className` | `string` | -- | optional, custom styles |
+<hr>
 
-- #### component Checkbox
+- #### component **LinkButton**
+
+The component is for navigation with all variants of style from layout
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `href` | `string` | -- | required, link path to a page |
+| `children` | `ReactNode` | -- | required, element`s children |
+| `target` | `'string'` | -- | optional, attribute for a link |
+| `rel` | `'string'` | -- | optional, attribute for a link |
+| `variant` | `'primary'` `'secondary'` `'contactsHeader'` | `'primary'` | optional, variant of link style |
+| `className` | `string` | -- | optional, custom styles |
+<hr>
+
+- #### component **Logo**
+
+| Prop      | Type         |  Description |
+| `onClick` | `() => void` | optional, function for handle click |
+<hr>
+
+- #### component **ScrollBox**
+
+The component is designed to create custom scrollBox.
+
+| Prop        | Type     | Description                 |
+| ----------- | -------- | --------------------------- |
+| `children`  | `ReactNode` | required, component`s children  |
+| `className` | `string` | optional, add custom styles |
+<hr>
+
+- #### component **SocialMedia**
+
+The component is designed to create SocialMedia list.
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `checked` | `boolean` | required, starting value for checked |
-| `handleChange` | `function` | required, the function to control the value into state in the parent component |
-| `errorMessage` | `string or undefined` | optional, can pass text displaying for an error |
-| `text` | `string` | optional, text for the checkbox |
-| `className` | `string` | optional, styles can be passed for the component wrapper |
-| `{...rest}` | `string` | optional, any other attributes that are characteristic of the checkbox (type, etc) |
+| `socialMedia` | `SocialMediaItem[]` | required, sets the list of social networks |
+| `lightMode` | `boolean` | required, depending on the value, a SocialMedia item of a certain color is rendered  |
 
-- #### component dwellingCard
-
-The component is designed to create a dwelling card.
+SocialMediaItem:
 
 | Prop | Type | Description |
 | --- | --- | --- |
+| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `link` | `string` | required, sets the link of social network |
+<hr>
+
+- #### component **CardList**
+
+The component is designed to create a list of cards. 
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `items` | `IItem[] or IItemTeam[]` | required, sets type of cards |
+| `CardComponent` | `ElementType` | required |
+| `path` | `string` | required, sets pathname of page|
+| `section` | `string` | required, sets section of page |
+
+IItem:
+| Prop   | Type     | Description               |
+| ------ | -------- | ------------------------- |
+| `id`   | `string` | required, item`s id          |
+| `name` | `string` | required, name of a partner |
+| `image` | `IImageData` | required, image data|
+
+IItemTeam:
+
+| Prop   | Type     | Description               |
+| ------ | -------- | ------------------------- |
+| `name`     | `string`   | required, team member's name  |
+| `text`     | `string`   | required, description for card |
+| `position` | `string`   | required, member's position   |
+| `status` | `string` | required, variant of team member's status |
+| `socialItem` | `[]`  | required, list of team member's social networks |
+| `image`    | `IImageData`   | required, image data          |
+
+IImageData:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `attributes`  | `data: {url: string; alternativeText: string; }` | required, src and description for img |
+<hr>
+
+
+- #### component **DwellingCard**
+
+The component is designed to create a dwelling card. Component receives prop "item" and its type:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `address` | `string` | required, dwelling address |
 | `city` | `string` | required, dwelling city |
-| `contacts` | `{ link: string; text: string; target?: string; rel?: string }[]` | required, links for contacts info |
+| `locationLink` | `string` | required, links for contacts info |
+| `phone` | `string` | required, dwelling phone |
+<hr>
 
-**FormBlock** includes a form assembly that includes custom inputs, textarea, and checkboxe
+#### **FormBlock** includes a form assembly that includes custom inputs, textarea, and checkbox
 
-**The remark:** To apply with React-Hook-Form using the library's component - <Controller />
+    The remark: To apply with React-Hook-Form using the library's component - <Controller />
 
-- #### component FormBlock
+- #### component **FormBlock**
 
 | Prop | Type | Description |
 | --- | --- | --- |
 | `className` | `string` | optional, the style can be passed to manage placing the component next to others in the section |
+<hr>
 
-- #### component FormInput
+- #### component **FormInput**
 
 | Prop | Type | Description |
 | --- | --- | --- |
@@ -133,114 +222,21 @@ The component is designed to create a dwelling card.
 | `className` | `string` | optional, styles can be passed for the component wrapper |
 | `isFilled` | `boolean or undefined` | optional, can pass the status of filling |
 | `{...rest}` | `string` | optional, any other attributes that are characteristic of the input (type, placeholder, etc) |
+<hr>
 
-- #### component FormModal
-
-1. Create state for control showing modal `const [modalOpen, setModalOpen] = useState<boolean>(false);`
-2. The application example - `<FormModal/>`
+- #### component **Checkbox**
 
 | Prop | Type | Description |
 | --- | --- | --- |
-| `openModal` | `boolean` | required, give created state `show={openModal}` |
-| `onClose` | `() => void` | required, callback with false for your components state `onClose={() => setModalOpen(false)}` |
-| `title` | `string` | required, text for the Title FormModal |
-| `text` | `string` | required, text for the discription FormModal |
-| `isSuccessful` | `boolean` | required, set status for change title and text color |
+| `checked` | `boolean` | required, starting value for checked |
+| `handleChange` | `(checked: boolean) => void` | required, the function to control the value into state in the parent component |
+| `errorMessage` | `string or undefined` | optional, can pass text displaying for an error |
+| `text` | `string` | required, text for the checkbox |
+| `className` | `string` | optional, styles can be passed for the component wrapper |
+| `{...rest}` | `string` | optional, any other attributes that are characteristic of the input (type, placeholder, etc) |
+<hr>
 
-- #### component linkButton
-
-The component is for navigation with all variants of style from layout
-
-| Prop | Type | Default | Description |
-| --- | --- | --- | --- |
-| `href` | `string` | -- | required, link path to page |
-| `children` | `string` | -- | required, element children |
-| `variant` | `'primary'` `'secondary'` `'contacts'` | `'primary'` | optional, variant of link style |
-| `rel` | `'string'` | `undefined` | optional, attribute for link |
-| `target` | `'string'` | `undefined` | optional,attribute for link |
-| `className` | `string` | -- | optional, custom styles |
-
-- #### component newsCard
-
-The component is designed to create a news card.
-
-| Prop          | Type     | Description                   |
-| ------------- | -------- | ----------------------------- |
-| `id`          | `string` | required, card id             |
-| `img`         | `string` | required, img src             |
-| `imgAlt`      | `string` | required, description for img |
-| `date`        | `string` | required, date of news        |
-| `title`       | `string` | required, title of news       |
-| `description` | `string` | required, description of news |
-
-- #### component partnerCard
-
-The component is designed to create a partner card.
-
-| Prop   | Type     | Description               |
-| ------ | -------- | ------------------------- |
-| `img`  | `string` | required, img src         |
-| `name` | `string` | required, name of partner |
-
-- #### component projectCard
-
-The component is designed to create a project card.
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| `id` | `string` | required, project id |
-| `img` | `string` | required, img src |
-| `imgAlt` | `string` | required, description for img |
-| `title` | `string` | required, title of project |
-| `description` | `string` | required, description of project |
-| `linkText` | `string` | required, button text of project card |
-| `isOddCard` | `boolean` | required, for changing direction of elements (see layout) |
-
-- #### component scrollBox
-
-The component is designed to create custom scrollBox.
-
-| Prop        | Type     | Description                 |
-| ----------- | -------- | --------------------------- |
-| `children`  | `string` | required, element children  |
-| `className` | `string` | optional, add custom styles |
-
-- #### component ServiceCard
-
-The component is designed to create a service card.
-
-| Prop       | Type     | Description                               |
-| ---------- | -------- | ----------------------------------------- |
-| `title`    | `string` | required, sets the title                  |
-| `src`      | `string` | required, sets the src of image           |
-| `alt`      | `string` | required, sets the alt of image           |
-| `count`    | `string` | required, sets the count of service.      |
-| `countAll` | `string` | required, sets the count of all services. |
-
-- #### component supportCards
-
-The component is designed to create a supports card.
-
-| Prop | Type | Description |
-| --- | --- | --- |
-| `supportsCards` | `massive` | required, massive include :id, amountOfHelp, typeOfHelp |
-| `id` | `number` | required, sets the id of card |
-| `amountOfHelp` | `number` | required, sets the card helps amount |
-| `typeOfHelp` | `string` | required, sets the card type helps |
-
-- #### component TeamCard
-
-The component is designed to create a team's card.
-
-| Prop       | Type       | Description                   |
-| ---------- | ---------- | ----------------------------- |
-| `name`     | `string`   | required, team member's name  |
-| `src`      | `string`   | required, img src             |
-| `alt`      | `string`   | required, description for img |
-| `position` | `string`   | required, member's position   |
-| `onClick`  | `()=>void` | optional, function if needed  |
-
-- #### component Textarea
+- #### component **Textarea**
 
 | Prop | Type | Description |
 | --- | --- | --- |
@@ -249,8 +245,205 @@ The component is designed to create a team's card.
 | `className` | `string` | optional, styles can be passed for the component wrapper |
 | `isFilled` | `boolean or undefined` | optional, can pass the status of filling |
 | `{...rest}` | `string` | optional, any other attributes that are characteristic of the textarea (placeholder, rows, cols, etc) |
+<hr>
 
-</details>
+- #### component **FormModal**
+
+1. Create state for control showing modal `const [modalOpen, setModalOpen] = useState<boolean>(false);`
+2. The application example - `<FormModal/>`
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `openModal` | `boolean` | required, give created state `show={openModal}` |
+| `onClose` | `() => void` | required, callback with false for your components state `onClose={() => setModalOpen(false)}` |
+| `title` | `string` | required, text for the FormModal title  |
+| `text` | `string` | required, text for the FormModal discription |
+| `isSuccessful` | `boolean` | required, set status for change title and text color |
+<hr>
+
+- #### component **NavList**
+
+| Prop        | Type        | Description     |
+| ----------- | ----------- | ------------|
+| `navList`   | `NavListItem[]` | required, sets liast for navigation |
+| `forFooter` | `boolean` | required, set status for style change  |
+| `onClick`   | `() => void`| optional, add the function for click handler  |
+<hr>
+
+- #### component **NewsCard**
+
+The component is designed to create a news card. Component receives prop "item" and its type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `slug`        | `string` | required, card`s slug         |
+| `date`        | `string` | required, date of news        |
+| `title`       | `string` | required, title of news       |
+| `text`        | `string` | required, description of news |
+| `image`       | `data: INewsImageArray[]` | required, image data|
+
+INewsImageArray type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `attributes`  | `{url: string; alternativeText: string; }` | required, src and description for img |
+<hr>
+
+- #### component **PartnerCard**
+
+The component is designed to create a partner card.  Component receives prop "item" and its type:
+
+| Prop   | Type     | Description               |
+| ------ | -------- | ------------------------- |
+| `id`   | `string` | required, img id          |
+| `name` | `string` | required, name of a partner |
+| `image`       | `data: IImageDataAttributes` | required, image data|
+
+IImageDataAttributes type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `attributes`  | `{url: string; alternativeText: string; }` | required, src and description for img |
+<hr>
+
+- #### component **ProjectCard**
+
+The component is designed to create a project card.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `item` | `object` | required, project data |
+| `linkText` | `string` | required, button text of project card |
+| `isOddCard` | `boolean` | required, for changing direction of elements (see layout) |
+
+"item" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `title`       | `string` | required, title of project    |
+| `slug`        | `string` | required, project card`s slug |
+| `description` | `string` | required, description of project |
+| `image`       | `object` | required, image data |
+
+"image" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `data`  | `attributes: {url: string; alternativeText: string; }` | required, src and description for img |
+<hr>
+
+- #### component **ServiceCard**
+
+The component is designed to create a service card.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `item` | `object` | required, service data |
+| `count` | `string` | required, number of service card |
+| `countAll` | `string` | required, total number of service cards |
+
+"item" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `id`       | `string` | required, id of service    |
+| `title`       | `string` | required, title of service    |
+| `description` | `string` | required, description of service |
+| `image`       | `object` | required, image data |
+
+"image" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `data`  | `attributes: {url: string; alternativeText: string; }` | required, src and description for img |
+<hr>
+
+- #### component **SupportCardAbout**
+
+The component is designed to create a support cards on About page. Component receives prop "item" and its type:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `icon` | `'balanceIcon'` `'infoIcon'` `'heartHandIcon'` | required, sets a variant of icon |
+| `title`       | `string` | required, title of support card    |
+| `description` | `string` | required, description of support card |
+<hr>
+
+- #### component **SupportCards**
+
+The component is designed to create a support cards.
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `data` | `ISupportProps[]` | required, array of support cards |
+
+ISupportProps:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `id` | `number` | required, sets the id of card |
+| `amountOfHelp` | `number` | required, sets the card helps amount |
+| `typeOfHelp` | `string` | required, sets the card type helps |
+<hr>
+
+- #### component **TeamCard**
+
+The component is designed to create a team member's card. Component receives prop "item" and its type:
+
+| Prop       | Type       | Description                   |
+| ---------- | ---------- | ----------------------------- |
+| `id`       | `string`   | required, sets the id of card |
+| `name`     | `string`   | required, team member's name  |
+| `image`    | `object`   | required, image data          |
+| `position` | `string`   | required, member's position   |
+| `text`     | `string`   | required, description for card |
+| `status` | `'vijskova_veteranka'` `'vijskovij_veteran'` `'rodina_vijskovoyi_veteranki'` `'rodina_vijskovogo_veterana'` | required, variant of team member's status |
+| `socialItem` | `SocialMediaItem[]`  | optional, list of team member's social networks |
+
+"image" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `data`  | `attributes: {url: string; alternativeText: string; }` | required, src and description for img |
+
+SocialMediaItem:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `link` | `string` | required, sets the link of social network |
+<hr>
+
+- #### component **TeamCardModal**
+
+The component is designed to create a team member card's modal. 
+
+| Prop       | Type       | Description                   |
+| ---------- | ---------- | ----------------------------- |
+| `openModal` | `boolean` | required, give created state `show={openModal}` |
+| `onClose` | `() => void` | required, callback with false for your components state `onClose={() => setModalOpen(false)}` |
+| `img`      | `string`   | required, image src          |
+| `name`     | `string`   | required, team member's name  |
+| `position` | `string`   | required, member's position   |
+| `description`     | `string`   | required, description for card |
+| `plug` | `'vijskova_veteranka'` `'vijskovij_veteran'` `'rodina_vijskovoyi_veteranki'` `'rodina_vijskovogo_veterana'` | required, variant of team member's status |
+| `socialItem` | `SocialMediaItem[]`  | optional, list of team member's social networks |
+
+"image" type:
+
+| Prop          | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| `data`  | `attributes: {url: string; alternativeText: string; }` | required, src and description for img |
+
+SocialMediaItem:
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `social` | `'Facebook'` `'Instagram'` ` 'YouTube'`  `'TikTok'` `'Twitter'` `'SoundCloud'` `'Spotify'` `'Diya'` `'YouTube Music'` | required, sets the type of social network |
+| `link` | `string` | required, sets the link of social network |
+<hr>
+
+<!-- </details> -->
 
 ## Technologies
 

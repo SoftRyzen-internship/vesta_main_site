@@ -1,3 +1,5 @@
+import { SocialMediaItem } from "@/components/ui/SocialMedia/SocialMedia.types";
+
 export interface ITeamCardImage {
   data: {
     attributes: {
@@ -5,11 +7,6 @@ export interface ITeamCardImage {
       alternativeText: string;
     };
   };
-}
-
-export interface ITeamCardSocials {
-  link: string;
-  social: string;
 }
 
 export interface ITeamCardProps {
@@ -24,6 +21,7 @@ export interface ITeamCardProps {
       | 'vijskovij_veteran'
       | 'rodina_vijskovoyi_veteranki'
       | 'rodina_vijskovogo_veterana';
-    socialItem?: ITeamCardSocials[];
+    socialItem?: SocialMediaItem[];
   };
 }
+

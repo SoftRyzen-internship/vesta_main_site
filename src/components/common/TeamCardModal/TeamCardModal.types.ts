@@ -1,3 +1,5 @@
+import { SocialMediaItem } from "@/components/ui/SocialMedia/SocialMedia.types";
+
 export interface ITeamCardModalProps {
   openModal: boolean;
   closeModal: () => void;
@@ -10,5 +12,5 @@ export interface ITeamCardModalProps {
     | 'vijskovij_veteran'
     | 'rodina_vijskovoyi_veteranki'
     | 'rodina_vijskovogo_veterana';
-  socialMedia?: { social: string; link: string }[];
+  socialMedia?: SocialMediaItem[];
 }
