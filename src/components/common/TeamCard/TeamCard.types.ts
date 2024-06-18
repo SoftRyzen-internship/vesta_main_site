@@ -19,7 +19,11 @@ export interface ITeamCardProps {
     image: ITeamCardImage;
     position: string;
     text: string;
-    status: string;
+    status:
+      | 'vijskova_veteranka'
+      | 'vijskovij_veteran'
+      | 'rodina_vijskovoyi_veteranki'
+      | 'rodina_vijskovogo_veterana';
     socialItem?: ITeamCardSocials[];
   };
 }

@@ -21,7 +21,7 @@ export const Team: FC = () => {
   const pathName = usePathname();
   const sizes = useWindowSize();
   const [team, setTeam] = useState<IItemTeam[]>([]);
-  const [numberOfCards, setNumberOfCards] = useState(3)
+  const [numberOfCards, setNumberOfCards] = useState(3);
   useEffect(() => {
     if (pathName === '/about') {
       setNumberOfCards(24);
@@ -34,8 +34,11 @@ export const Team: FC = () => {
 
   useEffect(() => {
     const fetchPartnersData = async () => {
-      const data: ITeamData = await fetchData<ITeamData>(getTeam(0, numberOfCards));
+      const data: ITeamData = await fetchData<ITeamData>(
+        getTeam(0, numberOfCards),
+      );
       setTeam(data.team.data.attributes.itemTeam);
+      console.log(data);
     };
     fetchPartnersData();
   }, [numberOfCards]);
