@@ -9,7 +9,7 @@ import { fetchData } from '@/actions/fetchData';
 
 import { getLocation } from '@/graphql/locationSchema';
 
-import { DwellingsResponse,  } from '@/sections/Dwelling/Dwellings.types';
+import { DwellingsResponse } from '@/sections/Dwelling/Dwellings.types';
 
 
 
@@ -31,7 +31,7 @@ console.log(locationItems);
         </div>
         <ul className='flex flex-col gap-[30px]'>
           {locationItems.map((item) => (
-            <li key={item.address}>
+            <li key={`${Date.now()}`} >
               <DwellingCard item={item} />
             </li>
           ))}

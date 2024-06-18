@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { DwellingCardProps } from './DwellingCard.types';
+import {dwellings} from '@/data'
 
 export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
   return (
@@ -12,8 +13,8 @@ export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
         <li className='leading-none first:mb-[10px]'>
           <Link
             href={item.locationLink}
-            target='_blank'
-            rel='noopener noreferrer nofollow'
+            target={dwellings.target}
+            rel={dwellings.rel}
             className='paragraph hover:text-hoverDark focus:text-orangeText flex flex-col gap-[10px]'
           >
             <span>{item.address}</span>
