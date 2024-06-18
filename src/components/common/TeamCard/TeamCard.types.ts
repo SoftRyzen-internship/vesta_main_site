@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { IItemTeam } from "@/sections/Team/Team.types";
-
-export interface ITeamCardProps {
-  item: IItemTeam
-=======
 export interface ITeamCardImage {
   data: {
     attributes: {
@@ -20,13 +14,12 @@ export interface ITeamCardSocials {
 
 export interface ITeamCardProps {
   item: {
+    id: string;
     name: string;
-    src: string;
-    alt: string;
+    image: ITeamCardImage;
     position: string;
     description: string;
     plug: string;
     socialMedia?: { social: string; link: string }[];
   };
->>>>>>> origin/dev
 }
