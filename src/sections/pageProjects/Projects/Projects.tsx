@@ -60,7 +60,9 @@ export const Projects: FC = () => {
 
   return (
     <>
-      {isLoading && <NoDataTemplate title={wait} description={waitText} />}
+      {isLoading && (
+        <NoDataTemplate title={wait} description={waitText} isLoading={true} />
+      )}
       {!isLoading && total === 0 && (
         <NoDataTemplate
           title={titleProjects}

@@ -59,6 +59,7 @@ export const News = () => {
           sectionTitle={title}
           title={wait}
           description={waitText}
+          isLoading={true}
         />
       )}
       {!isLoading && total === 0 && (
