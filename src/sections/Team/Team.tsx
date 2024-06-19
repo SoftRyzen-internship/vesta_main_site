@@ -1,5 +1,5 @@
 'use client'
-import { FC} from 'react';
+import { FC, useState} from 'react';
 
 import { usePathname } from 'next/navigation';
 
@@ -17,6 +17,11 @@ import { teamData } from '@/data';
 export const Team: FC<TeamProps> = ({team}) => {
   const pathName = usePathname();
   const {width} = useWindowSize();
+  const isDesktop = width && width > 1279 ? true : false;
+const [teamForRender, setTeam] = useState(team)
+if (pathName !== '/about') {
+  setTeam(team.slice(0, 6));
+}
   return (
     <section
       id='team'
@@ -33,7 +38,7 @@ export const Team: FC<TeamProps> = ({team}) => {
           </h2>
         </div>
         <CardsList
-          items={team}
+          items={teamForRender}
           CardComponent={TeamCard}
           path={pathName}
           section='team'

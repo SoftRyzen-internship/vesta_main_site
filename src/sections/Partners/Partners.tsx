@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC , useState} from 'react';
 import { usePathname } from 'next/navigation';
 
 import { CardsList } from '@/components/common/CardsList';
@@ -15,6 +15,11 @@ import { partnersData } from '@/data';
 export const Partners: FC<PartnersProps> = ({partners}) => {
   const pathName = usePathname();
   const {width} = useWindowSize();
+  const isDesktop = width && width > 1279 ? true : false;
+const [partnersForRender, setPartners] = useState(partners)
+   if (!isDesktop) {
+    setPartners(partners.slice(0, 4));
+
 
 
   return (
@@ -35,7 +40,7 @@ export const Partners: FC<PartnersProps> = ({partners}) => {
           )}
         </div>
         <CardsList
-          items={partners}
+          items={partnersForRender}
           CardComponent={PartnerCard}
           path={pathName}
           section='partners'
