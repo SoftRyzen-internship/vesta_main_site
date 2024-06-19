@@ -58,7 +58,7 @@ export default async function Page({ params }: IOneNewsPageProps) {
         <NoDataTemplate
           title={titleTemplateNews}
           description={descriptionTemplateNews}
-          className='pb-0 pt-[100px] md:py-0  md:pt-[100px] xl:py-0 xl:pt-[130px]'
+          className='pb-0 pt-[100px] md:py-0 md:pt-[100px] xl:py-0 xl:pt-[130px]'
         />
       )}
       <News slug={slug} />
