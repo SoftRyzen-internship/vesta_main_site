@@ -31,7 +31,7 @@ export const Contacts: FC = async () => {
           <h1 className='mb-10 font-kyiv text-h3 font-bold md:mb-[50px] md:text-h3_tab xl:mb-[60px] xl:text-h3_desk'>
             {title}
           </h1>
-          {!data.contact.data.attributes ? (
+          {data.contact.data.attributes ? (
             <address className='text-body2 font-medium not-italic md:text-body2_tab xl:text-body2_desk'>
               <div className='mb-5 flex items-center gap-[15px]'>
                 <div className='flex h-10 w-10 items-center justify-center rounded-full border-[0.5px] border-current '>
