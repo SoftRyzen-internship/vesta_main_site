@@ -6,15 +6,14 @@ import { HeroLess } from '@/sections/HeroLess';
 import { Support } from '@/sections/pageAboutUs/Support';
 import { News } from '@/sections/News';
 
-import { heroLessData, metaData } from '@/data';
+import { IPartnersData } from '@/sections/Partners/Partners.types';
+import { ITeamData } from '@/sections/Team/Team.types';
 
 import { fetchData } from '@/actions/fetchData';
-import { IPartnersData } from '@/sections/Partners/Partners.types';
+import { getTeamPagination } from '@/graphql/teamPaginationSchema';
 import { getPartnersPagination } from '@/graphql/partnersPaginationSchema';
 
-import { ITeamData } from '@/sections/Team/Team.types';
-import { getTeamPagination } from '@/graphql/teamPaginationSchema';
-
+import { heroLessData, metaData } from '@/data';
 
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
 
@@ -32,11 +31,10 @@ export default async function Page() {
   const dataPartners: IPartnersData = await fetchData<IPartnersData>(
     getPartnersPagination(0, -1),
   );
-  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
-
   const dataTeam: ITeamData = await fetchData<ITeamData>(
     getTeamPagination(0, -1),
   );
+  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
   const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
 
   return (
@@ -47,8 +45,8 @@ export default async function Page() {
         description={descriptionAbout}
       />
       <Support />
-      <Team team={team}/>
-      <Partners partners={partners}/>
+      <Team team={team} />
+      <Partners partners={partners} />
       <News />
     </>
   );

@@ -9,22 +9,21 @@ import { Contacts } from '@/sections/Contacts';
 import { Dwelling } from '@/sections/Dwelling';
 import { News } from '@/sections/News';
 
-import { fetchData } from '@/actions/fetchData';
 import { IPartnersData } from '@/sections/Partners/Partners.types';
-import { getPartnersPagination } from '@/graphql/partnersPaginationSchema';
-
 import { ITeamData } from '@/sections/Team/Team.types';
+
+import { fetchData } from '@/actions/fetchData';
+import { getPartnersPagination } from '@/graphql/partnersPaginationSchema';
 import { getTeamPagination } from '@/graphql/teamPaginationSchema';
 
 export default async function Home() {
   const dataPartners: IPartnersData = await fetchData<IPartnersData>(
     getPartnersPagination(0, 4),
   );
-  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
-
   const dataTeam: ITeamData = await fetchData<ITeamData>(
     getTeamPagination(0, 5),
   );
+  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
   const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
 
   return (
@@ -34,8 +33,8 @@ export default async function Home() {
       <Projects />
       <Services />
       <Donation />
-      <Partners partners={partners}/>
-      <Team team={team}/>
+      <Partners partners={partners} />
+      <Team team={team} />
       <Contacts />
       <Dwelling />
       <News />

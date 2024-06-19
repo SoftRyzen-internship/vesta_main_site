@@ -1,6 +1,6 @@
 'use client';
 
-import { FC , useState, useEffect} from 'react';
+import { FC, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 import { CardsList } from '@/components/common/CardsList';
@@ -9,22 +9,24 @@ import { LinkButton } from '@/components/ui/LinkButton';
 
 import { PartnersProps } from './Partners.types';
 
-import { useWindowSize } from '@/utils';
 import { partnersData } from '@/data';
 
-export const Partners: FC<PartnersProps> = ({partners}) => {
+import { useWindowSize } from '@/utils';
+
+export const Partners: FC<PartnersProps> = ({ partners }) => {
+  const [partnersForRender, setPartners] = useState(partners);
+  const { width } = useWindowSize();
   const pathName = usePathname();
-  const {width} = useWindowSize();
   const isDesktop = width && width > 1279 ? true : false;
-const [partnersForRender, setPartners] = useState(partners)
-useEffect(() => {
-  if (!isDesktop && pathName !== '/about') {
-    setPartners(partners.slice(0, 3));
-  } else {
-    setPartners(partners);
-  }
-}, [isDesktop, pathName, partners]);
- 
+
+  useEffect(() => {
+    if (!isDesktop && pathName !== '/about') {
+      setPartners(partners.slice(0, 3));
+    } else {
+      setPartners(partners);
+    }
+  }, [isDesktop, pathName, partners]);
+
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
