@@ -63,7 +63,7 @@ export const AboutOrganisation: FC = async () => {
       </div>
       <div className='container'>
         <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
-          *станом на {date}
+          *станом на {date ? date : 'XXXX-XX-XX'}
         </p>
         <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
           <ul className='flex gap-5 transition pb-10'>
