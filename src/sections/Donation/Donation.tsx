@@ -35,8 +35,8 @@ export const Donation: FC = () => {
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
-              transition={{ duration: 2, delay: 1 }}
-              viewport={{ once: true }}
+              transition={{ duration: 2, delay: 2 }}
+              viewport={{ once: true, amount: 0.3 }}
               className='absolute left-0 top-6 hidden h-[3px] translate-y-[-60%] bg-tomorrow xl:block'
             />
           </div>
