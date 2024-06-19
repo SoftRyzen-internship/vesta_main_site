@@ -19,7 +19,7 @@ export const Partners: FC<PartnersProps> = ({partners}) => {
 const [partnersForRender, setPartners] = useState(partners)
 useEffect(() => {
   if (!isDesktop && pathName !== '/about') {
-    setPartners(partners.slice(0, 4));
+    setPartners(partners.slice(0, 3));
   } else {
     setPartners(partners);
   }

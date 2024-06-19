@@ -7,7 +7,7 @@ export const getPartner = gql`
         attributes {
           item {
             id
-            names
+            name
             image {
               data {
                 attributes {
