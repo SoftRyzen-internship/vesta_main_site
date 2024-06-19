@@ -29,8 +29,8 @@ export default function Page() {
         description={descriptionAbout}
       />
       <Support />
-      <Team />
-      <Partners />
+      <Team page='/about'/>
+      <Partners page='/about'/>
       <News />
     </>
   );

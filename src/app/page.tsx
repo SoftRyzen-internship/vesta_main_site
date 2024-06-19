@@ -10,6 +10,7 @@ import { Dwelling } from '@/sections/Dwelling';
 import { News } from '@/sections/News';
 
 export default function Home() {
+
   return (
     <>
       <HeroMain />
@@ -17,8 +18,8 @@ export default function Home() {
       <Projects />
       <Services />
       <Donation />
-      <Partners />
-      <Team />
+      <Partners page='/home'/>
+      <Team page='/home'/>
       <Contacts />
       <Dwelling />
       <News />

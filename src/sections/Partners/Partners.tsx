@@ -1,41 +1,25 @@
-'use client';
-
-import { FC, useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { FC} from 'react';
 
 import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { IPartnersData, IItem } from './Partners.types';
+import { IPartnersData, PartnersProps } from './Partners.types';
 
 import { fetchData } from '@/actions/fetchData';
 import { getPartners } from '@/graphql/partnerSchema';
-import { useWindowSize } from '@/utils';
 import { partnersData } from '@/data';
 
-export const Partners: FC = () => {
-  const pathName = usePathname();
-  const sizes = useWindowSize();
-  const [partners, setPartners] = useState<IItem[]>([]);
-  const [numberOfCards, setNumberOfCards] = useState(4)
-  useEffect(() => {
-    if (pathName === '/about') {
-      setNumberOfCards(12);
-    } else if (sizes.width && sizes.width >= 1280) {
-      setNumberOfCards(4);
-    } else {
-      setNumberOfCards(3);
-    }
-  }, [pathName, sizes.width]);
+export const Partners: FC<PartnersProps> = async({page}) => {
+  let partners
+  if (page === '/about') {
+    const data: IPartnersData = await fetchData<IPartnersData>(getPartners());
+    partners = data.partner.data.attributes.item;
+  } else {
+    const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, 4));
+    partners = data.partner.data.attributes.item;
+  }
 
-  useEffect(() => {
-    const fetchPartnersData = async () => {
-      const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, numberOfCards));
-      setPartners(data.partner.data.attributes.item);
-    };
-    fetchPartnersData();
-  }, [numberOfCards]);
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
@@ -43,7 +27,7 @@ export const Partners: FC = () => {
           <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
             {partnersData.title}
           </h2>
-          {pathName !== '/about' && (
+          {page !== '/about' && (
             <LinkButton
               variant='secondary'
               href='/about#partners'
@@ -56,7 +40,7 @@ export const Partners: FC = () => {
         <CardsList
           items={partners}
           CardComponent={PartnerCard}
-          path={pathName}
+          path={page}
           section='partners'
         />
       </div>

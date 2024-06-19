@@ -32,3 +32,7 @@ export interface IData {
 export interface IPartnersData {
   partner: IData;
 }
+
+export interface PartnersProps {
+  page: string
+}
