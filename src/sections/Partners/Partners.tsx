@@ -17,11 +17,10 @@ export const Partners: FC<PartnersProps> = ({partners}) => {
   const {width} = useWindowSize();
   const isDesktop = width && width > 1279 ? true : false;
 const [partnersForRender, setPartners] = useState(partners)
-   if (!isDesktop) {
+   if (!isDesktop && pathName !== '/about') {
     setPartners(partners.slice(0, 4));
-
-
-
+  }
+ 
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
       <div className='container'>
