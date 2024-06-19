@@ -1,24 +1,21 @@
-import { FC} from 'react';
+'use client';
+
+import { FC } from 'react';
+import { usePathname } from 'next/navigation';
 
 import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { IPartnersData, PartnersProps } from './Partners.types';
+import { PartnersProps } from './Partners.types';
 
-import { fetchData } from '@/actions/fetchData';
-import { getPartners } from '@/graphql/partnerSchema';
+import { useWindowSize } from '@/utils';
 import { partnersData } from '@/data';
 
-export const Partners: FC<PartnersProps> = async({page}) => {
-  let partners
-  if (page === '/about') {
-    const data: IPartnersData = await fetchData<IPartnersData>(getPartners());
-    partners = data.partner.data.attributes.item;
-  } else {
-    const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, 4));
-    partners = data.partner.data.attributes.item;
-  }
+export const Partners: FC<PartnersProps> = ({partners}) => {
+  const pathName = usePathname();
+  const {width} = useWindowSize();
+
 
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
@@ -27,7 +24,7 @@ export const Partners: FC<PartnersProps> = async({page}) => {
           <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
             {partnersData.title}
           </h2>
-          {page !== '/about' && (
+          {pathName !== '/about' && (
             <LinkButton
               variant='secondary'
               href='/about#partners'
@@ -40,7 +37,7 @@ export const Partners: FC<PartnersProps> = async({page}) => {
         <CardsList
           items={partners}
           CardComponent={PartnerCard}
-          path={page}
+          path={pathName}
           section='partners'
         />
       </div>

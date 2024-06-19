@@ -18,7 +18,7 @@ export interface IItem {
 }
 
 export interface IPartnersAttributes {
-  item: IItem[];
+  item: IItem[]
 }
 
 export interface IDataAttributes {
@@ -34,5 +34,5 @@ export interface IPartnersData {
 }
 
 export interface PartnersProps {
-  page: string
+  partners: IItem[]
 }

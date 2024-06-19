@@ -1,36 +1,28 @@
+'use client'
 import { FC} from 'react';
+
+import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
 
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
-import { ITeamData, TeamProps } from './Team.types';
+import { TeamProps } from './Team.types';
 
-import { fetchData } from '@/actions/fetchData';
-import { getTeam } from '@/graphql/teamSchema';
+import { useWindowSize } from '@/utils';
 
 import { teamData } from '@/data';
 
-export const Team: FC<TeamProps> = async({page}) => {
- let team;
-  if (page === '/about') {
-    const data: ITeamData = await fetchData<ITeamData>(
-      getTeam(),
-    );
-    team = data.team.data.attributes.itemTeam;
-  } else {
-    const data: ITeamData = await fetchData<ITeamData>(
-      getTeam(0, 4),
-    );
-    team = data.team.data.attributes.itemTeam;
-  }
+export const Team: FC<TeamProps> = ({team}) => {
+  const pathName = usePathname();
+  const {width} = useWindowSize();
   return (
     <section
       id='team'
       className={clsx(
-        page === '/about' && 'smOnly:pb-0',
-        page !== '/about' && 'md:pb-[100px] xl:pb-[130px]',
+        pathName === '/about' && 'smOnly:pb-0',
+        pathName !== '/about' && 'md:pb-[100px] xl:pb-[130px]',
         'smOnly:pb-[60px] md:pt-[100px] xl:pt-[130px]',
       )}
     >
@@ -43,7 +35,7 @@ export const Team: FC<TeamProps> = async({page}) => {
         <CardsList
           items={team}
           CardComponent={TeamCard}
-          path={page}
+          path={pathName}
           section='team'
         />
       </div>

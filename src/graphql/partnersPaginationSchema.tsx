@@ -1,13 +1,15 @@
 import { gql } from 'graphql-request';
 
-export const getPartner = gql`
+export const getPartnersPagination = (start: number, limit: number) => gql`
   query {
     partner{
       data {
         attributes {
-          item {
+          item(
+            pagination: { start: ${start}, limit: ${limit} }
+            ) {
             id
-            names
+            name
             image {
               data {
                 attributes {

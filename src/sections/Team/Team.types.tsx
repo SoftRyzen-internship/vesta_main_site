@@ -13,7 +13,7 @@ export interface IImageData {
 }
 
 export interface IItemTeam {
-  d: string;
+  id: string;
   name: string;
   text: string;
   position: string;
@@ -39,5 +39,5 @@ export interface ITeamData {
 }
 
 export interface TeamProps {
-  page: string
+  team: IItemTeam[]
 }

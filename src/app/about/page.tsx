@@ -8,6 +8,14 @@ import { News } from '@/sections/News';
 
 import { heroLessData, metaData } from '@/data';
 
+import { fetchData } from '@/actions/fetchData';
+import { IPartnersData } from '@/sections/Partners/Partners.types';
+import { getPartner } from '@/graphql/partnerSchema';
+
+import { ITeamData } from '@/sections/Team/Team.types';
+import { getTeam } from '@/graphql/teamSchema';
+
+
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
 
 export const metadata: Metadata = {
@@ -18,8 +26,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
   const { toAboutId, titleAbout, descriptionAbout } = heroLessData;
+
+  const dataAllPartners: IPartnersData = await fetchData<IPartnersData>(getPartner);
+  const partners = dataAllPartners.partner?.data?.attributes?.item ?? [];
+
+  const dataAllTeam: ITeamData = await fetchData<ITeamData>(getTeam);
+  const team = dataAllTeam.team?.data?.attributes?.itemTeam ?? [];
 
   return (
     <>
@@ -29,8 +43,8 @@ export default function Page() {
         description={descriptionAbout}
       />
       <Support />
-      <Team page='/about'/>
-      <Partners page='/about'/>
+      <Team team={team}/>
+      <Partners partners={partners}/>
       <News />
     </>
   );
