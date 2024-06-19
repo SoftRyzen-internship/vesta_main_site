@@ -14,7 +14,6 @@ export const NoDataTemplate: FC<INoDataProps> = ({
   title,
   description,
   className,
-  isLoading,
 }) => {
   const pathname = usePathname();
   const classes = [s['no-data-projects'], s['no-data-news']];
@@ -40,7 +39,7 @@ export const NoDataTemplate: FC<INoDataProps> = ({
         )}
         <div
           className={clsx(
-            isLoading ? 'bg-green' : background,
+            background,
             'px-[26px] pb-12 pt-10 text-center md:px-7 md:pb-[104px] md:pt-[60px]',
           )}
         >

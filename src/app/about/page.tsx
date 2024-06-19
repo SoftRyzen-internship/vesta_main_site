@@ -6,6 +6,13 @@ import { HeroLess } from '@/sections/HeroLess';
 import { Support } from '@/sections/pageAboutUs/Support';
 import { News } from '@/sections/News';
 
+import { IPartnersData } from '@/sections/Partners/Partners.types';
+import { ITeamData } from '@/sections/Team/Team.types';
+
+import { fetchData } from '@/actions/fetchData';
+import { getTeamPagination } from '@/graphql/teamPaginationSchema';
+import { getPartnersPagination } from '@/graphql/partnersPaginationSchema';
+
 import { heroLessData, metaData } from '@/data';
 
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
@@ -18,8 +25,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
   const { toAboutId, titleAbout, descriptionAbout } = heroLessData;
+
+  const dataPartners: IPartnersData = await fetchData<IPartnersData>(
+    getPartnersPagination(0, -1),
+  );
+  const dataTeam: ITeamData = await fetchData<ITeamData>(
+    getTeamPagination(0, -1),
+  );
+  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
+  const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
 
   return (
     <>
@@ -29,8 +45,8 @@ export default function Page() {
         description={descriptionAbout}
       />
       <Support />
-      <Team />
-      <Partners />
+      <Team team={team} />
+      <Partners partners={partners} />
       <News />
     </>
   );

@@ -3,5 +3,4 @@ export interface INoDataProps {
   title: string;
   description: string;
   className?: string;
-  isLoading?: boolean;
 }

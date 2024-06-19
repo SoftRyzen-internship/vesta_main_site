@@ -18,7 +18,7 @@ export interface IItem {
 }
 
 export interface IPartnersAttributes {
-  item: IItem[];
+  item: IItem[]
 }
 
 export interface IDataAttributes {
@@ -31,4 +31,8 @@ export interface IData {
 
 export interface IPartnersData {
   partner: IData;
+}
+
+export interface PartnersProps {
+  partners: IItem[]
 }

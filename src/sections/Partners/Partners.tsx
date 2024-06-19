@@ -1,65 +1,72 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
 
-import { IPartnersData, IItem } from './Partners.types';
+import { PartnersProps } from './Partners.types';
 
-import { fetchData } from '@/actions/fetchData';
-import { getPartners } from '@/graphql/partnerSchema';
+import { partnersData, templateNoData } from '@/data';
+
 import { useWindowSize } from '@/utils';
-import { partnersData } from '@/data';
 
-export const Partners: FC = () => {
+export const Partners: FC<PartnersProps> = ({ partners }) => {
+  const [partnersForRender, setPartners] = useState(partners);
+  const { width } = useWindowSize();
   const pathName = usePathname();
-  const sizes = useWindowSize();
-  const [partners, setPartners] = useState<IItem[]>([]);
-  const [numberOfCards, setNumberOfCards] = useState(4)
-  useEffect(() => {
-    if (pathName === '/about') {
-      setNumberOfCards(12);
-    } else if (sizes.width && sizes.width >= 1280) {
-      setNumberOfCards(4);
-    } else {
-      setNumberOfCards(3);
-    }
-  }, [pathName, sizes.width]);
+  const isDesktop = width && width > 1279 ? true : false;
+  const { sectionPartners, titlePartners, descriptionPartners } =
+    templateNoData;
 
   useEffect(() => {
-    const fetchPartnersData = async () => {
-      const data: IPartnersData = await fetchData<IPartnersData>(getPartners(0, numberOfCards));
-      setPartners(data.partner.data.attributes.item);
-    };
-    fetchPartnersData();
-  }, [numberOfCards]);
+    if (!isDesktop && pathName !== '/about') {
+      setPartners(partners.slice(0, 3));
+    } else {
+      setPartners(partners);
+    }
+  }, [isDesktop, pathName, partners]);
+
   return (
-    <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
-      <div className='container'>
-        <div className='mb-[40px] flex flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
-          <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
-            {partnersData.title}
-          </h2>
-          {pathName !== '/about' && (
-            <LinkButton
-              variant='secondary'
-              href='/about#partners'
-              className='h-[28px] w-[125px]'
-            >
-              {partnersData.button}
-            </LinkButton>
-          )}
-        </div>
-        <CardsList
-          items={partners}
-          CardComponent={PartnerCard}
-          path={pathName}
-          section='partners'
+    <>
+      {partners.length === 0 ? (
+        <NoDataTemplate
+          sectionTitle={sectionPartners}
+          title={titlePartners}
+          description={descriptionPartners}
         />
-      </div>
-    </section>
+      ) : (
+        <section
+          id='partners'
+          className='pt-[60px] md:pt-[100px] xl:pt-[130px]'
+        >
+          <div className='container'>
+            <div className='mb-[40px] flex flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
+              <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
+                {partnersData.title}
+              </h2>
+              {pathName !== '/about' && (
+                <LinkButton
+                  variant='secondary'
+                  href='/about#partners'
+                  className='h-[28px] w-[125px]'
+                >
+                  {partnersData.button}
+                </LinkButton>
+              )}
+            </div>
+            <CardsList
+              items={partnersForRender}
+              CardComponent={PartnerCard}
+              path={pathName}
+              section='partners'
+            />
+          </div>
+        </section>
+      )}
+    </>
   );
 };
