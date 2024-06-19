@@ -10,10 +10,10 @@ import { heroLessData, metaData } from '@/data';
 
 import { fetchData } from '@/actions/fetchData';
 import { IPartnersData } from '@/sections/Partners/Partners.types';
-import { getPartner } from '@/graphql/partnerSchema';
+import { getPartnersPagination } from '@/graphql/partnersPaginationSchema';
 
 import { ITeamData } from '@/sections/Team/Team.types';
-import { getTeam } from '@/graphql/teamSchema';
+import { getTeamPagination } from '@/graphql/teamPaginationSchema';
 
 
 const BASE_APP_URL = process.env.BASE_APP_URL as string;
@@ -29,11 +29,15 @@ export const metadata: Metadata = {
 export default async function Page() {
   const { toAboutId, titleAbout, descriptionAbout } = heroLessData;
 
-  const dataAllPartners: IPartnersData = await fetchData<IPartnersData>(getPartner);
-  const partners = dataAllPartners.partner?.data?.attributes?.item ?? [];
+  const dataPartners: IPartnersData = await fetchData<IPartnersData>(
+    getPartnersPagination(0, -1),
+  );
+  const partners = dataPartners.partner?.data?.attributes?.item ?? [];
 
-  const dataAllTeam: ITeamData = await fetchData<ITeamData>(getTeam);
-  const team = dataAllTeam.team?.data?.attributes?.itemTeam ?? [];
+  const dataTeam: ITeamData = await fetchData<ITeamData>(
+    getTeamPagination(0, -1),
+  );
+  const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
 
   return (
     <>
