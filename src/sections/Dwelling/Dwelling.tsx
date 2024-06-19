@@ -2,8 +2,9 @@ import { FC } from 'react';
 
 import { DwellingCard } from '@/components/common/DwellingCard';
 import { LinkButton } from '@/components/ui/LinkButton';
+import { NoDataTemplate } from '../NoDataTemplate';
 
-import { dwellingData } from '@/data';
+import { dwellingData, templateNoData } from '@/data';
 
 import { fetchData } from '@/actions/fetchData';
 
@@ -11,10 +12,13 @@ import { getLocation } from '@/graphql/locationSchema';
 
 import { DwellingsResponse } from '@/sections/Dwelling/Dwellings.types';
 
+
 export const Dwelling: FC = async () => {
   const data: DwellingsResponse =
     await fetchData<DwellingsResponse>(getLocation);
   const locationItems = data.location.data.attributes.locationItem;
+
+  const { titleDwellings, descriptionDwellings } = templateNoData;
 
   return (
     <section className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
@@ -27,13 +31,21 @@ export const Dwelling: FC = async () => {
             {dwellingData.requestButton}
           </LinkButton>
         </div>
-        <ul className='flex flex-col gap-[30px]'>
-          {locationItems.map(item => (
-            <li key={item.id}>
-              <DwellingCard item={item} />
-            </li>
-          ))}
-        </ul>
+        {locationItems.length > 0 ? (
+          <ul className='flex flex-col gap-[30px]'>
+            {locationItems.map(item => (
+              <li key={item.id}>
+                <DwellingCard item={item} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <NoDataTemplate
+            title={titleDwellings}
+            description={descriptionDwellings}
+            className='pb-0 pt-0 md:pb-0 md:pt-0 xl:pb-0 xl:pt-0'
+          />
+        )}
       </div>
     </section>
   );
