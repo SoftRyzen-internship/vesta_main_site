@@ -1,6 +1,6 @@
 'use client';
 
-import { FC , useState} from 'react';
+import { FC , useState, useEffect} from 'react';
 import { usePathname } from 'next/navigation';
 
 import { CardsList } from '@/components/common/CardsList';
@@ -17,9 +17,13 @@ export const Partners: FC<PartnersProps> = ({partners}) => {
   const {width} = useWindowSize();
   const isDesktop = width && width > 1279 ? true : false;
 const [partnersForRender, setPartners] = useState(partners)
-   if (!isDesktop && pathName !== '/about') {
+useEffect(() => {
+  if (!isDesktop && pathName !== '/about') {
     setPartners(partners.slice(0, 4));
+  } else {
+    setPartners(partners);
   }
+}, [isDesktop, pathName, partners]);
  
   return (
     <section id='partners' className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>

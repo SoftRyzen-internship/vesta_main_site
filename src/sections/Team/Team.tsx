@@ -1,5 +1,5 @@
 'use client'
-import { FC, useState} from 'react';
+import { FC, useState, useEffect} from 'react';
 
 import { usePathname } from 'next/navigation';
 
@@ -19,9 +19,14 @@ export const Team: FC<TeamProps> = ({team}) => {
   const {width} = useWindowSize();
   const isDesktop = width && width > 1279 ? true : false;
 const [teamForRender, setTeam] = useState(team)
-if (pathName !== '/about') {
-  setTeam(team.slice(0, 6));
-}
+useEffect(() => {
+  if (!isDesktop && pathName !== '/about') {
+    setTeam(team.slice(0, 6));
+  } else {
+    setTeam(team);
+  }
+}, [isDesktop, pathName, team]);
+
   return (
     <section
       id='team'
