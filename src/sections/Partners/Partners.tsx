@@ -3,6 +3,7 @@
 import { FC, useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 import { CardsList } from '@/components/common/CardsList';
 import { PartnerCard } from '@/components/common/PartnerCard';
 import { LinkButton } from '@/components/ui/LinkButton';
@@ -12,7 +13,6 @@ import { PartnersProps } from './Partners.types';
 import { partnersData, templateNoData } from '@/data';
 
 import { useWindowSize } from '@/utils';
-import { NoDataTemplate } from '../NoDataTemplate';
 
 export const Partners: FC<PartnersProps> = ({ partners }) => {
   const [partnersForRender, setPartners] = useState(partners);

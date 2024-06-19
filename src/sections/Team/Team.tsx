@@ -5,13 +5,13 @@ import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
 
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 import { CardsList } from '@/components/common/CardsList';
 import { TeamCard } from '@/components/common/TeamCard';
 
 import { TeamProps } from './Team.types';
 
 import { teamData, templateNoData } from '@/data';
-import { NoDataTemplate } from '../NoDataTemplate';
 
 export const Team: FC<TeamProps> = ({ team }) => {
   const { sectionTeam, emptyTitle, emptyDescription } = templateNoData;
