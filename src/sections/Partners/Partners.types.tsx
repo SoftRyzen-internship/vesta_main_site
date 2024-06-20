@@ -13,12 +13,12 @@ export interface IImageData {
 
 export interface IItem {
   id: string;
- name: string;
+  name: string;
   image: IImageData;
 }
 
 export interface IPartnersAttributes {
-  item: IItem[];
+  item: IItem[]
 }
 
 export interface IDataAttributes {
@@ -29,7 +29,10 @@ export interface IData {
   data: IDataAttributes;
 }
 
-
 export interface IPartnersData {
   partner: IData;
+}
+
+export interface PartnersProps {
+  partners: IItem[]
 }

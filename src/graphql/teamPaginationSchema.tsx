@@ -1,13 +1,18 @@
 import { gql } from 'graphql-request';
 
-export const getPartner = gql`
+export const getTeamPagination = (start: number, limit: number) => gql`
   query {
-    partner{
+    team{
       data {
         attributes {
-          item {
+          itemTeam(
+            pagination: { start: ${start}, limit: ${limit} }
+            ) {
             id
             name
+            position
+            status
+            text
             image {
               data {
                 attributes {
@@ -15,6 +20,10 @@ export const getPartner = gql`
                   alternativeText
                 }
               }
+            }
+            socialItem {
+              link
+              social
             }
           }
         }

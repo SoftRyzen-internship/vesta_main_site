@@ -7,6 +7,7 @@ import { animateScroll as scroll } from 'react-scroll';
 
 import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
+import { Loader } from '@/components/ui/Loader';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
 import { fetchData } from '@/actions/fetchData';
@@ -28,7 +29,7 @@ export const Projects: FC = () => {
     buttonText: { more, hide },
   } = projectsData;
 
-  const { wait, waitText, titleProjects, descriptionProjects } = templateNoData;
+  const { titleProjects, descriptionProjects } = templateNoData;
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -60,7 +61,7 @@ export const Projects: FC = () => {
 
   return (
     <>
-      {isLoading && <NoDataTemplate title={wait} description={waitText} />}
+      {isLoading && <Loader />}
       {!isLoading && total === 0 && (
         <NoDataTemplate
           title={titleProjects}

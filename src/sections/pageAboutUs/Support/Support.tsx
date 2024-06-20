@@ -43,7 +43,7 @@ export const Support: FC = () => {
             alt={imgAlt}
             className='mb-[50px] h-[437px] w-[328px] rounded-ee-[150px] object-cover md:h-[691px] md:w-[566px] md:rounded-ee-[200px] xl:mb-0 xl:h-[872px] xl:w-[596px]'
           />
-          <p className='absolute left-10 top-10 w-[325px] text-body3 font-medium uppercase tracking-[-0.01em] text-bgText xl:text-body3_desk'>
+          <p className='absolute left-10 top-10 text-body3 font-medium uppercase tracking-[-0.01em] text-bgText md:w-[325px] xl:text-body3_desk'>
             {subtitle}
           </p>
           <ul className='md:w-[566px] xl:w-[492px]'>

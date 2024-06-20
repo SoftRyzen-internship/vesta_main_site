@@ -7,11 +7,13 @@ export interface IImageDataAttributes {
   attributes: IImageAttributes;
 }
 
+
 export interface IImageData {
   data: IImageDataAttributes;
 }
 
 export interface IItemTeam {
+  id: string;
   name: string;
   text: string;
   position: string;
@@ -24,14 +26,18 @@ export interface ITeamAttributes {
   itemTeam: IItemTeam[];
 }
 
-export interface IDataAttributes {
+export interface IDataAttributesTeam {
   attributes: ITeamAttributes;
 }
 
 export interface IData {
-  data: IDataAttributes;
+  data: IDataAttributesTeam;
 }
 
 export interface ITeamData {
   team: IData;
+}
+
+export interface TeamProps {
+  team: IItemTeam[]
 }

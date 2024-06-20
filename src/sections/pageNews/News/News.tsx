@@ -6,6 +6,7 @@ import { animateScroll as scroll } from 'react-scroll';
 
 import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
+import { Loader } from '@/components/ui/Loader';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
 import { IDataAttributes, INewsData } from './News.types';
@@ -21,7 +22,7 @@ export const News = () => {
     buttonText: { more, hide },
     limit,
   } = newsPageData;
-  const { descriptionNews, titleNews, wait, waitText } = templateNoData;
+  const { descriptionNews, titleNews } = templateNoData;
   const [news, setNews] = useState<IDataAttributes[]>([]);
   const [start, setStart] = useState(0);
   const [total, setTotal] = useState(0);
@@ -54,13 +55,7 @@ export const News = () => {
 
   return (
     <>
-      {isLoading && (
-        <NoDataTemplate
-          sectionTitle={title}
-          title={wait}
-          description={waitText}
-        />
-      )}
+      {isLoading && <Loader/> }
       {!isLoading && total === 0 && (
         <NoDataTemplate
           sectionTitle={title}
