@@ -8,7 +8,7 @@
     "phone": {
       "name": "phone",
       "label": "Номер телефону*",
-      "placeholder": "+38 (097) 111 11 11"
+      "placeholder": "+38 097 111 11 11"
     },
     "email": {
       "name": "email",
