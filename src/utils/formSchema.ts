@@ -34,7 +34,7 @@ export const formSchema = yup.object({
     .trim()
     .required(required)
     .min(13, phoneMin)
-    .max(13, phoneMax)
+    .max(17, phoneMax)
     .matches(phoneRegExp, phonePattern),
   email: yup
     .string()
