@@ -45,7 +45,7 @@ export const Partners: FC<PartnersProps> = ({ partners }) => {
         >
           <div className='container'>
             <div className='mb-[40px] flex flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
-              <h2 className='xl:text-h2_desc font-kyiv text-h2 md:text-h2_tab'>
+              <h2 className='font-kyiv text-h2 md:text-h2_tab xl:text-h2_desk font-bold'>
                 {partnersData.title}
               </h2>
               {pathName !== '/about' && (
