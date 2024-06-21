@@ -91,11 +91,7 @@ export default function RootLayout({
   return (
     <html lang='uk'>
       <body
-        className={clsx(
-          eUkraine.variable,
-          KyivTypeSans.variable,
-          'h-full min-h-screen scrollbar-thin scrollbar-track-bgText scrollbar-thumb-tomorrow scrollbar-thumb-rounded-full ',
-        )}
+        className={clsx(eUkraine.variable, KyivTypeSans.variable, 'scroll')}
       >
         <Header />
         <main>{children}</main>
