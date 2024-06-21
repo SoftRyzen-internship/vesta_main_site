@@ -73,7 +73,9 @@ export const TeamCardModal: FC<ITeamCardModalProps> = ({
                     <h3 className='mb-2 text-body2_tab font-medium text-green xl:text-body2_desk'>
                       {name}
                     </h3>
-                    <p className='paragraph mb-[30px] md:mb-10'>{position}</p>
+                    <p className='paragraph mb-[30px] md:mb-10 xl:mb-0'>
+                      {position}
+                    </p>
                   </div>
                   <div className='xl:flex xl:h-[463px] xl:w-[418px] xl:flex-col xl:justify-between'>
                     <p className='paragraph mb-[30px] md:mb-10 xl:mb-0'>

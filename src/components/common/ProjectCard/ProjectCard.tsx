@@ -33,7 +33,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         className='mb-[30px] h-[250px] w-full object-cover object-center md:mb-0 md:h-[250px] md:w-[300px] xl:h-[300px] xl:w-[492px]'
       />
       <div>
-        <h2 className='mb-5 line-clamp-2 font-kyiv text-h3 font-bold text-green text-inherit md:mb-10 md:text-h3_tab xl:text-h3_desk'>
+        <h2 className='mb-5 line-clamp-2 text-h3 font-bold text-green text-inherit md:mb-10 md:text-h3_tab xl:text-h3_desk'>
           {title}
         </h2>
         <p className='paragraph mb-5 line-clamp-4 md:mb-10 xl:w-[492px]'>
