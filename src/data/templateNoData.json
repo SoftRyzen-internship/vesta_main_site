@@ -19,5 +19,7 @@
   "titlePartners": "Йой! Кудись ділись всі партнери!",
   "descriptionPartners": "Будь ласка, спробуйте повернутися пізніше.",
   "emptyTitle": "Упс... От халепа!",
-  "emptyDescription": "Десь всі поділися... Спробуйте будь-ласка пізніше."
+  "emptyDescription": "Десь всі поділися... Спробуйте будь-ласка пізніше.",
+
+  "noImage": "/images/noData/no-data-image.webp"
 }

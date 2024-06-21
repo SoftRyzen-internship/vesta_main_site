@@ -6,15 +6,21 @@ import { Button } from '@/components/ui/Button';
 import { ITeamCardProps } from './TeamCard.types';
 
 import { TeamCardModal } from '../TeamCardModal';
+import { templateNoData } from '@/data';
 
 export const TeamCard: FC<ITeamCardProps> = ({
   item: { name, image, position, status, text, socialItem },
 }) => {
   const [openModal, setIsOpenModal] = useState(false);
+  const { noImage } = templateNoData;
+
   const onClick = () => {
     setIsOpenModal(true);
   };
-  const { url, alternativeText } = image.data.attributes;
+
+  const url = image?.data?.attributes?.url ?? noImage;
+  const alternativeText = image?.data?.attributes?.alternativeText ?? name;
+
   return (
     <div className='smOnly:max-w-[328px] md:w-[330px] xl:w-[389px]'>
       <div className='relative mb-4 h-[330px] w-full overflow-hidden md:h-[440px] xl:h-[463px]'>
