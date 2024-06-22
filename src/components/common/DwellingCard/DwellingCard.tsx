@@ -10,7 +10,7 @@ export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
         {item.city}
       </h3>
       <ul>
-        <li className='flex flex-col gap-[10px] leading-none'>
+        <li className='flex flex-col gap-[10px] leading-none first:mb-[10px]'>
           <Link
             href={item.locationLink}
             target={dwellings.target}
