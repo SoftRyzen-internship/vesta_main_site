@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     siteName: metaData.ogSiteName,
     images: '/images/ogImage/ogImage.webp',
   },
+  other: {
+    'color-scheme': 'light',
+  },
 };
 
 const KyivTypeSans = localFont({
