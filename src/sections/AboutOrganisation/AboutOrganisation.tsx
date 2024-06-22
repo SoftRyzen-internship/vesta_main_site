@@ -11,38 +11,33 @@ import { getOrganization } from '@/graphql/organizationSchema';
 
 import { getSpecialWords } from '@/utils';
 
-import {
-  OrganizationResponse,
-  AboutOrganisationHelps,
-} from './AboutOrganisation.types';
+import { OrganizationResponse, AboutOrganisationHelps } from './AboutOrganisation.types';
 
 export const AboutOrganisation: FC = async () => {
   const { caption, title, sectionOrganisationHelp } = aboutOrganisation;
 
-  const data: OrganizationResponse =
-    await fetchData<OrganizationResponse>(getOrganization);
+  const data: OrganizationResponse = await fetchData<OrganizationResponse>(getOrganization);
 
   const { help_psyhologist, legal_support, date, request_psychologist, text } =
     data.organization.data.attributes;
 
-  const updatedSupportCards: AboutOrganisationHelps[] =
-    sectionOrganisationHelp.map(card => {
-      switch (card.typeOfHelp) {
-        case 'надано юридичну підтримку':
-          return { ...card, amountOfHelp: help_psyhologist ?? 0 };
-        case 'запитів на психологічну підтримку':
-          return { ...card, amountOfHelp: legal_support ?? 0 };
-        case 'надано психологічну підтримку':
-          return { ...card, amountOfHelp: request_psychologist ?? 0 };
-        default:
-          return { ...card, amountOfHelp: 0 };
-      }
-    });
+  const updatedSupportCards: AboutOrganisationHelps[] = sectionOrganisationHelp.map((card) => {
+    switch (card.typeOfHelp) {
+      case 'надано юридичну підтримку':
+        return { ...card, amountOfHelp: help_psyhologist ?? 0 };
+      case 'запитів на психологічну підтримку':
+        return { ...card, amountOfHelp: legal_support ?? 0 };
+      case "надано психологічну підтримку":
+        return { ...card, amountOfHelp: request_psychologist ?? 0 };
+      default:
+        return { ...card, amountOfHelp: 0 };
+    }
+  });
 
   return (
     <section>
       <div className='container py-[60px] md:py-[100px] xl:flex xl:justify-between'>
-        <p className='text-caption font-medium uppercase text-darkGrey'>
+        <p className='text-caption font-medium uppercase text-darkGrey xl:text-caption_desk'>
           {caption}
         </p>
         <div className='xl:flex xl:flex-col'>
@@ -56,17 +51,19 @@ export const AboutOrganisation: FC = async () => {
             </span>
             {getSpecialWords(title, 10, 4, { start: true })}
           </h3>
-          <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
+          <p className='text-body4 font-normal text-darkGrey transition md:w-[415px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
             {text}
           </p>
         </div>
       </div>
-      <div className='container'>
-        <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
-          *станом на {date ? date : 'XXXX-XX-XX'}
+      <div className='container h-[377px] md:h-[387px]'>
+        <p
+          className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
+        >
+          {aboutOrganisation.dateBy}{date}
         </p>
-        <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
-          <ul className='flex gap-5 transition pb-10'>
+        <ScrollBox className='overflow-x-auto xl:overflow-hidden absolute container p-0'>
+          <ul className='flex gap-5 transition pb-[40px] md:pb-[10px] xl:pb-0'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
                 <SupportCards
