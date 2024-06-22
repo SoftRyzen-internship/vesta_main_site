@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: metaData.ogSiteName,
     images: [
       {
-        url: metaData.image.url,
+        url: '/images/ogImage/ogImage.webp',
         width: 1200,
         height: 630,
         alt: metaData.image.alt,
