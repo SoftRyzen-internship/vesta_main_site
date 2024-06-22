@@ -22,14 +22,7 @@ import {
 import GoIt from '/public/icons/goIt.svg';
 import SoftRyzen from '/public/icons/softryzen.svg';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
-
-const sanitizePhoneNumber = (phone: string) => {
-  const cleaned = phone.replace(/\D/g, '');
-
-  const formatted = cleaned.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '+$1 ($2) $3 $4 $5');
-
-  return formatted;
-};
+import { sanitizePhoneNumber } from '@/utils';
 
 export const Footer: FC = async () => {
   const data = await fetchData<FooterOrganizationResponse>(getContact);
