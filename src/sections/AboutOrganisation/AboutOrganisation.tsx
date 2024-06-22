@@ -56,13 +56,13 @@ export const AboutOrganisation: FC = async () => {
           </p>
         </div>
       </div>
-      <div className='container h-[377px] md:h-[387px]'>
+      <div className='container'>
         <p
           className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'
         >
-          {aboutOrganisation.dateBy}{date}
+          {aboutOrganisation.dateBy}{date ? date : 'XXXX-XX-XX'}
         </p>
-        <ScrollBox className='overflow-x-auto xl:overflow-hidden absolute container p-0'>
+        <ScrollBox className='overflow-x-auto xl:overflow-hidden p-0'>
           <ul className='flex gap-5 transition pb-[40px] md:pb-[10px] xl:pb-0'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
