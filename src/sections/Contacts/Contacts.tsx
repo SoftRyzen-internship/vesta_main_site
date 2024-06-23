@@ -3,7 +3,6 @@
 import { FC } from 'react';
 
 import { clsx } from 'clsx';
-import { motion } from 'framer-motion';
 
 import { LinkButton } from '@/components/ui/LinkButton';
 
@@ -24,17 +23,7 @@ export const Contacts: FC = () => {
         <h2 className='subtitle pb-10 text-bgText md:w-[560px] xl:w-[630px]'>
           {title}
         </h2>
-        <motion.div
-          initial={{ scale: 1 }}
-          whileInView={{ scale: [1, 1.05, 1, 1.05, 1] }}
-          transition={{ repeat: Infinity, repeatDelay: 5, duration: 2 }}
-          className='hidden xl:inline-block'
-        >
-          <LinkButton href={hrefLink} className='w-full md:w-[240px]'>
-            {contactsButton}
-          </LinkButton>
-        </motion.div>
-        <LinkButton href={hrefLink} className='w-full md:w-[240px] xl:hidden'>
+        <LinkButton href={hrefLink} className='w-full md:w-[240px]'>
           {contactsButton}
         </LinkButton>
       </div>
