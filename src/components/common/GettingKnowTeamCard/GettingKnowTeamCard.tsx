@@ -1,11 +1,14 @@
-import VestaLogoIcon from '/public/icons/vestaLogo.svg';
-import { LinkButton } from '@/components/ui/LinkButton';
+import { FC } from 'react';
 
-import { getSpecialWords } from '@/utils';
+import { LinkButton } from '@/components/ui/LinkButton';
 
 import { gettingKnowTeamCard } from '@/data';
 
-export const GettingKnowTeamCard = () => {
+import VestaLogoIcon from '/public/icons/vestaLogo.svg';
+
+import { getSpecialWords } from '@/utils';
+
+export const GettingKnowTeamCard: FC = () => {
   const { title, description, link, textLink } = gettingKnowTeamCard;
   return (
     <div className='h-[422px] w-full bg-bgText p-10 pb-[46px] md:h-[558px] md:w-[330px] md:pb-[54px] xl:h-[561px] xl:w-[388px] xl:pb-10'>

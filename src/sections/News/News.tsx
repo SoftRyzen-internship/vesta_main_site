@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 import { NewsCard } from '@/components/common/NewsCard';
 import { LinkButton } from '@/components/ui/LinkButton';
-import { NoDataTemplate } from '../NoDataTemplate';
 
 import { fetchData } from '@/actions/fetchData';
 import { getNewsCard } from '@/graphql/newsSchemaCard';

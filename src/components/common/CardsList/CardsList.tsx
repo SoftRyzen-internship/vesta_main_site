@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation';
 
 import { clsx } from 'clsx';
 
-import { GettingKnowTeamCard } from '../GettingKnowTeamCard';
+import { GettingKnowTeamCard } from '@/components/common/GettingKnowTeamCard';
+import { ScrollBox } from '@/components/ui/ScrollBox';
 
 import { CardListProps } from './CardList.types';
 
 import { useWindowSize } from '@/utils';
-import { ScrollBox } from '@/components/ui/ScrollBox';
 
 export const CardsList: FC<CardListProps> = ({
   items,

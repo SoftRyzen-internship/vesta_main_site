@@ -11,8 +11,8 @@ import SocialsTikTok from '@/../public/icons/socialsTikTok.svg';
 import SocialsTwitter from '@/../public/icons/socialsTwitter.svg';
 import SoundCloud from '@/../public/icons/soundCloud.svg';
 import SpotifyIcon from '@/../public/icons/spotifyIcon.svg';
-import Diya from '@/../public/icons/diya.svg';
 import YoutubeMusic from '@/../public/icons/youtubeMusic.svg';
+import Diya from '@/../public/icons/diya.svg';
 
 export const SocialMedia: FC<SocialMediaProps> = ({
   socialMedia,
@@ -29,7 +29,7 @@ export const SocialMedia: FC<SocialMediaProps> = ({
               aria-label={`відкрити ${social}`}
               href={link}
               className={clsx(
-                'transition flex h-full w-full items-center justify-center rounded-[50%]',
+                'flex h-full w-full items-center justify-center rounded-[50%] transition',
                 lightMode &&
                   'bg-whiteGrey text-logoWhite hover:bg-[#9C4E12] focus:bg-[#B25A17]',
                 !lightMode &&

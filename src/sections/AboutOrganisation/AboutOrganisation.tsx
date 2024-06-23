@@ -46,7 +46,7 @@ export const AboutOrganisation: FC = async () => {
         </p>
         <div className='xl:flex xl:flex-col'>
           <h3
-            className='my-[30px] font-kyiv text-h3 font-bold text-green 
+            className='text-h3new my-[30px] font-kyiv font-bold text-green 
             transition md:w-[596px] md:text-h3_tab xl:mb-[20px] xl:mt-0 xl:w-[700px] xl:text-h3_desk'
           >
             {getSpecialWords(title, 0, 8, { end: true })}
@@ -66,7 +66,7 @@ export const AboutOrganisation: FC = async () => {
           {reformatDate(date) ?? 'XX-XX-XXXX'}
         </p>
         <ScrollBox className='overflow-x-auto p-0 xl:overflow-hidden'>
-          <ul className='flex gap-5 pb-[40px] transition md:pb-[10px] xl:pb-0'>
+          <ul className='flex gap-[15px] pb-[40px] transition md:gap-5 md:pb-[10px] xl:gap-6 xl:pb-0'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
                 <SupportCards

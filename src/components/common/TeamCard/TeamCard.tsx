@@ -1,11 +1,11 @@
 import { FC, useState } from 'react';
 import Image from 'next/image';
 
+import { TeamCardModal } from '@/components/common/TeamCardModal';
 import { Button } from '@/components/ui/Button';
 
 import { ITeamCardProps } from './TeamCard.types';
 
-import { TeamCardModal } from '../TeamCardModal';
 import { templateNoData } from '@/data';
 
 export const TeamCard: FC<ITeamCardProps> = ({
