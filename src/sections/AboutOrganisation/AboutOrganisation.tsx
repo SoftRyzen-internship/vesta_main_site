@@ -45,7 +45,7 @@ export const AboutOrganisation: FC = async () => {
           {caption}
         </p>
         <div className='xl:flex xl:flex-col'>
-          <h3
+          <h2
             className='text-h3new my-[30px] font-kyiv font-bold text-green 
             transition md:w-[596px] md:text-h3_tab xl:mb-[20px] xl:mt-0 xl:w-[700px] xl:text-h3_desk'
           >
@@ -54,7 +54,7 @@ export const AboutOrganisation: FC = async () => {
               {getSpecialWords(title, 8, 2)}
             </span>
             {getSpecialWords(title, 10, 4, { start: true })}
-          </h3>
+          </h2>
           <p className='text-body4 font-normal text-darkGrey transition md:w-[415px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
             {text}
           </p>
