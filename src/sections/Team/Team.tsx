@@ -35,7 +35,7 @@ export const Team: FC<TeamProps> = ({ team }) => {
           )}
         >
           <div className='container'>
-            <div className='mb-[40px] flex  flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
+            <div className='mb-[40px] flex flex-col gap-[24px] md:mb-[50px] xl:mb-[60px] xl:flex-row xl:justify-between'>
               <h2 className='font-kyiv text-h2 md:text-h2_tab xl:text-h2_desk font-bold'>
                 {teamData.title}
               </h2>
