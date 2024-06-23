@@ -25,7 +25,6 @@ export default async function Home() {
   );
   const partners = dataPartners.partner?.data?.attributes?.item ?? [];
   const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
-
   return (
     <>
       <HeroMain />
