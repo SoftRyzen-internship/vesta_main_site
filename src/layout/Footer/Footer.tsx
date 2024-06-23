@@ -1,12 +1,11 @@
 import { FC } from 'react';
 
-import { Logo } from '@/components/ui/Logo';
 import { NavList } from '@/components/common/NavList';
+import { Logo } from '@/components/ui/Logo';
 import { ScrollButtonUp } from '@/components/ui/ScrollButtonUp/ScrollButtonUp';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { fetchData } from '@/actions/fetchData';
-
 import { getContact } from '@/graphql/contactSchema';
 
 import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
@@ -70,7 +69,7 @@ export const Footer: FC = async () => {
                       </p>
                       <a
                         href={`tel:${phone}`}
-                        className='transition hover:text-hoverDark focus:text-#B25A17 active:text-orangeText'
+                        className='focus:text-#B25A17 transition hover:text-hoverDark active:text-orangeText'
                         aria-label={`${aria}`}
                       >
                         {phone}
@@ -79,7 +78,7 @@ export const Footer: FC = async () => {
                   ))}
                   <a
                     href={`mailto:${email}`}
-                    className='transition hover:text-hoverDark focus:text-#B25A17 active:text-orangeText'
+                    className='focus:text-#B25A17 transition hover:text-hoverDark active:text-orangeText'
                     aria-label={footer.ariaEmail}
                   >
                     {email}
