@@ -3,7 +3,6 @@ export { scrollToTop } from './scrollToTop';
 export { supportIconTypes } from './supportIconTypes';
 export { getSpecialWords } from './getSpecialWords';
 export { useWindowSize } from './useWindowSize';
-export { formatDate } from './formatDate';
+export { reformatDate } from './reformatDate';
 export { teamPlugTypes } from './teamPlugTypes';
 export { sanitizePhoneNumber } from './footerPhoneExp';
-

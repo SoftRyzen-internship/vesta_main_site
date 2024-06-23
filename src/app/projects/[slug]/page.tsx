@@ -15,7 +15,7 @@ export interface IOneProjectPageProps {
   params: { slug: string };
 }
 
-const BASE_APP_URL = process.env.BASE_APP_URL as string;
+const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL as string;
 
 export async function generateStaticParams() {
   const fetchedProjects = await fetchData<IProjectsData>(getProjects);

@@ -23,8 +23,10 @@ export default async function Home() {
   const dataTeam: ITeamData = await fetchData<ITeamData>(
     getTeamPagination(0, 5),
   );
+
   const partners = dataPartners.partner?.data?.attributes?.item ?? [];
   const team = dataTeam.team?.data?.attributes?.itemTeam ?? [];
+
   return (
     <>
       <HeroMain />
