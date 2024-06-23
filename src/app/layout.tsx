@@ -28,14 +28,10 @@ export const metadata: Metadata = {
     title: metaData.ogTitle,
     description: metaData.ogDescription,
     siteName: metaData.ogSiteName,
-    images: [
-      {
-        url: metaData.image.url,
-        width: 1200,
-        height: 630,
-        alt: metaData.image.alt,
-      },
-    ],
+    images: '/images/ogImage/ogImage.webp',
+  },
+  other: {
+    'color-scheme': 'light',
   },
 };
 
@@ -91,11 +87,7 @@ export default function RootLayout({
   return (
     <html lang='uk'>
       <body
-        className={clsx(
-          eUkraine.variable,
-          KyivTypeSans.variable,
-          'h-full min-h-screen scrollbar-thin scrollbar-track-bgText scrollbar-thumb-tomorrow scrollbar-thumb-rounded-full ',
-        )}
+        className={clsx(eUkraine.variable, KyivTypeSans.variable, 'scroll')}
       >
         <Header />
         <main>{children}</main>

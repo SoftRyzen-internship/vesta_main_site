@@ -16,7 +16,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
       <div className='container'>
         <div className='justify-between xl:flex'>
           <div className='mb-[30px] md:mb-10 md:max-w-[492px] xl:mb-0'>
-            <h1 className='subtitle'>{title}</h1>
+            <h1 className='subtitle max-w-[300px] md:max-w-[395px]'>{title}</h1>
             <p className='mt-5 whitespace-pre-wrap pb-10 text-body3 text-darkGrey xl:text-body3_desk'>
               {pageText}
             </p>
@@ -35,7 +35,7 @@ export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
 
         <div className='mt-[60px] justify-between md:mt-[100px] xl:mt-[130px] xl:flex '>
           {add_title ? (
-            <h2 className='text-body1 md:max-w-[566px] md:text-body1_tab xl:max-w-[492px] xl:text-body1_desk'>
+            <h2 className='max-w-[320px] text-body1 md:max-w-[550px] md:text-body1_tab xl:max-w-[472px] xl:text-body1_desk'>
               {add_title}
             </h2>
           ) : null}

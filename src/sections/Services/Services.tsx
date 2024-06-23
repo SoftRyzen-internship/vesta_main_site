@@ -23,7 +23,7 @@ export const Services: FC = async () => {
           {title}
         </h2>
         <ScrollBox className='overflow-x-auto md:overflow-hidden'>
-          <ul className='flex items-center gap-10  pb-10 md:flex-col  md:gap-[30px] xl:gap-10'>
+          <ul className='flex items-center gap-10 pb-10 md:flex-col md:gap-[30px] xl:gap-10'>
             {services.map((service, index) => (
               <li key={service.id}>
                 <ServiceCard

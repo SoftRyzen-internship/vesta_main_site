@@ -54,8 +54,15 @@ export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
 
   const onSubmit: SubmitHandler<IFormState> = async data => {
     setSendError(false);
+    const sanitizedData = {
+      ...data,
+      name: data.name.trim(),
+      phone: data.phone.replace(/[\s()-]/g, ''),
+      email: data.email.trim(),
+      message: data.textarea ? data.textarea.trim() : '',
+    };
     try {
-      await sendEmail(data);
+      await sendEmail(sanitizedData);
       reset();
     } catch (error) {
       setSendError(true);
