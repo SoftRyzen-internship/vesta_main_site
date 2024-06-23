@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import { LogoProps } from './Logo.types';
+
 import { logoData } from '@/data';
 
 import LogoIcon from '@/../public/icons/vestaLogoWhite.svg';

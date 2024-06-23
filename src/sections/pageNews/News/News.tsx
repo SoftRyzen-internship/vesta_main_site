@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 
 import { animateScroll as scroll } from 'react-scroll';
 
+import { NoDataTemplate } from '@/sections/NoDataTemplate';
 import { NewsCard } from '@/components/common/NewsCard';
 import { Button } from '@/components/ui/Button';
 import { Loader } from '@/components/ui/Loader';
-import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
 import { IDataAttributes, INewsData } from './News.types';
 

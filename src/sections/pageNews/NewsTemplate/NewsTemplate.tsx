@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import ReactPlayer from 'react-player';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 
 import { Button } from '@/components/ui/Button';
 

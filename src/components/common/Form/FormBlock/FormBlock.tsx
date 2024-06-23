@@ -13,13 +13,14 @@ import { Checkbox } from '../Checkbox';
 import { FormModal } from '../../FormModal';
 import { Button } from '@/components/ui/Button';
 
-import { formSchema } from '@/utils';
-
-import { sendEmail } from '@/actions';
-
 import { IFormBlockProps, IFormState } from './FormBlock.types';
 
 import { formData } from '@/data';
+
+import { sendEmail } from '@/actions';
+import { formSchema } from '@/utils';
+
+
 
 export const FormBlock: FC<IFormBlockProps> = ({ className }) => {
   const [modalOpen, setModalOpen] = useState(false);

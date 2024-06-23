@@ -5,8 +5,8 @@ import { FC, useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 import { animateScroll as scroll } from 'react-scroll';
 
-import { Button } from '@/components/ui/Button';
 import { ProjectCard } from '@/components/common/ProjectCard';
+import { Button } from '@/components/ui/Button';
 import { Loader } from '@/components/ui/Loader';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
 
