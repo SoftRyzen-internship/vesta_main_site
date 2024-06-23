@@ -25,7 +25,7 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
     <section className='pt-[141px] md:pt-[154px] xl:pt-[191px]'>
       <div className='container xl:flex xl:flex-col xl:items-center'>
         <p className='paragraph mb-[30px] xl:w-[802px] '>{date}</p>
-        <h2 className='mb-[50px] text-h3 font-bold text-green md:text-h3_tab xl:w-[802px] xl:text-h3_desk'>
+        <h2 className='mb-[50px] font-kyiv text-h3 font-bold text-green md:text-h3_tab xl:w-[802px] xl:text-h3_desk'>
           {title}
         </h2>
         <Image
