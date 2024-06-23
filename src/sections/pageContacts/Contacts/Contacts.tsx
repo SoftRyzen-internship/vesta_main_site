@@ -51,7 +51,7 @@ export const Contacts: FC = async () => {
                 <div className='flex flex-col gap-2'>
                   <p className='paragraph font-normal'>{phoneTitle}</p>
                   <a
-                    href={`tel:${head_organization.replace(/-/g, '').replace(/\s/g, '')}`}
+                    href={`tel:${head_organization.replace(/[\s()-]/g, '')}`}
                     className='transition hover:text-greenHover'
                   >
                     {head_organization}
@@ -62,7 +62,7 @@ export const Contacts: FC = async () => {
                 <li className='flex flex-col gap-2'>
                   <p className='paragraph font-normal'>{legalService}</p>
                   <a
-                    href={`tel:${legal_support.replace(/-/g, '').replace(/\s/g, '')}`}
+                    href={`tel:${legal_support.replace(/[\s()-]/g, '')}`}
                     className='transition hover:text-greenHover'
                   >
                     {legal_support}
@@ -73,7 +73,7 @@ export const Contacts: FC = async () => {
                     {psychologicalService}
                   </p>
                   <a
-                    href={`tel:${psychological_support.replace(/-/g, '').replace(/\s/g, '')}`}
+                    href={`tel:${psychological_support.replace(/[\s()-]/g, '')}`}
                     className='transition hover:text-greenHover'
                   >
                     {psychological_support}

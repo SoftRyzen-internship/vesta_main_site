@@ -24,11 +24,11 @@ export const CardsList: FC<CardListProps> = ({
 
   return (
     <>
-      <ScrollBox className='mb-[60px] overflow-x-auto smOnly:pb-10 md:mb-0'>
+      <ScrollBox className='overflow-x-auto smOnly:pb-10 md:mb-0'>
         <ul
           className={clsx(
             pathname === '/about' && 'mb-0',
-            ' flex gap-2.5  md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-6',
+            ' flex gap-2.5  md:flex-wrap md:gap-6 xl:w-[1215px] xl:gap-x-6 xl:gap-y-10',
           )}
         >
           {items.map(item => {

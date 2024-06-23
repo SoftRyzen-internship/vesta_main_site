@@ -20,7 +20,7 @@ export const BurgerMenu: FC<BurgerMenuProps> = ({ isOpen, close }) => {
           className='fixed inset-0 bg-[#30303640] backdrop-blur-md'
           aria-hidden='true'
         >
-          <DialogPanel className='fixed right-0 top-0 h-screen w-screen bg-green px-[16px] pb-[118px] pt-[84px] md:h-[592px] md:w-[360px] md:px-[40px] md:pb-[70px] md:pt-[78px]'>
+          <DialogPanel className='fixed right-0 top-0 h-screen w-screen bg-green px-[16px] pb-[118px] pt-[84px] md:max-h-[592px] md:w-[360px] md:px-[40px] md:pb-[70px] md:pt-[78px]'>
             <div className='absolute left-[25px] top-[25px] md:hidden'>
               <Logo onClick={close} />
             </div>

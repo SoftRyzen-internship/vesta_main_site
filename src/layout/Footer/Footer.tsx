@@ -68,9 +68,9 @@ export const Footer: FC = async () => {
                         {typeOfHelp}
                       </p>
                       <a
-                        href={`tel:${phone}`}
+                        href={`tel:${phone?.replace(/[\s()-]/g, '')}`}
                         className='focus:text-#B25A17 transition hover:text-hoverDark active:text-orangeText'
-                        aria-label={`${aria}`}
+                        aria-label={aria}
                       >
                         {phone}
                       </a>
