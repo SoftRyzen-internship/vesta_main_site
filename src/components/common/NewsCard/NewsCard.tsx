@@ -5,6 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { INewsCardProps } from './NewsCard.types';
+
+import { reformatDate } from '@/utils';
+
 export const NewsCard: FC<INewsCardProps> = ({
   item: { slug, date, title, text, image },
 }) => {
@@ -25,11 +28,11 @@ export const NewsCard: FC<INewsCardProps> = ({
         height={290}
         className='mb-[25px] h-[290px] w-full object-cover md:h-[356px]'
       />
-      <p className='paragraph mb-[15px]'>{date}</p>
-      <h3 className='md:text-body3_desk: mb-[15px] text-body3 font-medium text-inherit xl:text-body2_desk'>
+      <p className='paragraph mb-[15px]'>{reformatDate(date)}</p>
+      <h3 className='mb-[15px] text-body2 font-medium text-inherit md:text-body2_tab xl:text-body2_desk'>
         {title}
       </h3>
-      <p className='paragraph line-clamp-2'>{text}</p>
+      <p className='paragraph line-clamp-2 mdOnly:w-[597px]'>{text}</p>
     </Link>
   );
 };

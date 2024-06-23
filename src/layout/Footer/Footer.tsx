@@ -1,12 +1,11 @@
 import { FC } from 'react';
 
-import { Logo } from '@/components/ui/Logo';
 import { NavList } from '@/components/common/NavList';
+import { Logo } from '@/components/ui/Logo';
 import { ScrollButtonUp } from '@/components/ui/ScrollButtonUp/ScrollButtonUp';
 import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { fetchData } from '@/actions/fetchData';
-
 import { getContact } from '@/graphql/contactSchema';
 
 import { FooterOrganizationResponse, FooterPhones } from './Footer.types';
@@ -22,6 +21,7 @@ import {
 import GoIt from '/public/icons/goIt.svg';
 import SoftRyzen from '/public/icons/softryzen.svg';
 import { NoDataTemplate } from '@/sections/NoDataTemplate';
+import { sanitizePhoneNumber } from '@/utils';
 
 export const Footer: FC = async () => {
   const data = await fetchData<FooterOrganizationResponse>(getContact);
@@ -32,16 +32,21 @@ export const Footer: FC = async () => {
   const { titleContacts, descriptionContacts } = templateNoData;
 
   const footerHelpPhones: FooterPhones[] = footerPhones.map(card => {
+    let phone;
     switch (card.typeOfHelp) {
       case 'Юридичні послуги:':
-        return { ...card, phone: legal_support };
+        phone = legal_support;
+        break;
       case 'Психологічні послуги:':
-        return { ...card, phone: psychological_support };
+        phone = psychological_support;
+        break;
       case "Зв'язатися за нами:":
-        return { ...card, phone: head_organization };
+        phone = head_organization;
+        break;
       default:
-        return card;
+        phone = '';
     }
+    return { ...card, phone: sanitizePhoneNumber(phone) };
   });
 
   return (
@@ -73,7 +78,7 @@ export const Footer: FC = async () => {
                   ))}
                   <a
                     href={`mailto:${email}`}
-                    className='transition hover:text-orangeText'
+                    className='focus:text-#B25A17 transition hover:text-hoverDark active:text-orangeText'
                     aria-label={footer.ariaEmail}
                   >
                     {email}

@@ -5,7 +5,7 @@ import { Projects } from '@/sections/pageProjects/Projects';
 
 import { heroLessData, metaData } from '@/data';
 
-const BASE_APP_URL = process.env.BASE_APP_URL as string;
+const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL as string;
 
 export const metadata: Metadata = {
   title: metaData.titleProjects,

@@ -6,12 +6,13 @@ import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { motion } from 'framer-motion';
 
-import { Logo } from '@/components/ui/Logo';
 import { NavList } from '@/components/common/NavList';
+import { Logo } from '@/components/ui/Logo';
 import { LinkButton } from '@/components/ui/LinkButton';
 import { Button } from '@/components/ui/Button';
-import { navListData } from '@/data';
 import { BurgerMenu } from '@/components/ui/BurgerMenu';
+
+import { navListData } from '@/data';
 
 export const Header: FC = () => {
   const pathName = usePathname();

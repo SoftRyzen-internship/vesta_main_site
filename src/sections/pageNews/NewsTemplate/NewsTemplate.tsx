@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/Button';
 
 import { INewsTemplateProps } from './NewsTemplate.types';
 
+import { reformatDate } from '@/utils';
+
 export const NewsTemplate: FC<INewsTemplateProps> = ({
   oneNews: { image, date, title, text, videoLink = '', descriptionVideo = '' },
 }) => {
@@ -24,8 +26,8 @@ export const NewsTemplate: FC<INewsTemplateProps> = ({
   return (
     <section className='pt-[141px] md:pt-[154px] xl:pt-[191px]'>
       <div className='container xl:flex xl:flex-col xl:items-center'>
-        <p className='paragraph mb-[30px] xl:w-[802px] '>{date}</p>
-        <h2 className='mb-[50px] text-h3 text-green md:text-h3_tab xl:w-[802px] xl:text-h3_desk'>
+        <p className='paragraph mb-[30px] xl:w-[802px]'>{reformatDate(date)}</p>
+        <h2 className='mb-[50px] font-kyiv text-h3 font-bold text-green md:text-h3_tab xl:w-[802px] xl:text-h3_desk'>
           {title}
         </h2>
         <Image

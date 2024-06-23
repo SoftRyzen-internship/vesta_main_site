@@ -6,10 +6,9 @@ import { SupportCards } from '@/components/common/SupportCards';
 import { aboutOrganisation } from '@/data';
 
 import { fetchData } from '@/actions/fetchData';
-
 import { getOrganization } from '@/graphql/organizationSchema';
 
-import { getSpecialWords } from '@/utils';
+import { getSpecialWords, reformatDate } from '@/utils';
 
 import {
   OrganizationResponse,
@@ -42,7 +41,7 @@ export const AboutOrganisation: FC = async () => {
   return (
     <section>
       <div className='container py-[60px] md:py-[100px] xl:flex xl:justify-between'>
-        <p className='text-caption font-medium uppercase text-darkGrey'>
+        <p className='text-caption font-medium uppercase text-darkGrey xl:text-caption_desk'>
           {caption}
         </p>
         <div className='xl:flex xl:flex-col'>
@@ -56,17 +55,18 @@ export const AboutOrganisation: FC = async () => {
             </span>
             {getSpecialWords(title, 10, 4, { start: true })}
           </h3>
-          <p className='text-body4 font-normal text-darkGrey transition md:w-[492px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
+          <p className='text-body4 font-normal text-darkGrey transition md:w-[415px] md:text-body4_tab xl:w-[465px] xl:text-body4_desk'>
             {text}
           </p>
         </div>
       </div>
       <div className='container'>
         <p className='pb-[10px] text-body4 font-normal text-darkGrey transition xl:flex xl:justify-end'>
-          *станом на {date ? date : 'XXXX-XX-XX'}
+          {aboutOrganisation.dateBy}
+          {reformatDate(date) ?? 'XX-XX-XXXX'}
         </p>
-        <ScrollBox className='overflow-x-auto xl:overflow-hidden'>
-          <ul className='flex gap-5 transition pb-10'>
+        <ScrollBox className='overflow-x-auto p-0 xl:overflow-hidden'>
+          <ul className='flex gap-5 pb-[40px] transition md:pb-[10px] xl:pb-0'>
             {updatedSupportCards.map(card => (
               <li key={card.id}>
                 <SupportCards

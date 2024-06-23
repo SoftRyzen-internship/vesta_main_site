@@ -11,7 +11,7 @@ import { Footer } from '@/layout/Footer';
 
 import { metaData } from '@/data';
 
-const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL as string;
+const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL || '';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_APP_URL),
