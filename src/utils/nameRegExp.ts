@@ -1,1 +1,1 @@
-export const nameRegExp = /^[А-ЯҐЄІЇа-яґєії\s'-]+$/u;
+export const nameRegExp = /^[А-ЯҐЄІЇа-яґєії\s''ʼ`-]+$/u
