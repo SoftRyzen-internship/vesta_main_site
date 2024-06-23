@@ -2,8 +2,8 @@
 
 import { FC, useEffect } from 'react';
 
-import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
 import { clsx } from 'clsx';
+import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
 
 import { ISupportProps } from './SupportCards.types';
 
@@ -29,7 +29,7 @@ export const SupportCards: FC<ISupportProps> = ({
   return (
     <div
       className={clsx(
-        'h-[300px] w-[260px] flex-shrink-0 list-none bg-bgText md:h-[340px] md:w-[300px] xl:h-[368px] xl:w-[390px]',
+        'h-[300px] w-[260px] flex-shrink-0 list-none bg-bgText md:h-[340px] md:w-[300px] xl:h-[368px] xl:w-[389px]',
         {
           'rounded-tl-[120px]': id === 1,
           'rounded-bl-[120px] rounded-br-[120px]': id === 2,
