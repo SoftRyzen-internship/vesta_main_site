@@ -24,7 +24,12 @@ export const CardsList: FC<CardListProps> = ({
 
   return (
     <>
-      <ScrollBox className='overflow-x-auto smOnly:pb-10 md:mb-0'>
+      <ScrollBox
+        className={clsx(
+          pathname !== '/about' && 'mb-[60px]',
+          'overflow-x-auto smOnly:pb-10 md:mb-0',
+        )}
+      >
         <ul
           className={clsx(
             pathname === '/about' && 'mb-0',
