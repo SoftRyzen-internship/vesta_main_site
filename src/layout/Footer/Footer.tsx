@@ -58,7 +58,7 @@ export const Footer: FC = async () => {
             <div className='relative flex flex-col transition md:flex-row xl:w-full xl:pl-[277px]'>
               <div className='mb-10 mt-[43px] flex flex-col gap-[15px] text-body4 font-normal text-white transition md:mt-[40px] xl:mt-0'>
                 <NavList navList={footerNavigation} forFooter={true} />
-                <ScrollButtonUp />
+                <ScrollButtonUp className='absolute right-0' />
               </div>
               {footerHelpPhones.length > 0 ? (
                 <div className='flex flex-col gap-[15px] pb-10 text-body4 font-normal text-white transition md:pb-[96px] md:pl-[169px] md:pt-[40px] xl:pb-[100px] xl:pl-[236px] xl:pt-0'>
