@@ -41,7 +41,7 @@
 
 @layer base {
   body {
-    @apply bg-bgWhite font-eukraine text-caption_desk font-normal text-green;
+    @apply h-full min-h-screen bg-bgWhite font-eukraine  text-caption_desk font-normal text-green;
   }
 }
 
@@ -60,5 +60,9 @@
 
   .paragraph {
     @apply text-body4 tracking-[-0.14px] text-darkGrey;
+  }
+
+  .scroll {
+    @apply scrollbar-thin scrollbar-track-bgText scrollbar-thumb-tomorrow scrollbar-thumb-rounded-full;
   }
 }

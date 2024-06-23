@@ -19,7 +19,7 @@ export const Projects: FC = () => {
   } = projectsData;
 
   return (
-    <section className='py-[60px] md:py-[50px] xl:py-[65px]'>
+    <section className='py-[60px] md:py-[50px] mdOnly:pt-[100px] xl:py-[65px]'>
       <div className='container xl:flex xl:items-center xl:gap-[104px]'>
         <div className='xl:w-[549px]'>
           <h2 className='mb-[30px] font-kyiv text-h3 font-bold text-green md:text-h3_tab mdOnly:w-[598px] xl:mb-5 xl:text-h3_desk'>
@@ -29,7 +29,7 @@ export const Projects: FC = () => {
             </span>
             {getSpecialWords(title, 8, 5, { start: true })}
           </h2>
-          <p className='paragraph mb-[30px] md:mb-10 md:w-[415px] xl:mb-10'>
+          <p className='paragraph mb-[30px] md:mb-10 md:w-[415px] xl:mb-10 xl:w-[471px]'>
             {description}
           </p>
           <LinkButton

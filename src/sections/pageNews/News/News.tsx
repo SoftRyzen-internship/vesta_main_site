@@ -55,7 +55,7 @@ export const News = () => {
 
   return (
     <>
-      {isLoading && <Loader/> }
+      {isLoading && <Loader />}
       {!isLoading && total === 0 && (
         <NoDataTemplate
           sectionTitle={title}
@@ -69,7 +69,7 @@ export const News = () => {
             <h1 className='mb-10 text-h1 text-green md:mb-[60px] md:text-h2_tab xl:w-[744px] xl:text-h1_desk'>
               {title}
             </h1>
-            <ul className='mb-[64px] flex flex-col items-center gap-10 md:mb-[100px] md:gap-[60px] xl:mb-[60px] xl:flex-row xl:flex-wrap xl:gap-x-[25px] xl:gap-y-10'>
+            <ul className='flex flex-col items-center gap-10 md:gap-[60px] xl:flex-row xl:flex-wrap xl:gap-x-[25px] xl:gap-y-10'>
               {news.map(({ attributes, id }) => (
                 <li key={id}>
                   <NewsCard item={attributes} />
