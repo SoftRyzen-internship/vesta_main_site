@@ -28,7 +28,14 @@ export const metadata: Metadata = {
     title: metaData.ogTitle,
     description: metaData.ogDescription,
     siteName: metaData.ogSiteName,
-    images: '/images/ogImage/ogImage.webp',
+    images: [
+      {
+        url: metaData.image.url,
+        width: 1200,
+        height: 630,
+        alt: metaData.image.alt,
+      },
+    ],
   },
   other: {
     'color-scheme': 'light',
