@@ -29,7 +29,7 @@ export const SocialMedia: FC<SocialMediaProps> = ({
               aria-label={`відкрити ${social}`}
               href={link}
               className={clsx(
-                'flex h-full w-full items-center justify-center rounded-[50%]',
+                'transition flex h-full w-full items-center justify-center rounded-[50%]',
                 lightMode &&
                   'bg-whiteGrey text-logoWhite hover:bg-[#9C4E12] focus:bg-[#B25A17]',
                 !lightMode &&
