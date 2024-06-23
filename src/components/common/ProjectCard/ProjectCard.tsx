@@ -19,7 +19,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
   return (
     <div
       className={clsx(
-        'overflow-hidden border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:flex md:gap-[54px] md:pb-10 xl:gap-[129px]',
+        ' overflow-hidden border-b-[0.50px] border-solid border-darkGrey pb-[30px] md:flex md:h-[340px] md:gap-[54px] md:pb-10 xl:gap-[129px]',
         isOddCard
           ? 'flex-row justify-start xl:gap-[129px]'
           : 'flex-row-reverse justify-end xl:gap-[232px]',
@@ -32,7 +32,7 @@ export const ProjectCard: FC<IProjectCardProps> = ({
         height={250}
         className='mb-[30px] h-[250px] w-full object-cover object-center md:mb-0 md:h-[250px] md:w-[300px] xl:h-[300px] xl:w-[492px]'
       />
-      <div>
+      <div className='md:w-[330px] xl:w-[492px]'>
         <h2 className='mb-5 line-clamp-2 font-kyiv text-h3 font-bold text-green text-inherit md:mb-10 md:text-h3_tab xl:text-h3_desk'>
           {title}
         </h2>
