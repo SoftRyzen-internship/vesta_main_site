@@ -22,14 +22,14 @@ export const Dwelling: FC = async () => {
 
   return (
     <section className='pt-[60px] md:pt-[100px] xl:pt-[130px]'>
-      <div className='container  flex flex-col transition xl:flex-row xl:gap-[145px]'>
-        <div className=' mb-[60px] flex w-[328px] flex-col gap-10 transition md:w-[476px] xl:mb-0'>
-          <h3 className='font-kyiv text-h3 font-bold md:text-h3_tab xl:text-h3_desk'>
+      <div className='container flex flex-col transition xl:flex-row xl:gap-[145px]'>
+        <div className=' mb-[60px] flex flex-col gap-10 transition smOnly:max-w-[328px] md:w-[476px] xl:mb-0'>
+          <h2 className='font-kyiv text-h3 font-bold md:text-h3_tab xl:text-h3_desk'>
             {getSpecialWords(dwellingData.title, 0, 3, { end: true })}
             <span className='bg-yellowLight'>
               {getSpecialWords(dwellingData.title, 3, 2)}
             </span>
-          </h3>
+          </h2>
           <LinkButton href={dwellingData.hrefLink} className='w-60'>
             {dwellingData.requestButton}
           </LinkButton>
