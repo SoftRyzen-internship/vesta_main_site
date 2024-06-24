@@ -5,10 +5,12 @@ import { SocialMedia } from '@/components/ui/SocialMedia';
 
 import { IOneProjectsProps } from './ProjectTemplate.type';
 
+import { templateNoData } from '@/data';
+
 export const ProjectTemplate: FC<IOneProjectsProps> = ({ oneProject }) => {
   const { title, pageText, add_title, add_text, image, social } = oneProject;
-  const url =
-    image.data?.attributes?.url ?? '/images/noData/no-data-image.webp';
+  const { noImage } = templateNoData;
+  const url = image.data?.attributes?.url ?? noImage;
   const alternativeText = image.data?.attributes?.alternativeText ?? title;
 
   return (
