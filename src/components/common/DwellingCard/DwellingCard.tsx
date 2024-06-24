@@ -24,7 +24,7 @@ export const DwellingCard: FC<DwellingCardProps> = ({ item }) => {
         </li>
         <li>
           <Link
-            href={`tel:${item.phone}`}
+            href={`tel:${item.phone.replace(/[\s()-]/g, '')}`}
             rel={dwellings.rel}
             className='paragraph hover:text-hoverDark focus:text-orangeText'
           >

@@ -44,7 +44,7 @@ export const CardsList: FC<CardListProps> = ({
             );
           })}
           {path !== '/about' && section === 'team' && !isMobile && (
-            <GettingKnowTeamCard />
+            <li><GettingKnowTeamCard/></li>
           )}
         </ul>
       </ScrollBox>
