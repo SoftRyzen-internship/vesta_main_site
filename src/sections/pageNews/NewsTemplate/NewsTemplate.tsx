@@ -10,14 +10,17 @@ import { Button } from '@/components/ui/Button';
 
 import { INewsTemplateProps } from './NewsTemplate.types';
 
+import { templateNoData } from '@/data';
+
 import { reformatDate } from '@/utils';
 
 export const NewsTemplate: FC<INewsTemplateProps> = ({
   oneNews: { image, date, title, text, videoLink = '', descriptionVideo = '' },
 }) => {
   const [isClient, setIsClient] = useState(false);
-  const url =
-    image.data[0]?.attributes?.url ?? '/images/noData/no-data-image.webp';
+
+  const { noImage } = templateNoData;
+  const url = image.data[0]?.attributes?.url ?? noImage;
   const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
   useEffect(() => {
     setIsClient(true);
