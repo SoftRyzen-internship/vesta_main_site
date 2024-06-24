@@ -11,6 +11,8 @@ import { Footer } from '@/layout/Footer';
 
 import { metaData } from '@/data';
 
+import ogImage from './ogp.webp';
+
 const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL as string;
 
 export const metadata: Metadata = {
@@ -28,7 +30,14 @@ export const metadata: Metadata = {
     title: metaData.ogTitle,
     description: metaData.ogDescription,
     siteName: metaData.ogSiteName,
-    images: './ogp.webp',
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+        alt: metaData.image.alt,
+      },
+    ],
   },
   other: {
     'color-scheme': 'light',
