@@ -6,14 +6,15 @@ import Link from 'next/link';
 
 import { INewsCardProps } from './NewsCard.types';
 
+import { templateNoData } from '@/data';
+
 import { reformatDate } from '@/utils';
 
 export const NewsCard: FC<INewsCardProps> = ({
   item: { slug, date, title, text, image },
 }) => {
-  const url =
-    image.data[0]?.attributes?.url ??
-    '/images/mainHero/main-hero-bg-tab@1x.webp';
+  const { noImage } = templateNoData;
+  const url = image.data[0]?.attributes?.url ?? noImage;
   const alternativeText = image.data[0]?.attributes?.alternativeText ?? title;
 
   return (

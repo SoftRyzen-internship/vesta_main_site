@@ -7,13 +7,15 @@ import { LinkButton } from '@/components/ui/LinkButton';
 
 import { IProjectCardProps } from './ProjectCard.types';
 
+import { templateNoData } from '@/data';
+
 export const ProjectCard: FC<IProjectCardProps> = ({
   item: { slug, image, title, description },
   linkText,
   isOddCard,
 }) => {
-  const url =
-    image.data?.attributes?.url ?? '/images/noData/no-data-image.webp';
+  const { noImage } = templateNoData;
+  const url = image.data?.attributes?.url ?? noImage;
   const alternativeText = image.data?.attributes?.alternativeText ?? title;
 
   return (
